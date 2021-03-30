@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<div class="flex-container">
+  {% include header.html %}
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    {% include schema-meta.html %}
+    <div class="page-image">
+      <div class="cover-image" style="background: url({{"/assets/img/" | prepend: site.baseurl | append : page.img}}) center no-repeat; background-size: cover;"></div>
+    </div>
+    <div class="wrapper">
+      <div class="page-content">
+        <div class="header-page">
+          <h1 class="page-title">{{page.title}}</h1>
+          {% include post_meta.html type="post-page-meta" %}
+        </div>
+        {% include sidebar.html context="post" class="side" id="sidebar" %}
+        {% if page.toc %}{% include sidebar-toc.html %}{% endif %}
+        {% include github-button.html %}
+        {{page.content | markdownify}}
+        {% include sidebar.html context="post" class="inline" id="post-end" %}
+        <div class="separator"></div>
+        {% include author-box.html %}
+        {% include recent-post.html %}
+        {% include newsletter.html %}
+        {% include disqus.html %}
+      </div>
+    </div> <!-- End Wrapper -->
+  {% include To_Top_Button.html %}
+  </article>
+  {% include search.html %}
+  {% include footer.html %}
+</div>

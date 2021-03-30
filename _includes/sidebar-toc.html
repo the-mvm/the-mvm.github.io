@@ -1,0 +1,6 @@
+<aside class="toc">
+  <nav class="toc-nav">
+    <li class="toc-title">on this post</li>
+    {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc-content" id="toc-content" item_class="toc-item-%level%" submenu_class="toc-submenu-%level%" skip_no_ids=true %}
+  </nav>
+</aside>

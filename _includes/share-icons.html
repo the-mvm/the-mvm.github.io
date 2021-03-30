@@ -1,0 +1,12 @@
+<div class="share-options {{ include.class }}">
+    <div class="share-hover">
+        <span class="share-button {{ include.class }}"><svg width="25" height="25" class="{{ include.class }}"><g fill-rule="evenodd"><path d="M15.6 5a.42.42 0 0 0 .17-.3.42.42 0 0 0-.12-.33l-2.8-2.79a.5.5 0 0 0-.7 0l-2.8 2.8a.4.4 0 0 0-.1.32c0 .12.07.23.16.3h.02a.45.45 0 0 0 .57-.04l2-2V10c0 .28.23.5.5.5s.5-.22.5-.5V2.93l2.02 2.02c.08.07.18.12.3.13.11.01.21-.02.3-.08v.01"></path><path d="M18 7h-1.5a.5.5 0 0 0 0 1h1.6c.5 0 .9.4.9.9v10.2c0 .5-.4.9-.9.9H6.9a.9.9 0 0 1-.9-.9V8.9c0-.5.4-.9.9-.9h1.6a.5.5 0 0 0 .35-.15A.5.5 0 0 0 9 7.5a.5.5 0 0 0-.15-.35A.5.5 0 0 0 8.5 7H7a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h11a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"></path></g></svg></span>
+        <div class="share-icons {{ include.class }}" id="{{ include.id }}-icons">
+            <a class="twitter" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a class="facebook" href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a class="reddit" href="http://www.reddit.com/submit?url={{ site.url }}{{ page.url }}&title={{ page.title }}" title="Submit to Reddit" rel="nofollow" target="_blank"><i class="fa fa-reddit" aria-hidden="true"></i></a>
+            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}&title={{ page.title }}&summary={{ page.description }}&source={{ site.url }}{{ page.url }}" title="Share on LinkedIn" rel="nofollow" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a class="email" href="mailto:?subject={{ page.title }}&body={{ page.description }}%0A%0ARead more here: {{ site.url }}{{ page.url }}" title="Share via e-mail" rel="nofollow" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</div>

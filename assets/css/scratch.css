@@ -1,0 +1,94 @@
+span.github-btn {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 1em;
+    margin-top: 1em
+}
+
+.github-btn {
+    font: 11px/14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    height: 30px;
+}
+
+.gh-btn{
+    padding: 5px;
+    color: var(--text);
+    font-size: 0.9em;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.gh-btn, .gh-ico {
+  float:left;
+}
+
+.gh-ico {
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+    background-image: url(/assets/img/github_icon.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.gh-btn {
+    will-change: transform;
+    background-image:linear-gradient(to bottom, #fcfcfc 0, #eee 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#eeeeee', GradientType=0);
+    background-repeat:no-repeat;
+    border:1px solid #d5d5d5;
+    transition: 0.25s;
+    }
+
+.gh-btn:hover,.gh-btn:focus{
+    background-color:var(--grey3);
+    background-image:linear-gradient(to bottom, #eee 0, #ddd 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#dddddd', GradientType=0);
+    box-shadow: 0 0.5em 0.5em -0.4em #545454;
+    transform: translateY(-0.25em);
+    color: var(--text);
+    }
+
+.gh-btn:active{
+    background-image:none;
+    background-color:var(--grey3);
+    border-color:var(--grey2);
+    box-shadow:inset 0 2px 4px rgba(0,0,0,0.15);
+    box-shadow: 0 0.5em 0.5em -0.4em var(--text);
+    transform: translateY(-0.25em);
+    }
+
+
+@media only screen and (max-width: 768px) {
+  .gh-ico {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+  }
+  .gh-btn{
+  font-size: 13px;
+  line-height: 15px;
+  padding: 5px 5px 5px;
+  }
+  .github-btn {
+    height: auto;
+  }}
+
+  @media only screen and (max-width: 480px) {
+  .gh-ico {
+    width: 12px;
+    height: 12px;
+    margin-top: 1px;
+    margin-right: 2px;
+  }
+  .gh-btn{
+    font-size: 10px;
+    line-height: 12px;
+    padding: 5px 5px 5px;
+  }
+  .github-btn {
+    height: auto;
+  }}

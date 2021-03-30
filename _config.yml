@@ -1,0 +1,62 @@
+title: The Minimum Viable Model
+description: > # this means to ignore newlines until "baseurl:"
+  Projects, thoughts, research and more...
+permalink: ':title/'
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://amaynez.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+logo: "/assets/img/branding/MVM-logo-full.svg"
+logo-icon: "/assets/img/branding/MVM-symbol.svg"
+
+# Author settings
+author: Armando Maynez # add your name
+author-pic: Myself_Neon.jpg
+about-author: Engineer, industry executive, research enthusiast. Avid learner with diverse interests in coding, machine learning, artificial intelligence and reinforcement learning. 17+ years of experience working in multinational corporations.
+
+# Contact links
+email: armando.maynez@gmail.com # Add your Email address
+phone: # Add your Phone number
+website: https://amaynez.github.io # Add your website, do not add http://
+linkedin: amaynez # Add your Linkedin handle
+github: amaynez # Add your Github handle
+twitter: '@MvmThe' # Add your Twitter handle
+bandcamp: armandomaynez # Add your Bandcamp username
+
+# Newsletter
+mailchimp: "https://github.us1.list-manage.com/subscribe/post?u=8ece198b3eb260e6838461a60&amp;id=397d90b5f4"
+
+# Disqus
+discus_identifier: amaynez-github-io # Add your discus identifier
+comments_curtain: yes # leave empty to show the disqus embed directly
+
+# Tracker
+analytics: G-R8SZS2YBZK
+fbadmin: ar.maybach
+
+# Paginate
+paginate: 6
+paginate_path: /page:num/
+words_per_minute: 200
+
+# Build settings
+markdown: kramdown
+mathjax: true
+highlighter: rouge
+highlight_theme: default
+
+# Outputting
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+category_archive:
+  type: liquid
+  path: /categories/
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-sitemap
+
+include: [_pages]
+exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock", "package-lock.json", "assets/css/sass/"]

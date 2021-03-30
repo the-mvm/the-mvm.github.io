@@ -1,0 +1,15 @@
+<div class="tag-cloud">
+    {% if include.context == "post" %}
+        <ul class="tags post {{ include.class }}">
+            {% for tag in page.tags %}
+                <li><a href="{{ site.url }}/tags#{{ tag | cgi_escape }}" class="tag post {{ include.class }}">{{ tag }}</a></li>
+            {% endfor %}
+    {% else %}
+        <ul class="tags">
+            {% for item in (0..site.tags.size) %}{% unless forloop.last %}
+                {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
+                <li><a href="{{ site.url }}/tags#{{ this_word | cgi_escape }}" class="tag">{{ this_word }} <span>({{ site.tags[this_word].size }})</span></a></li>
+            {% endunless %}{% endfor %}
+    {% endif %}
+        </ul>
+</div>

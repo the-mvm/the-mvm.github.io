@@ -1,0 +1,71 @@
+<!-- JS -->
+<script src="{{site.baseurl}}/assets/js/jquery-3.2.1.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/jekyll-search.js"></script>
+<script src="{{site.baseurl}}/assets/js/main.js"></script>
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '{{site.baseurl}}/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{description}">{title}</a></li>',
+    noResultsText: 'No results found',
+    fuzzy: false,
+    exclude: ['Welcome']
+  });
+
+{% if page.layout == "post" %}
+if (document.getElementById('comment-curtain') == null){
+  document.getElementById('disqus_thread').classList.toggle('show')
+}
+function toggle_comments(){
+    document.getElementById('comment-curtain').classList.toggle('hide')
+    document.getElementById('disqus_thread').classList.toggle('show')
+}
+$(".share-hover").on("mouseover", function() {
+  document.getElementById('sidebar-icons').classList.add('show');
+  setTimeout(function () {
+      document.getElementById('sidebar-icons').classList.add('opaque');
+      document.getElementById('sidebar-icons').classList.remove('transparent');
+  }, 10);
+}).on("mouseleave", function() {
+  document.getElementById('sidebar-icons').classList.add('transparent');
+  document.getElementById('sidebar-icons').classList.remove('opaque');
+  document.getElementById('sidebar-icons').addEventListener('transitionend', function(e) {
+    document.getElementById('sidebar-icons').classList.remove('show');
+  }, {capture: false, once: true, passive: false});
+});
+{% endif %}
+{% if page.toc %}
+var spy = new Gumshoe("#toc-content a", {
+                        navClass:"active",
+                        contentClass:"underline",
+                        nested:0,
+                        nestedClass:"active",
+                        offset:20,
+                        reflow:1,
+                        events:1});
+
+var coll = document.getElementsByClassName("toc-item-1");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  if (coll[i].childElementCount > 1) {
+    sign = document.createElement('div');
+    sign.className = "toc-sign";
+    sign.textContent = "+"
+    coll[i].insertBefore(sign, coll[i].childNodes[0]);
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.lastElementChild;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+          this.firstElementChild.textContent = this.firstElementChild.textContent.replace('-','+');
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          this.firstElementChild.textContent = this.firstElementChild.textContent.replace('+','-');
+        }
+    });
+  }
+}
+{% endif %}
+</script>

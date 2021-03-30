@@ -1,0 +1,31 @@
+<footer class="main-footer">
+    <div class="footer-wrapper">
+        <div class="logo-symbol">
+            <a class="logo-link" href="{{ site.baseurl }}/">
+                <svg class="logo-symbol">
+                    <use xlink:href='{{site.logo-icon}}#MVM-symbol'></use>
+                </svg>
+            </a>
+        </div>
+        <div class="copyright">
+          <p>{{site.time | date: '%Y'}} &copy; {{site.author}}</p>
+        </div>
+        <div class="footer-nav">
+            <div>
+                <a href="{{site.baseurl}}/tags/">
+                    Tags
+                </a>
+            </div>
+            <div>
+                <a href="{{site.baseurl}}/archive/">
+                    Archive
+                </a>
+            </div>
+            <div>
+                <a href="{{site.baseurl}}/about/">
+                    About
+                </a>
+            </div>
+        </div>
+    </div>
+</footer> <!-- End Footer -->

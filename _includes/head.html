@@ -1,0 +1,92 @@
+{% assign words = page.content | strip_html | number_of_words %}
+<head>
+	<meta charset="utf-8">
+	<title>{% if page.title %}{{page.title}} - {{site.title}}{% else %}{{site.title}}{% endif %}</title>
+	<meta name="description" content="{{ page.description }}">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ site.url }}"
+      },
+      "headline": "{% if page.title %}{{page.title}}{% else %}{{site.title}}{% endif %}",
+      "abstract": "{{ page.description }}",
+		"keywords": "{% for tag in page.tags %}{{tag}}{% if forloop.last == false %}, {% endif %}{% endfor %}",
+		"wordcount": "{{ words }}",
+		"image": ["{{ site.url }}/assets/img{{ page.img }}"],
+      "datePublished": "{{ page.date }}",
+      "dateModified": "{{ page.date }}",
+      "author": {
+        "@type": "Person",
+        "name": "{{ site.author }}"
+      }
+  	}
+    </script>
+	<!-- Open Graph data -->
+	<meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
+	<meta property="og:type" content="article"/>
+	<meta property="og:title" content="{% if page.title %}{{page.title}}{% else %}{{site.title}}{% endif %}"/>
+	<meta property="og:description" content="{{ page.description }}"/>
+	<meta property="og:image" content="{{ site.url }}/assets/img{{ page.img }}"/>
+	<meta property="og:image:alt" content="{{page.title}}"/>
+	<meta property="og:site_name" content="{{site.title}}" />
+	<meta property="article:published_time" content="{{ page.date }}" />
+	<meta property="article:modified_time" content="{{ page.date }}" />
+	<meta property="article:tag" content="{% for tag in page.tags %}{{tag}}{% if forloop.last == false %}, {% endif %}{% endfor %}" />
+	<meta property="fb:admins" content="{{ site.fbadmin }}" />
+	<link rel="icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/favicon.ico">
+	<!-- Schema.org markup for Google -->
+	<meta itemprop="name" content="{% if page.title %}{{page.title}}{% else %}{{site.title}}{% endif %}">
+	<meta itemprop="description" content="{{ page.description }}">
+	<meta itemprop="image" content="{{ site.url }}/assets/img{{ page.img }}">
+	<!-- Twitter Card data -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="{{ site.url }}{{ page.url }}">
+	<meta name="twitter:title" content="{% if page.title %}{{page.title}}{% else %}{{site.title}}{% endif %}">
+	<meta name="twitter:description" content="{{ page.description | truncate: 200 }}">
+	<meta name="twitter:creator" content="{{% site.twitter %}}">
+	<!-- Twitter summary card with large image must be at least 280x150px -->
+	<meta name="twitter:image:src" content="{{ site.url }}/assets/img{{ page.img }}">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#311e3e">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#311e3e">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#311e3e">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Inter:100,300,600|Jost:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="{{ '/assets/fonts/font-awesome/css/font-awesome.min.css' | prepend: site.baseurl }}">
+	<!-- Styles -->
+	<link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl }}">
+	{% if page.layout == 'post' %}
+	<link rel="stylesheet" href="/assets/css/highlighter/{{ site.highlight_theme }}.css">
+	<!-- Mailchimp linking -->
+	<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8ece198b3eb260e6838461a60/d20d9fb9aad962399025da52e.js");</script>
+	{% endif %}
+	{% include analytics.html %}
+	{% if page.mathjax %}
+	<script type="text/x-mathjax-config">
+	  MathJax.Hub.Config({
+		extensions: ["tex2jax.js"],
+		tex2jax: {
+		  inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+		  displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+		  processEscapes: true
+		},
+		"CommonHTML": { linebreaks: { automatic: true } }
+	  });
+	</script>
+	<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	{% endif %}
+	{% if page.toc %}
+		<script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5.1.1/dist/gumshoe.polyfills.min.js"></script>
+	{% endif %}
+</head>

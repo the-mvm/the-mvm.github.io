@@ -1,0 +1,26 @@
+---
+layout: menu-page
+title: Tags
+permalink: /tags/
+---
+{% include get-site-tags.html %}
+<section class="blog-tags">
+  <h1>Posts by tag</h1>
+  {% include tag_cloud.html %}
+  <table class="tags-table" cellspacing="0">
+  {% for item in (0..site.tags.size) %}{% unless forloop.last %}
+    {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
+  <tr>
+    <td class="tag-word"><a id="{{ this_word | cgi_escape }}">{{ this_word }}</a></td>
+    <td class="tag-row">
+    {% for post in site.tags[this_word] %}{% if post.title != null %}
+      <div class="post-list">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        {% include post_meta.html type="post-card-meta" %}
+      </div>
+    {% endif %}{% endfor %}
+     </td>
+  </tr>
+  {% endunless %}{% endfor %}
+    </table>
+</section>
