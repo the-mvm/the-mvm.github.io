@@ -451,10 +451,7 @@ img {
   max-width: 100%;
 }
 a {
-    color: var(--blue);
-    font-weight: var(--font1-bold);
-    font-size: 1.25rem;
-    text-decoration: none;
+    color: var(--text);
 }
 a:hover{
     color:var(--red)
@@ -846,7 +843,7 @@ svg.menu-icon-house {
 .copyright {
   text-align: center;
   color: var(--grey2);
-  font-size: 0.9em;
+  font-size: 0.6em;
   font-weight: var(--font1-light);
 }
 .footer-nav {
@@ -861,6 +858,9 @@ svg.menu-icon-house {
 }
 .footer-nav a {
     color: var(--grey4);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: var(--font1-bold);
 }
 .footer-wrapper a:hover {
     opacity: 0.6
@@ -973,6 +973,7 @@ svg.menu-icon-house {
     padding: 30px;
     transition-timing-function: cubic-bezier(0.2,1,0.3,1);
     text-decoration: none;
+    font-size: 18px;
     cursor: pointer;
     transition: all 0.5s;
 }
@@ -1458,6 +1459,7 @@ div.tag-cloud{
   width: 720px;
   max-width: 100%;
   margin: 0 auto;
+  font-size: 18px;
 }
 
 .newsletter .form-container p {
@@ -1550,6 +1552,7 @@ div.tag-cloud{
   margin-top: 30px;
   padding-bottom: 30px;
   border-bottom: 1px solid var(--grey4);
+  font-size:.8em;
 }
 .narrow-column{
     display: inline-block;
