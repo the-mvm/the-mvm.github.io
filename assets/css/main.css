@@ -1307,11 +1307,9 @@ div.tag-cloud{
   margin-bottom: 1em;
 }
 .header-page h1 {
-  font-family: var(--font2), sans-serif;
   font-weight: var(--font2-light);
   font-size: 4.25rem;
-  line-height: 4.75rem;
-  text-align: center;
+  text-align: left;
   margin: 0 0 10px;
   color: var(--purple);
 }
