@@ -781,8 +781,9 @@ svg.menu-icon-house {
   color: var(--grey4);
 }
 .post-card-title-and-meta {
-  margin:0;
-  color: white
+    margin:0;
+    color: white;
+    line-height: 1;
 }
 .post-card-link {
   text-decoration: none;
@@ -1693,55 +1694,28 @@ div.tag-cloud{
 
 /* = = = = = = = = = = Tag Page  = = = = = = = = = = */
 
-.tags-table {
-    border-spacing: 0 1em;
-    border-collapse: separate;
-    border: 0
+tag-card-title{
+border-top: 1px solid var(--grey4);
+padding: 5px 10px;
 }
-
-.tag-row {
-    vertical-align: top;
-    padding-left: .65em;
-    background-color: transparent;
-    padding-top: 0
-}
-
-.tag-word {
-    vertical-align: top;
-    text-align: right;
-    padding-right: 0.65em;
-    border-right-width: 1px;
-    border-right-style: solid;
-    border-right-color: var(--grey2);
-    font-weight: var(--font1-bold);
-    padding: 12px;
-    background-color: transparent;
-    padding-top: 0
-}
-
-.tag-word a {
+.tag-card-title a {
     color: var(--grey1);
-    text-transform: lowercase
+    text-transform: lowercase;
+    font-weight:var(--font1-bold);
+}
+tag-card-post{
+    margin-bottom:5px
+}
+.tag-card-post a {
+    display: block;
+    color: var(--red);
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
-.post-list {
-    margin-bottom: 0.75em;
-}
-
-.post-list a {
-  display: block;
-  color: var(--red);
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.post-list a:hover {
-  text-decoration: underline;
-  opacity: .8;
-}
-
-.post-list small {
-  color: var(--purple);
+.tag-card-post a:hover {
+    text-decoration: underline;
+    opacity: .8;
 }
 
 /* = = = = = = = = = = Animations  = = = = = = = = = = */
