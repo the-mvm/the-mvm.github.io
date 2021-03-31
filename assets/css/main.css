@@ -1218,35 +1218,6 @@ div.tag-cloud{
     color: var(--red) !important;
     text-decoration: none}
 
-/* = = = = = = = = = = Archive Page  = = = = = = = = = = */
-.archive-table {
-  border-spacing:0;
-  border-collapse: collapse;
-  border: 0
-}
-.archive-row {
-    height: 3em;
-}
-.archive-date {
-    font-style: italic;
-    color: var(--grey1);
-    font-size: 13px;
-    text-align: right;
-    padding-right: 0.65em;
-    background: transparent;
-    padding-top: 0;
-    line-height: 1.2;
-    display: block
-}
-.archive-post {
-    text-align: left;
-    padding-left: 0.65em;
-    background: transparent;
-    padding-top: 0;
-    border-left-width: 1px;
-    border-left-style: solid;
-    border-left-color: var(--grey1)
-}
 /* = = = = = = = = = = Github Link Button = = = = = = = = = = */
 .button-icon {
     width: 20px;
@@ -1693,31 +1664,31 @@ div.tag-cloud{
           transform: scale(1.3);
 }
 
-/* = = = = = = = = = = Tag Page  = = = = = = = = = = */
-.tag-card{
+/* = = = = = = = = = = Post Lists  = = = = = = = = = = */
+.list-group {
   border-top: 1px solid var(--grey4);
   padding: 5px 10px;
   margin-bottom:10px
 }
-.tag-card-title{
+.list-group-title{
   margin-bottom:5px
 }
-.tag-card-title a {
+.list-group-title a {
     color: var(--grey1);
     text-transform: lowercase;
     font-weight:var(--font1-bold);
 }
-.tag-card-post{
+.list-item {
     margin-bottom:20px
 }
-.tag-card-post a {
+.list-item a {
     display: block;
     color: var(--red);
     text-decoration: none;
     text-transform: uppercase;
     line-height: 1.3;
 }
-.tag-card-post a:hover {
+.list-item a:hover {
     text-decoration: underline;
     opacity: .8;
 }
