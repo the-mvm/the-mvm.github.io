@@ -12,13 +12,13 @@
 --grey4:    #D5DEE2;
 --grey5:    #EFF2F3;
 --font1:    'Inter';    /* body text            */
---font2:    'Jost';     /* headers and titles   */
+--font2:    'Roboto';     /* headers and titles   */
 --font1-light:      100;
 --font1-regular:    300;
 --font1-bold:       600;
---font2-light:      300;
---font2-regular:    400;
---font2-bold:       700;
+--font2-light:      100;
+--font2-regular:    300;
+--font2-bold:       500;
 }
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
@@ -63,6 +63,7 @@ section {
  */
 h1 {
   font-size: 4rem;
+  font-weight: var(--font1-regular);
   margin: 0.67rem 0;
 }
 /* Grouping content
@@ -157,7 +158,7 @@ kbd,
 samp {
   font-family: monospace, monospace;
   /* 1 */
-  font-size: 1em;
+  font-size: .6em;
   /* 2 */
 }
 /**
@@ -892,7 +893,7 @@ svg.menu-icon-house {
 
 /* = = = = post's read time and date (meta data) = = = = */
 .post-card-meta{
-  font-size:10px;
+  font-size:.6em;
   white-space:nowrap;
   display: block
 }
@@ -990,7 +991,6 @@ a.tag.post {
     text-align:center;
 }
 a.tag.post.side {
-    font-size: .65em;
     padding: 3px 0px 3px 0px;
 }
 .share-options {
@@ -1034,8 +1034,8 @@ a.tag.post.side {
       display:block;
       position: sticky;
       top: 2em;
-      width: 100px;
-      margin-left: -125px;
+      width: 115px;
+      margin-left: -135px;
       float: left;
     }
     .sidebar.side .tag-cloud{
@@ -1271,8 +1271,9 @@ div.tag-cloud{
     min-width: max-content;
 }
 .github-button a{
-        color: var(--text);
-        white-space: nowrap;
+    color: var(--text);
+    white-space: nowrap;
+    text-decoration: none
 }
 .center-container {
     display: flex;
@@ -1344,6 +1345,10 @@ div.tag-cloud{
   font-size: 14px;
   text-transform: uppercase;
   font-weight: var(--font1-light);
+}
+
+.post-page-meta {
+    font-size: .8em;
 }
 
 .page-footer {
@@ -1712,7 +1717,6 @@ div.tag-cloud{
 }
 
 .tag-word a {
-    font-size: 15px;
     color: var(--grey1);
     text-transform: lowercase
 }
@@ -1726,7 +1730,6 @@ div.tag-cloud{
   color: var(--red);
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 12px
 }
 
 .post-list a:hover {
