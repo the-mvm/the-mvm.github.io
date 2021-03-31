@@ -1369,7 +1369,9 @@ div.tag-cloud{
   padding-bottom: 30px;
   border-bottom: 1px solid var(--grey4)
 }
-
+.recent-list {
+  font-size: 0.7em
+}
 .recent-item{display:inline}
 .recent-item:hover .recent-item-img::after{
   background: rgba(0, 0, 0, 0);
