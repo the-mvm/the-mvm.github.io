@@ -429,9 +429,8 @@ html, body {
   overflow: visible
 }
 html {
-    line-height: 1.5;
+    line-height: 1.75;
     letter-spacing: 0.002em;
-    line-height: 2.375rem;
     font-size: 1.375rem;
 }
 body {
@@ -1329,11 +1328,11 @@ div.tag-cloud{
   position: relative;
   margin-bottom: 1em;
 }
-
 .header-page h1 {
   font-family: var(--font2), sans-serif;
   font-weight: var(--font2-regular);
-  font-size: 4rem;
+  font-size: 4.25rem;
+  line-height: 4.75rem;
   text-align: center;
   margin: 0 0 10px;
   color: var(--purple);
