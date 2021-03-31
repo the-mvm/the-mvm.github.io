@@ -1670,9 +1670,13 @@ div.tag-cloud{
   padding: 5px 10px;
   margin-bottom:10px
 }
-.list-group-title{
-  margin-bottom:5px
+.list-group-title {
+  margin-bottom:5px;
+  color:var(--grey1);
+  font-size:.9em;
+  font-style: italic;
 }
+
 .list-group-title a {
     color: var(--grey1);
     text-transform: lowercase;
