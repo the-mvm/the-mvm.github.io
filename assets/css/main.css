@@ -436,7 +436,7 @@ html {
 }
 body {
   font-family: var(--font1), sans-serif;
-  color: var(--grey1);
+  color: var(--text);
   margin: 0;
   background-color: white;
   -webkit-font-smoothing: antialiased;
