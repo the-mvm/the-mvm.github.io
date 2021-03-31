@@ -1070,6 +1070,9 @@ a.tag.post.side {
     }
 }
 /* = = = = = = = = = = Right Sidebar TOC  = = = = = = = = = = */
+aside.toc {
+    line-height: 1.2;
+}
 .toc {
   margin:auto;
   max-width: 480px;
@@ -1095,8 +1098,8 @@ a.tag.post.side {
     text-decoration:none;
     padding:5px;
     color:var(--grey1);
-    font-size:0.9em;
-    font-weight:var(--font1-bold)
+    font-size:0.8em;
+
 }
 .toc-content a:hover {
     color:var(--grey2)
