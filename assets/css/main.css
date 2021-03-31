@@ -1308,7 +1308,7 @@ div.tag-cloud{
 }
 .header-page h1 {
   font-family: var(--font2), sans-serif;
-  font-weight: var(--font2-regular);
+  font-weight: var(--font2-light);
   font-size: 4.25rem;
   line-height: 4.75rem;
   text-align: center;
