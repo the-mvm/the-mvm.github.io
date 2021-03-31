@@ -429,11 +429,13 @@ html, body {
   overflow: visible
 }
 html {
-  line-height: 1.5;
+    line-height: 1.5;
+    letter-spacing: 0.002em;
+    line-height: 2.375rem;
+    font-size: 1.375rem;
 }
 body {
   font-family: var(--font1), sans-serif;
-  font-size: 1.375rem;
   color: var(--grey1);
   margin: 0;
   background-color: white;
