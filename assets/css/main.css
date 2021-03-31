@@ -918,7 +918,6 @@ svg.menu-icon-house {
     padding-right: 5px;
 }
 .page_meta {
-    justify-content: center;
     display: flex;
     color: var(--grey2);
     font-size: .9em;
@@ -996,7 +995,6 @@ a.tag.post.side {
     padding: 3px 0px 3px 0px;
 }
 .share-options {
-    text-align: center;
     cursor: default;
     margin-bottom:2em
 }
@@ -1050,7 +1048,7 @@ a.tag.post.side {
         width: 20px;
         margin: auto;
         cursor: pointer;
-        margin-left: 33px;
+        margin-right: 55px;
     }
     .share-icons.side{
         display:none;
