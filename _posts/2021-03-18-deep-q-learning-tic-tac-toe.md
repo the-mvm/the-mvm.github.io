@@ -16,9 +16,9 @@ toc: sticky # use yes for inline TOC or sticky for sticky TOC, leave empty or er
 ## Background
 After many years of a corporate career (17) diverging from computer science, I have now decided to learn Machine Learning and in the process return to coding (something I have always loved!).
 
-To fully grasp the essence of ML I decided to start by [coding a ML library myself](https://amaynez.github.io/ML-Library-from-scratch/), so I can fully understand the inner workings, linear algebra and calculus involved in Stochastic Gradient Descent. And on top learn Python (I used to code in C++ 20 years ago).
+To fully grasp the essence of ML I decided to start by [coding a ML library myself](https://the-mvm.github.io/ML-Library-from-scratch/), so I can fully understand the inner workings, linear algebra and calculus involved in Stochastic Gradient Descent. And on top learn Python (I used to code in C++ 20 years ago).
 
-I built a general purpose basic ML library that creates a Neural Network (only DENSE layers), saves and loads the weights into a file, does forward propagation and training (optimization of weights and biases) using SGD. I tested the ML library with the XOR problem to make sure it worked fine. You can read the blog post for it [here](https://amaynez.github.io/ML-Library-from-scratch/).
+I built a general purpose basic ML library that creates a Neural Network (only DENSE layers), saves and loads the weights into a file, does forward propagation and training (optimization of weights and biases) using SGD. I tested the ML library with the XOR problem to make sure it worked fine. You can read the blog post for it [here](https://the-mvm.github.io/ML-Library-from-scratch/).
 
 For the next challenge I am interested in reinforcement learning greatly inspired by Deep Mind's astonishing feats of having their Alpha Go, Alpha Zero and Alpha Star programs learn (and be amazing at it) Go, Chess, Atari games and lately Starcraft; I set myself to the task of programming a neural network that will learn by itself how to play the ancient game of tic tac toe (or noughts and crosses).
 
@@ -159,7 +159,7 @@ I [reached out to the reddit community](https://www.reddit.com/r/MachineLearning
 - Adam: Adaptive Moment Estimation
 - and keep my old vanilla Gradient Descent (vGD) ☺
 
-<a name='optimization'></a>[Click here for a detailed explanation and code of all the implemented optimization algorithms.](https://amaynez.github.io/neural-network-optimization-methods/)
+<a name='optimization'></a>[Click here for a detailed explanation and code of all the implemented optimization algorithms.](https://the-mvm.github.io/neural-network-optimization-methods/)
 
 So far, I have not been able to get better results with Model 4, I have tried all the momentum optimization algorithms with little to no success.
 <a name='Model5'></a>

@@ -18,7 +18,7 @@ Let me try to explain; I am in the process of immersing myself into the world of
 
 Another benefit of doing this is that since I am also learning Python, the experiment brings along good exercise for me.
 
-To call it a Machine Learning Library is perhaps a bit of a stretch, since I just intended to create a **multi-neuron, multi-layered [perceptron](https://amaynez.github.io/single-neuron-perceptron/)**.
+To call it a Machine Learning Library is perhaps a bit of a stretch, since I just intended to create a **multi-neuron, multi-layered [perceptron](https://the-mvm.github.io/single-neuron-perceptron/)**.
 
 <center><img src="/assets/img/posts/nnet_flow.gif"></center>
 

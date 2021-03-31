@@ -23,7 +23,7 @@ As for the focus areas I will start with:
 - Reinforcement Learning
 - Current state of the art: what is at the cutting edge now in terms of Deep Neural Networks and Reinforcement Learning?
   
-I selected the above areas to focus on based on my personal interests, I have been fascinated by the developments in reinforcement learning for a long time, in particular [Deep Mind's](https://deepmind.com/blog) awesome [Go](https://deepmind.com/blog/article/innovations-alphago), [Chess](https://deepmind.com/blog/article/alphazero-shedding-new-light-grand-games-chess-shogi-and-go) and [Starcraft](https://deepmind.com/blog/article/AlphaStar-Grandmaster-level-in-StarCraft-II-using-multi-agent-reinforcement-learning) playing agents. Therefore, I started reading a lot about it and even started a personal project for coding a [tic-tac-toe learning agent](https://amaynez.github.io/deep-q-learning-tic-tac-toe/).
+I selected the above areas to focus on based on my personal interests, I have been fascinated by the developments in reinforcement learning for a long time, in particular [Deep Mind's](https://deepmind.com/blog) awesome [Go](https://deepmind.com/blog/article/innovations-alphago), [Chess](https://deepmind.com/blog/article/alphazero-shedding-new-light-grand-games-chess-shogi-and-go) and [Starcraft](https://deepmind.com/blog/article/AlphaStar-Grandmaster-level-in-StarCraft-II-using-multi-agent-reinforcement-learning) playing agents. Therefore, I started reading a lot about it and even started a personal project for coding a [tic-tac-toe learning agent](https://the-mvm.github.io/deep-q-learning-tic-tac-toe/).
 
 With my limited knowledge I have drafted the following learning path:
 
@@ -32,7 +32,7 @@ With my limited knowledge I have drafted the following learning path:
 3. Book: [Deep Learning with Python by Francois Chollet](https://www.amazon.com/dp/1617294438/ref=cm_sw_em_r_mt_dp_AV4DHT7CVE95D1SR2JJ8)
 4. Book: [Reinforcement Learning: An Introduction, by Richard S. Sutton and Andrew G. Barto](https://www.amazon.com/dp/0262193981/ref=cm_sw_em_r_mt_dp_10B6J4MDB7QE3YHBQF4X)
 
-As for practical work I decided to start by [coding my first models from scratch](https://amaynez.github.io/ML-Library-from-scratch/) (without using libraries such as Tensorflow), to be able to deeply understand the math and logic behind the models, so far it has proven to be priceless.
+As for practical work I decided to start by [coding my first models from scratch](https://the-mvm.github.io/ML-Library-from-scratch/) (without using libraries such as Tensorflow), to be able to deeply understand the math and logic behind the models, so far it has proven to be priceless.
 
 For my next project I think I will start to do the basic hand-written digits recognition, which is the Machine Learning Hello World, for this I think I will start to use Tensorflow already.
 
@@ -79,9 +79,9 @@ I chose this option, specially because I can manipulate files, like images, in m
 After testing with several templates to get the feel for it, I decided to keep Jekyll for my blog for several reasons: the convenience of not having to install anything extra on my computer to build my blog, the integration with GitHub Pages, the ease of use, the future proofing via integration with modern technologies such as react or vue and the vast online community that has produced tons of templates and useful information for issue resolution, customization and added functionality.
 
 I picked up a template, just forked the repository and started modifying the files to customize it, it was fast and easy, I even took it upon myself to add some functionality to the template (it served as a coding little project) like:
-- automatic [sitemap.xml](http://amaynez.github.io/sitemap.xml)
-- automatic [archive page](http://amaynez.github.io/archive/)
-- changed the styling of the [tags page](http://amaynez.github.io/tags/)
+- automatic [sitemap.xml](http://the-mvm.github.io/sitemap.xml)
+- automatic [archive page](http://the-mvm.github.io/archive/)
+- changed the styling of the [tags page](http://the-mvm.github.io/tags/)
 - added the tags and archive pages to the main menu with icons
 - included linkedin and reddit in the share post icons
 - included linkedin icon in the contact info
@@ -96,4 +96,4 @@ As a summary, Hugo and Gatsby might be much faster than Jekyll to build the site
 I created a [clean version of my site as a template for others to use here](https://github.com/amaynez/amaynez.github.io/tree/clean_template). Let me know in the comments or feel free to contact me if you are interested in a detailed walkthrough on how to set it all up. 
 
 #### Hosting
-Since I decided on Jekyll to generate my site, the choice for hosting was quite obvious, **[Github Pages](https://pages.github.com)** is very nicely integrated with it, it is free, and it has no ads! Plus the domain name isn't too terrible ([amaynez.github.io](https://amaynez.github.io)).
+Since I decided on Jekyll to generate my site, the choice for hosting was quite obvious, **[Github Pages](https://pages.github.com)** is very nicely integrated with it, it is free, and it has no ads! Plus the domain name isn't too terrible ([the-mvm.github.io](https://the-mvm.github.io)).
