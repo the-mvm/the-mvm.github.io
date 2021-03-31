@@ -62,8 +62,8 @@ section {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+  font-size: 4rem;
+  margin: 0.67rem 0;
 }
 /* Grouping content
    ========================================================================== */
@@ -103,7 +103,7 @@ hr {
 pre {
   font-family: monospace, monospace;
   /* 1 */
-  font-size: 1em;
+  font-size: 1.375rem;
   /* 2 */
 }
 /* Text-level semantics
@@ -433,6 +433,7 @@ html {
 }
 body {
   font-family: var(--font1), sans-serif;
+  font-size: 1.375rem;
   color: var(--grey1);
   margin: 0;
   background-color: white;
@@ -451,7 +452,7 @@ img {
 a {
     color: var(--blue);
     font-weight: var(--font1-bold);
-    font-size: .9em;
+    font-size: 1.25rem;
     text-decoration: none;
 }
 a:hover{
@@ -812,7 +813,7 @@ svg.menu-icon-house {
 .pagination .previous, .pagination .next {
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--grey1);
 }
 
@@ -1330,7 +1331,7 @@ div.tag-cloud{
 .header-page h1 {
   font-family: var(--font2), sans-serif;
   font-weight: var(--font2-regular);
-  font-size: 36px;
+  font-size: 4rem;
   text-align: center;
   margin: 0 0 10px;
   color: var(--purple);
@@ -1854,7 +1855,7 @@ div.tag-cloud{
     margin-bottom: 10px;
   }
   .header-page h1 {
-    font-size: 27px;
+    font-size: 2.5rem;
     margin: 0 0 10px;
   }
   .header-page .page-date {
