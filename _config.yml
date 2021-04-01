@@ -36,22 +36,6 @@ paginate: 6
 paginate_path: /page:num/
 words_per_minute: 200
 
-autopages:
-  enabled: true
-  categories:
-    enabled: false
-  collections:
-    enabled: false
-  tags:
-    layouts:
-      - 'tag.html'
-    title: 'The Minimum Viable Model - :tag'
-    permalink: '/tag/:tag'
-    slugify:
-      mode: raw
-      cased: true
-
-
 # Build settings
 markdown: kramdown
 mathjax: true
