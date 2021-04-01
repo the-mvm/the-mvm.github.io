@@ -894,8 +894,6 @@ svg.menu-icon-house {
 /*- Font-awesome icons centered within their containers by default -*/
 .fa{margin:auto}
 
-
-
 /* = = = = post's read time and date (meta data) = = = = */
 .post-card-meta{
   font-size:.6em;
@@ -1695,6 +1693,30 @@ div.tag-cloud{
 .list-item a:hover {
     text-decoration: underline;
     opacity: .8;
+}
+.post:not(:last-child) {
+    border-bottom: 1px solid var(--grey4);
+    margin-bottom: 1.5em;
+    padding-bottom: 1em
+}
+.post h2, h3, h4, h5, h6 {
+    display: none;
+}
+.post img {
+    display: none;
+}
+a.post-list-title {
+    text-decoration: none;
+    font-weight: var(--font1-bold);
+    font-size: 2em;
+}
+a.read-more {
+    color: var(--grey2);
+    text-decoration:none
+}
+a.read-more:hover {
+    text-decoration:underline;
+    color: var(--blue);
 }
 /* = = = = = = = = = = Animations  = = = = = = = = = = */
 .main-header,
