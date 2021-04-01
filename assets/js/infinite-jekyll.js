@@ -11,7 +11,7 @@ $(function() {
   const urlParams = new URLSearchParams(queryString);
   if (urlParams.has('tag')){
     const tag = urlParams.get('tag');
-    $('.'+tag).classList.toggle('hidden');
+    document.getElementById(tag).classList.toggle('show')
     $.getJSON('/posts-by-tag.json', function(data) {
         let tag_item = data.find(el => el.tag === tag);
         postURLs = tag_item["posts"];

@@ -6,7 +6,7 @@ permalink: /tag/
 {% include get-site-tags.html %}
 {% for item in (0..site.tags.size) %}{% unless forloop.last %}
 	{% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
-	<div class="{{ this_word | url_encode }} hidden">
+	<div id="{{ this_word | url_encode }}" class="hidden">
 		<h1>{{ this_word }}</h1>
 		<div class="archive">
 			<div class="post-list">
