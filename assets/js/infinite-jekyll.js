@@ -31,6 +31,7 @@ $(function() {
     // If we've scrolled past the loadNewPostsThreshold, fetch posts
     if ((documentHeight - loadNewPostsThreshold) < bottomScrollPosition) {
       fetchPosts();
+      console.log(windowHeight, windowScrollPosition, bottomScrollPosition, documentHeight);
     }
   });
   
