@@ -11,6 +11,6 @@ layout: null
       "{{ post.url }}"{% unless forloop.last %},{% endunless %}
       {% endfor %}
     ]
-  }   {% unless forloop.last %},{% endunless %}
+  },
     {% endunless %}{% endfor %}
 ]
