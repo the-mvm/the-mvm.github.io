@@ -2,20 +2,17 @@ $(function() {
   
   var postURLs,
       isFetchingPosts = false,
-      shouldFetchPosts = true,
-      postsToLoad = $(".post-list").children().length,
-      loadNewPostsThreshold = 10;
+      shouldFetchPosts = true;
   
   // Load the JSON file containing all URLs
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
+  // If a tag was passed as a url parameter then use it to filter the urls
   if (urlParams.has('tag')){
     const tag = urlParams.get('tag');
     document.getElementById(tag).classList.toggle('hidden');
     $.getJSON('/posts-by-tag.json', function(data) {
-        console.log(data);
         let tag_item = data.find(el => el.tag === tag);
-        console.log(tag_item);
         postURLs = tag_item["posts"];
         // If there aren't any more posts available to load than already visible, disable fetching
         if (postURLs.length <= postsToLoad)
@@ -24,13 +21,15 @@ $(function() {
   } else {
       $.getJSON('/all-posts.json', function(data) {
         postURLs = data["posts"];
-
         // If there aren't any more posts available to load than already visible, disable fetching
         if (postURLs.length <= postsToLoad)
           disableFetching();
       });
   }
-	
+
+  var postsToLoad = $(".post-list").children().length,
+      loadNewPostsThreshold = 10;
+
   // If there's no spinner, it's not a page where posts should be fetched
   if ($(".infinite-spinner").length < 1)
     shouldFetchPosts = false;
