@@ -36,19 +36,6 @@ paginate: 6
 paginate_path: /page:num/
 words_per_minute: 200
 
-# Build settings
-markdown: kramdown
-mathjax: true
-highlighter: rouge
-highlight_theme: default
-
-# Outputting
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
-category_archive:
-  type: liquid
-  path: /categories/
-
 autopages:
   enabled: true
   categories:
@@ -63,6 +50,24 @@ autopages:
     slugify:
       mode: raw
       cased: true
+
+
+# Build settings
+markdown: kramdown
+mathjax: true
+highlighter: rouge
+highlight_theme: default
+compress_html:
+  clippings: all
+  comments: all
+  startings: [html, head, body]
+
+# Outputting
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+category_archive:
+  type: liquid
+  path: /categories/
 
 sass:
   style: compressed
