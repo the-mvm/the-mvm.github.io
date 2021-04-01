@@ -7,13 +7,27 @@ $(function() {
       loadNewPostsThreshold = 10;
   
   // Load the JSON file containing all URLs
-  $.getJSON('/all-posts.json', function(data) {
-    postURLs = data["posts"];
-    
-    // If there aren't any more posts available to load than already visible, disable fetching
-    if (postURLs.length <= postsToLoad)
-      disableFetching();
-  });
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  if (urlParams.has('tag')){
+    const tag = urlParams.get('tag');
+    $('.'+tag).classList.toggle('hidden');
+    $.getJSON('/posts-by-tag.json', function(data) {
+        let tag_item = data.find(el => el.tag === tag);
+        postURLs = tag_item["posts"];
+        // If there aren't any more posts available to load than already visible, disable fetching
+        if (postURLs.length <= postsToLoad)
+        disableFetching();
+    });
+  } else {
+      $.getJSON('/all-posts.json', function(data) {
+        postURLs = data["posts"];
+
+        // If there aren't any more posts available to load than already visible, disable fetching
+        if (postURLs.length <= postsToLoad)
+          disableFetching();
+      });
+  }
 	
   // If there's no spinner, it's not a page where posts should be fetched
   if ($(".infinite-spinner").length < 1)

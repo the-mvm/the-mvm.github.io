@@ -2,7 +2,7 @@
     {% if include.context == "post" %}
         <ul class="tags {{ include.class }}">
             {% for tag in page.tags %}
-                <li><a href="{{ site.url }}/tags#{{ tag | cgi_escape }}" class="tag {{ include.class }}">{{ tag }}</a></li>
+                <li><a href="{{ site.url }}/tag.html?tag={{ tag | url_encode }}" class="tag {{ include.class }}">{{ tag }}</a></li>
             {% endfor %}
     {% else %}
         <ul class="tags">
