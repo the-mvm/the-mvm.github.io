@@ -1128,7 +1128,6 @@ aside.toc {
 .toc-submenu-1 {
     padding-inline-start: 0px;
     list-style:none;
-    font-weight:200;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
