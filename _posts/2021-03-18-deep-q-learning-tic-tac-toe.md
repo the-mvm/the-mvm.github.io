@@ -55,15 +55,15 @@ However, the model was still generating many illegal moves, so I decided to modi
 
 Nevertheless, the model was still performing quite poorly winning only around 50% of games vs. a completely random player (I expected it to win above 90% of the time). This was after only training 100,000 games, so I decided to keep training and see the results:
 
-<center><img src='/assets/img/posts/Loss_function_and_Illegal_moves2.png' width="540"></center>
-<center>Wins: 65.46% Losses: 30.32% Ties: 4.23%</center><br>
+<center><img src='/assets/img/posts/Loss_function_and_Illegal_moves2.png' width="540">
+<small>Wins: 65.46% Losses: 30.32% Ties: 4.23%</small></center>
 
 Note that when training restarts, the loss and illegal moves are still high in the beginning of the training round, and this is caused by the epsilon greedy strategy that prefers exploration (a completely random move) over exploitation, this preference diminishes over time.
 
 After another round of 100,000 games, I can see that the loss function actually started to diminish, and the win rate ended up at 65%, so with little hope I decided to carry on and do another round of 100,000 games (about 2 hours in an i7 MacBook Pro):
 
-<center><img src='/assets/img/posts/Loss_function_and_Illegal_moves3.png' width="540"><br>
-Wins: 46.40% Losses: 41.33% Ties: 12.27%</center><br>
+<center><img src='/assets/img/posts/Loss_function_and_Illegal_moves3.png' width="540">
+<small>Wins: 46.40% Losses: 41.33% Ties: 12.27%</small></center>
 
 As you can see in the chart, the calculated loss not even plateaued, but it seemed to increase a bit over time, which tells me the model is not learning anymore. This was confirmed by the win rate decreasing with respect of the previous round to a meek 46.4% that looks no better than a random player.
 
@@ -72,7 +72,7 @@ As you can see in the chart, the calculated loss not even plateaued, but it seem
 After not getting the results I wanted, I decided to change the output activation function to linear, since the output is supposed to be a Q value, and not a probability of an action.
 
 <center><img src='/assets/img/posts/Loss_function_and_Illegal_moves4.png' width="540"><br>
-Wins: 47.60% Losses: 39% Ties: 13.4%</center><br>
+<small>Wins: 47.60% Losses: 39% Ties: 13.4%</small></center><br>
 
 Initially I tested with only 1000 games to see if the new activation function was working, the loss function appears to be decreasing, however it reached a plateau around a value of 1, hence still not learning as expected. I came across a <a href="https://github.com/bckenstler/CLR">technique by Brad Kenstler, Carl Thome and Jeremy Jordan</a> called Cyclical Learning Rate, which appears to solve some cases of stagnating loss functions in this type of networks. So I gave it a go using their Triangle 1 model.
 
