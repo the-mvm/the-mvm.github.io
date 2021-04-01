@@ -4,7 +4,7 @@ $(function() {
       isFetchingPosts = false,
       shouldFetchPosts = true,
       postsToLoad = $(".post-list").children().length,
-      loadNewPostsThreshold = 3000;
+      loadNewPostsThreshold = 10;
   
   // Load the JSON file containing all URLs
   $.getJSON('/all-posts.json', function(data) {
