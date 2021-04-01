@@ -1670,13 +1670,10 @@ div.tag-cloud{
 }
 .list-group-title {
   margin-bottom:5px;
-  color:var(--grey1);
-  font-size:.9em;
-  font-style: italic;
+  font-size:.75em;
 }
-
 .list-group-title a {
-    color: var(--grey1);
+    color: var(--text);
     text-transform: lowercase;
     font-weight:var(--font1-bold);
 }
@@ -1685,14 +1682,15 @@ div.tag-cloud{
 }
 .list-item a {
     display: block;
-    color: var(--red);
     text-decoration: none;
-    text-transform: uppercase;
-    line-height: 1.3;
+    color:var(--blue);
+    font-size:1.25em;
+    font-weight: var(--font2-light);
+    font-family:var(--font2)
 }
 .list-item a:hover {
     text-decoration: underline;
-    opacity: .8;
+    text-decoration-color:var(--grey4);
 }
 .post:not(:last-child) {
     border-bottom: 1px solid var(--grey4);

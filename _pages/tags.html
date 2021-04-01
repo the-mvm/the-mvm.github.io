@@ -5,7 +5,7 @@ permalink: /tags/
 ---
 {% include get-site-tags.html %}
 <section class="blog-tags">
-  <h1>Posts by tag</h1>
+  <h2>tags</h2>
   {% include tag_cloud.html %}
   <div class="tags-page-content">
   {% for item in (0..site.tags.size) %}{% unless forloop.last %}
