@@ -27,7 +27,7 @@ $(function() {
       });
   }
 
-  var postsToLoad = $(".post-list").children().length,
+  var postsToLoad = $(".tag-master:not(.hidden) .post-list").children().length,
       loadNewPostsThreshold = 10;
 
   // If there's no spinner, it's not a page where posts should be fetched
@@ -60,7 +60,7 @@ $(function() {
     // Load as many posts as there were present on the page when it loaded
     // After successfully loading a post, load the next one
     var loadedPosts = 0,
-        postCount = $(".post-list").children().length,
+        postCount = $(".tag-master:not(.hidden) .post-list").children().length,
         callback = function() {
           loadedPosts++;
           var postIndex = postCount + loadedPosts;
@@ -84,7 +84,7 @@ $(function() {
     var postURL = postURLs[index];
 		
     $.get(postURL, function(data) {
-      $(data).find(".post").appendTo(".post-list");
+      $(data).find(".post").appendTo(".tag-master:not(.hidden) .post-list");
       callback();
     });
   }
