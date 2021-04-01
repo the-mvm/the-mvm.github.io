@@ -49,6 +49,21 @@ category_archive:
   type: liquid
   path: /categories/
 
+autopages:
+  enabled: true
+  categories:
+    enabled: false
+  collections:
+    enabled: false
+  tags:
+    layouts:
+      - 'tag.html'
+    title: 'The Minimum Viable Model - :tag'
+    permalink: '/tag/:tag'
+    slugify:
+      mode: raw
+      cased: true
+
 sass:
   style: compressed
 

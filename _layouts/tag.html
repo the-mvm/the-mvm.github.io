@@ -1,0 +1,18 @@
+---
+layout: menu-page
+---
+<h1>{{ page.autopages.display_name }}</h1>
+<div class="archive">
+	<div class="post-list">
+    {% for post in site.tags[page.autopages.display_name] limit: 3 %}
+		<div class="post">
+			<a class="post-list-title" href="{{ post.url }}">{{ post.title }}</a>
+			{% include post_meta.html type="post-card-meta" %}
+			<div class="post-excerpt">
+				{{ post.content | markdownify | truncatewords: 100 }}<a class="read-more" href="{{ post.url }}"> read more</a>
+			</div>
+		</div>
+	{% endfor %}
+	</div>
+</div>
+<div class="infinite-spinner"></div>
