@@ -81,9 +81,9 @@ With the cycling learning rate in place, still no luck after a quick 1,000 games
 <center><img src='/assets/img/posts/lr_formula.jpeg' width="280"></center>
 
 The resulting learning rate combining the cycles and decay per epoch is:
-<center><img src='/assets/img/posts/LR_cycle_decay.png'  width="480"></center>
-<center>Learning Rate = 0.1, Decay = 0.0001, Cycle = 2048 epochs,<br>
-        max Learning Rate factor = 10x</center><br>
+<center><img src='/assets/img/posts/LR_cycle_decay.png' width="480">
+<small>Learning Rate = 0.1, Decay = 0.0001, Cycle = 2048 epochs,<br>
+        max Learning Rate factor = 10x</small></center>
 
 ```python
 true_epoch = epoch - c.BATCH_SIZE
@@ -105,9 +105,9 @@ c.LR_STEP_SIZE = the number of epochs each cycle lasts
 ```
 <br>With these many changes, I decided to restart with a fresh set of random weights and biases and try training more (much more) games.
 
-<center><img src='/assets/img/posts/Loss_function_and_Illegal_moves6.png' width="540"><br>
-1,000,000 episodes, 7.5 million epochs with batches of 64 moves each</center><br>
-<center>Wins: 52.66% Losses: 36.02% Ties: 11.32%</center><br>
+<center><img src='/assets/img/posts/Loss_function_and_Illegal_moves6.png' width="540">
+<small>1,000,000 episodes, 7.5 million epochs with batches of 64 moves each<br>
+Wins: 52.66% Losses: 36.02% Ties: 11.32%</small></center>
 
 After **24 hours!**, my computer was able to run 1,000,000 episodes (games played), which represented 7.5 million training epochs of batches of 64 plays (480 million plays learned), the learning rate did decreased (a bit), but is clearly still in a plateau; interestingly, the lower boundary of the loss function plot seems to continue to decrease as the upper bound and the moving average remains constant. This led me to believe that I might have hit a local minimum.
 <a name='Model3'></a>
@@ -115,18 +115,18 @@ After **24 hours!**, my computer was able to run 1,000,000 episodes (games playe
 
 After all the failures I figured I had to rethink the topology of the network and play around with combinations of different networks and learning rates.
 
-<center><img src='/assets/img/posts/Loss_function_and_Illegal_moves7.png' width="540"></center>
-<center>100,000 episodes, 635,000 epochs with batches of 64 moves each</center><br>
-<center><b>Wins: 76.83%</b> Losses: 17.35% Ties: 5.82%</center><br>
+<center><img src='/assets/img/posts/Loss_function_and_Illegal_moves7.png' width="540">
+<small>100,000 episodes, 635,000 epochs with batches of 64 moves each<br>
+<b>Wins: 76.83%</b> Losses: 17.35% Ties: 5.82%</small></center>
 
 I increased to 200 neurons each hidden layer. In spite of this great improvement the loss function was still in a plateau at around 0.1 (Mean Squared Error). Which, although it is greatly reduced from what we had, still was giving out only 77% win rate vs. a random player, the network was playing tic tac toe as a toddler!
 
-<center><img src='/assets/img/posts/Game_Screen2.png' width="240" height="240"><br>
-*I can still beat the network most of the time! (I am playing with the red X)*</center>
+<center><img src='/assets/img/posts/Game_Screen2.png' width="240" height="240">
+<small>*I can still beat the network most of the time! (I am playing with the red X)*</small></center>
 
 <center><img src='/assets/img/posts/Loss_function_and_Illegal_moves10.png' width="540">
-<br>100,000 more episodes, 620,000 epochs with batches of 64 moves each</center><br>
-<center><b>Wins: 82.25%</b> Losses: 13.28% Ties: 4.46%</center><br>
+<small>100,000 more episodes, 620,000 epochs with batches of 64 moves each<br>
+<b>Wins: 82.25%</b> Losses: 13.28% Ties: 4.46%</small></center>
 
 **Finally we crossed the 80% mark!** This is quite an achievement, it seems that the change in network topology is working, although it also looks like the loss function is stagnating at around 0.15.
 

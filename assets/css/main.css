@@ -1308,9 +1308,11 @@ Usage (in markdown):
 ![img](/some/image.jpg)
 <small>Your image caption</small>
 */
-img + br + small {
+img + small, img + br + small {
     display: block;
-    margin-top: -3em;
+    font-size:.6em;
+    color:var(--grey1);
+    margin-top: -1em;
     margin-bottom: 1.5em;
 }
 
