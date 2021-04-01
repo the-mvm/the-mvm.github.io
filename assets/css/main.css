@@ -12,7 +12,7 @@
 --grey4:    #D5DEE2;
 --grey5:    #EFF2F3;
 --font1:    'Inter';    /* body text            */
---font2:    'Roboto Flex';     /* headers and titles   */
+--font2:    'Roboto';     /* headers and titles   */
 --font1-light:      100;
 --font1-regular:    300;
 --font1-bold:       600;
@@ -1305,11 +1305,11 @@ div.tag-cloud{
   margin-bottom: 1em;
 }
 .header-page h1 {
-  font-weight: var(--font2-light);
+  font-weight: var(--font2-regular);
   font-size: 4.25rem;
   text-align: left;
   margin: 0 0 10px;
-  color: var(--purple);
+  color: var(--text)
 }
 
 .header-page .page-date {
