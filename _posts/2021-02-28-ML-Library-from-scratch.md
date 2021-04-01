@@ -9,6 +9,8 @@ img: /posts/MLLibrary.jpg
 tags: [Machine Learning, Coding, Neural Networks, Python]
 author: Armando Maynez
 github: amaynez/GenericNeuralNetwork/
+summary: >
+"In the process of immersing myself into the world of Machine Learning, I decided to create my own ML library from scratch. I created a multi-neuron, multi-layered perceptron for the XOR problem. I restricted the model to be sequential, and the layers to be only dense / fully connected, this means that every neuron is connected to every neuron of the following layer. The library can only train on batches of 1 (another self-imposed coding restriction), therefore only one "observation" at a time."
 ---
 <center><img src="/assets/img/posts/ML_cloud.jpg"></center>
 
