@@ -1,10 +1,10 @@
-# Modified Jekyll theme
+# Modified Jekyll theme Adam Blog
 [original](https://github.com/artemsheludko/adam-blog)
 
 ### Additional features or changes in this mod:
-- automatic [sitemap.xml](http://amaynez.github.io/sitemap.xml)
-- automatic [archive page](http://amaynez.github.io/archive/)
-- changed the styling of the [tags page](http://amaynez.github.io/tags/)
+- automatic [sitemap.xml](http://the-mvm.github.io/sitemap.xml)
+- automatic [archive page](http://the-mvm.github.io/archive/) with infinite scrolling capability.
+- changed the styling of the [tags page](http://the-mvm.github.io/tags/)
 - included linkedin and reddit in the share post icons
 - included linkedin icon in the contact info
 - added an automatic Table of Contents, it is configurable per post (on / off) and it displays as a sticky sidebar (when the screen is wide enough) or inline after the post's title and metadata
@@ -19,6 +19,9 @@
 - post images in home page appear black and white and colorize upon hovering in them
 - ensured overall consistency on colors and established a color palette
 - added several pygments themes for code syntax highlight configurable from the _config.yml file.
+- added CSS variables to make it easy to customize colors and fonts
+- added a responsive footer menu that also includes the logo if setup in the config file.
+
 
 # The original Adam Blog is a minimal clear theme for Jekyll
 
@@ -26,7 +29,7 @@
 
 ## Demo
 
-Check the modified theme in action [Demo](https://amaynez.github.io/)
+Check the modified theme in action [Demo](https://the-mvm.github.io/)
 
 The main page would look like this:
 
