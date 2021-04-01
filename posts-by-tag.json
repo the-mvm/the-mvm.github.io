@@ -5,7 +5,7 @@ layout: null
 [   {% for item in (0..site.tags.size) %}{% unless forloop.last %}
       {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
   {
-  "tag" : "{{ this_word | url_encode }}",
+  "tag" : "{{ this_word }}",
   "posts" : [
       {% for post in site.tags[this_word] %}
       "{{ post.url }}"{% unless forloop.last %},{% endunless %}
