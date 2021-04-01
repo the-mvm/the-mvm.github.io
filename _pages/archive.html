@@ -5,17 +5,15 @@ permalink: /archive/
 ---
 <div class="archive">
   <h1>All posts</h1>
-	<div class="archive-page-content">
+	<div class="post-list">
 	{% for post in site.posts limit: 3 %}
-		<div class="list-group">
-			<div class="list-item">
-				<a href="{{ post.url }}">{{ post.title }}</a>
-				{% include post_meta.html type="post-card-meta" %}
-				<div class="post">
-					{{ post.content | markdownify | truncatewords: 30 }}
-				</div>
-				<a class="read-more" href="{{ post.url }}">read more...</a>
+		<div class="post">
+			<a href="{{ post.url }}">{{ post.title }}</a>
+			{% include post_meta.html type="post-card-meta" %}
+			<div class="post-excerpt">
+				{{ post.content | markdownify | truncatewords: 60 }}
 			</div>
+			<a class="read-more" href="{{ post.url }}">read more...</a>
 		</div>
 	{% endfor %}
 	</div>

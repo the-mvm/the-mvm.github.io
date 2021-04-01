@@ -1,6 +1,16 @@
 ---
 layout: default
 ---
+<section class="hidden">
+  <div class="post">
+      <a href="{{ page.url }}">{{ page.title }}</a>
+      {% include post_meta.html type="post-card-meta" %}
+      <div class="post-excerpt">
+          {{ page.content | markdownify | truncatewords: 60 }}
+      </div>
+      <a class="read-more" href="{{ page.url }}">read more...</a>
+  </div>
+</section>
 <div class="flex-container">
   {% include header.html %}
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">

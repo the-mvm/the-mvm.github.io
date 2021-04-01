@@ -419,6 +419,9 @@ template {
 /**
  * Add the correct display in IE 10-.
  */
+
+.hidden{display:none}
+
 [hidden] {
   display: none;
 }
@@ -983,15 +986,15 @@ svg.menu-icon-house {
 .sidebar.side .tag-cloud{
   display:none;
 }
-ul.tags.post {
+ul.tags {
     justify-content: center;
 }
-a.tag.post {
+a.tag {
     line-height: 1;
     white-space: pre-wrap;
     text-align:center;
 }
-a.tag.post.side {
+a.tag.side {
     padding: 3px 0px 3px 0px;
 }
 .share-options {
@@ -1041,7 +1044,7 @@ a.tag.post.side {
     .sidebar.side .tag-cloud{
       display:block;
     }
-    ul.tags.post.side {
+    ul.tags.side {
         display: block;
     }
     .share-options.side {
