@@ -6,7 +6,7 @@ layout: default
       <a  class="post-list-title" href="{{ page.url }}">{{ page.title }}</a>
       {% include post_meta.html type="post-card-meta" %}
         <div class="post-excerpt">
-            {{ page.content | markdownify | strip_html | strip_newlines | truncatewords: 100 }}<a class="read-more" href="{{ page.url }}"> read more</a>
+            {{ page.content | markdownify | strip_newlines | truncatewords: 100 }}<a class="read-more" href="{{ page.url }}"> read more</a>
         </div>
   </div>
 </section>
