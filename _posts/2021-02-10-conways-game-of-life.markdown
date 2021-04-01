@@ -9,8 +9,6 @@ img: /posts/Game_of_Life.jpg
 tags: [Coding, Python]
 author: Armando Maynez
 github: amaynez/GameOfLife/
-summary: >
-"The Game of Life is based on a simple set of rules: if a cell has less than 2 neighbors, it will die of overpopulation. If an empty block has 3 or more neighbors, a new cell will be born in that spot."
 ---
 <p>I&nbsp;am lately trying to take on coding again. It had always been a part of my life since my early years when I&nbsp;learned to program a Tandy Color Computer at the age of 8, the good old days.</p>
 

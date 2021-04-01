@@ -10,8 +10,6 @@ tags: [Machine Learning, Coding, Neural Networks]
 author: Armando Maynez
 github:  amaynez/Perceptron/
 mathjax: yes
-summary: >
-"A Perceptron is the basic building block of a neural network, it can be compared to a neuron. A perceptron is nothing more than a collection of values and rules for passing information through them, but in its simplicity lies its power. Backpropagation is a process where we "educate" our tiny one neuron brain to have it learn how to do its job. After the model trains successfully we can have it classify data it has never seen before, and we have a fairly high confidence that it will do so correctly."
 ---
 As an entry point to learning python and getting into Machine Learning, I decided to code from scratch the Hello World! of the field, a single neuron perceptron.
 
