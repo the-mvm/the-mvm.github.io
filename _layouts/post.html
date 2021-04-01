@@ -5,10 +5,9 @@ layout: default
   <div class="post">
       <a  class="post-list-title" href="{{ page.url }}">{{ page.title }}</a>
       {% include post_meta.html type="post-card-meta" %}
-      <div class="post-excerpt">
-          {{ page.content | markdownify | truncatewords: 60 }}
-      </div>
-      <a class="read-more" href="{{ page.url }}">read more...</a>
+        <div class="post-excerpt">
+            {{ page.content | markdownify | truncatewords: 100 }}<a class="read-more" href="{{ post.url }}"> read more</a>
+        </div>
   </div>
 </section>
 <div class="flex-container">
