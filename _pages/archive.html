@@ -10,7 +10,7 @@ permalink: /archive/
 			<a class="post-list-title" href="{{ post.url }}">{{ post.title }}</a>
 			{% include post_meta.html type="post-card-meta" %}
 			<div class="post-excerpt">
-				{{ post.content | markdownify | truncatewords: 100 }}<a class="read-more" href="{{ post.url }}"> read more</a>
+				{{ post.content | markdownify | strip_html | strip_newlines | truncatewords: 100 }}<a class="read-more" href="{{ post.url }}"> read more</a>
 			</div>
 		</div>
 	{% endfor %}
