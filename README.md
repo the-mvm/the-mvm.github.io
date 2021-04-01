@@ -5,6 +5,7 @@
 - automatic [sitemap.xml](http://the-mvm.github.io/sitemap.xml)
 - automatic [archive page](http://the-mvm.github.io/archive/) with infinite scrolling capability.
 - changed the styling of the [tags page](http://the-mvm.github.io/tags/)
+- [new page](https://the-mvm.github.io/tag/?tag=Coding) of posts by a single tag (without needing autopages from paginator V2), also with infinite scrolling.
 - included linkedin and reddit in the share post icons
 - included linkedin icon in the contact info
 - added an automatic Table of Contents, it is configurable per post (on / off) and it displays as a sticky sidebar (when the screen is wide enough) or inline after the post's title and metadata
