@@ -31,14 +31,15 @@
 
 Check the modified theme in action [Demo](https://the-mvm.github.io/)
 
-The main page would look like this:
+The main page looks like this:
 
-![Main page preview](https://github.com/artemsheludko/adam-blog/blob/master/assets/img/adam-home-page.jpg?raw=true)
+![Main page preview](https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/homepage.jpg?raw=true)
 
-The post page would look like this:
+The post page looks like:
 
-![Post page preview](https://github.com/artemsheludko/adam-blog/blob/master/assets/img/adam-post-example.jpg?raw=true)
+![Post page preview](https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/post.jpg?raw=true)
 
+![Post bottom](https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/post_bottom.jpg?raw=true)
 ## Features
 
 - [Google Fonts](https://fonts.google.com/)
