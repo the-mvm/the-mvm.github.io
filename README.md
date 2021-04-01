@@ -51,7 +51,11 @@ The post page looks like:
 
 ## Installation:
 
-Fork the ``clean install`` branch.
+1. Fork this repository into your own account (if you use as destination a repository named **USERNAME.github.io** then your url will be ``username.github.io``, else ``username.github.io/REPONAME/``)
+2. Modify ``_config.yml`` with your data
+3. Use the files inside of the ``/_posts/`` directory as templates to modify and create your own blog posts.
+4. Delete images inside of ``/assets/img/posts/`` and upload your own images for your posts.
+5. Make sure Github Pages are turned on in the repository settings, and pointing to the main or master branch (where you cloned this repo)
 
 ## License
 
