@@ -1,18 +1,16 @@
 /* = = = = = = = = = = CURRENT  = = = = = = = = = = = = */
 :root {
---red: #DB504A;
+--red:      #DB504A;
 --purple: #4e3e51;
---blue: #326273;
---text: #151513;
---grey1: #56554D;
---grey2: #969288;
---grey3: #BFBDB4;
---grey4: #D3D2CB;
---grey5: #DFDEDA;
+--blue:    #326273;
+--text:     #161216;
+--grey1:  #8A8880;
+--grey2:  #BDBBB3;
+--grey3:  #D0CFC8;
+--grey4:  #E0DFDA;
+--grey5:  #EDEBE9;
 }
-
-https://coolors.co/326273-4e3e51-db504a-151513-56554d-969288-bfbdb4-d3d2cb-dfdeda
-
+https://coolors.co/326273-4e3e51-db504a-161216-8a8880-bdbbb3-d0cfc8-e0dfda-edebe9
 /* = = = = = = = = = =  backups  = = = = = = = = = = = = */
 :root {
 --red: #87314e;
