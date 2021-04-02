@@ -828,7 +828,7 @@ svg.menu-icon-house {
 /* = = = = = = = = = = Footer  = = = = = = = = = = */
 .main-footer {
   padding: 5px 15px 5px 15px;
-  background-color: var(--grey1);
+  background-color: var(--grey2);
   box-shadow: 0 5px 5px -6px black inset;
 }
 .footer-wrapper {
@@ -842,13 +842,17 @@ svg.menu-icon-house {
 }
 .logo-link {
     display:block;
-    color: var(--grey2);
+    color: var(--grey3);
     -webkit-transition: all 350ms cubic-bezier(0.13, 0.43, 0.54, 1.82);
     transition: all 350ms cubic-bezier(0.13, 0.43, 0.54, 1.82);
 }
+.logo-link:hover{
+    transform: scale(1.2);
+    color: var(--grey4);
+}
 .copyright {
   text-align: center;
-  color: var(--grey2);
+  color: var(--grey5);
   font-size: 0.6em;
   font-weight: var(--font1-light);
 }
@@ -871,10 +875,7 @@ svg.menu-icon-house {
 .footer-wrapper a:hover {
     opacity: 0.6
 }
-.logo-link:hover{
-    transform: scale(1.2);
-    color: var(--grey2);
-}
+
 @media (max-width:640px){
     .footer-wrapper {
         display: flex;
@@ -1220,8 +1221,7 @@ div.tag-cloud{
     display: block;
     text-transform: lowercase}
 .tags li a:hover {
-    background: var(--purple);
-    border: 2px solid var(--purple);
+    background: var(--red);
     color: white !important;
     text-decoration: none}
 
