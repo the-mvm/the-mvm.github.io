@@ -54,7 +54,7 @@ for (i = 0; i < coll.length; i++) {
     sign = document.createElement('div');
     sign.className = "toc-sign";
     sign.textContent = "&#711;"
-    coll[i].insertAfter(sign, coll[i].childNodes[0]);
+    coll[i].insertBefore(sign, coll[i].childNodes[0].nextSibling);
     coll[i].addEventListener("click", function() {
         this.classList.toggle("active");
         var content = this.lastElementChild;

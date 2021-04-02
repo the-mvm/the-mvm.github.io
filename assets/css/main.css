@@ -1124,7 +1124,7 @@ path.fa-secondary {
 .toc-item-1.active div {
 }
 .toc-sign{
-  float:left;
+  float:right;
   width:15px;
   text-align:center;
   cursor: pointer;
