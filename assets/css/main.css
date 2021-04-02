@@ -1104,8 +1104,7 @@ aside.toc {
 }
 .toc-title {
     padding: 5px;
-    display: block;
-    color: var(--blue);
+    color: var(--red);
 }
 path.fa-secondary {
     opacity: 0.4;
@@ -1113,7 +1112,7 @@ path.fa-secondary {
 .toc-title{display:none}
 .toc-title svg {
     width: 25px;
-    margin-bottom:0.75em
+    margin-bottom:1em
 }
 .toc-content{
     list-style:none;
@@ -1125,12 +1124,8 @@ path.fa-secondary {
     text-decoration:none;
     padding:5px;
 }
-.toc-content a:hover {
-}
 .toc-item-1 {
     padding: 8px 0 8px 0;
-}
-.toc-item-1.active div {
 }
 .toc-sign {
     float: right;
@@ -1164,29 +1159,21 @@ path.fa-secondary {
 .active{
    background-color:var(--grey5)
 }
-.active a {
-
-}
 .underline{
   text-decoration: underline;
   text-decoration-color: var(--grey4)
 }
 @media (min-width: 1200px) {
-    .toc {
+    aside.toc {
         position: sticky;
         top: 2em;
         width: 180px;
         margin-right: -210px;
         float: right;
     }
-    .toc-title{display:block}
     .toc-content{
         max-height: calc(100vh - 7em);
         overflow: scroll;
-    }
-    .toc-content a {
-    }
-    .toc-submenu-1 a{
     }
 }
 /* = = = = = = = = = = Tags = = = = = = = = = = */
