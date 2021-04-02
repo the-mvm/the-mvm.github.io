@@ -53,17 +53,17 @@ for (i = 0; i < coll.length; i++) {
   if (coll[i].childElementCount > 1) {
     sign = document.createElement('div');
     sign.className = "toc-sign";
-    sign.textContent = '\U02C7';
+    sign.textContent = '\u02C7';
     coll[i].insertBefore(sign, coll[i].childNodes[0].nextSibling);
     coll[i].addEventListener("click", function() {
         this.classList.toggle("active");
         var content = this.lastElementChild;
         if (content.style.maxHeight){
           content.style.maxHeight = null;
-          this.firstElementChild.textContent = this.firstElementChild.textContent.replace('\U02C6','\U02C7');
+          this.firstElementChild.textContent = this.firstElementChild.textContent.replace('\u02C6','\u02C7');
         } else {
           content.style.maxHeight = content.scrollHeight + "px";
-          this.firstElementChild.textContent = this.firstElementChild.textContent.replace('\U02C7','\U02C6');
+          this.firstElementChild.textContent = this.firstElementChild.textContent.replace('\u02C7','\u02C6');
         }
     });
   }
