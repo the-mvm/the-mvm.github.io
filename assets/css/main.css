@@ -1055,7 +1055,7 @@ a.tag.side {
     .sidebar.side {
       display:block;
       position: sticky;
-      top: 2em;
+      top: 32px;
       width: 115px;
       margin-left: -135px;
       float: left;
@@ -1166,7 +1166,7 @@ path.fa-secondary {
 @media (min-width: 1200px) {
     aside.toc {
         position: sticky;
-        top: 2em;
+        top: 32px;
         width: 180px;
         margin-right: -210px;
         float: right;
