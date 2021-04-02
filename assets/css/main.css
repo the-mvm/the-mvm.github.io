@@ -1085,7 +1085,10 @@ a.tag.side {
 }
 /* = = = = = = = = = = Right Sidebar TOC  = = = = = = = = = = */
 aside.toc {
-    line-height: 1.2;
+    line-height: 1.4;
+    font-size: .65em;
+    font-family: sans-serif;
+    font-weight:var(--font1-bold);
 }
 .toc {
   margin:auto;
@@ -1094,6 +1097,14 @@ aside.toc {
 .toc-title {
     padding: 5px;
     display: block;
+    color: var(--blue);
+}
+path.fa-secondary {
+    opacity: 0.4;
+}
+.toc-title svg {
+    width: 25px;
+    margin-bottom:2em
 }
 .toc-content{
     list-style:none;
@@ -1108,7 +1119,7 @@ aside.toc {
 .toc-content a:hover {
 }
 .toc-item-1 {
-    padding: 3px 0 0 0;
+    padding: 8px 0 8px 0;
 }
 .toc-item-1.active div {
 }
@@ -1126,18 +1137,24 @@ aside.toc {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    padding-top: 8px;
 }
 .toc-submenu-1 a{
+  color:var(--grey1);
+  font-weight:var(--font1-regular);
 }
 .toc-item-2, .toc-item-3, toc-item-4, .toc-item-5, .toc-item-6 {
-    padding:3px;
+    padding: 8px 0px 8px;
 }
 .toc-submenu-2, .toc-submenu-3, .toc-submenu-4, .toc-submenu-5 {
     padding-inline-start: 5px;
     list-style:none;
 }
 .active{
-    background-color:var(--grey4)
+    background-color:var(--grey5);
+}
+.active a {
+  color:var(--blue)
 }
 .underline{
   text-decoration: underline;
