@@ -60,10 +60,10 @@ for (i = 0; i < coll.length; i++) {
         var content = this.lastElementChild;
         if (content.style.maxHeight){
           content.style.maxHeight = null;
-          this.firstElementChild.textContent = this.firstElementChild.textContent.replace('\u02C6','\u02C7');
+          this.firstElementChild.textContent = this.firstElementChild.textContent.replace(/\u02C6/,'\u02C7');
         } else {
           content.style.maxHeight = content.scrollHeight + "px";
-          this.firstElementChild.textContent = this.firstElementChild.textContent.replace('\u02C7','\u02C6');
+          this.firstElementChild.textContent = this.firstElementChild.textContent.replace(/\u02C7/,'\u02C6');
         }
     });
   }
