@@ -1692,6 +1692,9 @@ img + small, img + br + small {
 }
 
 /* = = = = = = = = = = Post Lists  = = = = = = = = = = */
+.tag-master h1 {
+    color: var(--grey4);
+}
 .list-group {
   border-top: 1px solid var(--grey4);
   padding: 5px 10px;
@@ -1979,9 +1982,8 @@ a.read-more:hover {
   width: 40px;
   height: 40px;
   border-radius: 40px;
-  background-color: #333;
+  background-color: #var(--grey2);
   margin: 60px auto;
-
   -webkit-animation: scaleout 1.0s infinite ease-in-out;
   animation: scaleout 1.0s infinite ease-in-out;
 }
