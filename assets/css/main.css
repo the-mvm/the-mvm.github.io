@@ -937,10 +937,13 @@ svg.menu-icon-house {
     color: #fff;
     cursor: pointer;
     transition: all .5s ease;
-    opacity: .75;
+    opacity: .8;
 }
 .top.is-active {
     right: 40px;
+}
+.top:hover {
+  background-color: var(--grey1);
 }
 .top svg {
     display: inline-block;
@@ -952,25 +955,7 @@ svg.menu-icon-house {
         right: 10px;
     }
 }
-.icon {
-  text-align: center;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-}
-.icon svg{
-  max-height:50px;
-  max-width:50px;
-}
-.icon a{
-    display:block;
-    opacity: 0.25;
-}
-.icon a:hover {
-  opacity: 1;
-  color:var(--grey1)
-}
 /* = = = = = = = = = = Post's comments = = = = = = = = = = */
-
 .hide {display:none}
 #disqus_thread {display:none}
 #disqus_thread.show {display:block}
