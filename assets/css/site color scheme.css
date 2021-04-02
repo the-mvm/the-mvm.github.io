@@ -4,13 +4,13 @@
 --purple: #4e3e51;
 --blue:    #326273;
 --text:     #161216;
---grey1:  #8A8880;
---grey2:  #BDBBB3;
---grey3:  #D0CFC8;
---grey4:  #E0DFDA;
---grey5:  #EDEBE9;
+--grey1:  #5f5e58;
+--grey2:  #bdbbb3;
+--grey3:  #dcdbd6;
+--grey4:  #e8e6e3;
+--grey5:  #efedeb;
 }
-https://coolors.co/326273-4e3e51-db504a-161216-8a8880-bdbbb3-d0cfc8-e0dfda-edebe9
+https://coolors.co/326273-4e3e51-db504a-161216-5f5e58-bdbbb3-dcdbd6-e8e6e3-efedeb
 /* = = = = = = = = = =  backups  = = = = = = = = = = = = */
 :root {
 --red: #87314e;
