@@ -2,15 +2,15 @@
 
 /* Main Color palette and fonts */
 :root {
---red:      #87314e;
---purple:   #4e3e51;
---blue:     #326273;
---text:     #212B30;
---grey1:    #546c78;
---grey2:    #879dab;
---grey3:    #c2d0d6;
---grey4:    #D5DEE2;
---grey5:    #EFF2F3;
+--red:      #DB504A;
+--purple: #4e3e51;
+--blue:    #326273;
+--text:     #151513;
+--grey1:  #56554D;
+--grey2:  #969288;
+--grey3:  #BFBDB4;
+--grey4:  #D3D2CB;
+--grey5:  #DFDEDA;
 --font1:    'Inter';    /* body text            */
 --font2:    'Roboto';     /* headers and titles   */
 --font1-light:      100;

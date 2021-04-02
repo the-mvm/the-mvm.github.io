@@ -1,4 +1,19 @@
-/* = = = = = = = = = = Template Colors = = = = = = = = = = = = */
+/* = = = = = = = = = = CURRENT  = = = = = = = = = = = = */
+:root {
+--red: #DB504A;
+--purple: #4e3e51;
+--blue: #326273;
+--text: #151513;
+--grey1: #56554D;
+--grey2: #969288;
+--grey3: #BFBDB4;
+--grey4: #D3D2CB;
+--grey5: #DFDEDA;
+}
+
+https://coolors.co/326273-4e3e51-db504a-151513-56554d-969288-bfbdb4-d3d2cb-dfdeda
+
+/* = = = = = = = = = =  backups  = = = = = = = = = = = = */
 :root {
 --red: #87314e;
 --purple: #4e3e51;
