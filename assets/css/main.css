@@ -1102,9 +1102,10 @@ aside.toc {
 path.fa-secondary {
     opacity: 0.4;
 }
+.toc-title{display:none}
 .toc-title svg {
     width: 25px;
-    margin-bottom:2em
+    margin-bottom:0.75em
 }
 .toc-content{
     list-style:none;
@@ -1123,12 +1124,12 @@ path.fa-secondary {
 }
 .toc-item-1.active div {
 }
-.toc-sign{
-  float:right;
-  width: 10px;
-  text-align:center;
-  cursor: pointer;
-  color:var(--text)
+.toc-sign {
+    float: right;
+    width: 10px;
+    cursor: pointer;
+    color: var(--text);
+    margin-right: 8px;
 }
 .toc-sign:hover{
   color:var(--grey2)
@@ -1170,6 +1171,7 @@ path.fa-secondary {
         margin-right: -210px;
         float: right;
     }
+    .toc-title{display:block}
     .toc-content{
         max-height: calc(100vh - 7em);
         overflow: scroll;
