@@ -63,10 +63,10 @@ for (i = 0; i < coll.length; i++) {
         var content = this.lastElementChild;
         if (content.style.maxHeight){
           content.style.maxHeight = null;
-          this.firstElementChild.innerHTML = chevron_down;
+          this.firstElementChild.nextSibling.innerHTML = chevron_down;
         } else {
           content.style.maxHeight = content.scrollHeight + "px";
-          this.firstElementChild.textContent = chevron_up;
+          this.firstElementChild.nextSibling.innerHTML = chevron_up;
         }
     });
   }
