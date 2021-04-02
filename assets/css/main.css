@@ -924,6 +924,32 @@ svg.menu-icon-house {
     font-size: .9em;
 }
 /* = = = = = = = = = = icon image buttons = = = = = = = = */
+.top {
+    position: fixed;
+    bottom: 40px;
+    right: -100px;
+    z-index: 1;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    background-color: var(--text);
+    color: #fff;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+.top.is-active {
+    right: 40px;
+}
+svg.top {display:inline-block;}
+@media only screen and (max-width: 768px)
+    .top {
+        bottom: 25px;
+    }
+    .top.is-active {
+        right: 30px;
+    }
+}
 .icon {
   text-align: center;
   margin-top: 0.5em;
