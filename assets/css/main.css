@@ -829,7 +829,7 @@ svg.menu-icon-house {
 .main-footer {
   padding: 5px 15px 5px 15px;
   background-color: var(--grey2);
-  box-shadow: 0 5px 5px -6px black inset;
+  box-shadow: 0 5px 5px -6px var(--text) inset;
 }
 .footer-wrapper {
     display: grid;
