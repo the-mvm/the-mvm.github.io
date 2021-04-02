@@ -926,7 +926,7 @@ svg.menu-icon-house {
 /* = = = = = = = = = = icon image buttons = = = = = = = = */
 .top {
     position: fixed;
-    bottom: 40px;
+    bottom: 62px;
     right: -100px;
     z-index: 1;
     width: 35px;
@@ -936,18 +936,20 @@ svg.menu-icon-house {
     background-color: var(--text);
     color: #fff;
     cursor: pointer;
-    transition: all .25s ease;
+    transition: all .5s ease;
+    opacity: .75;
 }
 .top.is-active {
     right: 40px;
 }
-svg.top {display:inline-block;}
-@media only screen and (max-width: 768px)
-    .top {
-        bottom: 25px;
-    }
+.top svg {
+    display: inline-block;
+    height: 25px;
+    vertical-align: text-bottom;
+}
+@media (max-width: 768px) {
     .top.is-active {
-        right: 30px;
+        right: 10px;
     }
 }
 .icon {
