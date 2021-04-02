@@ -11,7 +11,7 @@ author: Armando Maynez
 github: amaynez/GenericNeuralNetwork/
 ---
 It must sound crazy that in this day and age, when we have such a myriad of amazing machine learning libraries and toolkits all open sourced, all quite well documented and easy to use, I decided to create my own ML library from scratch.
-<center><img src="/assets/img/posts/ML_cloud.jpg" width="480px"></center><br>
+<center><img src="/assets/img/posts/ML_cloud.jpg" width="480px"></center>
 Let me try to explain; I am in the process of immersing myself into the world of Machine Learning, and to do so, I want to deeply understand the basic concepts and its foundations, and I think that there is no better way to do so than by creating myself all the code for a basic neural network library from scratch. This way I can gain in depth understanding of the math that underpins the ML algorithms.
 
 Another benefit of doing this is that since I am also learning Python, the experiment brings along good exercise for me.
