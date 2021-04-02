@@ -898,7 +898,11 @@ svg.menu-icon-house {
 .post-card-meta{
   font-size:.6em;
   white-space:nowrap;
-  display: block
+  display: block;
+  padding-top: 4px;
+}
+.post-card-meta i {
+    display: none;
 }
 .recent-item-meta{
   padding-left:5px;
