@@ -1151,10 +1151,10 @@ path.fa-secondary {
     list-style:none;
 }
 .active{
-    background-color:var(--grey5);
 }
 .active a {
-  color:var(--blue)
+  color:var(--blue);
+  font-weight:var(--font1-bold)
 }
 .underline{
   text-decoration: underline;
