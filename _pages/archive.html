@@ -4,6 +4,12 @@ title: Archive
 permalink: /archive/
 ---
 <div class="archive tag-master">
+	<form class="search-form">
+		<div id="search-container">
+			<input type="text" id="search-input" class="search" placeholder="Search">
+		</div>
+	</form>
+	<ul id="results-container" class="results-search"></ul>
 	<div class="post-list">
 	{% for post in site.posts limit: 3 %}
 		<div class="post">
