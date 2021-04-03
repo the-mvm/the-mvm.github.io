@@ -1,18 +1,18 @@
 @charset "utf-8";
 /* Main Color palette and fonts */
 :root {
---red:    #DB504A; /* accent */
---purple: #4e3e51; /* accent 2 (dark) */
---blue:   #326273; /* main color */
---dim:    #879dab; /* dimmed version of main color */
---text:   #201E1E;
---grey1:  #5F5E58;
---grey2:  #8D897C;
---grey3:  #B4B3A7;
---grey4:  #DAD7D2;
---grey5:  #F0EFED;
---font1:  'Inter';    /* body text */
---font2:  'Roboto';     /* headers and titles   */
+--accent:       #DB504A;    /* accent */
+--accent-dark:  #4e3e51;    /* accent 2 (dark) */
+--main:         #326273;    /* main color */
+--main-dim:     #879dab;    /* dimmed version of main color */
+--text:         #201E1E;
+--grey1:        #5F5E58;
+--grey2:        #8D897C;
+--grey3:        #B4B3A7;
+--grey4:        #DAD7D2;
+--grey5:        #F0EFED;
+--font1: 'Inter';           /* body text */
+--font2: 'Roboto';          /* headers and titles   */
 --font1-light:      100;
 --font1-regular:    300;
 --font1-bold:       600;
@@ -449,7 +449,7 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font2), sans-serif;
-  color: var(--purple);
+  color: var(--accent-dark);
 }
 img {
   height: auto;
@@ -459,10 +459,10 @@ a {
     color: var(--text);
 }
 a:hover{
-    color:var(--red)
+    color:var(--accent)
 }
 table {
-      border-left: 6px solid var(--red);
+      border-left: 6px solid var(--accent);
 }
 table td, table th {
     border: 0;
@@ -475,7 +475,7 @@ blockquote {
     padding-left: 1em;
     margin-left: 2.5em;
     font-style: italic;
-    color: var(--purple);
+    color: var(--accent-dark);
     background: hsla(0,0%,95%,0.5);
     margin-right: 0;
     font-weight: 100;
@@ -581,7 +581,7 @@ svg {
   text-transform: uppercase;
   font-size: 27px;
   font-weight: var(--font2-light);
-  color: var(--purple);
+  color: var(--accent-dark);
 }
 .main-nav {
   position: fixed;
@@ -610,11 +610,11 @@ svg {
   text-transform: uppercase;
   font-weight: var(--font2-regular);
   font-size: 18px;
-  color: var(--blue);
+  color: var(--main);
 }
 .main-nav ul li a:hover {
   opacity: .8;
-  color: var(--purple);
+  color: var(--accent-dark);
 }
 
 
@@ -636,7 +636,7 @@ svg.menu-icon-house {
 .search-icon-close {
   cursor: pointer;
   font-size: 18px;
-  color: var(--blue);
+  color: var(--main);
   -webkit-transition: all .4s;
   transition: all .4s;
   padding: 10px;
@@ -702,7 +702,7 @@ svg.menu-icon-house {
 }
 
 .results-search li a:hover {
-  color: var(--red);
+  color: var(--accent);
   opacity: .8;
 }
 
@@ -823,12 +823,12 @@ svg.menu-icon-house {
 
 .pagination .previous:hover, .pagination .next:hover {
   opacity: .8;
-  color: var(--red);
+  color: var(--accent);
 }
 /* = = = = = = = = = = Footer  = = = = = = = = = = */
 .main-footer {
   padding: 5px 15px 5px 15px;
-  background-color: var(--dim);
+  background-color: var(--main-dim);
   box-shadow: 0 5px 5px -6px var(--text) inset;
 }
 .footer-wrapper {
@@ -1022,7 +1022,7 @@ a.tag.side {
 }
 .share-button {
     margin-right: 3px;
-    color:var(--purple);
+    color:var(--accent-dark);
     vertical-align: top;
 }
 .share-icons {
@@ -1104,7 +1104,7 @@ aside.toc {
 }
 .toc-title {
     padding: 5px;
-    color: var(--red);
+    color: var(--accent);
 }
 path.fa-secondary {
     opacity: 0.4;
@@ -1208,7 +1208,7 @@ div.tag-cloud{
     display: block;
     text-transform: lowercase}
 .tags li a:hover {
-    background: var(--red);
+    background: var(--accent);
     color: white !important;
     text-decoration: none}
 
@@ -1258,7 +1258,7 @@ div.tag-cloud{
     }
 /* = = = = = = = = = = Code = = = = = = = = = = */
 .highlighter-rouge {
-  color: var(--blue);
+  color: var(--main);
   font-weight: var(--font1-light);
   border: none;
   -webkit-border-radius: 3px;
@@ -1353,7 +1353,7 @@ img + small, img + br + small {
 .page-footer .page-share {
   text-transform: uppercase;
   font-size: 12px;
-  color: var(--purple);
+  color: var(--accent-dark);
 }
 
 .page-footer .page-tag {
@@ -1362,7 +1362,7 @@ img + small, img + br + small {
 
 .page-footer .page-tag a {
   text-decoration: none;
-  color: var(--red);
+  color: var(--accent);
 }
 
 .page-footer .page-tag a:hover {
@@ -1513,7 +1513,7 @@ img + small, img + br + small {
   font-size: 14px;
   text-align: center;
   color: white;
-  background-color: var(--purple);
+  background-color: var(--accent-dark);
   vertical-align: baseline;
   cursor: pointer;
   border: none;
@@ -1524,7 +1524,7 @@ img + small, img + br + small {
   transition: all .3s;
 }
 .newsletter .newsletter-box .subscribe-btn:hover {
-  background-color: var(--red);
+  background-color: var(--accent);
 }
 .icon a {
     display:inline-block;
@@ -1592,7 +1592,7 @@ img + small, img + br + small {
 
 .contact-icons a {
     display:inline-block;
-    color: var(--purple);
+    color: var(--accent-dark);
     font-size: 18px;
     -webkit-transition: all 350ms cubic-bezier(0.13, 0.43, 0.54, 1.82);
     transition: all 350ms cubic-bezier(0.13, 0.43, 0.54, 1.82);
@@ -1630,7 +1630,7 @@ img + small, img + br + small {
   display: block;
   height: 1px;
   width: 80px;
-  background-color: var(--purple);
+  background-color: var(--accent-dark);
 }
 
 .about-header .author-image-container {
@@ -1643,7 +1643,7 @@ img + small, img + br + small {
 }
 
 .about-header .subtitle {
-  color: var(--purple);
+  color: var(--accent-dark);
   font-weight: var(--font1-light);
   margin: 0;
 }
@@ -1675,7 +1675,7 @@ img + small, img + br + small {
 }
 
 .contact-list a:hover {
-  color: var(--red);
+  color: var(--accent);
   -webkit-transform: scale(1.3);
       -ms-transform: scale(1.3);
           transform: scale(1.3);
@@ -1706,7 +1706,7 @@ img + small, img + br + small {
 .list-item a {
     display: block;
     text-decoration: none;
-    color:var(--blue);
+    color:var(--main);
     font-size:1.25em;
     font-weight: var(--font2-light);
     font-family:var(--font2)
@@ -1732,7 +1732,7 @@ a.post-list-title {
     font-size: 2em;
 }
 a.read-more {
-    color: var(--red);
+    color: var(--accent);
     text-decoration:none
 }
 a.read-more:hover {
@@ -1972,7 +1972,7 @@ a.read-more:hover {
   width: 40px;
   height: 40px;
   border-radius: 40px;
-  background-color: #var(--dim);
+  background-color: #var(--main-dim);
   margin: 60px auto;
   -webkit-animation: scaleout 1.0s infinite ease-in-out;
   animation: scaleout 1.0s infinite ease-in-out;
