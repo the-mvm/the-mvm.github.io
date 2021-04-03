@@ -83,6 +83,8 @@ Many of the problems neural networks solve, could be certainly worked out by oth
 
 There are a few more details on how a simple neural network operate that I purposedly left out to make this explanation as simple as possible. Thinks like biases, the activation functions and the math behind learning, the backpropagation algorithm, I will leave to a more in depth article. I will also write (perhaps in a series) about the more complex topologies combining different types of layers and other building blocks, a part from the perceptron.
 
+![Alexa recognizing speach](/assets/img/posts/post7-alexa.png)
+
 Things like "Alexa", are a bit more complex, but work on exactly the same principles. Let's break down for example the case of asking "Alexa" to play a song in spotify. Alexa uses several different neural networks to acomplish this:
 
 #### 1. Speech recognition
