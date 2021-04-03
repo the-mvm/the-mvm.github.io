@@ -31,7 +31,7 @@ $(function() {
       loadNewPostsThreshold = 10;
 
   // If there's no spinner, it's not a page where posts should be fetched
-  if ($(".infinite-spinner").length < 1)
+  if ($(".spinner").length < 1)
     shouldFetchPosts = false;
 	
   // Are we close to the end of the page? If we are, load more posts
@@ -92,7 +92,7 @@ $(function() {
   function disableFetching() {
     shouldFetchPosts = false;
     isFetchingPosts = false;
-    $(".infinite-spinner").fadeOut();
+    $(".spinner").fadeOut();
   }
 	
 });
