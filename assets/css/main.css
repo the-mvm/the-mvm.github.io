@@ -1,18 +1,18 @@
 @charset "utf-8";
-
 /* Main Color palette and fonts */
 :root {
---red:      #DB504A;
---purple: #4e3e51;
---blue:    #326273;
---text:     #201E1E;
+--red:    #DB504A; /* accent */
+--purple: #4e3e51; /* accent 2 (dark) */
+--blue:   #326273; /* main color */
+--dim:    #879dab; /* dimmed version of main color */
+--text:   #201E1E;
 --grey1:  #5F5E58;
 --grey2:  #8D897C;
 --grey3:  #B4B3A7;
 --grey4:  #DAD7D2;
 --grey5:  #F0EFED;
---font1:    'Inter';    /* body text            */
---font2:    'Roboto';     /* headers and titles   */
+--font1:  'Inter';    /* body text */
+--font2:  'Roboto';     /* headers and titles   */
 --font1-light:      100;
 --font1-regular:    300;
 --font1-bold:       600;
@@ -828,7 +828,7 @@ svg.menu-icon-house {
 /* = = = = = = = = = = Footer  = = = = = = = = = = */
 .main-footer {
   padding: 5px 15px 5px 15px;
-  background-color: var(--grey2);
+  background-color: var(--dim);
   box-shadow: 0 5px 5px -6px var(--text) inset;
 }
 .footer-wrapper {
@@ -1972,7 +1972,7 @@ a.read-more:hover {
   width: 40px;
   height: 40px;
   border-radius: 40px;
-  background-color: #var(--grey2);
+  background-color: #var(--dim);
   margin: 60px auto;
   -webkit-animation: scaleout 1.0s infinite ease-in-out;
   animation: scaleout 1.0s infinite ease-in-out;
