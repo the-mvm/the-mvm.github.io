@@ -1732,7 +1732,7 @@ a.post-list-title {
     font-size: 2em;
 }
 a.read-more {
-    color: var(--grey2);
+    color: var(--red);
     text-decoration:none
 }
 a.read-more:hover {
