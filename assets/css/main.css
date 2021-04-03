@@ -834,7 +834,7 @@ svg.menu-icon-house {
 .footer-wrapper {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    align-items:center
+    align-items:center;
 }
 .logo-symbol {
     max-width: 45px;
@@ -842,32 +842,34 @@ svg.menu-icon-house {
 }
 .logo-link {
     display:block;
-    color: var(--grey3);
+    color: var(--grey5);
     -webkit-transition: all 350ms cubic-bezier(0.13, 0.43, 0.54, 1.82);
     transition: all 350ms cubic-bezier(0.13, 0.43, 0.54, 1.82);
 }
 .logo-link:hover{
     transform: scale(1.2);
-    color: var(--grey4);
+    opacity: 0.6;
+    color: var(--grey5);
 }
 .copyright {
   text-align: center;
-  color: var(--grey5);
+  color: white;
   font-size: 0.6em;
-  font-weight: var(--font1-light);
+  opacity: 0.5;
 }
 .footer-nav {
   display: flex;
-  flex-flow: wrap;
-  justify-content: flex-end;
   }
 .footer-nav div {
+    display: flex;
     padding: 3px 5px;
     flex: 1;
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 .footer-nav a {
-    color: var(--grey4);
+    color: var(--grey5);
     text-decoration: none;
     font-size: 14px;
     font-weight: var(--font1-bold);
@@ -875,7 +877,6 @@ svg.menu-icon-house {
 .footer-wrapper a:hover {
     opacity: 0.6
 }
-
 @media (max-width:640px){
     .footer-wrapper {
         display: flex;
