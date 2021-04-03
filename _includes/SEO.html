@@ -18,8 +18,9 @@
     "name": "{{ page.author }}"},
   "publisher": {
     "@type":  "Organization",
-    "logo": ["{{ site.url }}{{ site.logo-icon }}"],
-    "legalName" : "{{ site.title }}"}
+    "logo": {
+        "url": "{{ site.url }}{{ site.logo-icon }}"},
+    "name" : "{{ site.title }}"}
 }
 </script>
 <!-- Open Graph data -->
