@@ -30,6 +30,7 @@ Then, in the middle of last century by trying to create a model of how our brain
 ![A perceptron](/assets/img/posts/perceptron.png)
 
 To illustrate, let's say that the brain of the housefly is a perceptron, its inputs are whatever values are produced by the multiple cells in its eyes, when the eye cell detects "something" it's output will be a 1, and if there is nothing a 0. Then the combination of all those inputs can be processed by the perceptron (the fly brain), and the output is a simple 0 or 1 value. If it is a 1 then the brain is telling the fly to flee and if it is a 0 it means it is safe to stay where it is.
+
 ![A housefly eye](/assets/img/posts/post7-housefly-eye.jpg)
 We can imagine then that if many of the eye cells of the fly produce 1s, it means that an object is quite near, and therefore the perceptron will calculate a 1, it is time to flee.
 ![The fly vision](/assets/img/posts/post7-fly-vision.jpg)
@@ -49,15 +50,18 @@ A neural network has different components, in its basic form it has:
 - Input
 - Hidden layers
 - Output
-![Neural network components](/assets/img/posts/nnet_flow.gif)
-### Input
-The inputs of a neural network are in their essence just numbers, therefore anything that can be converted to a number can become an input. Letters in a text, pixels in an image, frecuencies in a sound wave, values from a sensor, etc. are all different things that when converted to a numerical value serve as inputs for the neural network. This is one of the reasons why applications of neural networks are so diverse.
 
-Inputs can be as many as one need for the task at hand, from maybe 9 inputs to teach a neural network how to play tic-tac-toe to thoushands of pixels from a camera for an autonomous vehicle. Since the input of a perceptron needs to be a single value, if for example a color pixel is chosen as input, it most likely will be broken into three different values; its  red, green and blue components, hence each pixel will become 3 different inputs for the neural network.
+![Neural network components](/assets/img/posts/nnet_flow.gif)
+
+### Input
+
+The inputs of a neural network are in their essence just numbers, therefore anything that can be converted to a number can become an input. Letters in a text, pixels in an image, frequencies in a sound wave, values from a sensor, etc. are all different things that when converted to a numerical value serve as inputs for the neural network. This is one of the reasons why applications of neural networks are so diverse.
+
+Inputs can be as many as one need for the task at hand, from maybe 9 inputs to teach a neural network how to play tic-tac-toe to thousands of pixels from a camera for an autonomous vehicle. Since the input of a perceptron needs to be a single value, if for example a color pixel is chosen as input, it most likely will be broken into three different values; its  red, green and blue components, hence each pixel will become 3 different inputs for the neural network.
 
 ### Hidden layers
 
-A "layer" within a neural network is just a group of perceptrons that all perform the same exact mathematical operation to the inputs and produce an output. The catch is that each of them have different wheights (parameters), therefore their output for a given input will be different amongst them. There are many different types of layers, the most typical of them being a "dense" layer, which is another word to say that all the inputs are connected to all of the neurons (individual perceptrons), and as said before, each of these connections have a weight associated with it, so that the operation that each neuron performs is a simple weighted sum of all the inputs.
+A "layer" within a neural network is just a group of perceptrons that all perform the same exact mathematical operation to the inputs and produce an output. The catch is that each of them have different weights (parameters), therefore their output for a given input will be different amongst them. There are many types of layers, the most typical of them being a "dense" layer, which is another word to say that all the inputs are connected to all the neurons (individual perceptrons), and as said before, each of these connections have a weight associated with it, so that the operation that each neuron performs is a simple weighted sum of all the inputs.
 
 ![post7-dense-layers](/assets/img/posts/post7-dense-layers.png)
 
