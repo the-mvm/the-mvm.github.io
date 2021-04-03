@@ -1,0 +1,52 @@
+{% assign words = page.content | strip_html | number_of_words %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url }}"
+  },
+  "headline": "{% if page.title %}{{page.title}}{% else %}{{site.title}}{% endif %}",
+  "abstract": "{{ page.description }}",
+    "keywords": "{% for tag in page.tags %}{{tag}}{% if forloop.last == false %}, {% endif %}{% endfor %}",
+    "wordcount": "{{ words }}",
+    "image": ["{{ site.url }}/assets/img{{ page.img }}"],
+  "datePublished": "{{ page.date }}",
+  "dateModified": "{{ page.date }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ page.author }}",
+  "publisher": "{{ site.title }}",
+  "publication": "{{ site.title }}"
+  }
+}
+</script>
+<!-- Open Graph data -->
+<meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="{% if page.title %}{{page.title}}{% else %}{{site.title}}{% endif %}"/>
+<meta property="og:description" content="{{ page.description }}"/>
+<meta property="og:image" content="{{ site.url }}/assets/img{{ page.img }}"/>
+<meta property="og:image:alt" content="{{page.title}}"/>
+<meta property="og:site_name" content="{{site.title}}" />
+<meta property="article:published_time" content="{{ page.date }}" />
+<meta property="article:modified_time" content="{{ page.date }}" />
+<meta property="article:tag" content="{% for tag in page.tags %}{{tag}}{% if forloop.last == false %}, {% endif %}{% endfor %}" />
+<meta property="fb:admins" content="{{ site.fbadmin }}" />
+<link rel="icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="/assets/img/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/favicon.ico">
+<!-- Schema.org markup for Google -->
+<meta itemprop="name" content="{% if page.title %}{{page.title}}{% else %}{{site.title}}{% endif %}">
+<meta itemprop="description" content="{{ page.description }}">
+<meta itemprop="image" content="{{ site.url }}/assets/img{{ page.img }}">
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="{{ site.url }}{{ page.url }}">
+<meta name="twitter:title" content="{% if page.title %}{{page.title}}{% else %}{{site.title}}{% endif %}">
+<meta name="twitter:description" content="{{ page.description | truncate: 200 }}">
+<meta name="twitter:creator" content="{{% site.twitter %}}">
+<!-- Twitter summary card with large image must be at least 280x150px -->
+<meta name="twitter:image:src" content="{{ site.url }}/assets/img{{ page.img }}">
