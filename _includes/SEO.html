@@ -5,8 +5,7 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "{{ site.url }}"
-  },
+    "@id": "{{ site.url }}"},
   "headline": "{% if page.title %}{{page.title}}{% else %}{{site.title}}{% endif %}",
   "abstract": "{{ page.description }}",
     "keywords": "{% for tag in page.tags %}{{tag}}{% if forloop.last == false %}, {% endif %}{% endfor %}",
@@ -16,10 +15,11 @@
   "dateModified": "{{ page.date }}",
   "author": {
     "@type": "Person",
-    "name": "{{ page.author }}",
-  "publisher": "{{ site.title }}",
-  "publication": "{{ site.title }}"
-  }
+    "name": "{{ page.author }}"},
+  "publisher": {
+    "@type":  "Organization",
+    "logo": ["{{ site.url }}{{ site.logo-icon }}"],
+    "legalName" : "{{ site.title }}"}
 }
 </script>
 <!-- Open Graph data -->
