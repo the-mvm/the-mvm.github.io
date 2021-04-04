@@ -34,7 +34,7 @@ Check the theme in action [Demo](https://the-mvm.github.io/)
 
 The main page looks like this:
 
-<img width="540px" src="https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/homepage.jpg?raw=true">
+<img width="640px" src="https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/homepage-responsive.jpg?raw=true">
 
 The post page looks like:
 
