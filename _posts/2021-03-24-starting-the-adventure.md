@@ -80,16 +80,23 @@ After testing with several templates to get the feel for it, I decided to keep J
 
 I picked up a template, just forked the repository and started modifying the files to customize it, it was fast and easy, I even took it upon myself to add some functionality to the template (it served as a coding little project) like:
 - automatic [sitemap.xml](http://the-mvm.github.io/sitemap.xml)
-- automatic [archive page](http://the-mvm.github.io/archive/)
-- changed the styling of the [tags page](http://the-mvm.github.io/tags/)
-- added the tags and archive pages to the main menu with icons
-- included linkedin and reddit in the share post icons
-- included linkedin icon in the contact info
-- added a responsive and automatic _Table of Contents_ for the posts page (optional per post and with the choice of being sticky or inline)
-- added MathJax support for math equations in the posts (optional per post)
-- added "view on github" link button for posts (optional per post)
-- added a "curtain" to keep the disqus comment section masked until the reader clicks it.
-- _in progress:_ add a sidebar for the post tags and share links
+- automatic [archive page](http://the-mvm.github.io/archive/) with infinite scrolling capability
+- [new page](https://the-mvm.github.io/tag/?tag=Coding) of posts filtered by a single tag (without needing autopages from paginator V2), also with infinite scrolling
+- custom and responsive [404 page](https://the-mvm.github.io/404.html)
+- included linkedin and reddit icons for contact and sharing
+- automatic Table of Contents (optional). It behaves as a sticky sidebar (when the screen is wide enough) or inline after the post's title and metadata
+- post tags and social share icons are now a sticky sidebar when the screen resolution permits
+- MathJax support (optional per post)
+- view on github link button (optional per post)
+- read time per post automatically calculated
+- SEO meta tags
+- tag cloud in the home page
+- 'back to top' button
+- comments 'courtain' to mask the disqus interface until the user clicks on it ([configurable in _config.yml](https://github.com/the-mvm/the-mvm.github.io/blob/e146070e9348c2e8f46cb90e3f0c6eb7b59c041a/_config.yml#L29))
+- [CSS variables](https://github.com/the-mvm/the-mvm.github.io/blob/e146070e9348c2e8f46cb90e3f0c6eb7b59c041a/assets/css/main.css#L3) to make it easy to customize colors and fonts
+- added several pygments themes for code syntax highlight [configurable from the _config.yml file](https://github.com/the-mvm/the-mvm.github.io/blob/e146070e9348c2e8f46cb90e3f0c6eb7b59c041a/_config.yml#L44).
+- responsive footer menu and footer logo ([if setup in the config file](https://github.com/the-mvm/the-mvm.github.io/blob/e146070e9348c2e8f46cb90e3f0c6eb7b59c041a/_config.yml#L7))
+
 
 As a summary, Hugo and Gatsby might be much faster than Jekyll to build the sites, but their complexity I think makes them useful for a big site with plenty of posts. For a small site like mine, Jekyll provides sufficient functionality and power without the hassle.
 
