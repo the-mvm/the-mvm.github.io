@@ -38,10 +38,6 @@
 <meta property="article:modified_time" content="{{ page.date }}" />
 <meta property="article:tag" content="{% for tag in page.tags %}{{tag}}{% if forloop.last == false %}, {% endif %}{% endfor %}" />
 <meta property="fb:admins" content="{{ site.fbadmin }}" />
-<link rel="icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon" href="/assets/img/favicon/favicon.ico">
-<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/favicon.ico">
-<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/favicon.ico">
 <!-- Schema.org markup for Google -->
 <meta itemprop="name" content="{% if page.title %}{{page.title}}{% else %}{{site.title}}{% endif %}">
 <meta itemprop="description" content="{{ page.description }}">
