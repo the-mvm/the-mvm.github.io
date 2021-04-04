@@ -3,7 +3,11 @@ layout: home-page
 permalink: /404.html
 title: null
 ---
-<img src="/assets/img/404.jpg" width="100%">
+<picture>
+  <source srcset="/assets/img/404_small.jpg" media="(max-width: 768px)">
+  <source srcset="/assets/img/404.jpg">
+  <img src="/assets/img/404.jpg" width="100%" alt="Page not found">
+</picture>
 <form class="search-form inline">
     <div id="search-container">
         <input type="text" id="search-input" class="search" placeholder="Search">
