@@ -1738,6 +1738,7 @@ a.read-more:hover {
 .tag-master,
 .toc,
 .sidebar,
+.404-image,
 .page_meta {
   -webkit-animation-duration: 0.7s;
           animation-duration: 0.7s;
@@ -1762,6 +1763,7 @@ a.read-more:hover {
 .github-button,
 .sidebar,
 .about-container,
+.404-image,
 .post-card-box {
   -webkit-animation-delay: 0.75s;
           animation-delay: 0.75s;
