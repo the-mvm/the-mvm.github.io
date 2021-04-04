@@ -685,7 +685,6 @@ svg.menu-icon-house {
 .results-search {
   list-style: none;
   overflow: auto;
-  height: 90vh;
   margin: 0;
   padding: 0;
 }
