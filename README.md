@@ -1,28 +1,32 @@
 # Jekyll theme: Adam Blog 2.0
 [V1.0](https://github.com/artemsheludko/adam-blog) by [Artem Sheludko](https://github.com/artemsheludko), modified by [Armando Maynez](https://github.com/amaynez)
 
-### Additional features or changes in this mod:
+### Additional features in v2.0:
 - automatic [sitemap.xml](http://the-mvm.github.io/sitemap.xml)
 - automatic [archive page](http://the-mvm.github.io/archive/) with infinite scrolling capability
-- changed the styling of the [tags page](http://the-mvm.github.io/tags/)
 - [new page](https://the-mvm.github.io/tag/?tag=Coding) of posts filtered by a single tag (without needing autopages from paginator V2), also with infinite scrolling
 - custom and responsive [404 page](https://the-mvm.github.io/404.html)
-- included linkedin and reddit in the share post icons
-- included linkedin icon in the contact info
-- added an automatic Table of Contents, it is configurable per post (on / off). It behaves as a sticky sidebar (when the screen is wide enough) or inline after the post's title and metadata
-  moved the post tag cloud and share options into a sticky sidebar when the screen resolution permits
-- added MathJax support (optional per post)
-- added view on github link button for posts (optional per post)
-- read time per post automatically calculated and included in all relevant pages
-- SEO meta tags included
-- added a tag cloud to the main page (after the post card styled latest posts)
-- added a 'back to top' button to the post pages.
-- added a comments 'courtain' that masks the disqus interface until the user clicks on it (configurable in _config.yml)
-- post images in home page appear black and white and colorize upon hovering in them
-- ensured overall consistency on colors and established a color palette
-- added several pygments themes for code syntax highlight configurable from the _config.yml file.
-- added CSS variables to make it easy to customize colors and fonts
-- added a responsive footer menu that also includes the logo if setup in the config file.
+- included linkedin and reddit icons for contact and sharing
+- automatic Table of Contents (optional). It behaves as a sticky sidebar (when the screen is wide enough) or inline after the post's title and metadata
+- post tags and social share icons are now a sticky sidebar when the screen resolution permits
+- MathJax support (optional per post)
+- view on github link button (optional per post)
+- read time per post automatically calculated
+- SEO meta tags
+- tag cloud in the home page
+- 'back to top' button
+- comments 'courtain' to mask the disqus interface until the user clicks on it ([configurable in _config.yml](https://github.com/the-mvm/the-mvm.github.io/blob/e146070e9348c2e8f46cb90e3f0c6eb7b59c041a/_config.yml#L29))
+- [CSS variables](https://github.com/the-mvm/the-mvm.github.io/blob/e146070e9348c2e8f46cb90e3f0c6eb7b59c041a/assets/css/main.css#L3) to make it easy to customize colors and fonts
+- added several pygments themes for code syntax highlight [configurable from the _config.yml file](https://github.com/the-mvm/the-mvm.github.io/blob/e146070e9348c2e8f46cb90e3f0c6eb7b59c041a/_config.yml#L44).
+- responsive footer menu and footer logo ([if setup in the config file](https://github.com/the-mvm/the-mvm.github.io/blob/e146070e9348c2e8f46cb90e3f0c6eb7b59c041a/_config.yml#L7))
+
+### Features from v1.0
+- [Google Fonts](https://fonts.google.com/)
+- [Font Awesome icons](http://fontawesome.io/)
+- [Disqus](https://disqus.com/)
+- [MailChimp](https://mailchimp.com/)
+- [Analytics](https://analytics.google.com/analytics/web/)
+- [Search](https://github.com/christian-fei/Simple-Jekyll-Search)
 
 ### Demo
 
@@ -43,16 +47,6 @@ Custom responsive 404:
 <img width="540px" src="https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/404.jpg?raw=true">
 
 <img width="200px" src="https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/404-mobile.jpg?raw=true">
-
-
-## Features
-
-- [Google Fonts](https://fonts.google.com/)
-- [Font Awesome](http://fontawesome.io/)
-- [Disqus](https://disqus.com/)
-- [MailChimp](https://mailchimp.com/)
-- [Analytics](https://analytics.google.com/analytics/web/)
-- [Search](https://github.com/christian-fei/Simple-Jekyll-Search)
 
 ## Installation:
 
