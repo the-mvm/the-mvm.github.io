@@ -1,14 +1,15 @@
-# Modified Jekyll theme Adam Blog
-[original](https://github.com/artemsheludko/adam-blog)
+# Jekyll theme: Adam Blog 2.0
+[V1.0](https://github.com/artemsheludko/adam-blog) by [Artem Sheludko](https://github.com/artemsheludko), modified by [Armando Maynez](https://github.com/amaynez)
 
 ### Additional features or changes in this mod:
 - automatic [sitemap.xml](http://the-mvm.github.io/sitemap.xml)
-- automatic [archive page](http://the-mvm.github.io/archive/) with infinite scrolling capability.
+- automatic [archive page](http://the-mvm.github.io/archive/) with infinite scrolling capability
 - changed the styling of the [tags page](http://the-mvm.github.io/tags/)
-- [new page](https://the-mvm.github.io/tag/?tag=Coding) of posts by a single tag (without needing autopages from paginator V2), also with infinite scrolling.
+- [new page](https://the-mvm.github.io/tag/?tag=Coding) of posts filtered by a single tag (without needing autopages from paginator V2), also with infinite scrolling
+- custom and responsive [404 page](https://the-mvm.github.io/404.html)
 - included linkedin and reddit in the share post icons
 - included linkedin icon in the contact info
-- added an automatic Table of Contents, it is configurable per post (on / off) and it displays as a sticky sidebar (when the screen is wide enough) or inline after the post's title and metadata
+- added an automatic Table of Contents, it is configurable per post (on / off). It behaves as a sticky sidebar (when the screen is wide enough) or inline after the post's title and metadata
   moved the post tag cloud and share options into a sticky sidebar when the screen resolution permits
 - added MathJax support (optional per post)
 - added view on github link button for posts (optional per post)
@@ -23,14 +24,9 @@
 - added CSS variables to make it easy to customize colors and fonts
 - added a responsive footer menu that also includes the logo if setup in the config file.
 
+### Demo
 
-# The original Adam Blog is a minimal clear theme for Jekyll
-
-![Adam Blog - Imac](https://github.com/artemsheludko/adam-blog/blob/master/assets/img/adam-blog-imac.jpg?raw=true)
-
-## Demo
-
-Check the modified theme in action [Demo](https://the-mvm.github.io/)
+Check the theme in action [Demo](https://the-mvm.github.io/)
 
 The main page looks like this:
 
@@ -41,6 +37,12 @@ The post page looks like:
 ![Post page preview](https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/post.jpg?raw=true)
 
 ![Post bottom](https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/post_bottom.jpg?raw=true)
+
+Custom responsive 404:
+![404 large](https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/404.jpg?raw=true)
+![404 mobile](https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/404-mobile.jpg?raw=true)
+
+
 ## Features
 
 - [Google Fonts](https://fonts.google.com/)
