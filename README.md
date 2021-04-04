@@ -30,17 +30,19 @@ Check the theme in action [Demo](https://the-mvm.github.io/)
 
 The main page looks like this:
 
-![Main page preview](https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/homepage.jpg?raw=true)
+<img width="540px" src="https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/homepage.jpg?raw=true">
 
 The post page looks like:
 
-![Post page preview](https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/post.jpg?raw=true)
+<img width="540px" src="https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/post.jpg?raw=true">
 
-![Post bottom](https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/post_bottom.jpg?raw=true)
+<img width="540px" src="https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/post_bottom.jpg?raw=true">
 
 Custom responsive 404:
-![404 large](https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/404.jpg?raw=true)
-![404 mobile](https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/404-mobile.jpg?raw=true)
+
+<img width="540px" src="https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/404.jpg?raw=true">
+
+<img width="200px" src="https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/404-mobile.jpg?raw=true">
 
 
 ## Features
