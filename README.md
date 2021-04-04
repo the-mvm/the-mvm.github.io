@@ -44,9 +44,7 @@ The post page looks like:
 
 Custom responsive 404:
 
-<img width="540px" src="https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/404.jpg?raw=true">
-
-<img width="200px" src="https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/404-mobile.jpg?raw=true">
+<img width="640px" src="https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/404-responsive.jpg?raw=true">
 
 ## Installation:
 
