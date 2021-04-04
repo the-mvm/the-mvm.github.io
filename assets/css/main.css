@@ -747,8 +747,7 @@ svg.menu-icon-house {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 1);
-  mix-blend-mode: color;
+  background: rgba(255,255,255,.15);
   -webkit-transition: all .5s;
   transition: all .5s;
 }
@@ -1406,7 +1405,6 @@ img + small, img + br + small {
   background-position: center;
   background-repeat: no-repeat;
 }
-
 .recent-item-img::after {
   content: "";
   display: block;
@@ -1415,8 +1413,7 @@ img + small, img + br + small {
   left: 0;
   right: 0;
   bottom: 0;
-  background: black;
-  mix-blend-mode: color;
+  background: rgba(255,255,255,.15);
   -webkit-transition: all .5s;
   transition: all .5s;
 }
