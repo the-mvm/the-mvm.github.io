@@ -33,7 +33,9 @@ $(function () {
   // Search Settings
   $('.search-icon').click(function (e) {
     e.preventDefault()
-    searchBox.toggleClass('search-active')
+    if($('.inline').length = 0){
+        searchBox.toggleClass('search-active')
+    }
     searchInput.focus()
 
     if (searchBox.hasClass('search-active')) {
