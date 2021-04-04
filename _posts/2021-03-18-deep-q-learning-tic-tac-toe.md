@@ -9,7 +9,7 @@ img: /posts/TicTacToeSml.jpg
 tags: [Machine Learning, Artificial Intelligence, Reinforcement Learning, Coding, Python]
 author: Armando Maynez
 github: amaynez/TicTacToe/
-toc: sticky # use yes for inline TOC or sticky for sticky TOC, leave empty or erase for no TOC
+toc: yes # leave empty or erase for no TOC
 ---
 <center><img style="float: left;margin-right: 1em;" src='/assets/img/posts/Game_Screen.png' width="310" height="300"></center>
 
