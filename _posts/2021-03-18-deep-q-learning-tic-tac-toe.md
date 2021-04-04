@@ -6,7 +6,7 @@ title:  Deep Q Learning for Tic Tac Toe
 date:   2021-03-18 15:14:20 -0600
 description: "Inspired by Deep Mind's astonishing feats of having their Alpha Go, Alpha Zero and Alpha Star programs learn (and be amazing at it) Go, Chess, Atari games and lately Starcraft; I set myself to the task of programming a neural network that will learn by itself how to play the ancient game of tic tac toe. How hard could it be?"
 img: /posts/TicTacToeSml.jpg
-tags: [Machine Learning, Artificial Intelligence, Reinforcement Learning, Coding, Python]
+tags: [machine learning, artificial intelligence, reinforcement learning, coding, python]
 author: Armando Maynez
 github: amaynez/TicTacToe/
 toc: yes # leave empty or erase for no TOC
