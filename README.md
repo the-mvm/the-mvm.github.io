@@ -7,7 +7,7 @@
 - [new page](https://the-mvm.github.io/tag/?tag=Coding) of posts filtered by a single tag (without needing autopages from paginator V2), also with infinite scrolling
 - custom and responsive [404 page](https://the-mvm.github.io/404.html)
 - included linkedin and reddit icons for contact and sharing
-- automatic Table of Contents (optional). It behaves as a sticky sidebar (when the screen is wide enough) or inline after the post's title and metadata
+- automatic Table of Contents ([optional](https://github.com/the-mvm/the-mvm.github.io/blob/85d50a903f73ebdaea2cdc4b0f706f86bd07332f/_posts/2021-03-12-neural-network-optimization-methods.markdown#L13)). It behaves as a sticky sidebar (when the screen is wide enough) or inline after the post's title and metadata
 - post tags and social share icons are now a sticky sidebar when the screen resolution permits
 - MathJax support (optional per post)
 - view on github link button (optional per post)
