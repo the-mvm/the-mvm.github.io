@@ -12,7 +12,7 @@ github: amaynez/GameOfLife/
 ---
 <p>I&nbsp;am lately trying to take on coding again. It had always been a part of my life since my early years when I&nbsp;learned to program a Tandy Color Computer at the age of 8, the good old days.</p>
 
-<center><img src="https://uploads-ssl.webflow.com/60535753234cc817ed863828/605361c3e46d294313573eba_300px-TRS-80_Color_Computer_3.jpg" alt="Tandy Color Computer TRS80 III"/><small>Tandy Color Computer TRS80 III</small></center><br>
+<img src="https://uploads-ssl.webflow.com/60535753234cc817ed863828/605361c3e46d294313573eba_300px-TRS-80_Color_Computer_3.jpg" alt="Tandy Color Computer TRS80 III"/><small>Tandy Color Computer TRS80 III</small>
 
 <p>Having already programed in Java, C# and of course BASIC, I&nbsp;thought it would be a great idea to learn Python since I&nbsp;have great interest in data science and machine learning, and those two topics seem to have an avid community within Python coders.</p>
 
@@ -22,7 +22,7 @@ github: amaynez/GameOfLife/
 
 <ul><li>If a cell has less than 2 neighbors, meaning contiguous alive cells, the cell will die of loneliness</li><li>If a cell has more than 3 neighbors, it will die of overpopulation</li><li>If an empty block has exactly 3 contiguous alive neighbors, a new cell will be born in that spot</li><li>If an alive cell has 2 or 3 alive neighbors, it continues to live</li></ul>
 
-<center><img src="https://uploads-ssl.webflow.com/60535753234cc817ed863828/605363b67408ee90e0e471f0_GameOfLife.gif" alt="Conway's rules for the Game of Life"/><small>Conway's rules for the Game of Life</small></center>
+<img src="https://uploads-ssl.webflow.com/60535753234cc817ed863828/605363b67408ee90e0e471f0_GameOfLife.gif" alt="Conway's rules for the Game of Life"/><small>Conway's rules for the Game of Life</small>
 
 <p>To make it more of a challenge I&nbsp;also decided to implement an <em>"sparse" </em>method of recording the game board, this means that instead of the typical 2d array representing the whole board, I&nbsp;will only record the cells which are alive. Saving a lot of memory space and processing time, while adding some spice to the challenge.</p>
 

@@ -1307,7 +1307,6 @@ img + small, img + br + small {
     display: block;
     font-size:.6em;
     color:var(--grey1);
-    margin-top: -1em;
     margin-bottom: 1.5em;
     text-align: center
 }
