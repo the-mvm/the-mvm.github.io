@@ -936,17 +936,17 @@ svg.menu-icon-house {
     height: 35px;
     text-align: center;
     line-height: 35px;
-    background-color: var(--text);
+    background-color: var(--main);
     color: #fff;
     cursor: pointer;
     transition: all .5s ease;
-    opacity: .8;
+    opacity: .5;
 }
 .top.is-active {
     right: 40px;
 }
 .top:hover {
-  background-color: var(--grey1);
+  opacity: .4
 }
 .top svg {
     display: inline-block;
