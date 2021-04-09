@@ -25,14 +25,18 @@ They say that the best way to learn something is to try to explain it, so in a p
 Let's start with a little history, humans have been tinkering with the idea of an intelligent machine for a while now, some even say that the idea of artificial intelligence was conceived by the ancient greeks ([source](https://www.thinkautomation.com/bots-and-ai/a-history-of-automation-the-rise-of-robots-and-ai/)), and several attempts at devising "intelligent" machines have been made through history, a notable one was 'The Analytical Engine' created by Charles Babbage in 1837:
 
 ![The Analytical Engine](/assets/img/posts/post7-analytical-engine.jpg)
+<small>The Analytical Engine of Charles Babbage - 1837</small>
 
 Then, in the middle of last century by trying to create a model of how our brain works, Neural Networks were born. Around that time, Frank Rosenblatt at Cornell trying to understand the simple decision system present in the eye of a common housefly,  proposed the idea of a [perceptron](https://the-mvm.github.io/single-neuron-perceptron/), a very simple system that processes certain inputs with basic math operations and produces an output.
+
 ![A perceptron](/assets/img/posts/perceptron.png)
 
 To illustrate, let's say that the brain of the housefly is a perceptron, its inputs are whatever values are produced by the multiple cells in its eyes, when the eye cell detects "something" it's output will be a 1, and if there is nothing a 0. Then the combination of all those inputs can be processed by the perceptron (the fly brain), and the output is a simple 0 or 1 value. If it is a 1 then the brain is telling the fly to flee and if it is a 0 it means it is safe to stay where it is.
 
 ![A housefly eye](/assets/img/posts/post7-housefly-eye.jpg)
+
 We can imagine then that if many of the eye cells of the fly produce 1s, it means that an object is quite near, and therefore the perceptron will calculate a 1, it is time to flee.
+
 ![The fly vision](/assets/img/posts/post7-fly-vision.jpg)
 
 The perceptron is just a math operation, one that multiplies certain input values with preset "parameters" (called weights) and adds up the resulting multiplications to generate a value.
