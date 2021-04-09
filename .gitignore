@@ -7,3 +7,7 @@
 /.idea/the-mvm.github.io.iml
 /.idea/inspectionProfiles/Project_Default.xml
 /.idea/vcs.xml
+/.vscode/settings.json
+/.vscode/
+/.idea/
+.liquidrc
