@@ -1,7 +1,9 @@
+demo site now [mirrored](https://weathered-bread-8229.on.fleek.co/) in [IPFS](https://github.com/ipfs/ipfs#quick-summary)!
+
 # Jekyll theme: Adam Blog 2.0
 [V1.0](https://github.com/artemsheludko/adam-blog) by [Artem Sheludko](https://github.com/artemsheludko), modified by [Armando Maynez](https://github.com/amaynez)
 
-### Additional features in v2.0:
+## Additional features in v2.0:
 - automatic [sitemap.xml](http://the-mvm.github.io/sitemap.xml)
 - automatic [archive page](http://the-mvm.github.io/archive/) with infinite scrolling capability
 - [new page](https://the-mvm.github.io/tag/?tag=Coding) of posts filtered by a single tag (without needing autopages from paginator V2), also with infinite scrolling
@@ -20,7 +22,7 @@
 - added several pygments themes for code syntax highlight [configurable from the _config.yml file](https://github.com/the-mvm/the-mvm.github.io/blob/e146070e9348c2e8f46cb90e3f0c6eb7b59c041a/_config.yml#L44).
 - responsive footer menu and footer logo ([if setup in the config file](https://github.com/the-mvm/the-mvm.github.io/blob/e146070e9348c2e8f46cb90e3f0c6eb7b59c041a/_config.yml#L7))
 
-### Features from v1.0
+## Features from v1.0
 - [Google Fonts](https://fonts.google.com/)
 - [Font Awesome icons](http://fontawesome.io/)
 - [Disqus](https://disqus.com/)
@@ -28,7 +30,7 @@
 - [Analytics](https://analytics.google.com/analytics/web/)
 - [Search](https://github.com/christian-fei/Simple-Jekyll-Search)
 
-### Demo
+## Demo
 
 Check the theme in action [Demo](https://the-mvm.github.io/)
 
