@@ -1737,7 +1737,7 @@ a.read-more:hover {
 .tag-master,
 .toc,
 .sidebar,
-.404-image,
+.pnf-image,
 .page_meta {
   -webkit-animation-duration: 0.7s;
           animation-duration: 0.7s;
@@ -1762,7 +1762,7 @@ a.read-more:hover {
 .github-button,
 .sidebar,
 .about-container,
-.404-image,
+.pnf-image,
 .post-card-box {
   -webkit-animation-delay: 0.75s;
           animation-delay: 0.75s;
@@ -1936,7 +1936,7 @@ a.read-more:hover {
     thead{display:table-header-group}
     table,th,td{border-bottom:1px solid #000}
     td,th{padding:8px 16px}
-    img{border:0;display:block;max-width:100% !important;vertical-align:middle}
+    img{border:0;display:block;max-width:100% !important}
     hr{border:0;border-bottom:2px solid #bbb;height:0;margin:2.25rem 0;padding:0}
     dt{font-weight:bold}dd{margin:0;margin-bottom:0.75rem}
     abbr[title],acronym[title]{border:0;text-decoration:none}
