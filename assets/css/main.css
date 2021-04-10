@@ -1654,7 +1654,7 @@ img + small, img + br + small {
 
 .contact-list a {
   display: block;
-  color: var(--grey2);
+  color: var(--accent-dark);
   font-size: 21px;
   text-decoration: none;
   padding: 5px;
@@ -1663,7 +1663,6 @@ img + small, img + br + small {
 }
 
 .contact-list a:hover {
-  color: var(--accent);
   -webkit-transform: scale(1.3);
       -ms-transform: scale(1.3);
           transform: scale(1.3);
