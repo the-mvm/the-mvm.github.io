@@ -2,15 +2,15 @@
 {% capture relativebase %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
 
 <!-- JS -->
-<script src="{{ relativebase }}assets/js/jquery-3.2.1.min.js"></script>
-<script src="{{ relativebase }}assets/js/jekyll-search.js"></script>
-<script src="{{ relativebase }}assets/js/infinite-jekyll.js"></script>
-<script src="{{ relativebase }}assets/js/main.js"></script>
+<script src="{{ relativebase }}/assets/js/jquery-3.2.1.min.js"></script>
+<script src="{{ relativebase }}/assets/js/jekyll-search.js"></script>
+<script src="{{ relativebase }}/assets/js/infinite-jekyll.js"></script>
+<script src="{{ relativebase }}/assets/js/main.js"></script>
 <script>
   SimpleJekyllSearch({
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('results-container'),
-    json: '{{ relativebase }}search.json',
+    json: '{{ relativebase }}/search.json',
     searchResultTemplate: '<li><a href="{url}" title="{description}">{title}</a></li>',
     noResultsText: 'No results found',
     fuzzy: false,
