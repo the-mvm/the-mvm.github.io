@@ -6,6 +6,7 @@ layout: home-page
 <ol class="post-card-box clearfix">
   {% for post in paginator.posts %}
   {% include remove_double_slash.html %}
+  {% include escape-404.html %}
   <li>
     <div class="post-card">
       <a href="{{ post_url }}" class="post-card-image" style="background-image: url('{{ relativebase }}assets/img/{{ post.img }}')">

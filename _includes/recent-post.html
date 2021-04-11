@@ -7,6 +7,7 @@
       {% if post.title %}
         <div class="recent-item">
           {% include remove_double_slash.html %}
+          {% include escape-404.html %}
           <a href="{{ post_url }}" class="recent-item-img" style="background-image: url('{{ relativebase }}assets/img/{{ post.img }}')">
             <div class="recent-item-title">
               <span>{{ post.title }}</span>
