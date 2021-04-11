@@ -16,7 +16,6 @@ permalink: archive:output_ext
 	{% for post in site.posts limit: 3 %}
 		<div class="post">
 			{% include remove_double_slash.html %}
-			{% include escape-404.html %}
 			<a class="post-list-title" href="{{ post_url }}">{{ post.title }}</a>
 			{% include post_meta.html type="post-card-meta" %}
 			<div class="post-excerpt">
