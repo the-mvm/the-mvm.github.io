@@ -18,12 +18,19 @@
   });
 {% if page.url contains "ipfs-404" %}
   function fixUrls (){
+    console.log('i am in the function');
     let own_url = window.location.href;
     let countOfSlashes = (own_url.match("/") || []).length;
-    if (countOfSlashes > 3){
-        let relativebase = ""
-        for (i=3; i < countOfSlashes; i++){
-           relativebase = relativebase + "../"
+    let minimumSlashes = 3;
+    if (own_url.includes("/ipfs/")){
+      minimumSlashes = 5;
+    }
+    if (countOfSlashes > minimumSlashes){
+      console.log('i am in the conditional, my url is ', own_url);
+      console.log('my number of slashes is ', countOfSlashes);
+        let relativebase = "";
+        for (i=minimumSlashes; i < countOfSlashes; i++){
+           relativebase = relativebase + "../";
         }
         let elements = document.getElementsByTagName("link")
         for (i=0; i < elements.length; i++){
@@ -49,7 +56,7 @@
         }
     }
   }
-  window.onload = fixUrls();
+  console.log('just passed the window onload declaration');
 {% endif %}
 {% if page.layout == "post" %}
 if (document.getElementById('comment-curtain') == null){
@@ -123,6 +130,7 @@ for (i = 0; i < coll.length; i++) {
 {% endif %}
 $(document).ready(function() {
   'use strict';
+  fixUrls();
   /* -------- Scroll to top button ------- */
   $(".top").click(function() {
     $("html, body")
