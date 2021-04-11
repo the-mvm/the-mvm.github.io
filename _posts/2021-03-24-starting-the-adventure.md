@@ -79,17 +79,18 @@ I chose this option, specially because I can manipulate files, like images, in m
 After testing with several templates to get the feel for it, I decided to keep Jekyll for my blog for several reasons: the convenience of not having to install anything extra on my computer to build my blog, the integration with GitHub Pages, the ease of use, the future proofing via integration with modern technologies such as react or vue and the vast online community that has produced tons of templates and useful information for issue resolution, customization and added functionality.
 
 I picked up a template, just forked the repository and started modifying the files to customize it, it was fast and easy, I even took it upon myself to add some functionality to the template (it served as a coding little project) like:
+- SEO meta tags
 - automatic [sitemap.xml](http://the-mvm.github.io/sitemap.xml)
 - automatic [archive page](http://the-mvm.github.io/archive/) with infinite scrolling capability
 - [new page](https://the-mvm.github.io/tag/?tag=Coding) of posts filtered by a single tag (without needing autopages from paginator V2), also with infinite scrolling
 - custom and responsive [404 page](https://the-mvm.github.io/404.html)
-- included linkedin and reddit icons for contact and sharing
-- automatic Table of Contents (optional). It behaves as a sticky sidebar (when the screen is wide enough) or inline after the post's title and metadata
-- post tags and social share icons are now a sticky sidebar when the screen resolution permits
-- MathJax support (optional per post)
-- view on github link button (optional per post)
+- responsive and automatic Table of Contents (optional per post)
 - read time per post automatically calculated
-- SEO meta tags
+- responsive post tags and social share icons (sticky or inline)
+- included linkedin, reddit and bandcamp icons
+- *copy link to clipboard* sharing option (and icon)
+- view on github link button (optional per post)
+- MathJax support (optional per post)
 - tag cloud in the home page
 - 'back to top' button
 - comments 'courtain' to mask the disqus interface until the user clicks on it ([configurable in _config.yml](https://github.com/the-mvm/the-mvm.github.io/blob/e146070e9348c2e8f46cb90e3f0c6eb7b59c041a/_config.yml#L29))
@@ -97,10 +98,32 @@ I picked up a template, just forked the repository and started modifying the fil
 - added several pygments themes for code syntax highlight [configurable from the _config.yml file](https://github.com/the-mvm/the-mvm.github.io/blob/e146070e9348c2e8f46cb90e3f0c6eb7b59c041a/_config.yml#L44).
 - responsive footer menu and footer logo ([if setup in the config file](https://github.com/the-mvm/the-mvm.github.io/blob/e146070e9348c2e8f46cb90e3f0c6eb7b59c041a/_config.yml#L7))
 
+![my new blog](../img/../assets/img/template_screenshots/homepage-responsive.jpg)
 
 As a summary, Hugo and Gatsby might be much faster than Jekyll to build the sites, but their complexity I think makes them useful for a big site with plenty of posts. For a small site like mine, Jekyll provides sufficient functionality and power without the hassle.
 
-I created a [clean version of my site as a template for others to use here](https://github.com/amaynez/amaynez.github.io/tree/clean_template). Let me know in the comments or feel free to contact me if you are interested in a detailed walkthrough on how to set it all up. 
+You can use the modified template yourself by [forking my repository](https://github.com/the-mvm/the-mvm.github.io/fork/). Let me know in the comments or feel free to contact me if you are interested in a detailed walkthrough on how to [set it all up](https://github.com/the-mvm/the-mvm.github.io#Installation). 
 
 #### Hosting
 Since I decided on Jekyll to generate my site, the choice for hosting was quite obvious, **[Github Pages](https://pages.github.com)** is very nicely integrated with it, it is free, and it has no ads! Plus the domain name isn't too terrible ([the-mvm.github.io](https://the-mvm.github.io)).
+
+##### Interplanetary File System
+To contribute to and test [IPFS](https://github.com/ipfs/ipfs#quick-summary) I also set up a [mirror](https://weathered-bread-8229.on.fleek.co/) in IPFS by using [fleek.co](https://fleek.co). I must confess that it was more troublesome than I imagined, it was definetively not plug and play because of the paths used to fetch resources. The nature of IPFS makes short absolute paths for website resources (like images, css and javascript files) innoperative; the easiest fix for this is to use relative paths, however the same relative path that works for the root directory (i.e. /index.html) does not work for links inside directories (i.e. /tags/), and since the site is static, while generating it, one must make the distintion between the different directory levels for the page to be rendered correctly.
+
+At first I tried a simple (but brute force solution):
+```jekyll
+# determine the level of the current file
+{% assign lvl = page.url | append:'X' | split:'/' | size %}
+# create the relative base (i.e. "../")
+{% capture relativebase %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
+{% if relativebase == '' %}
+	{% assign relativebase = './' %}
+{% endif %}
+...
+# Eliminate unnecesary double backslashes
+{% capture post_url %}{{ relativebase }}{{ post.url }}{% endcapture %}
+  {% assign post_url = post_url | replace: "//", "/" %}
+```
+This `jekyll/liquid` code was executed in every page (or include) that needed to reference a resource hosted in the same server.
+
+But this fix did not work for the search function, because it relies on a `search.json` file (also generated programatically to be served as a static file), therefore when generating this file one either use the relative path for the `root` directory or for a nested directory, thus the search results will only link correctly the corresponding pages if the page where the user searched for something is in the corresponding scope.

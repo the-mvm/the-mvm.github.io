@@ -21,7 +21,7 @@ Back in the late 1950's, a young [Frank Rosenblatt](https://en.wikipedia.org/wik
 
 In its essence, a perceptron is nothing more than a collection of values and rules for passing information through them, but in its simplicity lies its power.
 
-<center><img src='/assets/img/posts/Perceptron.png'></center>
+<center><img src='../assets/img/posts/Perceptron.png'></center>
 
 Imagine you have a 'neuron' and to 'activate' it, you pass through several input signals, each signal connects to the neuron through a synapse, once the signal is aggregated in the perceptron, it is then passed on to one or as many outputs as defined. A perceptron is but a neuron and its collection of synapses to get a signal into it and to modify a signal to pass on.
 
@@ -94,7 +94,7 @@ In this particular case, I coded the learning_rate to decrease with every iterat
 
 this is important to ensure that once the weights are nearing the optimal values the adjustment in each iteration is subsequently more subtle.
 
-<center><img src='/assets/img/posts/Learning_1000_points_per_iteration.jpg'></center>
+<center><img src='../assets/img/posts/Learning_1000_points_per_iteration.jpg'></center>
 
 In the end, the perceptron always converges into a solution and finds with great precision the line we are looking for.
 
