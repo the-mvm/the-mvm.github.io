@@ -8,11 +8,11 @@ title: null
 {% if relativebase == '' %}
 	{% assign relativebase = './' %}
 {% endif %}
-<a href="{{ relativebase }}/">
+<a href="{{ relativebase }}">
     <picture>
-      <source srcset="{{ relativebase }}/assets/img/404_small.jpg" media="(max-width: 768px)">
-      <source srcset="{{ relativebase }}/assets/img/404.jpg">
-      <img src="{{ relativebase }}/assets/img/404.jpg" alt="Page not found" class="pnf-image" style="width:100vw;max-width:unset;margin-left:calc((100% - 100vw)/2);margin-top:-16.5px;">
+      <source srcset="{{ relativebase }}assets/img/404_small.jpg" media="(max-width: 768px)">
+      <source srcset="{{ relativebase }}assets/img/404.jpg">
+      <img src="{{ relativebase }}assets/img/404.jpg" alt="Page not found" class="pnf-image" style="width:100vw;max-width:unset;margin-left:calc((100% - 100vw)/2);margin-top:-16.5px;">
     </picture>
 </a>
 {% include recent-post.html %}
