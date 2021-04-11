@@ -23,7 +23,7 @@ As for the focus areas I will start with:
 - Reinforcement Learning
 - Current state of the art: what is at the cutting edge now in terms of Deep Neural Networks and Reinforcement Learning?
   
-I selected the above areas to focus on based on my personal interests, I have been fascinated by the developments in reinforcement learning for a long time, in particular [Deep Mind's](https://deepmind.com/blog) awesome [Go](https://deepmind.com/blog/article/innovations-alphago), [Chess](https://deepmind.com/blog/article/alphazero-shedding-new-light-grand-games-chess-shogi-and-go) and [Starcraft](https://deepmind.com/blog/article/AlphaStar-Grandmaster-level-in-StarCraft-II-using-multi-agent-reinforcement-learning) playing agents. Therefore, I started reading a lot about it and even started a personal project for coding a [tic-tac-toe learning agent](https://the-mvm.github.io/deep-q-learning-tic-tac-toe/).
+I selected the above areas to focus on based on my personal interests, I have been fascinated by the developments in reinforcement learning for a long time, in particular [Deep Mind's](https://deepmind.com/blog) awesome [Go](https://deepmind.com/blog/article/innovations-alphago), [Chess](https://deepmind.com/blog/article/alphazero-shedding-new-light-grand-games-chess-shogi-and-go) and [Starcraft](https://deepmind.com/blog/article/AlphaStar-Grandmaster-level-in-StarCraft-II-using-multi-agent-reinforcement-learning) playing agents. Therefore, I started reading a lot about it and even started a personal project for coding a [tic-tac-toe learning agent](./deep-q-learning-tic-tac-toe.html).
 
 With my limited knowledge I have drafted the following learning path:
 
@@ -32,7 +32,7 @@ With my limited knowledge I have drafted the following learning path:
 3. Book: [Deep Learning with Python by Francois Chollet](https://www.amazon.com/dp/1617294438/ref=cm_sw_em_r_mt_dp_AV4DHT7CVE95D1SR2JJ8)
 4. Book: [Reinforcement Learning: An Introduction, by Richard S. Sutton and Andrew G. Barto](https://www.amazon.com/dp/0262193981/ref=cm_sw_em_r_mt_dp_10B6J4MDB7QE3YHBQF4X)
 
-As for practical work I decided to start by [coding my first models from scratch](https://the-mvm.github.io/ML-Library-from-scratch/) (without using libraries such as Tensorflow), to be able to deeply understand the math and logic behind the models, so far it has proven to be priceless.
+As for practical work I decided to start by [coding my first models from scratch](./ML-Library-from-scratch.html) (without using libraries such as Tensorflow), to be able to deeply understand the math and logic behind the models, so far it has proven to be priceless.
 
 For my next project I think I will start to do the basic hand-written digits recognition, which is the Machine Learning Hello World, for this I think I will start to use Tensorflow already.
 
@@ -81,8 +81,8 @@ After testing with several templates to get the feel for it, I decided to keep J
 I picked up a template, just forked the repository and started modifying the files to customize it, it was fast and easy, I even took it upon myself to add some functionality to the template (it served as a coding little project) like:
 - SEO meta tags
 - automatic [sitemap.xml](http://the-mvm.github.io/sitemap.xml)
-- automatic [archive page](http://the-mvm.github.io/archive/) with infinite scrolling capability
-- [new page](https://the-mvm.github.io/tag/?tag=Coding) of posts filtered by a single tag (without needing autopages from paginator V2), also with infinite scrolling
+- automatic [archive page](http://the-mvm.github.io/archive.html) with infinite scrolling capability
+- [new page](https://the-mvm.github.io/tag.html?tag=Coding) of posts filtered by a single tag (without needing autopages from paginator V2), also with infinite scrolling
 - custom and responsive [404 page](https://the-mvm.github.io/404.html)
 - responsive and automatic Table of Contents (optional per post)
 - read time per post automatically calculated
@@ -98,7 +98,7 @@ I picked up a template, just forked the repository and started modifying the fil
 - added several pygments themes for code syntax highlight [configurable from the _config.yml file](https://github.com/the-mvm/the-mvm.github.io/blob/e146070e9348c2e8f46cb90e3f0c6eb7b59c041a/_config.yml#L44).
 - responsive footer menu and footer logo ([if setup in the config file](https://github.com/the-mvm/the-mvm.github.io/blob/e146070e9348c2e8f46cb90e3f0c6eb7b59c041a/_config.yml#L7))
 
-![my new blog](../img/../assets/img/template_screenshots/homepage-responsive.jpg)
+![my new blog](./assets/img/template_screenshots/homepage-responsive.jpg)
 
 As a summary, Hugo and Gatsby might be much faster than Jekyll to build the sites, but their complexity I think makes them useful for a big site with plenty of posts. For a small site like mine, Jekyll provides sufficient functionality and power without the hassle.
 
