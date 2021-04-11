@@ -3,11 +3,7 @@ layout: home-page
 permalink: /404.html
 title: null
 ---
-{% assign lvl = page.url | append:'X' | split:'/' | size %}
-{% capture relativebase %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
-{% if relativebase == '' %}
-	{% assign relativebase = './' %}
-{% endif %}
+{% include  calculate_relative_base.html %}
 <a href="{{ relativebase }}">
     <picture>
       <source srcset="{{ relativebase }}assets/img/404_small.jpg" media="(max-width: 768px)">

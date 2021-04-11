@@ -122,7 +122,7 @@ At first I tried a simple (but brute force solution):
 ...
 # Eliminate unnecesary double backslashes
 {% capture post_url %}{{ relativebase }}{{ post.url }}{% endcapture %}
-  {% assign post_url = post_url | replace: "//", "/" %}
+{% assign post_url = post_url | replace: "//", "/" %}
 ```
 This `jekyll/liquid` code was executed in every page (or include) that needed to reference a resource hosted in the same server.
 

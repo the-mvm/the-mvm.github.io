@@ -1,8 +1,4 @@
-{% assign lvl = page.url | append:'X' | split:'/' | size %}
-{% capture relativebase %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
-{% if relativebase == '' %}
-	{% assign relativebase = './' %}
-{% endif %}
+{% include  calculate_relative_base.html %}
 
 <div class="recent-box">
   <h2 class="page-subtitle">Recent posts</h2>
@@ -10,8 +6,7 @@
     {% for post in site.posts offset:0 limit:4 %}
       {% if post.title %}
         <div class="recent-item">
-          {% capture post_url %}{{ relativebase }}{{ post.url }}{% endcapture %}
-          {% assign post_url = post_url | replace: "//", "/" %}
+          {% include remove_double_slash.html %}
           <a href="{{ post_url }}" class="recent-item-img" style="background-image: url('{{ relativebase }}assets/img/{{ post.img }}')">
             <div class="recent-item-title">
               <span>{{ post.title }}</span>

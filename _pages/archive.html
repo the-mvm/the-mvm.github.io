@@ -3,11 +3,7 @@ layout: menu-page
 title: Archive
 permalink: archive:output_ext
 ---
-{% assign lvl = page.url | append:'X' | split:'/' | size %}
-{% capture relativebase %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
-{% if relativebase == '' %}
-	{% assign relativebase = './' %}
-{% endif %}
+{% include  calculate_relative_base.html %}
 
 <div class="archive tag-master">
 	<form class="search-form inline">
@@ -19,8 +15,7 @@ permalink: archive:output_ext
 	<div class="post-list">
 	{% for post in site.posts limit: 3 %}
 		<div class="post">
-			{% capture post_url %}{{ relativebase }}{{ post.url }}{% endcapture %}
-  			{% assign post_url = post_url | replace: "//", "/" %}
+			{% include remove_double_slash.html %}
 			<a class="post-list-title" href="{{ post_url }}">{{ post.title }}</a>
 			{% include post_meta.html type="post-card-meta" %}
 			<div class="post-excerpt">

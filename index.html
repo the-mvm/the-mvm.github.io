@@ -1,16 +1,11 @@
 ---
 layout: home-page
 ---
-{% assign lvl = page.url | append:'X' | split:'/' | size %}
-{% capture relativebase %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
-{% if relativebase == '' %}
-	{% assign relativebase = './' %}
-{% endif %}
+{% include  calculate_relative_base.html %}
 
 <ol class="post-card-box clearfix">
   {% for post in paginator.posts %}
-  {% capture post_url %}{{ relativebase }}{{ post.url }}{% endcapture %}
-  {% assign post_url = post_url | replace: "//", "/" %}
+  {% include remove_double_slash.html %}
   <li>
     <div class="post-card">
       <a href="{{ post_url }}" class="post-card-image" style="background-image: url('{{ relativebase }}assets/img/{{ post.img }}')">
