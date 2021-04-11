@@ -17,7 +17,7 @@
     exclude: ['Welcome']
   });
 {% if page.url contains "ipfs-404" %}
-  function fixUrls (){
+  window.onload = function() {
     console.log('i am in the function');
     let own_url = window.location.href;
     let countOfSlashes = (own_url.match("/") || []).length;
@@ -56,7 +56,7 @@
         }
     }
   }
-  console.log('just passed the window onload declaration');
+console.log('just passed the window onload declaration');
 {% endif %}
 {% if page.layout == "post" %}
 if (document.getElementById('comment-curtain') == null){
@@ -130,9 +130,6 @@ for (i = 0; i < coll.length; i++) {
 {% endif %}
 $(document).ready(function() {
   'use strict';
-  if (window.location.href.includes("ipfs-404")){
-    fixUrls();
-  }
   /* -------- Scroll to top button ------- */
   $(".top").click(function() {
     $("html, body")
