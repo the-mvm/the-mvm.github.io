@@ -127,3 +127,5 @@ At first I tried a simple (but brute force solution):
 This `jekyll/liquid` code was executed in every page (or include) that needed to reference a resource hosted in the same server.
 
 But this fix did not work for the search function, because it relies on a `search.json` file (also generated programatically to be served as a static file), therefore when generating this file one either use the relative path for the `root` directory or for a nested directory, thus the search results will only link correctly the corresponding pages if the page where the user searched for something is in the corresponding scope.
+
+So the final solution was to make the whole site flat, meaning to live in a single directory. All pages and posts will live under the root directory, and by doing so, I can control how to address the relative paths for resources.
