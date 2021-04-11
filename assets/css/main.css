@@ -1119,8 +1119,10 @@ path.fa-secondary {
     padding-inline-start: 0px;
 }
 .toc-content a {
-    text-decoration:none;
-    padding:5px;
+    text-decoration: none;
+    padding: 5px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
 }
 .toc-item-1 {
     padding: 8px 0 8px 0;
