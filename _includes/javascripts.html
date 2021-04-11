@@ -7,15 +7,6 @@
 <script src="{{ relativebase }}assets/js/infinite-jekyll.js"></script>
 <script src="{{ relativebase }}assets/js/main.js"></script>
 <script>
-  SimpleJekyllSearch({
-    searchInput: document.getElementById('search-input'),
-    resultsContainer: document.getElementById('results-container'),
-    json: '{{ relativebase }}search.json',
-    searchResultTemplate: '<li><a href="{url}" title="{description}">{title}</a></li>',
-    noResultsText: 'No results found',
-    fuzzy: false,
-    exclude: ['Welcome']
-  });
 {% if page.url contains "ipfs-404" %} 
   console.log('i am in the function');
   let own_url = window.location.href;
@@ -77,7 +68,6 @@ $(".share-hover.side").on("mouseover", function() {
     document.getElementById('sidebar-icons').classList.remove('show');
   }, {capture: false, once: true, passive: false});
 });
-
 function copyToClipboard() {
   navigator.clipboard.writeText('{{ site.url }}{{ page.url }}').then(function() {
   alerts = document.getElementsByClassName('alert')
@@ -142,4 +132,14 @@ $(document).ready(function() {
     }
   });
 });
+
+SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '{{ relativebase }}search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{description}">{title}</a></li>',
+    noResultsText: 'No results found',
+    fuzzy: false,
+    exclude: ['Welcome']
+  });
 </script>
