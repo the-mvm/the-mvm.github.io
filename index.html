@@ -9,13 +9,16 @@ layout: home-page
 
 <ol class="post-card-box clearfix">
   {% for post in paginator.posts %}
+  {% capture post_url %}{{ relativebase }}{{ post.url }}{% endcapture %}
+  {% assign post_url = post_url | replace: "//", "/" %}
   <li>
     <div class="post-card">
-      <a href="{{ relativebase }}{{ post.url }}" class="post-card-image" style="background-image: url('{{ relativebase }}assets/img/{{ post.img }}')">
+      <a href="{{ post_url }}" class="post-card-image" style="background-image: url('{{ relativebase }}assets/img/{{ post.img }}')">
       </a>
       <div class="post-card-body">
         <p class="post-card-title-and-meta">
-          <a href="{{ relativebase }}{{ post.url }}" class="post-card-link">
+          
+          <a href="{{ post_url }}" class="post-card-link">
           {{ post.title }}
           </a>
           {% include post_meta.html type="post-card-meta" date="none" %}

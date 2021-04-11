@@ -19,8 +19,10 @@ permalink: /tags/
       <div class="list-group-title"><a id="{{ this_word | cgi_escape }}">{{ this_word }}</a></div>
       <div>
       {% for post in site.tags[this_word] %}{% if post.title != null %}
+      {% capture post_url %}{{ relativebase }}{{ post.url }}{% endcapture %}
+      {% assign post_url = post_url | replace: "//", "/" %}
         <div class="list-item">
-          <a href="{{ relativebase }}{{ post.url }}">{{ post.title }}</a>
+          <a href="{{ post_url }}">{{ post.title }}</a>
           {% include post_meta.html type="post-card-meta" %}
         </div>
       {% endif %}{% endfor %}
