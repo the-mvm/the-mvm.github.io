@@ -38,8 +38,11 @@ $(".share-hover.side").on("mouseover", function() {
 
 function copyToClipboard() {
   navigator.clipboard.writeText('{{ site.url }}{{ page.url }}').then(function() {
-  document.getElementById('alert').innerHTML='\u009B link copied'; 
-  setTimeout(function() {document.getElementById('alert').innerHTML='';},1600);
+  alerts = document.getElementsByClassName('alert')
+  for (i=0; i < alerts.length; i++){
+    alerts[i].innerHTML='\u00ABlink copied\u00BB';
+    setTimeout(function() {alerts[i].innerHTML='';},1600);
+  };
   }, function() {
     prompt("Unable to copy, please use this link:", "{{ site.url }}{{ page.url }}");
   });
