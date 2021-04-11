@@ -3,9 +3,9 @@ layout: default
 ---
 {% assign lvl = page.url | append:'X' | split:'/' | size %}
 {% capture relativebase %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
-{% unless relativebase %}
+{% if relativebase == '' %}
 	{% assign relativebase = './' %}
-{% endunless %}
+{% endif %}
 
 <section class="hidden">
   <div class="post">

@@ -5,9 +5,9 @@ permalink: /archive/
 ---
 {% assign lvl = page.url | append:'X' | split:'/' | size %}
 {% capture relativebase %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
-{% unless relativebase %}
+{% if relativebase == '' %}
 	{% assign relativebase = './' %}
-{% endunless %}
+{% endif %}
 
 <div class="archive tag-master">
 	<form class="search-form inline">
