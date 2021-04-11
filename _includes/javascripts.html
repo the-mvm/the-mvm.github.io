@@ -15,9 +15,11 @@
   if (own_url.includes("/ipfs/")){
     minimumSlashes = 5;
   }
+  console.log('my number of slashes is ', countOfSlashes);
+  console.log('I estimate the minimum to be ', minimumSlashes);
+  console.log('my url is ', own_url);
   if (countOfSlashes > minimumSlashes){
-    console.log('i am in the conditional, my url is ', own_url);
-    console.log('my number of slashes is ', countOfSlashes);
+    console.log('i am in the conditional');
       let relativebase = "";
       for (i=minimumSlashes; i < countOfSlashes; i++){
           relativebase = relativebase + "../";
