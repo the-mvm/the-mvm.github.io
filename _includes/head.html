@@ -1,3 +1,6 @@
+{% assign lvl = page.url | append:'X' | split:'/' | size %}
+{% capture relativebase %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
+
 <head>
 	<meta charset="utf-8">
 	<title>{% if page.title %}{{page.title}} - {{site.title}}{% else %}{{site.title}}{% endif %}</title>

@@ -1,3 +1,6 @@
+{% assign lvl = page.url | append:'X' | split:'/' | size %}
+{% capture relativebase %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
+
 <div class="pagination clearfix">
   {% if paginator.previous_page %}
     <a href="{{ relativebase }}{{ paginator.previous_page_path }}" class="previous"><i class="fa fa-angle-left" aria-hidden="true"></i> Previous</a>

@@ -3,6 +3,9 @@ layout: menu-page
 title: Archive
 permalink: /archive/
 ---
+{% assign lvl = page.url | append:'X' | split:'/' | size %}
+{% capture relativebase %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
+
 <div class="archive tag-master">
 	<form class="search-form inline">
 		<div id="search-container">

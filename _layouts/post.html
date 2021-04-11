@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+{% assign lvl = page.url | append:'X' | split:'/' | size %}
+{% capture relativebase %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
+
 <section class="hidden">
   <div class="post">
       <a  class="post-list-title" href="{{ retativebase }}{{ page.url }}">{{ page.title }}</a>

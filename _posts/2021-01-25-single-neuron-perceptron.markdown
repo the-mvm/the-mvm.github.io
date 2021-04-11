@@ -5,7 +5,7 @@ show_date: true
 title:  Single Neuron Perceptron
 date:   2021-01-25 13:32:20 -0600
 description: Single neuron perceptron that classifies elements learning quite quickly.
-img: /posts/Perceptron.jpg 
+img: posts/Perceptron.jpg 
 tags: [machine learning, coding, neural networks]
 author: Armando Maynez
 github:  amaynez/Perceptron/
