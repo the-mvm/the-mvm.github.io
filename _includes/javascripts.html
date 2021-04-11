@@ -38,7 +38,7 @@ $(".share-hover.side").on("mouseover", function() {
 
 function copyToClipboard() {
   navigator.clipboard.writeText('{{ site.url }}{{ page.url }}').then(function() {
-  document.getElementById('alert').innerHTML='link copied to clipboard'; 
+  document.getElementById('alert').innerHTML='\u009B link copied'; 
   setTimeout(function() {document.getElementById('alert').innerHTML='';},1600);
   }, function() {
     prompt("Unable to copy, please use this link:", "{{ site.url }}{{ page.url }}");
