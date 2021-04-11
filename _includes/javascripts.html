@@ -16,7 +16,41 @@
     fuzzy: false,
     exclude: ['Welcome']
   });
-
+{% if page.url contains "ipfs-404" %}
+  function fixUrls (){
+    let own_url = window.location.href;
+    let countOfSlashes = (own_url.match("/") || []).length;
+    if (countOfSlashes > 3){
+        let relativebase = ""
+        for (i=3; i < countOfSlashes; i++){
+           relativebase = relativebase + "../"
+        }
+        let elements = document.getElementsByTagName("link")
+        for (i=0; i < elements.length; i++){
+          elements[i].href.replace("./", relativebase);
+        }
+        elements = document.getElementsByTagName("a")
+        for (i=0; i < elements.length; i++){
+          elements[i].href.replace("./", relativebase);
+          elements[i].style.background-image.url.replace("./", relativebase);
+        }
+        elements = document.getElementsByTagName("img")
+        for (i=0; i < elements.length; i++){
+          elements[i].src.replace("./", relativebase);
+        }
+        elements = document.getElementsByTagName("source")
+        for (i=0; i < elements.length; i++){
+          elements[i].srcset.replace("./", relativebase);
+        }
+        elements = document.getElementsByTagName("script")
+        for (i=0; i < elements.length; i++){
+          elements[i].src.replace("./", relativebase);
+          elements[i].innerText.replace("./", relativebase);
+        }
+    }
+  }
+  window.onload = fixUrls();
+{% endif %}
 {% if page.layout == "post" %}
 if (document.getElementById('comment-curtain') == null){
   document.getElementById('disqus_thread').classList.toggle('show')
