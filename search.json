@@ -1,13 +1,15 @@
 ---
 layout: null
 ---
+{% assign lvl = page.url | append:'X' | split:'/' | size %}
+{% capture relativebase %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
 [
   {% for post in site.posts %}
     {
       "title"       : "{{ post.title | escape }}",
       "category"    : "{{ post.category }}",
       "tags"        : "{{ post.tags | join: ', ' }}",
-      "url"         : "{{ site.baseurl }}{{ post.url }}",
+      "url"         : "{{ relativebase }}{{ post.url }}",
       "date"        : "{{ post.date }}",
       "description" : "{{ post.description }}"
     } {% unless forloop.last %},{% endunless %}

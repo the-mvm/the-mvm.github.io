@@ -4,7 +4,7 @@
     {% for post in site.posts offset:0 limit:4 %}
       {% if post.title %}
         <div class="recent-item">
-          <a href="{{ root_url }}{{ post.url | prepend: site.baseurl }}" class="recent-item-img" style="background-image: url({{'/assets/img/' | prepend: site.baseurl | append: post.img}})">
+          <a href="{{ relativebase }}{{ post.url }}" class="recent-item-img" style="background-image: url('{{ relativebase }}assets/img/{{ post.img }}')">
             <div class="recent-item-title">
               <span>{{ post.title }}</span>
               {% include post_meta.html type="recent-item-meta" date="none" %}
