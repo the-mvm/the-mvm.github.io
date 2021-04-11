@@ -35,6 +35,13 @@ $(".share-hover").on("mouseover", function() {
     document.getElementById('sidebar-icons').classList.remove('show');
   }, {capture: false, once: true, passive: false});
 });
+
+function copyToClipboard() {
+  navigator.clipboard.writeText('{{ site.url }}{{ page.url }}').then(function() {
+  }, function() {
+    alert("Unable to copy, please use this link:\n{{ site.url }}{{ page.url }}");
+  });
+}
 {% endif %}
 {% if page.toc %}
 var spy = new Gumshoe("#toc-content a", {
