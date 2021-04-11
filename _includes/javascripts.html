@@ -41,7 +41,7 @@ function copyToClipboard() {
   alerts = document.getElementsByClassName('alert')
   for (i=0; i < alerts.length; i++){
     alerts[i].innerHTML='\u00ABlink copied\u00BB';
-    setTimeout(function() {alerts[i].innerHTML='';},1600);
+    setTimeout((function(i){ return function(){alerts[i].innerHTML='';}})(i), 1600 );
   };
   }, function() {
     prompt("Unable to copy, please use this link:", "{{ site.url }}{{ page.url }}");
