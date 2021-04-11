@@ -26,7 +26,7 @@ How hard could it be?
 
 Of course the first thing to do was to program the game itself, so I chose Python because I am learning it, so it gives me a good practice opportunity, and PyGame for the interface.
 Coding the game was quite straightforward, albeit for the hiccups of being my first PyGame and almost my first Python program ever.
-I created the game quite openly, in such a way that it can be played by two humans, by a human vs. an algorithmic AI, and a human vs. the neural network. And of course the neural network against a choice of 3 AI engines: random, [minimax (click to see the code)](https://en.wikipedia.org/wiki/Minimax) or hardcoded (an exercise I wanted to do since a long time).
+I created the game quite openly, in such a way that it can be played by two humans, by a human vs. an algorithmic AI, and a human vs. the neural network. And of course the neural network against a choice of 3 AI engines: random, [minimax](https://en.wikipedia.org/wiki/Minimax) or hardcoded (an exercise I wanted to do since a long time).
 
 While training, the visuals of the game can be disabled to make training much faster.
 Now, for the fun part, training the network, I followed Deep Mind's own DQN recommendations:
