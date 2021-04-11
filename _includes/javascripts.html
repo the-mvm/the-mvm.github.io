@@ -10,7 +10,7 @@
 {% if page.url contains "ipfs-404" %} 
   console.log('i am in the function');
   let own_url = window.location.href;
-  let countOfSlashes = (own_url.match("/") || []).length;
+  let countOfSlashes = (own_url.match(/\U002F/g) || []).length;
   let minimumSlashes = 3;
   if (own_url.includes("/ipfs/")){
     minimumSlashes = 5;
