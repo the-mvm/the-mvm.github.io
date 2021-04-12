@@ -7,7 +7,7 @@
 <script src="{{ relativebase }}assets/js/infinite-jekyll.js"></script>
 <script src="{{ relativebase }}assets/js/main.js"></script>
 {% if page.url contains "ipfs-404" %} 
-<script>
+<script class="deep-dir">
   let own_url = window.location.href;
   let countOfSlashes = (own_url.match(/\//g) || []).length;
   let minimumSlashes = 3;
@@ -56,19 +56,21 @@
       }
       elements = document.getElementsByTagName("script");
       for (i=0; i < elements.length; i++){
-        replaceStr = elements[i].getAttribute("src");
-        if (replaceStr!=null){
-          replaceStr = replaceStr.replace(/\.\//g, relativebase);
-          var new_script = document.createElement('script');
-          new_script.setAttribute('src',replaceStr);
-          document.head.appendChild(new_script);
-          elements[i].remove();
-        }
-        if (elements[i].innerText!=null){
-          var new_script = document.createElement('script');
-          new_script.innerText = elements[i].innerText.replace("json: \'./", "json: \'" + relativebase);
-          document.head.appendChild(new_script);
-          elements[i].remove();
+        if (elements[i].className != "deep-dir") {
+          replaceStr = elements[i].getAttribute("src");
+          if (replaceStr!=null){
+            replaceStr = replaceStr.replace(/\.\//g, relativebase);
+            var new_script = document.createElement('script');
+            new_script.setAttribute('src',replaceStr);
+            document.head.appendChild(new_script);
+            elements[i].remove();
+          }
+          if (elements[i].innerText!=null){
+            var new_script = document.createElement('script');
+            new_script.innerText = elements[i].innerText.replace("json: \'./", "json: \'" + relativebase);
+            document.head.appendChild(new_script);
+            elements[i].remove();
+          }
         }
       }
   }
