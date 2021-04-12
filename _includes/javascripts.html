@@ -8,14 +8,14 @@
 <script src="{{ relativebase }}assets/js/main.js"></script>
 {% if page.url contains "ipfs-404" %} 
 <script class="deep-dir">
-  let own_url = window.location.href;
-  let countOfSlashes = (own_url.match(/\//g) || []).length;
-  let minimumSlashes = 3;
+  const own_url = window.location.href;
+  var countOfSlashes = (own_url.match(/\//g) || []).length;
+  var minimumSlashes = 3;
   if (own_url.includes("/ipfs/")){
     minimumSlashes = 5;
   }
   if (countOfSlashes > minimumSlashes){
-      let relativebase = "";
+      var relativebase = "";
       for (i=minimumSlashes; i < countOfSlashes; i++){
           relativebase = relativebase + "../";
       }
@@ -66,9 +66,9 @@
             elements[i].remove();
           } else {
             if (elements[i].innerText!=null) {
-              var new_script = document.createElement('script');
-              new_script.innerText = elements[i].innerText.replace("./", relativebase);
-              document.head.appendChild(new_script);
+              var new_script2 = document.createElement('script');
+              new_script2.innerText = elements[i].innerText.replace("./", relativebase);
+              document.head.appendChild(new_script2);
               elements[i].remove();
             }
           }
@@ -153,7 +153,7 @@ for (i = 0; i < coll.length; i++) {
 </script>
 {% endif %}
 <script>
-let a = SimpleJekyllSearch({
+SimpleJekyllSearch({
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('results-container'),
     json: '{{ relativebase }}search.json',
