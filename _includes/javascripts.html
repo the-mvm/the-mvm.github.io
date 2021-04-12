@@ -27,35 +27,35 @@
       console.log(relativebase);
       let elements = document.getElementsByTagName("link");
       for (i=0; i < elements.length; i++){
-        let replaceStr = elements[i].attributes.href;
+        let replaceStr = elements[i].getAttribute("href");
         replaceStr.replace('./', relativebase);
         elements[i].setAttribute('href', replaceStr);
       }
-      elements = document.getElementsByTagName("a")
+      elements = document.getElementsByTagName("a");
       for (i=0; i < elements.length; i++){
-        replaceStr = elements[i].attributes.href;
+        replaceStr = elements[i].getAttribute("href");
         replaceStr.replace('./', relativebase);
         elements[i].setAttribute('href', replaceStr);
-        elements[i].style.background.url.replace(own_url, relativebase);
+        elements[i].style.background.replace(own_url, relativebase);
       }
-      elements = document.getElementsByTagName("img")
+      elements = document.getElementsByTagName("img");
       for (i=0; i < elements.length; i++){
-        replaceStr = elements[i].attributes.href;
+        replaceStr = elements[i].getAttribute("src");
         replaceStr.replace('./', relativebase);
         elements[i].setAttribute('src', replaceStr);
       }
-      elements = document.getElementsByTagName("source")
+      elements = document.getElementsByTagName("source");
       for (i=0; i < elements.length; i++){
-        replaceStr = elements[i].attributes.href;
+        replaceStr = elements[i].getAttribute("srcset");
         replaceStr.replace('./', relativebase);
         elements[i].setAttribute('srcset', replaceStr);
       }
-      elements = document.getElementsByTagName("script")
+      elements = document.getElementsByTagName("script");
       for (i=0; i < elements.length; i++){
-        replaceStr = elements[i].attributes.href;
+        replaceStr = elements[i].getAttribute("src");
         replaceStr.replace('./', relativebase);
         elements[i].setAttribute('src', replaceStr);
-        elements[i].innerText.replace(own_url, relativebase);
+        elements[i].innerText.replace("json: \'./", "json: \'" + relativebase);
       }
   }
   console.log('just passed the fixer function declaration');
