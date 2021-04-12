@@ -60,7 +60,6 @@
       elements = document.getElementsByTagName("script");
       console.log(elements.length);
       for (i = 0; i < elements.length; i++) {
-        console.log(i);
         if (elements[i].className != "deep-dir") {
           replaceStr = elements[i].getAttribute("src");
           if (replaceStr!=null) {
@@ -69,10 +68,12 @@
             new_script.setAttribute("src", replaceStr);
             document.head.appendChild(new_script);
             elements[i].remove();
+            console.log("replaced src ", i);
           } else {
             if (elements[i].innerText != null) {
               let new_script2 = document.createElement("script");
               new_script2.innerText = elements[i].innerText.replace("./", relativebase);
+              console.log(i, " Inner TXT ", new_script2.innerText);
               document.head.appendChild(new_script2);
               elements[i].remove();
             }
