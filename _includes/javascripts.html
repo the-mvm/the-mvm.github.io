@@ -64,12 +64,13 @@
             new_script.setAttribute('src',replaceStr);
             document.head.appendChild(new_script);
             elements[i].remove();
-          }
-          if (elements[i].innerText!=null){
-            var new_script = document.createElement('script');
-            new_script.innerText = elements[i].innerText.replace("json: \'./", "json: \'" + relativebase);
-            document.head.appendChild(new_script);
-            elements[i].remove();
+          } else {
+            if (elements[i].innerText!=null) {
+              var new_script = document.createElement('script');
+              new_script.innerText = elements[i].innerText.replace("./", relativebase);
+              document.head.appendChild(new_script);
+              elements[i].remove();
+            }
           }
         }
       }
