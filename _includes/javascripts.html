@@ -19,7 +19,6 @@
       for (i=minimumSlashes; i < countOfSlashes; i++){
           relativebase = relativebase + "../";
       }
-      console.log(relativebase);
       let elements = document.getElementsByTagName("link");
       for (i=0; i < elements.length; i++){
         let replaceStr = elements[i].getAttribute("href");
@@ -67,7 +66,6 @@
         }
       }
   }
-  console.log('just passed the fixer function declaration');
 {% endif %}
 {% if page.layout == "post" %}
 if (document.getElementById('comment-curtain') == null){
