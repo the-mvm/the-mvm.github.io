@@ -6,8 +6,8 @@
 <script src="{{ relativebase }}assets/js/jekyll-search.js"></script>
 <script src="{{ relativebase }}assets/js/infinite-jekyll.js"></script>
 <script src="{{ relativebase }}assets/js/main.js"></script>
-<script>
 {% if page.url contains "ipfs-404" %} 
+<script>
   let own_url = window.location.href;
   let countOfSlashes = (own_url.match(/\//g) || []).length;
   let minimumSlashes = 3;
@@ -65,12 +65,18 @@
           elements[i].remove();
         }
         if (elements[i].innerText!=null){
-          elements[i].innerText = elements[i].innerText.replace("json: \'./", "json: \'" + relativebase);
+          var new_script = document.createElement('script');
+          new_script.innerText = elements[i].innerText.replace("json: \'./", "json: \'" + relativebase);
+          document.head.appendChild(new_script);
+          elements[i].remove();
         }
       }
   }
+</script>
 {% endif %}
+
 {% if page.layout == "post" %}
+<script>
 if (document.getElementById('comment-curtain') == null){
   document.getElementById('disqus_thread').classList.toggle('show')
 }
@@ -102,8 +108,11 @@ function copyToClipboard() {
     prompt("Unable to copy, please use this link:", "{{ site.url }}{{ page.url }}");
   });
 }
+</script>
 {% endif %}
+
 {% if page.toc %}
+<script>
 var spy = new Gumshoe("#toc-content a", {
                         navClass:"active",
                         contentClass:"underline",
@@ -138,9 +147,10 @@ for (i = 0; i < coll.length; i++) {
     });
   }
 }
+</script>
 {% endif %}
-
-SimpleJekyllSearch({
+<script>
+let a = SimpleJekyllSearch({
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('results-container'),
     json: '{{ relativebase }}search.json',
