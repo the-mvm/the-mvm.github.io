@@ -69,7 +69,6 @@
               let new_script = document.createElement("script");
               new_script.setAttribute("src", replaceStr);
               document.head.appendChild(new_script);
-              elements[i].remove();
               console.log("replaced src in: ", i, " with ", replaceStr);
             }
           } else {
@@ -79,7 +78,6 @@
                 new_script2.innerText = elements[i].innerText.replace("./", relativebase);
                 console.log(i, " Inner TXT: ", new_script2.innerText);
                 document.head.appendChild(new_script2);
-                elements[i].remove();
               }
             }
           }
