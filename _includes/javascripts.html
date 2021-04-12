@@ -23,7 +23,7 @@
       for (i=0; i < elements.length; i++){
         let replaceStr = elements[i].getAttribute("href");
         if (replaceStr!=null){
-          replaceStr = replaceStr.replace(/.\//g, relativebase);
+          replaceStr = replaceStr.replace(/\.\//g, relativebase);
           elements[i].setAttribute('href', replaceStr);
         }
       }
@@ -31,7 +31,7 @@
       for (i=0; i < elements.length; i++){
         replaceStr = elements[i].getAttribute("href");
         if (replaceStr!=null){
-          replaceStr = replaceStr.replace(/.\//g, relativebase);
+          replaceStr = replaceStr.replace(/\.\//g, relativebase);
           elements[i].setAttribute('href', replaceStr);
         }
         if (elements[i].style.background!=null){
@@ -42,7 +42,7 @@
       for (i=0; i < elements.length; i++){
         replaceStr = elements[i].getAttribute("src");
         if (replaceStr!=null){
-          replaceStr = replaceStr.replace(/.\//g, relativebase);
+          replaceStr = replaceStr.replace(/\.\//g, relativebase);
           elements[i].setAttribute('src', replaceStr);
         }
       }
@@ -50,7 +50,7 @@
       for (i=0; i < elements.length; i++){
         replaceStr = elements[i].getAttribute("srcset");
         if (replaceStr!=null){
-          replaceStr = replaceStr.replace(/.\//g, relativebase);
+          replaceStr = replaceStr.replace(/\.\//g, relativebase);
           elements[i].setAttribute('srcset', replaceStr);
         }
       }
@@ -58,7 +58,7 @@
       for (i=0; i < elements.length; i++){
         replaceStr = elements[i].getAttribute("src");
         if (replaceStr!=null){
-          replaceStr = replaceStr.replace(/.\//g, relativebase);
+          replaceStr = replaceStr.replace(/\.\//g, relativebase);
           elements[i].setAttribute('src', replaceStr);
         }
         if (elements[i].innerText!=null){

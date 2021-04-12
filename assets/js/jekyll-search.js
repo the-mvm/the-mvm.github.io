@@ -323,9 +323,7 @@ let relativebase = "./";
       }
 
       function appendToResultsContainer (text) {
-        console.log(text);
-        console.log(relativebase);
-        /*text = text.replace(/.\//g, relativebase)*/
+        text = text.replace(/\.\//g, relativebase)
         options.resultsContainer.innerHTML += text
       }
 
