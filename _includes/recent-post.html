@@ -8,7 +8,7 @@
         <div class="recent-item">
           {% include escape-404.html %}
           {% include remove_double_slash.html %}
-          <a href="{{ post_url }}" class="recent-item-img" style="background-image: url('{{ relativebase }}assets/img/{{ post.img }}')">
+          <a href="{{ post_url }}" class="recent-item-img" style="background: url('{{ relativebase }}assets/img/{{ post.img }}')">
             <div class="recent-item-title">
               <span>{{ post.title }}</span>
               {% include post_meta.html type="recent-item-meta" date="none" %}
