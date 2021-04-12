@@ -4,7 +4,7 @@ layout: null
 {
   "posts" : [
     {% for post in site.posts %}
-    "{{ post.url }}"{% unless forloop.last %},{% endunless %}
+    ".{{ post.url }}"{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ]
 }
