@@ -70,7 +70,7 @@
               new_script.setAttribute("src", replaceStr);
               document.head.appendChild(new_script);
               elements[i].remove();
-              console.log("replaced src in: ", i);
+              console.log("replaced src in: ", i, " with ", replaceStr);
             }
           } else {
             if (elements[i].innerText != null) {
