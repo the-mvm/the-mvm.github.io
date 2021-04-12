@@ -1,4 +1,4 @@
-let relativebase = "./";
+var relativebase = "./";
 
 (function e (t, n, r) { function s (o, u) { if (!n[o]) { if (!t[o]) { var a = typeof require === 'function' && require; if (!u && a) return a(o, !0); if (i) return i(o, !0); throw new Error("Cannot find module '" + o + "'") } var f = n[o] = {exports: {}}; t[o][0].call(f.exports, function (e) { var n = t[o][1][e]; return s(n || e) }, f, f.exports, e, t, n, r) } return n[o].exports } var i = typeof require === 'function' && require; for (var o = 0; o < r.length; o++)s(r[o]); return s })({1: [function (require, module, exports) {
   'use strict'
@@ -269,14 +269,15 @@ let relativebase = "./";
         /*
           calculate relative base for deep directory cases
         */
-        let own_url = window.location.href;
-        let countOfSlashes = (own_url.match(/\//g) || []).length;
-        let minimumSlashes = 3;
+        const own_url = window.location.href;
+        var countOfSlashes = (own_url.match(/\//g) || []).length;
+        var minimumSlashes = 3;
         if (own_url.includes("/ipfs/")){
           minimumSlashes = 5;
         }
         if (countOfSlashes > minimumSlashes){
             relativebase = "";
+            var i = 0;
             for (i=minimumSlashes; i < countOfSlashes; i++){
                 relativebase = relativebase + "../";
             }
