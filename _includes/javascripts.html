@@ -71,11 +71,13 @@
             console.log("replaced src ", i);
           } else {
             if (elements[i].innerText != null) {
-              let new_script2 = document.createElement("script");
-              new_script2.innerText = elements[i].innerText.replace("./", relativebase);
-              console.log(i, " Inner TXT ", new_script2.innerText);
-              document.head.appendChild(new_script2);
-              elements[i].remove();
+              if (elements[i].innerText.includes("./")) {
+                let new_script2 = document.createElement("script");
+                new_script2.innerText = elements[i].innerText.replace("./", relativebase);
+                console.log(i, " Inner TXT ", new_script2.innerText);
+                document.head.appendChild(new_script2);
+                elements[i].remove();
+              }
             }
           }
         }
