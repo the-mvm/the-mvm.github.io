@@ -139,6 +139,17 @@ for (i = 0; i < coll.length; i++) {
   }
 }
 {% endif %}
+
+SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '{{ relativebase }}search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{description}">{title}</a></li>',
+    noResultsText: 'No results found',
+    fuzzy: false,
+    exclude: ['Welcome']
+  });
+
 $(document).ready(function() {
   'use strict';
   /* -------- Scroll to top button ------- */
@@ -155,14 +166,4 @@ $(document).ready(function() {
     }
   });
 });
-
-SimpleJekyllSearch({
-    searchInput: document.getElementById('search-input'),
-    resultsContainer: document.getElementById('results-container'),
-    json: '{{ relativebase }}search.json',
-    searchResultTemplate: '<li><a href="{url}" title="{description}">{title}</a></li>',
-    noResultsText: 'No results found',
-    fuzzy: false,
-    exclude: ['Welcome']
-  });
 </script>
