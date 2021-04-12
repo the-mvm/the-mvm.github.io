@@ -36,7 +36,7 @@
           elements[i].setAttribute('href', replaceStr);
         }
         if (elements[i].style.background!=null){
-          elements[i].style.background = elements[i].style.background.replace(own_url, relativebase);
+          elements[i].style.background = elements[i].style.background.replace("./", relativebase);
         }
       }
       elements = document.getElementsByTagName("img");
