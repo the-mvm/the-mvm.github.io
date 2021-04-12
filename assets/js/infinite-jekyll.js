@@ -12,7 +12,7 @@ $(function() {
   if (urlParams.has('tag')){
     const tag = urlParams.get('tag');
     document.getElementById(tag).classList.toggle('hidden');
-    $.getJSON('../../posts-by-tag.json', function(data) {
+    $.getJSON('./posts-by-tag.json', function(data) {
         let tag_item = data.find(el => el.tag === tag);
         postURLs = tag_item["posts"];
         // If there aren't any more posts available to load than already visible, disable fetching
@@ -20,7 +20,7 @@ $(function() {
         disableFetching();
     });
   } else {
-      $.getJSON('../../all-posts.json', function(data) {
+      $.getJSON('./all-posts.json', function(data) {
         postURLs = data["posts"];
         // If there aren't any more posts available to load than already visible, disable fetching
         if (postURLs.length <= postsToLoad)
