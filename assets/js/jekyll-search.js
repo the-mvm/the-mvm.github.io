@@ -4,6 +4,8 @@
     load: load
   }
 
+  let relativebase = "./"
+
   function load (location, callback) {
     var xhr = getXHR()
     xhr.open('GET', location, true)
@@ -264,6 +266,22 @@
           throwError('You must specify the following required options: ' + requiredOptions)
         }
 
+        /*
+          calculate relative base for deep directory cases
+        */
+        let own_url = window.location.href;
+        let countOfSlashes = (own_url.match(/\//g) || []).length;
+        let minimumSlashes = 3;
+        if (own_url.includes("/ipfs/")){
+          minimumSlashes = 5;
+        }
+        if (countOfSlashes > minimumSlashes){
+            relativebase = "";
+            for (i=minimumSlashes; i < countOfSlashes; i++){
+                relativebase = relativebase + "../";
+            }
+          }
+
         options = utils.merge(options, _options)
 
         templater.setOptions({
@@ -305,6 +323,7 @@
       }
 
       function appendToResultsContainer (text) {
+        text = text.replace(/.\//g, relativebase)
         options.resultsContainer.innerHTML += text
       }
 
