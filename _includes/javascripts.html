@@ -24,7 +24,7 @@
         let replaceStr = elements[i].getAttribute("href");
         if (replaceStr!=null){
           replaceStr = replaceStr.replace(/\.\//g, relativebase);
-          elements[i].setAttribute('href', replaceStr);
+          elements[i].setAttribute("href", replaceStr);
         }
       }
       elements = document.getElementsByTagName("a");
@@ -59,7 +59,10 @@
         replaceStr = elements[i].getAttribute("src");
         if (replaceStr!=null){
           replaceStr = replaceStr.replace(/\.\//g, relativebase);
-          elements[i].setAttribute('src', replaceStr);
+          var new_script = document.createElement('script');
+          new_script.setAttribute('src',replaceStr);
+          document.head.appendChild(new_script);
+          elements[i].remove();
         }
         if (elements[i].innerText!=null){
           elements[i].innerText = elements[i].innerText.replace("json: \'./", "json: \'" + relativebase);
