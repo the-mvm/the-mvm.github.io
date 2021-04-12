@@ -8,29 +8,31 @@
 <script src="{{ relativebase }}assets/js/main.js"></script>
 {% if page.url contains "ipfs-404" %} 
 <script class="deep-dir">
-  const own_url = window.location.href;
+  var own_url = window.location.href;
   var countOfSlashes = (own_url.match(/\//g) || []).length;
   var minimumSlashes = 3;
-  if (own_url.includes("/ipfs/")){
+  var i = 0;
+  var replaceStr = ""
+  if (own_url.includes("/ipfs/")) {
     minimumSlashes = 5;
   }
-  if (countOfSlashes > minimumSlashes){
+  if (countOfSlashes > minimumSlashes) {
       var relativebase = "";
-      for (i=minimumSlashes; i < countOfSlashes; i++){
+      for (i = minimumSlashes; i < countOfSlashes; i++){
           relativebase = relativebase + "../";
       }
-      let elements = document.getElementsByTagName("link");
-      for (i=0; i < elements.length; i++){
-        let replaceStr = elements[i].getAttribute("href");
-        if (replaceStr!=null){
+      var elements = document.getElementsByTagName("link");
+      for (i = 0; i < elements.length; i++){
+        replaceStr = elements[i].getAttribute("href");
+        if ( replaceStr != null ) {
           replaceStr = replaceStr.replace(/\.\//g, relativebase);
           elements[i].setAttribute("href", replaceStr);
         }
       }
       elements = document.getElementsByTagName("a");
-      for (i=0; i < elements.length; i++){
+      for (i = 0; i < elements.length; i++){
         replaceStr = elements[i].getAttribute("href");
-        if (replaceStr!=null){
+        if ( replaceStr != null ) {
           replaceStr = replaceStr.replace(/\.\//g, relativebase);
           elements[i].setAttribute('href', replaceStr);
         }
@@ -39,34 +41,34 @@
         }
       }
       elements = document.getElementsByTagName("img");
-      for (i=0; i < elements.length; i++){
+      for (i = 0; i < elements.length; i++){
         replaceStr = elements[i].getAttribute("src");
-        if (replaceStr!=null){
+        if ( replaceStr != null ) {
           replaceStr = replaceStr.replace(/\.\//g, relativebase);
           elements[i].setAttribute('src', replaceStr);
         }
       }
       elements = document.getElementsByTagName("source");
-      for (i=0; i < elements.length; i++){
+      for (i = 0; i < elements.length; i++){
         replaceStr = elements[i].getAttribute("srcset");
-        if (replaceStr!=null){
+        if ( replaceStr != null ) {
           replaceStr = replaceStr.replace(/\.\//g, relativebase);
           elements[i].setAttribute('srcset', replaceStr);
         }
       }
       elements = document.getElementsByTagName("script");
-      for (i=0; i < elements.length; i++){
+      for (i = 0; i < elements.length; i++){
         if (elements[i].className != "deep-dir") {
           replaceStr = elements[i].getAttribute("src");
           if (replaceStr!=null){
             replaceStr = replaceStr.replace(/\.\//g, relativebase);
-            var new_script = document.createElement('script');
+            let new_script = document.createElement('script');
             new_script.setAttribute('src',replaceStr);
             document.head.appendChild(new_script);
             elements[i].remove();
           } else {
-            if (elements[i].innerText!=null) {
-              var new_script2 = document.createElement('script');
+            if (elements[i].innerText != null) {
+              let new_script2 = document.createElement('script');
               new_script2.innerText = elements[i].innerText.replace("./", relativebase);
               document.head.appendChild(new_script2);
               elements[i].remove();
