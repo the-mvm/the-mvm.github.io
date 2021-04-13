@@ -2,7 +2,8 @@
 layout: default
 ---
 {% include calculate_relative_base.html %}
-{% include remove_double_slash.html %}
+{% capture post_url %}{{ relativebase }}{{ page.url }}{% endcapture %}
+{% assign post_url = post_url | replace: "//", "/" %}
 <section class="hidden">
   <div class="post">
       <a  class="post-list-title" href="{{ post_url }}">{{ page.title }}</a>
