@@ -189,7 +189,7 @@
           if (newScript[i].innerHTML = "") {
             document.body.appendChild(newScript[i]);
           } else {
-            setTimeout(function(){
+            setTimeout(function(newScript, i) {
               document.body.appendChild(newScript[i]);
             }, 50);
           }
