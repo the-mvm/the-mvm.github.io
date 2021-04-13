@@ -1,14 +1,16 @@
 ---
-layout: null
 ---
+
 $(function () {
   'use strict';
+ 
   /* -------- Scroll to top button ------- */
   $(".top").click(function() {
     $("html, body")
       .stop()
       .animate({ scrollTop: 0 }, "slow", "swing");
   });
+
   $(window).scroll(function() {
     if ($(this).scrollTop() > $(window).height()) {
       $(".top").addClass("is-active");
@@ -64,7 +66,7 @@ $(function () {
     }
   })
 
-  {% if page.toc %}
+{% if page.toc %}
     var spy = new Gumshoe("#toc-content a", {
       navClass:"active",
       contentClass:"underline",
@@ -98,9 +100,9 @@ $(function () {
         });
       }
     }
-  {% endif %}
+{% endif %}
 
-  {% if page.infinite %}
+{% if page.infinite %}
     var postURLs,
         isFetchingPosts = false,
         shouldFetchPosts = true;
@@ -195,9 +197,9 @@ $(function () {
       isFetchingPosts = false;
       $(".spinner").fadeOut();
     }
-  {% endif %}
+{% endif %}
 
-  {% if page.layout == "post" %}
+{% if page.layout == "post" %}
     if (document.getElementById('comment-curtain') == null){
       document.getElementById('disqus_thread').classList.toggle('show')
     }
@@ -229,5 +231,5 @@ $(function () {
         prompt("Unable to copy, please use this link:", "{{ site.url }}{{ page.url }}");
       });
     }
-  {% endif %}
+{% endif %}
 });

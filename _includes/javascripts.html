@@ -2,7 +2,6 @@
 {% include escape-404.html %}
 
 <!-- JS -->
-
 {% if page.layout == "post" %}
   <!-- Mailchimp linking -->
   <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8ece198b3eb260e6838461a60/d20d9fb9aad962399025da52e.js");</script>
@@ -27,14 +26,14 @@
   <script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 {% endif %}
 
-<script src="{{ relativebase }}assets/js/jquery-3.2.1.min.js"></script>
-<script src="{{ relativebase }}assets/js/main.js"></script>
-<script src="{{ relativebase }}assets/js/jekyll-search.js"></script>
+<script src="{{ relativeBase }}assets/js/jquery-3.2.1.min.js"></script>
+<script src="{{ relativeBase }}assets/js/main.js"></script>
+<script src="{{ relativeBase }}assets/js/jekyll-search.js"></script>
 <script>
   SimpleJekyllSearch({
       searchInput: document.getElementById('search-input'),
       resultsContainer: document.getElementById('results-container'),
-      json: '{{ relativebase }}search.json',
+      json: '{{ relativeBase }}search.json',
       searchResultTemplate: '<li><a href="{url}" title="{description}">{title}</a></li>',
       noResultsText: 'No results found',
       fuzzy: false,
@@ -54,15 +53,15 @@
         minimumSlashes = 5;
       }
       if (countOfSlashes > minimumSlashes) {
-        var relativebase = "";
+        var relativeBase = "";
         for (i = minimumSlashes; i < countOfSlashes; i++){
-          relativebase = relativebase + "../";
+          relativeBase = relativeBase + "../";
         }
         var elements = document.getElementsByTagName("link");
         for (i = 0; i < elements.length; i++) {
           replaceStr = elements[i].getAttribute("href");
           if ( replaceStr != null ) {
-            replaceStr = replaceStr.replace(/\.\//g, relativebase);
+            replaceStr = replaceStr.replace(/\.\//g, relativeBase);
             elements[i].setAttribute("href", replaceStr);
           }
         }
@@ -70,18 +69,18 @@
         for (i = 0; i < elements.length; i++) {
           replaceStr = elements[i].getAttribute("href");
           if ( replaceStr != null ) {
-            replaceStr = replaceStr.replace(/\.\//g, relativebase);
+            replaceStr = replaceStr.replace(/\.\//g, relativeBase);
             elements[i].setAttribute("href", replaceStr);
           }
           if (elements[i].style.background!=null) {
-            elements[i].style.background = elements[i].style.background.replace("./", relativebase);
+            elements[i].style.background = elements[i].style.background.replace("./", relativeBase);
           }
         }
         elements = document.getElementsByTagName("img");
         for (i = 0; i < elements.length; i++) {
           replaceStr = elements[i].getAttribute("src");
           if ( replaceStr != null ) {
-            replaceStr = replaceStr.replace(/\.\//g, relativebase);
+            replaceStr = replaceStr.replace(/\.\//g, relativeBase);
             elements[i].setAttribute("src", replaceStr);
           }
         }
@@ -89,7 +88,7 @@
         for (i = 0; i < elements.length; i++) {
           replaceStr = elements[i].getAttribute("srcset");
           if ( replaceStr != null ) {
-            replaceStr = replaceStr.replace(/\.\//g, relativebase);
+            replaceStr = replaceStr.replace(/\.\//g, relativeBase);
             elements[i].setAttribute("srcset", replaceStr);
           }
         }
@@ -101,7 +100,7 @@
             replaceStr = elements[i].getAttribute("src");
             if (replaceStr!=null) {
               if (replaceStr.includes("./")){
-                replaceStr = replaceStr.replace(/\.\//g, relativebase);
+                replaceStr = replaceStr.replace(/\.\//g, relativeBase);
                 let new_script = document.createElement("script");
                 new_script.setAttribute("src", replaceStr);
                 document.head.appendChild(new_script);
@@ -111,7 +110,7 @@
               if (elements[i].innerText != null) {
                 if (elements[i].innerText.includes("./")) {
                   let new_script2 = document.createElement("script");
-                  new_script2.innerText = elements[i].innerText.replace("./", relativebase);
+                  new_script2.innerText = elements[i].innerText.replace("./", relativeBase);
                   console.log(i, " Inner TXT: ", new_script2.innerText);
                   document.head.appendChild(new_script2);
                 }
