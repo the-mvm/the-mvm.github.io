@@ -186,7 +186,7 @@
           }
         }
         for (i = 0; i < newScript.length; i++) {
-          newScript[i].setAttribute("async", false);
+          newScript[i].removeAttribute("async");
           document.body.appendChild(newScript[i]);
         }
       }
