@@ -1,7 +1,6 @@
 ---
 layout: null
 ---
-{% javascript %}
 $(function () {
   'use strict';
   /* -------- Scroll to top button ------- */
@@ -197,7 +196,7 @@ $(function () {
       $(".spinner").fadeOut();
     }
   {% endif %}
-  
+
   {% if page.layout == "post" %}
     if (document.getElementById('comment-curtain') == null){
       document.getElementById('disqus_thread').classList.toggle('show')
@@ -232,4 +231,3 @@ $(function () {
     }
   {% endif %}
 });
-{% endjavascript %}
