@@ -70,7 +70,6 @@
         sign.innerHTML = chevron_down;
         coll[i].insertBefore(sign, coll[i].childNodes[0].nextSibling);
         coll[i].addEventListener("click", function() {
-          this.classList.toggle("active");
           var content = this.lastElementChild;
           if (content.style.maxHeight){
             content.style.maxHeight = null;
