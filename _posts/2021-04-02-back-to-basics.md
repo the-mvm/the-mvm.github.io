@@ -27,7 +27,7 @@ Let's start with a little history, humans have been tinkering with the idea of a
 ![The Analytical Engine](./assets/img/posts/post7-analytical-engine.jpg)
 <small>The Analytical Engine of Charles Babbage - 1837</small>
 
-Then, in the middle of last century by trying to create a model of how our brain works, Neural Networks were born. Around that time, Frank Rosenblatt at Cornell trying to understand the simple decision system present in the eye of a common housefly,  proposed the idea of a [perceptron](../single-neuron-perceptron/), a very simple system that processes certain inputs with basic math operations and produces an output.
+Then, in the middle of last century by trying to create a model of how our brain works, Neural Networks were born. Around that time, Frank Rosenblatt at Cornell trying to understand the simple decision system present in the eye of a common housefly,  proposed the idea of a [perceptron](./single-neuron-perceptron.html), a very simple system that processes certain inputs with basic math operations and produces an output.
 
 ![A perceptron](./assets/img/posts/Perceptron.png)
 
