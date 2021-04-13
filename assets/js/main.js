@@ -1,6 +1,6 @@
 $(function () {
   'use strict';
- 
+
   /* -------- Scroll to top button ------- */
   $(".top").click(function() {
     $("html, body")
@@ -22,7 +22,7 @@ $(function () {
   var searchClose = $('.search-icon-close')
   var searchInput = $('#search-input')
 
-  // Menu Settings
+  // Menu button
   $('.menu-icon, .menu-icon-close').click(function (e) {
     e.preventDefault()
     e.stopPropagation()
@@ -54,7 +54,6 @@ $(function () {
         searchBox.toggleClass('search-active')
     }
     searchInput.focus()
-
     if (searchBox.hasClass('search-active')) {
       searchClose.click(function (e) {
     		e.preventDefault()
