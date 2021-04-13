@@ -111,6 +111,7 @@ Since I decided on Jekyll to generate my site, the choice for hosting was quite 
 To contribute to and test [IPFS](https://github.com/ipfs/ipfs#quick-summary) I also set up a [mirror](https://weathered-bread-8229.on.fleek.co/) in IPFS by using [fleek.co](https://fleek.co). I must confess that it was more troublesome than I imagined, it was definetively not plug and play because of the paths used to fetch resources. The nature of IPFS makes short absolute paths for website resources (like images, css and javascript files) inoperative; the easiest fix for this is to use relative paths, however the same relative path that works for the root directory (i.e. /index.html) does not work for links inside directories (i.e. /tags/), and since the site is static, while generating it, one must make the distinction between the different directory levels for the page to be rendered correctly.
 
 At first I tried a simple (but brute force solution):
+{% raw %}
 ```jekyll
 # determine the level of the current file
 {% assign lvl = page.url | append:'X' | split:'/' | size %}
@@ -124,6 +125,7 @@ At first I tried a simple (but brute force solution):
 {% capture post_url %}{{ relativebase }}{{ post.url }}{% endcapture %}
 {% assign post_url = post_url | replace: "//", "/" %}
 ```
+{% endraw %}
 This `jekyll/liquid` code was executed in every page (or include) that needed to reference a resource hosted in the same server.
 
 But this fix did not work for the search function, because it relies on a `search.json` file (also generated programmatically to be served as a static file), therefore when generating this file one either use the relative path for the `root` directory or for a nested directory, thus the search results will only link correctly the corresponding pages if the page where the user searched for something is in the corresponding scope.
