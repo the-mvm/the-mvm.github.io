@@ -181,6 +181,7 @@
                 new_script.setAttribute("src", replaceStr);
                 elements[i].remove();
                 document.body.appendChild(new_script);
+                i--;
                 console.log("replaced src in: ", i, " with ", replaceStr);
               }
             } else {
@@ -190,6 +191,7 @@
                   new_script2.innerText = elements[i].innerText.replace("./", relativeBase);
                   elements[i].remove();
                   document.body.appendChild(new_script2);
+                  i--;
                   console.log(i, " Inner TXT: ", new_script2.innerText);
                 }
               }
