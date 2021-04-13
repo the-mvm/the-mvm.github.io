@@ -189,9 +189,9 @@
           if (newScript[i].innerHTML = "") {
             document.body.appendChild(newScript[i]);
           } else {
-            setTimeout(function(newScript, i) {
-              document.body.appendChild(newScript[i]);
-            }, 50, newScript, i);
+            setTimeout(function(newScript) {
+              document.body.appendChild(newScript);
+            }, 50, newScript[i]);
           }
         }
       }
