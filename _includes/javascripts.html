@@ -179,9 +179,9 @@
               newScriptLenght = newScript.push(document.createElement("script"));
               newScript[newScriptLenght - 1].setAttribute("src", replaceStr);
             } else {
-              if (elements[i].innerText != null && elements[i].innerText.includes("./")) {
+              if (elements[i].innerHTML != null && elements[i].innerHTML.includes("./")) {
                 newScriptLenght = newScript.push(document.createElement("script"));
-                newScript[newScriptLenght - 1].innerText = elements[i].innerText.replace("./", relativeBase);
+                newScript[newScriptLenght - 1].innerHTML = elements[i].innerHTML.replace("./", relativeBase);
               }
             }
           }
