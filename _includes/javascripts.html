@@ -191,7 +191,7 @@
           } else {
             setTimeout(function(newScript, i) {
               document.body.appendChild(newScript[i]);
-            }, 50);
+            }, 50, newScript, i);
           }
         }
       }
