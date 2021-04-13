@@ -1,15 +1,9 @@
-{% include calculate_relative_base.html %}
-{% include escape-404.html %}
 
 <div class="pagination clearfix">
   {% if paginator.previous_page %}
-  {% capture new_url %}{{ relativebase }}{{ paginator.previous_page_path }}{% endcapture %}
-  {% assign new_url = post_url | replace: "//", "/" %}
-    <a href="{{ new_url }}" class="previous"><i class="fa fa-angle-left" aria-hidden="true"></i> Previous</a>
+    <a href=".{{ paginator.previous_page_path }}" class="previous"><i class="fa fa-angle-left" aria-hidden="true"></i> Previous</a>
   {% endif %}
   {% if paginator.next_page %}
-  {% capture new_url %}{{ relativebase }}{{ paginator.next_page_path }}{% endcapture %}
-  {% assign new_url = post_url | replace: "//", "/" %}
-    <a href="{{ new_url }}" class="next">Next <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+    <a href=".{{ paginator.next_page_path }}" class="next">Next <i class="fa fa-angle-right" aria-hidden="true"></i></a>
   {% endif %}
 </div>
