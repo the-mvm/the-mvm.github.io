@@ -24,25 +24,5 @@
 	{% include favicon.html %}
 	{% if page.layout == 'post' %}
 	<link rel="stylesheet" href="{{ relativebase }}assets/css/highlighter/{{ site.highlight_theme }}.css">
-	<!-- Mailchimp linking -->
-	<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8ece198b3eb260e6838461a60/d20d9fb9aad962399025da52e.js");</script>
-	{% endif %}
-	{% include analytics.html %}
-	{% if page.mathjax %}
-	<script type="text/x-mathjax-config">
-	  MathJax.Hub.Config({
-		extensions: ["tex2jax.js"],
-		tex2jax: {
-		  inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-		  displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-		  processEscapes: true
-		},
-		"CommonHTML": { linebreaks: { automatic: true } }
-	  });
-	</script>
-	<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-	{% endif %}
-	{% if page.toc %}
-		<script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5.1.1/dist/gumshoe.polyfills.min.js"></script>
 	{% endif %}
 </head>

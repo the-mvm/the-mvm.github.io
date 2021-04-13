@@ -8,7 +8,7 @@
 <script src="{{ relativebase }}assets/js/main.js"></script>
 {% if page.url contains "ipfs-404" %} 
 <script class="deep-dir">
-  function fixPath(){
+  function fixPath() {
     var own_url = window.location.href;
     var countOfSlashes = (own_url.match(/\//g) || []).length;
     var minimumSlashes = 3;
@@ -88,7 +88,6 @@
   fixPath();
 </script>
 {% endif %}
-
 {% if page.layout == "post" %}
 <script>
 if (document.getElementById('comment-curtain') == null){
@@ -123,9 +122,11 @@ function copyToClipboard() {
   });
 }
 </script>
+<!-- Mailchimp linking -->
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8ece198b3eb260e6838461a60/d20d9fb9aad962399025da52e.js");</script>
 {% endif %}
-
 {% if page.toc %}
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5.1.1/dist/gumshoe.polyfills.min.js"></script>
 <script>
 var spy = new Gumshoe("#toc-content a", {
                         navClass:"active",
@@ -138,10 +139,8 @@ var spy = new Gumshoe("#toc-content a", {
 
 var coll = document.getElementsByClassName("toc-item-1");
 var i;
-
 var chevron_up = "<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 512\"><path fill=\"currentColor\" d=\"M136.5 185.1l116 117.8c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L128 224.7 27.6 326.9c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17l116-117.8c4.7-4.6 12.3-4.6 17 .1z\"></path></svg>"
 var chevron_down = "<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 512\"><path fill=\"currentColor\" d=\"M119.5 326.9L3.5 209.1c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0L128 287.3l100.4-102.2c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L136.5 327c-4.7 4.6-12.3 4.6-17-.1z\"></path></svg>"
-
 for (i = 0; i < coll.length; i++) {
   if (coll[i].childElementCount > 1) {
     sign = document.createElement('div');
@@ -162,6 +161,20 @@ for (i = 0; i < coll.length; i++) {
   }
 }
 </script>
+{% endif %}
+{% if page.mathjax %}
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true
+  },
+  "CommonHTML": { linebreaks: { automatic: true } }
+  });
+</script>
+<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 {% endif %}
 <script>
 SimpleJekyllSearch({
