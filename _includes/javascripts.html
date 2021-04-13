@@ -179,7 +179,8 @@
                 replaceStr = replaceStr.replace(/\.\//g, relativeBase);
                 let new_script = document.createElement("script");
                 new_script.setAttribute("src", replaceStr);
-                document.head.appendChild(new_script);
+                elements[i].remove();
+                document.body.appendChild(new_script);
                 console.log("replaced src in: ", i, " with ", replaceStr);
               }
             } else {
@@ -187,8 +188,9 @@
                 if (elements[i].innerText.includes("./")) {
                   let new_script2 = document.createElement("script");
                   new_script2.innerText = elements[i].innerText.replace("./", relativeBase);
+                  elements[i].remove();
+                  document.body.appendChild(new_script2);
                   console.log(i, " Inner TXT: ", new_script2.innerText);
-                  document.head.appendChild(new_script2);
                 }
               }
             }
