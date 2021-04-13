@@ -2,205 +2,125 @@
 {% include escape-404.html %}
 
 <!-- JS -->
+
+{% if page.layout == "post" %}
+  <!-- Mailchimp linking -->
+  <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8ece198b3eb260e6838461a60/d20d9fb9aad962399025da52e.js");</script>
+{% endif %}
+
+{% if page.toc %}
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5.1.1/dist/gumshoe.polyfills.min.js"></script>
+{% endif %}
+
+{% if page.mathjax %}
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "CommonHTML": { linebreaks: { automatic: true } }
+    });
+  </script>
+  <script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+{% endif %}
+
 <script src="{{ relativebase }}assets/js/jquery-3.2.1.min.js"></script>
-<script src="{{ relativebase }}assets/js/jekyll-search.js"></script>
-<script src="{{ relativebase }}assets/js/infinite-jekyll.js"></script>
 <script src="{{ relativebase }}assets/js/main.js"></script>
-{% if page.url contains "ipfs-404" %} 
-<script class="deep-dir">
-  function fixPath() {
-    var own_url = window.location.href;
-    var countOfSlashes = (own_url.match(/\//g) || []).length;
-    var minimumSlashes = 3;
-    var i = 0;
-    var replaceStr = "";
-    if (own_url.includes("/ipfs/")) {
-      minimumSlashes = 5;
-    }
-    if (countOfSlashes > minimumSlashes) {
-      var relativebase = "";
-      for (i = minimumSlashes; i < countOfSlashes; i++){
-        relativebase = relativebase + "../";
+<script src="{{ relativebase }}assets/js/jekyll-search.js"></script>
+<script>
+  SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('results-container'),
+      json: '{{ relativebase }}search.json',
+      searchResultTemplate: '<li><a href="{url}" title="{description}">{title}</a></li>',
+      noResultsText: 'No results found',
+      fuzzy: false,
+      exclude: ['Welcome']
+    });
+</script>
+
+{% if page.url contains "ipfs-404" %}
+  <script class="deep-dir">
+    function fixPath() {
+      var own_url = window.location.href;
+      var countOfSlashes = (own_url.match(/\//g) || []).length;
+      var minimumSlashes = 3;
+      var i = 0;
+      var replaceStr = "";
+      if (own_url.includes("/ipfs/")) {
+        minimumSlashes = 5;
       }
-      var elements = document.getElementsByTagName("link");
-      for (i = 0; i < elements.length; i++) {
-        replaceStr = elements[i].getAttribute("href");
-        if ( replaceStr != null ) {
-          replaceStr = replaceStr.replace(/\.\//g, relativebase);
-          elements[i].setAttribute("href", replaceStr);
+      if (countOfSlashes > minimumSlashes) {
+        var relativebase = "";
+        for (i = minimumSlashes; i < countOfSlashes; i++){
+          relativebase = relativebase + "../";
         }
-      }
-      elements = document.getElementsByTagName("a");
-      for (i = 0; i < elements.length; i++) {
-        replaceStr = elements[i].getAttribute("href");
-        if ( replaceStr != null ) {
-          replaceStr = replaceStr.replace(/\.\//g, relativebase);
-          elements[i].setAttribute("href", replaceStr);
+        var elements = document.getElementsByTagName("link");
+        for (i = 0; i < elements.length; i++) {
+          replaceStr = elements[i].getAttribute("href");
+          if ( replaceStr != null ) {
+            replaceStr = replaceStr.replace(/\.\//g, relativebase);
+            elements[i].setAttribute("href", replaceStr);
+          }
         }
-        if (elements[i].style.background!=null) {
-          elements[i].style.background = elements[i].style.background.replace("./", relativebase);
+        elements = document.getElementsByTagName("a");
+        for (i = 0; i < elements.length; i++) {
+          replaceStr = elements[i].getAttribute("href");
+          if ( replaceStr != null ) {
+            replaceStr = replaceStr.replace(/\.\//g, relativebase);
+            elements[i].setAttribute("href", replaceStr);
+          }
+          if (elements[i].style.background!=null) {
+            elements[i].style.background = elements[i].style.background.replace("./", relativebase);
+          }
         }
-      }
-      elements = document.getElementsByTagName("img");
-      for (i = 0; i < elements.length; i++) {
-        replaceStr = elements[i].getAttribute("src");
-        if ( replaceStr != null ) {
-          replaceStr = replaceStr.replace(/\.\//g, relativebase);
-          elements[i].setAttribute("src", replaceStr);
-        }
-      }
-      elements = document.getElementsByTagName("source");
-      for (i = 0; i < elements.length; i++) {
-        replaceStr = elements[i].getAttribute("srcset");
-        if ( replaceStr != null ) {
-          replaceStr = replaceStr.replace(/\.\//g, relativebase);
-          elements[i].setAttribute("srcset", replaceStr);
-        }
-      }
-      elements = document.getElementsByTagName("script");
-      console.log(elements.length);
-      for (i = 0; i < elements.length; i++) {
-        console.log("checking: ", i);
-        if (elements[i].className != "deep-dir") {
+        elements = document.getElementsByTagName("img");
+        for (i = 0; i < elements.length; i++) {
           replaceStr = elements[i].getAttribute("src");
-          if (replaceStr!=null) {
-            if (replaceStr.includes("./")){
-              replaceStr = replaceStr.replace(/\.\//g, relativebase);
-              let new_script = document.createElement("script");
-              new_script.setAttribute("src", replaceStr);
-              document.head.appendChild(new_script);
-              console.log("replaced src in: ", i, " with ", replaceStr);
-            }
-          } else {
-            if (elements[i].innerText != null) {
-              if (elements[i].innerText.includes("./")) {
-                let new_script2 = document.createElement("script");
-                new_script2.innerText = elements[i].innerText.replace("./", relativebase);
-                console.log(i, " Inner TXT: ", new_script2.innerText);
-                document.head.appendChild(new_script2);
+          if ( replaceStr != null ) {
+            replaceStr = replaceStr.replace(/\.\//g, relativebase);
+            elements[i].setAttribute("src", replaceStr);
+          }
+        }
+        elements = document.getElementsByTagName("source");
+        for (i = 0; i < elements.length; i++) {
+          replaceStr = elements[i].getAttribute("srcset");
+          if ( replaceStr != null ) {
+            replaceStr = replaceStr.replace(/\.\//g, relativebase);
+            elements[i].setAttribute("srcset", replaceStr);
+          }
+        }
+        elements = document.getElementsByTagName("script");
+        console.log(elements.length);
+        for (i = 0; i < elements.length; i++) {
+          console.log("checking: ", i);
+          if (elements[i].className != "deep-dir") {
+            replaceStr = elements[i].getAttribute("src");
+            if (replaceStr!=null) {
+              if (replaceStr.includes("./")){
+                replaceStr = replaceStr.replace(/\.\//g, relativebase);
+                let new_script = document.createElement("script");
+                new_script.setAttribute("src", replaceStr);
+                document.head.appendChild(new_script);
+                console.log("replaced src in: ", i, " with ", replaceStr);
+              }
+            } else {
+              if (elements[i].innerText != null) {
+                if (elements[i].innerText.includes("./")) {
+                  let new_script2 = document.createElement("script");
+                  new_script2.innerText = elements[i].innerText.replace("./", relativebase);
+                  console.log(i, " Inner TXT: ", new_script2.innerText);
+                  document.head.appendChild(new_script2);
+                }
               }
             }
           }
         }
       }
     }
-  }
-  fixPath();
-</script>
+    fixPath();
+  </script>
 {% endif %}
-{% if page.layout == "post" %}
-<script>
-if (document.getElementById('comment-curtain') == null){
-  document.getElementById('disqus_thread').classList.toggle('show')
-}
-function toggle_comments(){
-    document.getElementById('comment-curtain').classList.toggle('hide')
-    document.getElementById('disqus_thread').classList.toggle('show')
-}
-$(".share-hover.side").on("mouseover", function() {
-  document.getElementById('sidebar-icons').classList.add('show');
-  setTimeout(function () {
-      document.getElementById('sidebar-icons').classList.add('opaque');
-      document.getElementById('sidebar-icons').classList.remove('transparent');
-  }, 10);
-}).on("mouseleave", function() {
-  document.getElementById('sidebar-icons').classList.add('transparent');
-  document.getElementById('sidebar-icons').classList.remove('opaque');
-  document.getElementById('sidebar-icons').addEventListener('transitionend', function(e) {
-    document.getElementById('sidebar-icons').classList.remove('show');
-  }, {capture: false, once: true, passive: false});
-});
-function copyToClipboard() {
-  navigator.clipboard.writeText('{{ site.url }}{{ page.url }}').then(function() {
-  alerts = document.getElementsByClassName('alert')
-  for (i=0; i < alerts.length; i++){
-    alerts[i].innerHTML='\u00ABlink copied\u00BB';
-    setTimeout((function(i){ return function(){alerts[i].innerHTML='';}})(i), 1600 );
-  };
-  }, function() {
-    prompt("Unable to copy, please use this link:", "{{ site.url }}{{ page.url }}");
-  });
-}
-</script>
-<!-- Mailchimp linking -->
-<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8ece198b3eb260e6838461a60/d20d9fb9aad962399025da52e.js");</script>
-{% endif %}
-{% if page.toc %}
-<script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5.1.1/dist/gumshoe.polyfills.min.js"></script>
-<script>
-var spy = new Gumshoe("#toc-content a", {
-                        navClass:"active",
-                        contentClass:"underline",
-                        nested:0,
-                        nestedClass:"active",
-                        offset:20,
-                        reflow:1,
-                        events:1});
-
-var coll = document.getElementsByClassName("toc-item-1");
-var i;
-var chevron_up = "<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 512\"><path fill=\"currentColor\" d=\"M136.5 185.1l116 117.8c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L128 224.7 27.6 326.9c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17l116-117.8c4.7-4.6 12.3-4.6 17 .1z\"></path></svg>"
-var chevron_down = "<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 512\"><path fill=\"currentColor\" d=\"M119.5 326.9L3.5 209.1c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0L128 287.3l100.4-102.2c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L136.5 327c-4.7 4.6-12.3 4.6-17-.1z\"></path></svg>"
-for (i = 0; i < coll.length; i++) {
-  if (coll[i].childElementCount > 1) {
-    sign = document.createElement('div');
-    sign.className = "toc-sign";
-    sign.innerHTML = chevron_down;
-    coll[i].insertBefore(sign, coll[i].childNodes[0].nextSibling);
-    coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.lastElementChild;
-        if (content.style.maxHeight){
-          content.style.maxHeight = null;
-          this.firstElementChild.nextSibling.innerHTML = chevron_down;
-        } else {
-          content.style.maxHeight = content.scrollHeight + "px";
-          this.firstElementChild.nextSibling.innerHTML = chevron_up;
-        }
-    });
-  }
-}
-</script>
-{% endif %}
-{% if page.mathjax %}
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  tex2jax: {
-    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-    processEscapes: true
-  },
-  "CommonHTML": { linebreaks: { automatic: true } }
-  });
-</script>
-<script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-{% endif %}
-<script>
-SimpleJekyllSearch({
-    searchInput: document.getElementById('search-input'),
-    resultsContainer: document.getElementById('results-container'),
-    json: '{{ relativebase }}search.json',
-    searchResultTemplate: '<li><a href="{url}" title="{description}">{title}</a></li>',
-    noResultsText: 'No results found',
-    fuzzy: false,
-    exclude: ['Welcome']
-  });
-
-$(document).ready(function() {
-  'use strict';
-  /* -------- Scroll to top button ------- */
-  $(".top").click(function() {
-    $("html, body")
-      .stop()
-      .animate({ scrollTop: 0 }, "slow", "swing");
-  });
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > $(window).height()) {
-      $(".top").addClass("is-active");
-    } else {
-      $(".top").removeClass("is-active");
-    }
-  });
-});
-</script>
