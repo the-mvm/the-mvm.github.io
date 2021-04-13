@@ -186,8 +186,13 @@
           }
         }
         for (i = 0; i < newScript.length; i++) {
-          newScript[i].defer = true;
-          document.body.appendChild(newScript[i]);
+          if (newScript[i].innerHTML = ""){}
+            document.body.appendChild(newScript[i]);
+          } else {
+            setTimeout(function(){
+              document.body.appendChild(newScript[i]);
+            }, 50);
+          }
         }
       }
     }
