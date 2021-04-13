@@ -7,6 +7,8 @@ console.log("inside", relativebase);
     load: load
   }
 
+  console.log("inside e");
+
   function load (location, callback) {
     var xhr = getXHR()
     xhr.open('GET', location, true)
@@ -260,7 +262,7 @@ console.log("inside", relativebase);
 
   /*
     Public API
-  */
+  */  console.log("about to declare SimpleJekyllSearch");
       window.SimpleJekyllSearch = function SimpleJekyllSearch (_options) {
         var errors = optionsValidator.validate(_options)
         if (errors.length > 0) {
