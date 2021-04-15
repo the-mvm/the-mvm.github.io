@@ -52,6 +52,7 @@ There is a myriad of website generators nowadays, after a lengthy search the one
 - [wix](https://www.wix.com/)
 - [squarespace](https://www.squarespace.com/)
 - [ghost](https://ghost.org/)
+- [webflow](https:webflow.com)
 - [netlify](https://www.netlify.com/)
 - [hugo](https://gohugo.io/)
 - [gatsby](https://www.gatsbyjs.com/docs/glossary/static-site-generator/)
@@ -64,6 +65,8 @@ I started with the web interfaced generators with included hosting in their offe
 I have tried [wix](https://www.wix.com/) and [squarespace](https://www.squarespace.com/) before, they are fantastic for quick and easy website generation, but their free offering has ads, so again, a big no for me.
 
 I discovered [ghost](https://ghost.org/) as the platform used by one of the bloggers I follow ([Sebastian Ruder](https://ruder.io/)), turns out is a fantastic evolution over wordpress. It runs on the latest technologies, its interface is quite modern, and it is focused on one thing only: publishing. They have a paid hosting service, but the software is open sourced, therefore free to use in any hosting.
+
+I also tested webflow and even created a [mockup](https://armando-maynez.webflow.io) there, the learning curve was quite smooth, and its CMS seems quite robust, but a bit too much for the functionalities I required.
 
 Next were the generators that don't have a web interface, but can be easily set up:
 
