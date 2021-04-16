@@ -11,6 +11,7 @@
 --grey3:        #B4B3A7;
 --grey4:        #DAD7D2;
 --grey5:        #F0EFED;
+--background:   #ffffff;
 --font1: 'Inter';           /* body text */
 --font2: 'Roboto';          /* headers and titles   */
 --font1-light:      200;
@@ -442,7 +443,7 @@ body {
   font-family: var(--font1), sans-serif;
   color: var(--text);
   margin: 0;
-  background-color: white;
+  background-color: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-overflow-scrolling: touch;
@@ -554,7 +555,7 @@ svg {
 .main-header {
   font-family: var(--font2), sans-serif;
   padding: 15px 0;
-  background-color: white;
+  background-color: var(--background);
   -webkit-box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.3);
           box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.3);
 }
@@ -590,7 +591,7 @@ svg {
   z-index: 10;
   width: 300px;
   height: 100%;
-  background-color: white;
+  background-color: var(--background);
   padding: 25px 30px;
   -webkit-transform: translate3d(-300px, 0, 0);
           transform: translate3d(-300px, 0, 0);
@@ -656,7 +657,7 @@ svg.menu-icon-house {
   bottom: 0;
   left: 0;
   z-index: 100;
-  background: white;
+  background: var(--background);
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
   -webkit-transform: translate(0, -100%) scale(0, 0);
@@ -1273,7 +1274,7 @@ div.tag-cloud{
   padding: 0;
   margin: 0;
   height: 500px;
-  background-color: white;
+  background-color: var(--background);
   overflow: hidden;
 }
 
