@@ -20,18 +20,18 @@ https://coolors.co/326273-4e3e51-db504a-201e1e-5f5e58-8d897c-b4b3a7-dad7d2-f0efe
 :root {
 --accent:       #d14c47;    /* accent */
 --accent-dark:  #CD8A7A;    /* accent 2 (dark) */
---main:         #56876D;    /* main color */
---main-dim:     #3B5346;    /* dimmed version of main color */
+--main:         #5F9579;    /* main color */
+--main-dim:     #496E5B;    /* dimmed version of main color */
 --text:         #B4B3A7;
 --grey1:        #8D897C;
 --grey2:        #827F73;
 --grey3:        #76746A;
---grey4:        #605F58;
+--grey4:        #55544F;
 --grey5:        #4A4945;
 --background:   #201E1E;
 --shadows:      rgba(32,30,30,.3);
     }
 
 /*
-https://coolors.co/d14c47-cd8a7a-cbc9ad-201e1e-b4b3a7-8d897c-827f73-76746a-605f58-4a4945
+https://coolors.co/d14c47-5f9579-496e5b-201e1e-b4b3a7-8d897c-827f73-76746a-55544f-4a4945
 */

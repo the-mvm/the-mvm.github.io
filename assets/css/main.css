@@ -861,7 +861,7 @@ svg.menu-icon-house {
 }
 .logo-link {
     display:block;
-    color: var(--main);
+    color: var(--grey4);
     -webkit-transition: all 350ms cubic-bezier(0.13, 0.43, 0.54, 1.82);
     transition: all 350ms cubic-bezier(0.13, 0.43, 0.54, 1.82);
 }
@@ -888,7 +888,7 @@ svg.menu-icon-house {
     justify-content: center;
 }
 .footer-nav a {
-    color: var(--main);
+    color: var(--grey4);
     text-decoration: none;
     font-size: 14px;
     font-weight: var(--font1-bold);
