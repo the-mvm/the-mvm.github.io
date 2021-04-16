@@ -622,7 +622,7 @@ svg {
   list-style: none;
 }
 .main-nav ul li {
-  border-bottom: 1px solid #d9d9d9;
+  border-bottom: 1px solid var(--grey5);
 }
 .main-nav ul li a {
   display: block;
