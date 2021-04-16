@@ -1253,7 +1253,7 @@ div.tag-cloud{
     will-change: transform;
     background-image:linear-gradient(to bottom, var(--grey5) 0, var(--grey4) 100%);
     font-size: 13px;
-    border:1px solid var(--grey3);
+    border:1px solid var(--grey5);
     border-radius: 8px;
     transition: all 0.3s ease-out;
     height: 28px;
