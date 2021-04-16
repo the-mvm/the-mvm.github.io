@@ -30,7 +30,7 @@
 --grey5:        #F0EFED;
 --background:   #ffffff;
 --shadows:      rgba(32,30,30,.3);
-{% end if %}
+{% endif %}
 --font1: 'Inter';           /* body text */
 --font2: 'Roboto';          /* headers and titles   */
 --font1-light:      200;
