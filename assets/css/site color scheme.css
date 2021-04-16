@@ -20,7 +20,7 @@ https://coolors.co/326273-4e3e51-db504a-201e1e-5f5e58-8d897c-b4b3a7-dad7d2-f0efe
 :root {
 --accent:       #d14c47;    /* accent */
 --accent-dark:  #CD8A7A;    /* accent 2 (dark) */
---main:         #5F9579;    /* main color */
+--main:         #587465;    /* main color */
 --main-dim:     #35463D;    /* dimmed version of main color */
 --text:         #B4B3A7;
 --grey1:        #8D897C;
@@ -33,5 +33,5 @@ https://coolors.co/326273-4e3e51-db504a-201e1e-5f5e58-8d897c-b4b3a7-dad7d2-f0efe
     }
 
 /*
-https://coolors.co/d14c47-5f9579-496e5b-201e1e-b4b3a7-8d897c-827f73-76746a-55544f-4a4945
+https://coolors.co/d14c47-7C9C8C-35463d-201e1e-b4b3a7-8d897c-827f73-76746a-66645d-4a4945
 */
