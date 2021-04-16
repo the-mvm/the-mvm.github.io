@@ -1,44 +1,55 @@
----
----
 
 @charset "utf-8";
 /* Main Color palette and fonts */
-:root {
-{% if site.mode == "dark" %}
---accent:       #d14c47;    /* accent */
---accent-dark:  #CD8A7A;    /* accent 2 (dark) */
---main:         #587465;    /* main color */
---main-dim:     #35463D;    /* dimmed version of main color */
---text:         #B4B3A7;
---grey1:        #8D897C;
---grey2:        #827F73;
---grey3:        #76746A;
---grey4:        #66645D;
---grey5:        #4A4945;
---background:   #201E1E;
---shadow:       rgba(32,30,30,.3);
-{% else %}
---accent:       #DB504A;    /* accent */
---accent-dark:  #4e3e51;    /* accent 2 (dark) */
---main:         #326273;    /* main color */
---main-dim:     #879dab;    /* dimmed version of main color */
---text:         #201E1E;
---grey1:        #5F5E58;
---grey2:        #8D897C;
---grey3:        #B4B3A7;
---grey4:        #DAD7D2;
---grey5:        #F0EFED;
---background:   #ffffff;
---shadows:      rgba(32,30,30,.3);
-{% endif %}
---font1: 'Inter';           /* body text */
---font2: 'Roboto';          /* headers and titles   */
---font1-light:      200;
---font1-regular:    300;
---font1-bold:       600;
---font2-light:      100;
---font2-regular:    300;
---font2-bold:       500;
+
+html {
+  --accent:       #d14c47;    /* accent */
+  --accent-dark:  #CD8A7A;    /* accent 2 (dark) */
+  --main:         #587465;    /* main color */
+  --main-dim:     #35463D;    /* dimmed version of main color */
+  --text:         #B4B3A7;
+  --grey1:        #8D897C;
+  --grey2:        #827F73;
+  --grey3:        #76746A;
+  --grey4:        #66645D;
+  --grey5:        #4A4945;
+  --background:   #201E1E;
+  --shadow:       rgba(32,30,30,.3);
+  --accent:       #DB504A;    /* accent */
+  --accent-dark:  #4e3e51;    /* accent 2 (dark) */
+  --main:         #326273;    /* main color */
+  --main-dim:     #879dab;    /* dimmed version of main color */
+  --text:         #201E1E;
+  --grey1:        #5F5E58;
+  --grey2:        #8D897C;
+  --grey3:        #B4B3A7;
+  --grey4:        #DAD7D2;
+  --grey5:        #F0EFED;
+  --background:   #ffffff;
+  --shadows:      rgba(32,30,30,.3);
+  --font1: 'Inter';           /* body text */
+  --font2: 'Roboto';          /* headers and titles   */
+  --font1-light:      200;
+  --font1-regular:    300;
+  --font1-bold:       600;
+  --font2-light:      100;
+  --font2-regular:    300;
+  --font2-bold:       500;
+}
+
+html[data-theme="dark"]  {
+  --accent:       #d14c47;    /* accent */
+  --accent-dark:  #CD8A7A;    /* accent 2 (dark) */
+  --main:         #587465;    /* main color */
+  --main-dim:     #35463D;    /* dimmed version of main color */
+  --text:         #B4B3A7;
+  --grey1:        #8D897C;
+  --grey2:        #827F73;
+  --grey3:        #76746A;
+  --grey4:        #66645D;
+  --grey5:        #4A4945;
+  --background:   #201E1E;
+  --shadow:       rgba(32,30,30,.3);
 }
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
@@ -638,8 +649,6 @@ svg {
   color: var(--accent-dark);
 }
 
-
-
 .menu-icon-container {
   width: 25%;
   text-align: left;
@@ -668,6 +677,90 @@ svg.menu-icon-house {
 .search-icon-close:hover {
   opacity: .8;
 }
+
+/* = = = = = = = = = = Theme toggle = = = = = = = = = = */
+
+.theme-toggle {
+  position: relative;
+  width: $base-font-size * 7.65;
+  margin-top: 10px;
+  margin-right: 60px;
+  margin-left: auto;
+  transition: .3s cubic-bezier(.4,.03,0,1);
+
+  label, .toggle {
+    border-radius: 100px;
+  }
+
+  label {
+    display: block;
+    background-color: rgba(120,120,120,.15);
+    cursor: pointer;
+  }
+
+  .toggle {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 15px rgba(0,0,0,.15);
+    transition: transform .2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .names {
+    font-size: 1em;
+    font-weight: bolder;
+    width: 76%;
+    margin-left: 12%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    user-select: none;
+  }
+
+  .dark {
+    opacity: .5;
+  }
+
+  p {
+    color: #acacac;
+    margin-bottom: 0;
+    line-height: 24px;
+  }
+
+  [type="checkbox"] {
+    display: none;
+  }
+
+  /* Toggle */
+  [type="checkbox"]:checked ~ label .toggle {
+    transform: translateX(100%);
+    background-color: #34323D;
+  }
+
+  [type="checkbox"]:checked ~ label .dark{
+    opacity: 1;
+  }
+
+  [type="checkbox"]:checked ~ label .light{
+    opacity: .5;
+  }
+
+  @include media-query(1024px) {
+    margin-right: 35px;
+  }
+
+  @include media-query($on-palm) {
+    width: $base-font-size * 6.65;
+    margin-right: 20px;
+
+    .names {
+      font-size: .85em;
+    }
+  }
+}
+
+
 /* = = = = = = = = = = Search Page = = = = = = = = = = */
 .search-box {
   padding-top: 40px;
