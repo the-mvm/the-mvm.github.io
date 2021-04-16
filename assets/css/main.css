@@ -2,7 +2,7 @@
 /* Main Color palette and fonts */
 :root {
 --accent:       #d14c47;    /* accent */
---accent-dark:  #CD8A7A;    /* accent 2 (dark) */
+--accent-dark:  #CBB0A4;    /* accent 2 (dark) */
 --main:         #CBC9AD;    /* main color */
 --main-dim:     #959483;    /* dimmed version of main color */
 --text:         #B4B3A7;
@@ -472,12 +472,12 @@ table td, table th {
     background-color: var(--grey5);
 }
 blockquote {
-    border-left: 10px solid #aaaaaa;
+    border-left: 10px solid var(--grey4);
     padding-left: 1em;
     margin-left: 2.5em;
     font-style: italic;
     color: var(--accent-dark);
-    background: hsla(0,0%,95%,0.5);
+    background: var(--grey5);
     margin-right: 0;
     font-weight: 100;
 }
