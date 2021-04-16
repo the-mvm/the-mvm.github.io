@@ -15,22 +15,6 @@
 /*
 https://coolors.co/326273-4e3e51-db504a-201e1e-5f5e58-8d897c-b4b3a7-dad7d2-f0efed
 */
-/* = = = = = = = = = =  backups  = = = = = = = = = = = = */
-:root {
---red:      #87314e;
---purple:   #4e3e51;
---blue:     #326273;
---text:     #212B30;
---grey1:    #546c78;
---grey2:    #879dab;
---grey3:    #c2d0d6;
---grey4:    #D5DEE2;
---grey5:    #EFF2F3;
-}
-/*
-Palette generator:
-https://coolors.co/87314e-4e3e51-326273-212b30-546c78-879dab-c2d0d6-d5dee2-eff2f3
-*/
 /* DARK MODE */
 :root {
     --accent:       #d14c47;    /* accent */

@@ -1286,7 +1286,7 @@ div.tag-cloud{
 .page-content {
   margin: auto;
   margin-top: -80px;
-  background-color: white;
+  background-color: var(--background);
   padding: 20px;
   -webkit-border-top-left-radius: 20px;
           border-top-left-radius: 20px;
