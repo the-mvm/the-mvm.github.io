@@ -682,20 +682,20 @@ svg.menu-icon-house {
 
 .theme-toggle {
   position: relative;
-  width: $base-font-size * 7.65;
+  width: 7.65rem;
   margin-top: 10px;
   margin-right: 60px;
   margin-left: auto;
   transition: .3s cubic-bezier(.4,.03,0,1);
-
-  label, .toggle {
-    border-radius: 100px;
-  }
-
+  
   label {
     display: block;
     background-color: rgba(120,120,120,.15);
     cursor: pointer;
+  }
+
+  label, .toggle {
+    border-radius: 100px;
   }
 
   .toggle {
@@ -750,7 +750,7 @@ svg.menu-icon-house {
     margin-right: 35px;
   }
 
-  @include media-query($on-palm) {
+  @include media-query(768px) {
     width: $base-font-size * 6.65;
     margin-right: 20px;
 
