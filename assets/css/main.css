@@ -1244,15 +1244,16 @@ div.tag-cloud{
     background-repeat: no-repeat;
     display: block;
     float: left;
+    color: var(--text);
 }
 .github-button {
     margin-top:1em;
     margin-bottom:1em;
     padding: 3px 10px 3px 10px;
     will-change: transform;
-    background-image:linear-gradient(to bottom, #fcfcfc 0, #eee 100%);
+    background-image:linear-gradient(to bottom, var(--grey5) 0, var(--grey4) 100%);
     font-size: 13px;
-    border:1px solid #eee;
+    border:1px solid var(--grey3);
     border-radius: 8px;
     transition: all 0.3s ease-out;
     height: 28px;
@@ -1271,9 +1272,8 @@ div.tag-cloud{
     overflow-x: visible;
 }
 .github-button:hover,.github-button:focus{
-    background-image:linear-gradient(to bottom, #fafafa 0, #ddd 100%);
+    background-image:linear-gradient(to bottom, var(--grey4) 0, var(--grey3) 100%);
     border:#ddd;
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#dddddd', GradientType=0);
     box-shadow: 0 0.5em 0.5em -0.4em var(--shadow);
     color: var(--text);
     cursor:pointer;
