@@ -7,6 +7,10 @@ logo: "/assets/img/branding/MVM-logo-full.svg"
 logo-icon: "/assets/img/branding/MVM-symbol.svg"
 logo-icon-SEO: "/assets/img/branding/MVM-symbol-black.png" # must be a non SVG file
 
+# Dark or light theme
+mode: dark # light or dark (default is light)
+logo-dark: "/assets/img/branding/MVM-logo-full-dark.svg"
+
 # Author settings
 author: Armando Maynez # add your name
 author-pic: Myself_Neon_grey.jpg

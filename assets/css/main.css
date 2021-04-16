@@ -1,6 +1,10 @@
+---
+---
+
 @charset "utf-8";
 /* Main Color palette and fonts */
 :root {
+{% if site.mode == "dark" %}
 --accent:       #d14c47;    /* accent */
 --accent-dark:  #CD8A7A;    /* accent 2 (dark) */
 --main:         #63796d;    /* main color */
@@ -13,6 +17,20 @@
 --grey5:        #4A4945;
 --background:   #201E1E;
 --shadow:       rgba(32,30,30,.3);
+{% else %}
+--accent:       #DB504A;    /* accent */
+--accent-dark:  #4e3e51;    /* accent 2 (dark) */
+--main:         #326273;    /* main color */
+--main-dim:     #879dab;    /* dimmed version of main color */
+--text:         #201E1E;
+--grey1:        #5F5E58;
+--grey2:        #8D897C;
+--grey3:        #B4B3A7;
+--grey4:        #DAD7D2;
+--grey5:        #F0EFED;
+--background:   #ffffff;
+--shadows:      rgba(32,30,30,.3);
+{% end if %}
 --font1: 'Inter';           /* body text */
 --font2: 'Roboto';          /* headers and titles   */
 --font1-light:      200;
