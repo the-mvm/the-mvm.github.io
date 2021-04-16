@@ -2,15 +2,15 @@
 /* Main Color palette and fonts */
 :root {
 --accent:       #d14c47;    /* accent */
---accent-dark:  #d14c47;    /* accent 2 (dark) */
+--accent-dark:  #CD8A7A;    /* accent 2 (dark) */
 --main:         #CBC9AD;    /* main color */
 --main-dim:     #959483;    /* dimmed version of main color */
 --text:         #B4B3A7;
---grey1:        #F0EFED;
---grey2:        #DAD7D2;
---grey3:        #B4B3A7;
---grey4:        #8D897C;
---grey5:        #5F5E58;
+--grey1:        #8D897C;
+--grey2:        #827F73;
+--grey3:        #76746A;
+--grey4:        #605F58;
+--grey5:        #4A4945;
 --background:   #201E1E;
 --font1: 'Inter';           /* body text */
 --font2: 'Roboto';          /* headers and titles   */
@@ -1494,8 +1494,8 @@ img + small, img + br + small {
   padding: 8px 10px;
   width: 100%;
   max-width: 100%;
-  color: var(--grey1);
-  background-color: var(--grey5);
+  color: var(--text);
+  background-color: var(--background);
   border: none;
   -webkit-border-radius: 2px;
           border-radius: 2px;
