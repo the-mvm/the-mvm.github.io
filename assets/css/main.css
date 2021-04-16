@@ -682,10 +682,11 @@ svg.menu-icon-house {
 
 .theme-toggle {
   position: relative;
-  width: 7.65rem;
+  width: 5rem;
   margin-top: 10px;
-  margin-right: 60px;
+  margin-right: auto;
   margin-left: auto;
+  margin-bottom: 10px;
   transition: .3s cubic-bezier(.4,.03,0,1);
 }
   
@@ -703,13 +704,13 @@ svg.menu-icon-house {
     position: absolute;
     width: 50%;
     height: 100%;
-    background-color: #fff;
+    background-color: var(--background);
     box-shadow: 0 2px 15px rgba(0,0,0,.15);
     transition: transform .2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .theme-toggle .names {
-    font-size: 1em;
+    font-size: 0.6em;
     font-weight: bolder;
     width: 76%;
     margin-left: 12%;
@@ -724,9 +725,8 @@ svg.menu-icon-house {
 }
 
 .theme-toggle p {
-    color: #acacac;
-    margin-bottom: 0;
-    line-height: 24px;
+    color: var(--grey3);
+    line-height: 0.5em;
 }
 
 .theme-toggle  [type="checkbox"] {
@@ -736,7 +736,8 @@ svg.menu-icon-house {
   /* Toggle */
 .theme-toggle  [type="checkbox"]:checked ~ label .toggle {
     transform: translateX(100%);
-    background-color: #34323D;
+    background-color: var(--background);
+    opacity: 0.75;
 }
 
 .theme-toggle  [type="checkbox"]:checked ~ label .dark{
@@ -755,14 +756,12 @@ svg.menu-icon-house {
 
 @media (max-width:768px) {
   .theme-toggle {
-    width: 6.65rem;
-    margin-right: 20px;
+    width: 4.5rem;
   }
   .theme-toggle .names {
-      font-size: .85em;
+      font-size: .45em;
     }
 }
-
 
 /* = = = = = = = = = = Search Page = = = = = = = = = = */
 .search-box {
