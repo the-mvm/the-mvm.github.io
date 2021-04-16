@@ -697,10 +697,11 @@ svg.menu-icon-house {
   width: 100%;
   padding: 15px;
   border: none;
-  border-bottom: 1px solid #d9d9d9;
+  border-bottom: 1px solid var(--grey5);
   outline: none;
   font-size: 21px;
   color: var(--grey1);
+  background: var(--background);
 }
 
 .results-search {
