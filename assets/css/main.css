@@ -687,27 +687,28 @@ svg.menu-icon-house {
   margin-right: 60px;
   margin-left: auto;
   transition: .3s cubic-bezier(.4,.03,0,1);
+}
   
-  label {
+.theme-toggle label {
     display: block;
     background-color: rgba(120,120,120,.15);
     cursor: pointer;
-  }
+}
 
-  label, .toggle {
+.theme-toggle label, .toggle {
     border-radius: 100px;
   }
 
-  .toggle {
+.theme-toggle .toggle {
     position: absolute;
     width: 50%;
     height: 100%;
     background-color: #fff;
     box-shadow: 0 2px 15px rgba(0,0,0,.15);
     transition: transform .2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
+}
 
-  .names {
+.theme-toggle .names {
     font-size: 1em;
     font-weight: bolder;
     width: 76%;
@@ -716,48 +717,50 @@ svg.menu-icon-house {
     display: flex;
     justify-content: space-between;
     user-select: none;
-  }
+}
 
-  .dark {
+.theme-toggle .dark {
     opacity: .5;
-  }
+}
 
-  p {
+.theme-toggle p {
     color: #acacac;
     margin-bottom: 0;
     line-height: 24px;
-  }
+}
 
-  [type="checkbox"] {
+.theme-toggle  [type="checkbox"] {
     display: none;
-  }
+}
 
   /* Toggle */
-  [type="checkbox"]:checked ~ label .toggle {
+.theme-toggle  [type="checkbox"]:checked ~ label .toggle {
     transform: translateX(100%);
     background-color: #34323D;
-  }
+}
 
-  [type="checkbox"]:checked ~ label .dark{
+.theme-toggle  [type="checkbox"]:checked ~ label .dark{
     opacity: 1;
-  }
+}
 
-  [type="checkbox"]:checked ~ label .light{
+.theme-toggle  [type="checkbox"]:checked ~ label .light{
     opacity: .5;
-  }
+}
 
-  @include media-query(1024px) {
+@media (max-width:1024px) {
+  .theme-toggle  {
     margin-right: 35px;
   }
+}
 
-  @include media-query(768px) {
-    width: $base-font-size * 6.65;
+@media (max-width:768px) {
+  .theme-toggle {
+    width: 6.65rem;
     margin-right: 20px;
-
-    .names {
+  }
+  .theme-toggle .names {
       font-size: .85em;
     }
-  }
 }
 
 
