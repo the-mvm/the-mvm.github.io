@@ -1,17 +1,17 @@
 @charset "utf-8";
 /* Main Color palette and fonts */
 :root {
---accent:       #DB504A;    /* accent */
---accent-dark:  #4e3e51;    /* accent 2 (dark) */
---main:         #326273;    /* main color */
---main-dim:     #879dab;    /* dimmed version of main color */
---text:         #201E1E;
---grey1:        #5F5E58;
---grey2:        #8D897C;
+--accent:       #d14c47;    /* accent */
+--accent-dark:  #d14c47;    /* accent 2 (dark) */
+--main:         #CBC9AD;    /* main color */
+--main-dim:     #959483;    /* dimmed version of main color */
+--text:         #B4B3A7;
+--grey1:        #F0EFED;
+--grey2:        #DAD7D2;
 --grey3:        #B4B3A7;
---grey4:        #DAD7D2;
---grey5:        #F0EFED;
---background:   #ffffff;
+--grey4:        #8D897C;
+--grey5:        #5F5E58;
+--background:   #201E1E;
 --font1: 'Inter';           /* body text */
 --font2: 'Roboto';          /* headers and titles   */
 --font1-light:      200;
