@@ -11,6 +11,7 @@
 --grey4:        #DAD7D2;
 --grey5:        #F0EFED;
 --background:   #ffffff;
+--shadows:      rgba(32,30,30,.3);
 }
 /*
 https://coolors.co/326273-4e3e51-db504a-201e1e-5f5e58-8d897c-b4b3a7-dad7d2-f0efed
@@ -28,6 +29,7 @@ https://coolors.co/326273-4e3e51-db504a-201e1e-5f5e58-8d897c-b4b3a7-dad7d2-f0efe
 --grey4:        #605F58;
 --grey5:        #4A4945;
 --background:   #201E1E;
+--shadows:      rgba(32,30,30,.3);
     }
 
 /*
