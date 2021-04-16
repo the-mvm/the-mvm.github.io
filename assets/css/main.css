@@ -605,6 +605,7 @@ svg {
 }
 .main-header .logo {
   width: 80%;
+  position: relative;
   text-align: center;
   color:var(--main);
 }
@@ -615,6 +616,22 @@ svg {
   font-weight: var(--font2-light);
   color: var(--accent-dark);
 }
+
+.main-header .logo img.dark {
+position: absolute;
+top: 0;
+right: 0;
+left: 0;
+bottom: 0;
+object-fit: contain;
+opacity: 0;
+transition: opacity .2s;
+}
+
+html[data-theme="dark"] img.dark {
+opacity: 1;
+}
+
 .main-nav {
   position: fixed;
   top: 0;

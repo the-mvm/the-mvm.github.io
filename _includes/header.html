@@ -55,9 +55,11 @@
           </li>
         </ul>
       </nav>
-      {% capture logo_url %}{{ relativebase }}{% if site.mode == "dark" %}{{ site.logo-dark  }}{% else %}{{ site.logo  }}{% endif %}{% endcapture %}
+      {% capture logo_url %}{{ relativebase }}{{ site.logo  }}{% endcapture %}
       {% assign logo_url = logo_url | replace: "//", "/" %}
-      <div class="logo"><a href="{{ relativebase }}"><img class="logo" src="{{ logo_url }}" alt="{{ site.title }}"></a></div>
+      {% capture logo_url_dark %}{{ relativebase }}{{ site.logo-dark  }}{% endcapture %}
+      {% assign logo_url_dark = logo_url_dark | replace: "//", "/" %}
+      <div class="logo"><a href="{{ relativebase }}"><img class="logo" src="{{ logo_url }}" alt="{{ site.title }}"><img class="logo dark" data-src="{{ logo_url_dark }}" alt="{{ site.title }}"></a></div>
       <div class="search-icon-container">
         <span class="search-icon"><a><i class="fa fa-search" aria-hidden="true"></i></a></span>
       </div>
