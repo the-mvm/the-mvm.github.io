@@ -5,6 +5,7 @@ demo site now [mirrored](https://weathered-bread-8229.on.fleek.co/) in [IPFS](ht
 
 ## Additional features in v2.0:
 - SEO meta tags
+- Dark mode ([configurable in _config.yml file](https://github.com/the-mvm/the-mvm.github.io/blob/a8d4f781bfbc4107b4842433701d28f5bbf1c520/_config.yml#L10))
 - automatic [sitemap.xml](http://the-mvm.github.io/sitemap.xml)
 - automatic [archive page](http://the-mvm.github.io/archive/) with infinite scrolling capability
 - [new page](https://the-mvm.github.io/tag/?tag=Coding) of posts filtered by a single tag (without needing autopages from paginator V2), also with infinite scrolling
@@ -48,6 +49,12 @@ The post page looks like:
 Custom responsive 404:
 
 <img width="640px" src="https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/404-responsive.jpg?raw=true">
+
+Dark mode looks like this:
+![Homepage Dark](https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/homepage-dark.png?raw=true)
+
+![post page dark](https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/post-dark.png?raw=true)
+![post bottom dark](https://github.com/the-mvm/the-mvm.github.io/blob/main/assets/img/template_screenshots/post_bottom-dark.png?raw=true)
 
 ## Installation:
 
