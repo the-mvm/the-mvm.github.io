@@ -8,7 +8,7 @@ logo-icon: "/assets/img/branding/MVM-symbol.svg"
 logo-icon-SEO: "/assets/img/branding/MVM-symbol-black.png" # must be a non SVG file
 
 # Dark or light theme
-mode: dark # light or dark (default is light)
+mode: light # light or dark (default is light)
 logo-dark: "/assets/img/branding/MVM-logo-full-dark.svg"
 highlight_theme: syntax-base16.monokai.dark # select a dark theme for the code highlighter if needed
 
