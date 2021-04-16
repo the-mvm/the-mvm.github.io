@@ -1495,6 +1495,7 @@ img + small, img + br + small {
   width: 100%;
   max-width: 100%;
   color: var(--grey1);
+  background-color: var(--grey5);
   border: none;
   -webkit-border-radius: 2px;
           border-radius: 2px;
