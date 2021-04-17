@@ -28,6 +28,10 @@ $(function () {
     e.preventDefault()
     e.stopPropagation()
     flexContainer.toggleClass('active')
+    setTimeout(function () {
+      flexContainer.classList.add('opaque');
+      flexContainer.classList.remove('transparent');
+    }, 10);
   })
 
   // Click outside of menu to close it
@@ -36,21 +40,29 @@ $(function () {
       if (e.target.className.includes('night')){
         clearTimeout(waiting);
         waiting = setTimeout(function() {
-          flexContainer.removeClass('active');
+          hideLayer();
         }, 1000);
       } else {
-        flexContainer.removeClass('active');
+        hideLayer();
       }
     }
   })
+
+  function hideLayer () {
+    flexContainer.classList.add('transparent');
+    flexContainer.classList.remove('opaque');
+    flexContainer.addEventListener('transitionend', function(e) {
+      flexContainer.removeClass('active');
+    }, {capture: false, once: true, passive: false});
+  }
 
   // Press Escape key to close menu
   $(window).keydown(function (e) {
     if (e.key === 'Escape') {
       if (flexContainer.hasClass('active')) {
-        flexContainer.removeClass('active')
+        hideLayer();
       } else if (searchBox.hasClass('search-active')) {
-        searchBox.removeClass('search-active')
+        searchBox.removeClass('search-active');
       }
     }
   })

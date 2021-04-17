@@ -543,6 +543,15 @@ svg {
   -webkit-transform: translate3d(300px, 0, 0);
           transform: translate3d(300px, 0, 0);
 }
+
+.flex-container.active.opaque::after {
+  opacity: 0.5;
+}
+
+.flex-container.active.transparent::after {
+  opacity: 0;
+}
+
 .flex-container.active::after {
   content: "";
   position: fixed;
@@ -551,7 +560,8 @@ svg {
   bottom: 0;
   left: 0;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0);
+  opacity: 0.5;
 }
 .content {
   -webkit-box-flex: 1;
