@@ -40,8 +40,8 @@ html {
 html[data-theme="dark"]  {
   --accent:       #d14c47;    /* accent */
   --accent-dark:  #CD8A7A;    /* accent 2 (dark) */
-  --main:         #587465;    /* main color */
-  --main-dim:     #35463D;    /* dimmed version of main color */
+  --main:         #4C6567;    /* main color */
+  --main-dim:     #3D5052;    /* dimmed version of main color */
   --text:         #B4B3A7;
   --grey1:        #8D897C;
   --grey2:        #827F73;
