@@ -31,7 +31,7 @@ $(function () {
 
   // Click outside of menu to close it
   flexContainer.click(function (e) {
-    if (flexContainer.hasClass('active') && e.target.tagName !== 'A' && e.target.tagName !== 'label') {
+    if (flexContainer.hasClass('active') && e.target.tagName !== 'A' && !(e.target.className.includes('toggle'))) {
       flexContainer.removeClass('active')
     }
   })
