@@ -32,8 +32,7 @@ $(function () {
       hideLayer();
     } else {
       setTimeout(function () {
-        flexContainer.addClass('opaque');
-        flexContainer.removeClass('transparent');
+        flexContainer.removeClass('transparent').addClass('opaque');
       }, 10);
     }
   })
@@ -53,8 +52,7 @@ $(function () {
   })
 
   function hideLayer () {
-    flexContainer.removeClass('opaque');
-    flexContainer.addClass('transparent');
+    flexContainer.removeClass('opaque').addClass('transparent');
     flexContainer[0].addEventListener('transitionend', function(e) {
       flexContainer.removeClass('active');
     }, {capture: false, once: true, passive: false});
