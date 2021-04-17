@@ -51,7 +51,8 @@ $(function () {
   })
 
   function hideLayer () {
-    flexContainer.removeClass('opaque').addClass('transparent');
+    flexContainer[0].classList.remove('opaque')
+    flexContainer[0].classList.add('transparent');
     flexContainer[0].addEventListener('transitionend', function(e) {
       flexContainer.removeClass('active');
     }, {capture: false, once: true, passive: false});
