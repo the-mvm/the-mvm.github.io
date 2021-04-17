@@ -29,8 +29,8 @@ $(function () {
     e.stopPropagation()
     flexContainer.toggleClass('active')
     setTimeout(function () {
-      flexContainer.classList.add('opaque');
-      flexContainer.classList.remove('transparent');
+      flexContainer.addClass('opaque');
+      flexContainer.removeClass('transparent');
     }, 10);
   })
 
@@ -49,8 +49,8 @@ $(function () {
   })
 
   function hideLayer () {
-    flexContainer.classList.add('transparent');
-    flexContainer.classList.remove('opaque');
+    flexContainer.addClass('transparent');
+    flexContainer.removeClass('opaque');
     flexContainer.addEventListener('transitionend', function(e) {
       flexContainer.removeClass('active');
     }, {capture: false, once: true, passive: false});
