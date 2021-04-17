@@ -21,6 +21,7 @@ $(function () {
   var searchBox = $('.search-box')
   var searchClose = $('.search-icon-close')
   var searchInput = $('#search-input')
+  var waiting;
 
   // Menu button
   $('.menu-icon, .menu-icon-close').click(function (e) {
@@ -31,13 +32,12 @@ $(function () {
 
   // Click outside of menu to close it
   flexContainer.click(function (e) {
-    var waiting;
     if (flexContainer.hasClass('active') && e.target.tagName !== 'A') {
       if (e.target.className.includes('night')){
         clearTimeout(waiting);
         waiting = setTimeout(function() {
           flexContainer.removeClass('active');
-        }, 2000);
+        }, 1000);
       } else {
         flexContainer.removeClass('active');
       }
