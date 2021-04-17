@@ -546,6 +546,8 @@ svg {
 }
 
 .flex-container::after{
+  will-change: opacity;
+  will-change: transform;
   -webkit-transition: -webkit-all 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
   transition: -webkit-all 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
   transition: all 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
