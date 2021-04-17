@@ -28,7 +28,7 @@ $(function () {
     e.preventDefault()
     e.stopPropagation()
     flexContainer.toggleClass('active')
-    if (flexContainer.hasClass('active')){
+    if (flexContainer.hasClass('opaque')){
       hideLayer();
     } else {
       setTimeout(function () {
