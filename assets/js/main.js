@@ -31,7 +31,7 @@ $(function () {
 
   // Click outside of menu to close it
   flexContainer.click(function (e) {
-    var waiting = 0;
+    var waiting;
     if (flexContainer.hasClass('active') && e.target.tagName !== 'A') {
       if (e.target.className.includes('night')){
         clearTimeout(waiting);
