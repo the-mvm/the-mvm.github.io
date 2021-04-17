@@ -747,19 +747,10 @@ svg.menu-icon-house {
     opacity: .5;
 }
 
-@media (max-width:1024px) {
-  .theme-toggle  {
-    margin-right: 35px;
-  }
-}
-
 @media (max-width:768px) {
   .theme-toggle {
-    width: 4.5rem;
+    width: 3.2rem;
   }
-  .theme-toggle .names {
-      font-size: .45em;
-    }
 }
 
 /* = = = = = = = = = = Search Page = = = = = = = = = = */
