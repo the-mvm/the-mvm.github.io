@@ -53,9 +53,9 @@ $(function () {
   function hideLayer () {
     flexContainer[0].classList.remove('opaque')
     flexContainer[0].classList.add('transparent');
-    flexContainer[0].addEventListener('transitionend', function(e) {
+    setTimeout(function(){
       flexContainer.removeClass('active');
-    }, {capture: false, once: true, passive: false});
+    }, 600)
   }
 
   // Press Escape key to close menu
