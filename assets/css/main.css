@@ -684,8 +684,7 @@ svg.menu-icon-house {
 
 .theme-toggle {
   position: relative;
-  width: 5rem;
-  margin-top: 10px;
+  width: 3.75rem;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 10px;
@@ -707,13 +706,12 @@ svg.menu-icon-house {
     width: 50%;
     height: 100%;
     background-color: var(--background);
-    box-shadow: 0 2px 15px rgba(0,0,0,.15);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, .8);
     transition: transform .2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .theme-toggle .names {
-    font-size: 0.6em;
-    font-weight: bolder;
+    font-size: 0.4em;
     width: 76%;
     margin-left: 12%;
     position: relative;
@@ -728,7 +726,6 @@ svg.menu-icon-house {
 
 .theme-toggle p {
     color: var(--grey3);
-    line-height: 0.5em;
 }
 
 .theme-toggle  [type="checkbox"] {
@@ -743,7 +740,7 @@ svg.menu-icon-house {
 }
 
 .theme-toggle  [type="checkbox"]:checked ~ label .dark{
-    opacity: 1;
+    opacity: .75;
 }
 
 .theme-toggle  [type="checkbox"]:checked ~ label .light{
