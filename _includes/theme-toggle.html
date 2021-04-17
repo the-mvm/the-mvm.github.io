@@ -1,3 +1,8 @@
+{% capture logo_url %}{{ relativebase }}{{ site.logo  }}{% endcapture %}
+{% assign logo_url = logo_url | replace: "//", "/" %}
+{% capture logo_url_dark %}{{ relativebase }}{{ site.logo-dark  }}{% endcapture %}
+{% assign logo_url_dark = logo_url_dark | replace: "//", "/" %}
+
 <div class="theme-toggle">
     <input type="checkbox" id="theme-switch">
     <label for="theme-switch">
@@ -43,9 +48,9 @@
         saveThemeData(themeData);
         html.dataset.theme = nightShift ? 'dark' : 'light';
         if (nightShift) {
-            logo.setAttribute("src", "{{ site.logo-dark }}");
+            logo.setAttribute("src", "{{ logo_url_dark }}");
         } else {
-            logo.setAttribute("src", "{{ site.logo }}");
+            logo.setAttribute("src", "{{ logo_url }}");
         }
         setTimeout(function() {
           sw.checked = nightShift ? true : false;
