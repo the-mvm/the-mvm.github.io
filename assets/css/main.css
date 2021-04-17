@@ -534,10 +534,10 @@ svg {
       -ms-flex-direction: column;
           flex-direction: column;
   min-height: 100vh;
-  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.16, 0.68, 0.43, 0.99);
-  transition: -webkit-transform 0.4s cubic-bezier(0.16, 0.68, 0.43, 0.99);
-  transition: transform 0.4s cubic-bezier(0.16, 0.68, 0.43, 0.99);
-  transition: transform 0.4s cubic-bezier(0.16, 0.68, 0.43, 0.99), -webkit-transform 0.4s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  transition: -webkit-transform 1s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  transition: transform 1s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  transition: transform 1s cubic-bezier(0.16, 0.68, 0.43, 0.99), -webkit-transform 1s cubic-bezier(0.16, 0.68, 0.43, 0.99);
 }
 .flex-container.active {
   -webkit-transform: translate3d(300px, 0, 0);

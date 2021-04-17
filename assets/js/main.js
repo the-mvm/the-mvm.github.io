@@ -31,8 +31,15 @@ $(function () {
 
   // Click outside of menu to close it
   flexContainer.click(function (e) {
-    if ((flexContainer.hasClass('active') && e.target.tagName !== 'A') && !(e.target.className.includes('night'))) {
-      flexContainer.removeClass('active')
+    if (flexContainer.hasClass('active') && e.target.tagName !== 'A') {
+      if (e.target.className.includes('night')){
+        clearTimeout(waiting);
+        setTimeout(function() {
+          waiting = flexContainer.removeClass('active');
+        }, 2000);
+      } else {
+        flexContainer.removeClass('active');
+      }
     }
   })
 
