@@ -37,17 +37,18 @@ $(function () {
     }
   })
 
-  // Click outside of menu to close it
+  // Click to close
   flexContainer.click(function (e) {
     if (flexContainer.hasClass('active') && e.target.tagName !== 'A') {
-      if (e.target.className.includes('night')) {
-        clearTimeout(waiting);
-        waiting = setTimeout(function() {
-          hideLayer();
-        }, 1000);
-      } else {
-        hideLayer();
-      }
+      hideLayer();
+      // if (e.target.className.includes('night')) {
+      //   // clearTimeout(waiting);
+      //   // waiting = setTimeout(function() {
+      //   //   hideLayer();
+      //   // }, 1000);
+      // } else {
+      //   hideLayer();
+      // }
     }
   })
 
