@@ -27,10 +27,10 @@ $(function () {
   $('.menu-icon, .menu-icon-close').click(function (e) {
     e.preventDefault()
     e.stopPropagation()
-    flexContainer.toggleClass('active')
     if (flexContainer.hasClass('opaque')){
       hideLayer();
     } else {
+      flexContainer.toggleClass('active')
       setTimeout(function () {
         flexContainer.removeClass('transparent').addClass('opaque');
       }, 10);
