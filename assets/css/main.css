@@ -535,10 +535,10 @@ svg {
       -ms-flex-direction: column;
           flex-direction: column;
   min-height: 100vh;
-  -webkit-transition: -webkit-all 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
-  transition: -webkit-all 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
-  transition: all 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
-  transition: all 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99), -webkit-all 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  transition: -webkit-transform 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  transition: transform 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  transition: transform 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99), -webkit-transform 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
 }
 
 .flex-container.opaque {
@@ -549,10 +549,10 @@ svg {
 
 .flex-container::after{
   will-change: opacity;
-  -webkit-transition: -webkit-all 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
-  transition: -webkit-all 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
-  transition: all 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
-  transition: all 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99), -webkit-all 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  -webkit-transition: -webkit-opacity 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  transition: -webkit-opacity 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  transition: opacity 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  transition: opacity 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99), -webkit-opacity 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
 }
 
 .flex-container.active.opaque::after {
