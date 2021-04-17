@@ -16,6 +16,7 @@
     (function() {
       var sw = document.getElementById('theme-switch');
       var html = document.getElementsByTagName('html')[0];
+      var logo = document.getElementById('logo');
       var nightModeOption = ('{{ night_mode }}' || 'auto').toLowerCase();
       var storage = nightModeOption === 'manual'
           ? localStorage
@@ -41,6 +42,11 @@
         themeData.nightShift = nightShift;
         saveThemeData(themeData);
         html.dataset.theme = nightShift ? 'dark' : 'light';
+        if (nightShift) {
+            logo.setAttribute("src", "{{ site.logo-dark }}");
+        } else {
+            logo.setAttribute("src", "{{ site.logo }}");
+        }
         setTimeout(function() {
           sw.checked = nightShift ? true : false;
         }, 50);
