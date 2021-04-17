@@ -40,7 +40,7 @@ $(function () {
   // Click to close
   flexContainer.click(function (e) {
     if (flexContainer.hasClass('active') && e.target.tagName !== 'A') {
-      if (e.target.className.includes('night')) {
+      if (e.target.classList.contains('night')) {
         setTimeout(function() {
           hideLayer();
         }, 1000);
