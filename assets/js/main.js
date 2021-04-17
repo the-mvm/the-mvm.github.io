@@ -27,10 +27,10 @@ $(function () {
   $('.menu-icon, .menu-icon-close').click(function (e) {
     e.preventDefault()
     e.stopPropagation()
-    if (flexContainer.hasClass('opaque')){
+    if (flexContainer.hasClass('active')){
       hideLayer();
     } else {
-      flexContainer.toggleClass('active')
+      flexContainer.addClass('active')
       setTimeout(function () {
         flexContainer.removeClass('transparent').addClass('opaque');
       }, 10);
@@ -41,7 +41,8 @@ $(function () {
   flexContainer.click(function (e) {
     if (flexContainer.hasClass('active') && e.target.tagName !== 'A') {
       if (e.target.classList.contains('night')) {
-        setTimeout(function() {
+        clearTimeout(waiting);
+        waiting = setTimeout(function() {
           hideLayer();
         }, 1000);
       } else {
@@ -51,8 +52,8 @@ $(function () {
   })
 
   function hideLayer () {
-    flexContainer[0].classList.remove('opaque')
-    flexContainer[0].classList.add('transparent');
+    flexContainer.removeClass('opaque')
+    flexContainer.addClass('transparent');
     setTimeout(function(){
       flexContainer.removeClass('active');
     }, 600)
