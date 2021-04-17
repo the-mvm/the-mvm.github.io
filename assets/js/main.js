@@ -40,15 +40,13 @@ $(function () {
   // Click to close
   flexContainer.click(function (e) {
     if (flexContainer.hasClass('active') && e.target.tagName !== 'A') {
-      hideLayer();
-      // if (e.target.className.includes('night')) {
-      //   // clearTimeout(waiting);
-      //   // waiting = setTimeout(function() {
-      //   //   hideLayer();
-      //   // }, 1000);
-      // } else {
-      //   hideLayer();
-      // }
+      if (e.target.className.includes('night')) {
+        setTimeout(function() {
+          hideLayer();
+        }, 1000);
+      } else {
+        hideLayer();
+      }
     }
   })
 
