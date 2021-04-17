@@ -31,11 +31,12 @@ $(function () {
 
   // Click outside of menu to close it
   flexContainer.click(function (e) {
+    var waiting = 0;
     if (flexContainer.hasClass('active') && e.target.tagName !== 'A') {
       if (e.target.className.includes('night')){
         clearTimeout(waiting);
-        setTimeout(function() {
-          waiting = flexContainer.removeClass('active');
+        waiting = setTimeout(function() {
+          flexContainer.removeClass('active');
         }, 2000);
       } else {
         flexContainer.removeClass('active');
