@@ -28,16 +28,20 @@ $(function () {
     e.preventDefault()
     e.stopPropagation()
     flexContainer.toggleClass('active')
-    setTimeout(function () {
-      flexContainer.addClass('opaque');
-      flexContainer.removeClass('transparent');
-    }, 10);
+    if (flexContainer.hasClass('active')){
+      hideLayer();
+    } else {
+      setTimeout(function () {
+        flexContainer.addClass('opaque');
+        flexContainer.removeClass('transparent');
+      }, 10);
+    }
   })
 
   // Click outside of menu to close it
   flexContainer.click(function (e) {
     if (flexContainer.hasClass('active') && e.target.tagName !== 'A') {
-      if (e.target.className.includes('night')){
+      if (e.target.className.includes('night')) {
         clearTimeout(waiting);
         waiting = setTimeout(function() {
           hideLayer();

@@ -539,9 +539,17 @@ svg {
   transition: all 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
   transition: all 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99), -webkit-all 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
 }
-.flex-container.active {
+
+.flex-container.opaque {
   -webkit-transform: translate3d(300px, 0, 0);
           transform: translate3d(300px, 0, 0);
+}
+
+.flex-container::after{
+  -webkit-transition: -webkit-all 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  transition: -webkit-all 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  transition: all 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  transition: all 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99), -webkit-all 0.6s cubic-bezier(0.16, 0.68, 0.43, 0.99);
 }
 
 .flex-container.active.opaque::after {
