@@ -43,7 +43,7 @@ The perceptron is just a math operation, one that multiplies certain input value
 
 Then the magic spark was ignited, the parameters (weights) of the perceptron could be "learnt" by a process of minimizing the difference between known results of particular observations, and what the perceptron is actually calculating. It is this process of learning what we call **training the neural network**.
 
->This idea is so powerful that even today it is one of the fundamental building blocks of what we call AI.
+<tweet>This idea is so powerful that even today it is one of the fundamental building blocks of what we call AI.</tweet>
 
 From this I will try to explain how this simple concept can have such diverse applications as natural language processing (think Alexa), image recognition like medical diagnosis from a CTR scan, autonomous vehicles, etc.
 
