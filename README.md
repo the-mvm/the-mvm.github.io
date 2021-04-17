@@ -9,6 +9,7 @@ demo site now [mirrored](https://weathered-bread-8229.on.fleek.co/) in [IPFS](ht
 - automatic [sitemap.xml](http://the-mvm.github.io/sitemap.xml)
 - automatic [archive page](http://the-mvm.github.io/archive/) with infinite scrolling capability
 - [new page](https://the-mvm.github.io/tag/?tag=Coding) of posts filtered by a single tag (without needing autopages from paginator V2), also with infinite scrolling
+- smoother menu animations 
 - custom and responsive [404 page](https://the-mvm.github.io/404.html)
 - responsive and automatic Table of Contents (optional per post)
 - read time per post automatically calculated
