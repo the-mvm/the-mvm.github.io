@@ -159,7 +159,7 @@
           tweetA.href = 'https://twitter.com/share?text='
                        + encodeURIComponent(tweetTags[i].textContent)
                        + '&via={{ site.tweeter | remove: "@" }}&url='
-                       + document.own_url;
+                       + window.location.href;
           tweetA.appendChild(document.createTextNode(tweetTags[i].textContent))
           tweetA.className = 'twitter';
           tweetTags[i].textContent = "";
