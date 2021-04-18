@@ -1814,7 +1814,6 @@ img + small, img + br + small {
 }
 
 .about-header .subtitle {
-  color: var(--accent-dark);
   font-weight: var(--font1-light);
   margin: 0;
 }
