@@ -160,13 +160,12 @@
                        + encodeURIComponent(tweetTags[i].textContent)
                        + '&via={{ site.twitter | remove: "@" }}&url='
                        + window.location.href;
-          tweetA.className = 'twitter';
           tweetA.target = "_blank";
           tweetSpanText = document.createElement('span');
           tweetSpanText.className = 'tweetText';
           tweetSpanText.appendChild(document.createTextNode(tweetTags[i].textContent));
           tweetSpanIcon = document.createElement('span');
-          tweetSpanIcon.className = 'tweetIcon';
+          tweetSpanIcon.className = 'tweetIcon twitter';
           tweetSpanIcon.appendChild(document.createTextNode("click to tweet"));
           tweetI = document.createElement("i");
           tweetI.className = 'fa fa-twitter';
