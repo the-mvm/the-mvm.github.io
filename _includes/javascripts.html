@@ -157,7 +157,7 @@
         for (i=0; i<tweetTags.length; i++){
           tweetA = document.createElement("a")
           tweetA.href = 'https://twitter.com/share?text='
-                       + fixedEncodeURIComponent(tweetTags[i].textContent)
+                       + encodeURIComponent(tweetTags[i].textContent)
                        + '&via={{ site.tweeter | remove: "@" }}&url='
                        + document.own_url;
           tweetA.appendChild(document.createTextNode(tweetTags[i].textContent))
