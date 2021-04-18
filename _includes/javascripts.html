@@ -160,12 +160,19 @@
                        + encodeURIComponent(tweetTags[i].textContent)
                        + '&via={{ site.twitter | remove: "@" }}&url='
                        + window.location.href;
-          tweetA.appendChild(document.createTextNode(tweetTags[i].textContent))
           tweetA.className = 'twitter';
           tweetA.target = "_blank";
+          tweetSpanText = document.createElement('span');
+          tweetSpanText.className = 'tweetText';
+          tweetSpanText.appendChild(document.createTextNode(tweetTags[i].textContent));
+          tweetSpanIcon = document.createElement('span');
+          tweetSpanIcon.className = 'tweetIcon';
+          tweetSpanIcon.appendChild(document.createTextNode("click to tweet"));
           tweetI = document.createElement("i");
           tweetI.className = 'fa fa-twitter';
-          tweetA.appendChild(tweetI);
+          tweetSpanIcon.appendChild(tweetI);
+          tweetA.appendChild(tweetSpanText);
+          tweetA.appendChild(tweetSpanIcon);
           tweetTags[i].textContent = "";
           tweetTags[i].appendChild(tweetA);
         }
