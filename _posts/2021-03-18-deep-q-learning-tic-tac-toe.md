@@ -149,7 +149,7 @@ It is quite interesting to learn how the many parameters (hyper-parameters as mo
 
 And so far the most effective change has been the network topology, but being so close but not quite there yet to my goal of 90% win rate vs. a random player, I will still try to optimize further.
 
-<tweet>Network topology seems to have the biggest impact on a neural network learning ability.</tweet>
+<tweet>Network topology seems to have the biggest impact on a neural network's learning ability.</tweet>
 
 <a name='Model4'></a>
 ### Model 4 - implementing momentum
