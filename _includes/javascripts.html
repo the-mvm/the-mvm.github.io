@@ -154,7 +154,7 @@
       var tweetTags = document.getElementsByTagName("tweet");
 
       if (tweetTags != null){
-        for (i=0; i<tweetTags.length(); i++){
+        for (i=0; i<tweetTags.length; i++){
           tweetA = document.createElement("a")
           tweetA.href = 'https://twitter.com/share?text='
                        + fixedEncodeURIComponent(tweetTags[i].textContent)
