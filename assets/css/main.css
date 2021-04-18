@@ -1402,6 +1402,7 @@ tweet {
   cursor: pointer;
   border-left: 5px solid var(--accent);
   padding-left: 1em;
+  padding-right: 0.5em;
   margin-left: 2.5em;
   font-family: var(--font2);
   background: var(--grey5);
