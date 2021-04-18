@@ -163,11 +163,11 @@
           tweetA.appendChild(document.createTextNode(tweetTags[i].textContent))
           tweetA.className = 'twitter';
           tweetA.target = "_blank";
-          tweetTags[i].textContent = "";
-          tweetTags[i].appendChild(tweetA);
           tweetI = document.createElement("i");
           tweetI.className = 'fa fa-twitter';
-          tweetTags[i].appendChild(tweetI);
+          tweetA.appendChild(tweetI);
+          tweetTags[i].textContent = "";
+          tweetTags[i].appendChild(tweetA);
         }
       }
 
