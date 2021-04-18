@@ -115,13 +115,11 @@
 
 {% if page.layout == "post" %}
   <script>
-    if (document.getElementById('comment-curtain') == null){
-      document.getElementById('disqus_thread').classList.toggle('show')
-    }
     function toggle_comments(){
         document.getElementById('comment-curtain').classList.toggle('hide')
         document.getElementById('disqus_thread').classList.toggle('show')
     }
+
     $(".share-hover.side").on("mouseover", function() {
       document.getElementById('sidebar-icons').classList.add('show');
       setTimeout(function () {
@@ -135,6 +133,7 @@
         document.getElementById('sidebar-icons').classList.remove('show');
       }, {capture: false, once: true, passive: false});
     });
+
     function copyToClipboard() {
       navigator.clipboard.writeText('{{ site.url }}{{ page.url }}').then(function() {
       alerts = document.getElementsByClassName('alert')
@@ -146,10 +145,34 @@
         prompt("Unable to copy, please use this link:", "{{ site.url }}{{ page.url }}");
       });
     }
-  </script>
-{% endif %}
 
-{% if page.layout == "post" %}
+    $(function () {
+      if (document.getElementById('comment-curtain') == null){
+        document.getElementById('disqus_thread').classList.toggle('show')
+      }
+
+      var tweetTags = document.getElementsByTagName("tweet");
+
+      if (tweetTags != null){
+        for (i=0; i<tweetTags.length(); i++){
+          tweetA = document.createElement("a")
+          tweetA.href = 'https://twitter.com/share?text='
+                       + fixedEncodeURIComponent(tweetTags[i].textContent)
+                       + '&via={{ site.tweeter | remove: "@" }}&url='
+                       + document.own_url;
+          tweetA.appendChild(document.createTextNode(tweetTags[i].textContent))
+          tweetA.className = 'twitter';
+          tweetTags[i].textContent = "";
+          tweetTags[i].appendChild(tweetA);
+          tweetI = document.createElement("i");
+          tweetI.className = 'fa fa-twitter';
+          tewwtTags[i].appendChild(tweetI);
+        }
+      }
+
+    });
+
+  </script>
   <!-- Mailchimp linking -->
   <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8ece198b3eb260e6838461a60/d20d9fb9aad962399025da52e.js");</script>
 {% endif %}

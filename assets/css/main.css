@@ -1054,7 +1054,7 @@ svg.menu-icon-house {
     color: var(--grey2);
     font-size: .9em;
 }
-/* = = = = = = = = = = icon image buttons = = = = = = = = */
+/* = = = = = = = = = = to top button = = = = = = = = */
 .top {
     position: fixed;
     bottom: 62px;
@@ -1393,6 +1393,24 @@ div.tag-cloud{
   border-radius: 3px;
   padding: 0.1rem 0.5rem;
   line-height: 0.75;
+}
+
+/* = = = = = = = = = = Tweet = = = = = = = = = = = = */
+
+tweet {
+  display: block;
+  cursor: pointer;
+  border-left: 5px solid var(--accent);
+  padding-left: 1em;
+  margin-left: 2.5em;
+  font-style: italic;
+  color: var(--accent-dark);
+  background: var(--grey5);
+  margin-right: 0;
+  font-weight: 100;
+}
+tweet:hover {
+  background: var(--grey4);
 }
 
 /* = = = = = = = = = = Post Page  = = = = = = = = = = */
