@@ -1440,6 +1440,12 @@ tweet a {
   padding: 0 0 0 0.5em;
 }
 
+@media only screen and (max-width: 768px) {
+  tweet {
+    margin-left: 0;
+  }
+}
+
 /* = = = = = = = = = = Post Page  = = = = = = = = = = */
 .page-image {
   position: relative;
