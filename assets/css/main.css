@@ -1411,8 +1411,9 @@ tweet {
 }
 
 tweet:hover {
-  background: var(--grey4);
+  opacity: 0.85;
 }
+
 tweet a {
   text-decoration: none;
 }
