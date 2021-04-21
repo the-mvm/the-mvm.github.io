@@ -824,6 +824,7 @@ svg.menu-icon-house {
 }
 
 .results-search li a {
+  font-family: var(--font2);
   text-decoration: none;
   color: var(--grey1);
 }
