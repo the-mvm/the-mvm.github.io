@@ -27,8 +27,8 @@ html {
   --grey5:        #F0EFED;
   --background:   #ffffff;
   --shadows:      rgba(32,30,30,.3);
-  --font1: 'Lora';                      /* body text */
-  --font2: 'Source Sans Pro';          /* headers and titles   */
+  --font1: 'Lora', charter, Georgia, Cambria, 'Times New Roman', Times, serif;/* body text */
+  --font2: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* headers and titles   */
   --font1-light:      400;
   --font1-regular:    400;
   --font1-bold:       600;
@@ -997,7 +997,8 @@ svg.menu-icon-house {
     color: var(--grey4);
     text-decoration: none;
     font-size: 14px;
-    font-weight: var(--font1-bold);
+    font-weight: var(--font2-bold);
+    font-family: var(--font2);
 }
 .footer-wrapper a:hover {
     opacity: 0.6
