@@ -27,14 +27,14 @@ html {
   --grey5:        #F0EFED;
   --background:   #ffffff;
   --shadows:      rgba(32,30,30,.3);
-  --font1: 'Inter';           /* body text */
-  --font2: 'Roboto';          /* headers and titles   */
-  --font1-light:      200;
-  --font1-regular:    300;
+  --font1: 'Lora';                      /* body text */
+  --font2: 'Source Sans Pro';          /* headers and titles   */
+  --font1-light:      400;
+  --font1-regular:    400;
   --font1-bold:       600;
-  --font2-light:      100;
-  --font2-regular:    300;
-  --font2-bold:       500;
+  --font2-light:      200;
+  --font2-regular:    400;
+  --font2-bold:       700;
 }
 
 html[data-theme="dark"]  {
@@ -1490,7 +1490,8 @@ img + small, img + br + small {
     font-size:.6em;
     color:var(--grey1);
     margin-bottom: 1.5em;
-    text-align: center
+    text-align: center;
+    font-style: italic;
 }
 
 .page-content img {
