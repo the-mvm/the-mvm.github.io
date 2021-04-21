@@ -10,7 +10,7 @@ permalink: about:output_ext
   <div class="about-container">
     <section class="about-header">
       <div class="author-image-container">
-        <img src="{{ relativebase }}/assets/img/{% if site.author-pic %}{{site.author-pic}}{% endif %}" alt="{{site.author}}">
+        <a href='{{ site.website }}'><img src="{{ relativebase }}/assets/img/{% if site.author-pic %}{{site.author-pic}}{% endif %}" alt="{{site.author}}"></a>
       </div>
       <p class="subtitle">{{site.about-author}}</p>
     </section>
