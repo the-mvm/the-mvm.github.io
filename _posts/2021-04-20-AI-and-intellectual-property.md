@@ -10,11 +10,11 @@ category: opinion
 author: Armando Maynez
 description: "As neural networks are used more and more in the creative process, text, images and even music are now created by AI, but who owns the copyright for those works?"
 ---
-Recently I was [reading an article](https://www.rollingstone.com/music/music-features/nirvana-kurt-cobain-ai-song-1146444/) about a cool project that intends to have a neural network create songs of the late club of the 27 (artists that have tragically died at age 27 or near, and in the height of their respective careers), artists such as Amy Whinehouse, Jimmy Hendrix, Curt Cobain and Jim Morrison.
+Recently I was [reading an article](https://www.rollingstone.com/music/music-features/nirvana-kurt-cobain-ai-song-1146444/) about a cool project that intends to have a neural network create songs of the late club of the 27 (artists that have tragically died at age 27 or near, and in the height of their respective careers), artists such as Amy Winehouse, Jimmy Hendrix, Curt Cobain and Jim Morrison.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GogY7RQFFus" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-The project was created by [Over the Bridge](https://overthebridge.org), an organization dedicated to increase awarenes on mental health and substance abuse in the music industry, trying to denormalize and remove the glamour around such ilnesses within the music community.
+The project was created by [Over the Bridge](https://overthebridge.org), an organization dedicated to increase awareness on mental health and substance abuse in the music industry, trying to denormalize and remove the glamour around such illnesses within the music community.
 
 They are using Google's [Magenta](https://magenta.tensorflow.org), which is a neural network that precisely was conceived to explore the role of machine learning within the creative process. Magenta has been used to create a brand new "Beatles" song or even there was a band that [used it to write a full album](https://arstechnica.com/gaming/2019/08/yachts-chain-tripping-is-a-new-landmark-for-ai-music-an-album-that-doesnt-suck/) in 2019.
 
@@ -30,11 +30,11 @@ Now, creative works qualify for copyright protection if they are original, with 
 
 So as we currently stand, a human author is required to grant a copyright, which makes sense, there is no point of having a neural network be the beneficiary of royalties of a creative work (no bank would open an account for them anyways, lol).
 
-I think amendments have to be made to the law to ensure that the person who undertook all the arrangements neccesary for the work to be created by the neural network gets the credit but also we need to modify copyright law to ensure the original authors of the body of work used as data input to produce the new piece get their corresponding share of credit. This will get messy if someone uses for example the #1 song of every month in a decade to create the decade song, then there would be as many as 120 different artists to credit.
+I think amendments have to be made to the law to ensure that the person who undertook all the arrangements necessary for the work to be created by the neural network gets the credit but also we need to modify copyright law to ensure the original authors of the body of work used as data input to produce the new piece get their corresponding share of credit. This will get messy if someone uses for example the #1 song of every month in a decade to create the decade song, then there would be as many as 120 different artists to credit.
 
-<tweet>In a computer generated artistic work, both the person who undertook all the arrangements neccesary for its creation as well as the original authors of the data input need to be credited.</tweet> 
+<tweet>In a computer generated artistic work, both the person who undertook all the arrangements necessary for its creation as well as the original authors of the data input need to be credited.</tweet> 
 
-There will still be some ambiguity as to who undertook the arrangements neccesary, only the one who gathered the data and pressed the button to let the network learn, or does the person who created the neural network's model also get credit? Shall we go all the way and say that even the programmer of the neural network gets some credit as well?
+There will still be some ambiguity as to who undertook the arrangements necessary, only the one who gathered the data and pressed the button to let the network learn, or does the person who created the neural network's model also get credit? Shall we go all the way and say that even the programmer of the neural network gets some credit as well?
 
 There are some countries, in particular the UK where some progress has been made to amend copyright laws to cater for computer generated works of art, but I believe this is one of those fields where technology will surpass our law making capacity and we will live under a grey area for a while, and maybe this is just what we need, by having these works ending up free for use by anyone in the world, perhaps a new model for remunerating creative work can be established, one that does not require commercial success to be necessary for artists to make a living, and thus they can become free to explore their art.
 
