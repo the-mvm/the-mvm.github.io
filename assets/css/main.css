@@ -941,6 +941,7 @@ svg.menu-icon-house {
 }
 
 .pagination .previous, .pagination .next {
+  font-family: var(--font2);
   text-decoration: none;
   text-transform: uppercase;
   font-size: 16px;
