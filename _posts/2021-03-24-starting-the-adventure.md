@@ -107,7 +107,7 @@ I picked up a template, just forked the repository and started modifying the fil
 
 ![my new blog](./assets/img/template_screenshots/homepage-responsive.jpg)
 
-![night theme toggle](./light-toggle.png)
+![night theme toggle](./assets/img/template_screenshots/light-toggle.png)
 
 As a summary, Hugo and Gatsby might be much faster than Jekyll to build the sites, but their complexity I think makes them useful for a big site with plenty of posts. For a small site like mine, Jekyll provides sufficient functionality and power without the hassle.
 
