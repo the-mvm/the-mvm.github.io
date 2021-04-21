@@ -1334,7 +1334,8 @@ div.tag-cloud{
     background: var(--grey5);
     border-radius: 15px;
     padding: 3px 15px;
-    font-weight: normal;
+    font-family: var(--font2);
+    font-weight: var(--font2-regular);
     display: block;
     text-transform: lowercase}
 .tags li a:hover {
@@ -1869,7 +1870,8 @@ img + small, img + br + small {
 .list-group-title a {
     color: var(--text);
     text-transform: lowercase;
-    font-weight:var(--font1-bold);
+    font-family: var(--font2);
+    font-weight:var(--font2-bold);
 }
 .list-item {
     margin-bottom:20px
@@ -1899,7 +1901,8 @@ img + small, img + br + small {
 }
 a.post-list-title {
     text-decoration: none;
-    font-weight: var(--font1-bold);
+    font-family: var(--font2);
+    font-weight: var(--font2-bold);
     font-size: 2em;
 }
 a.read-more {
