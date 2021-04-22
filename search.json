@@ -9,7 +9,8 @@ layout: null
       "tags"        : "{{ post.tags | join: ', ' }}",
       "url"         : ".{{ post.url }}",
       "date"        : "{{ post.date }}",
-      "description" : "{{ post.description }}"
+      "description" : "{{ post.description }}",
+      "content"     : "{{ post.content }}"
     } {% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]
