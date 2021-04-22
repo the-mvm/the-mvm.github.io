@@ -1191,7 +1191,7 @@ a.tag.side {
     }
     .share-icons.side{
       display:block;
-      transition: all 0.5s ease-out;
+      transition: all 1s ease-out;
       max-height:0;
       clip-path: inset(0);
     }
