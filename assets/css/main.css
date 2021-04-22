@@ -1190,11 +1190,15 @@ a.tag.side {
         margin-right: 55px;
     }
     .share-icons.side{
-        transition: all 0.5s ease;
-        opacity: 0;
+      display:block;
+      transition: all 0.5s ease-out;
+      max-height:0;
+      clip-path: inset(0);
     }
     .share-hover:hover>#sidebar-icons {
-      opacity: 1;
+      transition: all 0.5s ease-in;
+      max-height:100vh;
+      clip-path: inset(-100vh -100vw);
     }
     .sidebar.inline{
         display:none
