@@ -1905,6 +1905,7 @@ a.read-more:hover {
 .main-header,
 .page-image,
 .page-content,
+.pagination,
 .about-container,
 .post-card-box,
 .blog-tags,
@@ -1931,6 +1932,7 @@ a.read-more:hover {
 }
 
 .page-content,
+.pagination,
 .tag-master,
 .tag-cloud,
 .blog-tags,
