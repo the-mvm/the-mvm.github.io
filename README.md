@@ -139,7 +139,7 @@ paginate_path: 'page:num'
 words_per_minute: 200 # default words per minute to be considered when calculating the read time of the blog posts
 ```
 ### **STEP 3.**
-To configure the newsletter, please create an account in https://mailchimp.com, set up a web sugnup form and paste the link from the embed signup form in the `config.yml` file:
+To configure the newsletter, please create an account in https://mailchimp.com, set up a web signup form and paste the link from the embed signup form in the `config.yml` file:
 ```YAML
 # Newsletter
 mailchimp: "https://github.us1.list-manage.com/subscribe/post?u=8ece198b3eb260e6838461a60&amp;id=397d90b5f4"
