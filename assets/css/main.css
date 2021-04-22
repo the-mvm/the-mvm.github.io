@@ -190,7 +190,7 @@ kbd,
 samp {
   font-family: monospace, monospace;
   /* 1 */
-  font-size: .5em;
+  font-size: .75em;
   /* 2 */
 }
 /**
