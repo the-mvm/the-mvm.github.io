@@ -1333,48 +1333,46 @@ div.tag-cloud{
 
 /* = = = = = = = = = = Github Link Button = = = = = = = = = = */
 .button-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 4px;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    display: block;
-    float: left;
-    color: var(--text);
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+  display: block;
+  float: left;
+  transition: all 0.3s ease-out;
 }
 .github-button {
-    margin-top:1em;
-    margin-bottom:1em;
-    padding: 3px 10px 3px 10px;
-    will-change: transform;
-    background-image:linear-gradient(to bottom, var(--grey5) 0, var(--grey4) 100%);
-    font-size: 13px;
-    border:1px solid var(--grey5);
-    border-radius: 8px;
-    transition: all 0.3s ease-out;
-    height: 28px;
-    flex-flow: nowrap;
-    white-space: nowrap;
-    overflow-x: visible;
-    min-width: max-content;
+  margin-top:1em;
+  margin-bottom:1em;
+  padding: 3px 10px 3px 10px;
+  will-change: transform;
+  font-size: 13px;
+  border:1px solid var(--main);
+  border-radius: 20px;
+  transition: all 0.3s ease-out;
+  height: 28px;
+  flex-flow: nowrap;
+  white-space: nowrap;
+  overflow-x: visible;
 }
 .github-button a{
-    color: var(--text);
-    font-family: var(--font2);
-    white-space: nowrap;
-    text-decoration: none;
+  font-family: var(--font2);
+  white-space: nowrap;
+  text-decoration: none;
+}
+.button-icon, .github-button a{
+color:var(--main);
 }
 .center-container {
-    display: flex;
-    overflow-x: visible;
+  display: flex;
+  overflow-x: visible;
 }
 .github-button:hover,.github-button:focus{
-    background-image:linear-gradient(to bottom, var(--background) 0, var(--grey4) 100%);
-    border:#ddd;
-    box-shadow: 0 0.5em 0.5em -0.4em var(--shadow);
-    color: var(--text);
-    cursor:pointer;
-    }
+  border: 1px solid var(--accent);
+  cursor:pointer;
+  }
+.github-button:hover>a, .github-button:hover>.button-icon{
+color: var(--accent);
+}
 /* = = = = = = = = = = Code = = = = = = = = = = */
 .highlighter-rouge {
   color: var(--main);
