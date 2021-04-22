@@ -155,17 +155,6 @@ comments_curtain: yes # leave empty to show the disqus embed directly
 Customize the site colors. Modify `/assets/css/main.css` as follows:
 ```CSS
 html {
-  --accent:       #d14c47;    /* accent */
-  --accent-dark:  #CD8A7A;    /* accent 2 (dark) */
-  --main:         #587465;    /* main color */
-  --main-dim:     #35463D;    /* dimmed version of main color */
-  --text:         #B4B3A7;
-  --grey1:        #8D897C;
-  --grey2:        #827F73;
-  --grey3:        #76746A;
-  --grey4:        #66645D;
-  --grey5:        #4A4945;
-  --background:   #201E1E;
   --shadow:       rgba(32,30,30,.3);
   --accent:       #DB504A;    /* accent */
   --accent-dark:  #4e3e51;    /* accent 2 (dark) */
