@@ -1142,8 +1142,17 @@ a.tag.side {
     color:var(--accent-dark);
     vertical-align: top;
 }
+
+#sidebar-icons{
+  transition: all 0.5s ease;
+  height: 0;
+}
+.share-hover:hover>#sidebar-icons {
+  height: auto;
+  opacity: 1;
+}
+
 .share-icons {
-    transition: all 0.5s;
     display: inline;
     vertical-align: middle;
 }
