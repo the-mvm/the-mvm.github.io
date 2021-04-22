@@ -1369,7 +1369,7 @@ div.tag-cloud{
     overflow-x: visible;
 }
 .github-button:hover,.github-button:focus{
-    background-image:linear-gradient(to bottom, var(--grey4) 0, var(--grey3) 100%);
+    background-image:linear-gradient(to bottom, var(--background) 0, var(--grey4) 100%);
     border:#ddd;
     box-shadow: 0 0.5em 0.5em -0.4em var(--shadow);
     color: var(--text);
