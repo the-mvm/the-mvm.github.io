@@ -1977,6 +1977,7 @@ a.read-more:hover {
 .email:hover{color:#66ab6b}
 .bandcamp:hover{color:#629aa9}
 .github:hover{color:#333}
+.copy-link:hover{color:var(--accent)}
 
 /* = = = = = = = = = = Media = = = = = = = = = = */
 /* Small Devices, Tablets */
