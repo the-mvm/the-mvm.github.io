@@ -134,9 +134,9 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 pre {
-  font-family: monospace, monospace;
+  font-family: monospace;
   /* 1 */
-  font-size: 1.375rem;
+  font-size: 0.75rem;
   /* 2 */
 }
 /* Text-level semantics
@@ -188,7 +188,7 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
+  font-family: monospace;
   /* 1 */
   font-size: .75rem;
   /* 2 */
@@ -470,7 +470,7 @@ html {
     font-size: 1.375rem;
 }
 body {
-  font-family: var(--font1), sans-serif;
+  font-family: var(--font1);
   color: var(--text);
   margin: 0;
   background-color: var(--background);
@@ -479,7 +479,7 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font2), sans-serif;
+  font-family: var(--font2);
   color: var(--accent-dark);
 }
 img {
