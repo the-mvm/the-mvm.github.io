@@ -26,7 +26,6 @@ html {
   --grey4:        #DAD7D2;
   --grey5:        #F0EFED;
   --background:   #ffffff;
-  --shadows:      rgba(32,30,30,.3);
   --font1: 'Lora', charter, Georgia, Cambria, 'Times New Roman', Times, serif;/* body text */
   --font2: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* headers and titles   */
   --font1-light:      400;
@@ -49,7 +48,7 @@ html[data-theme="dark"]  {
   --grey4:        #66645D;
   --grey5:        #4A4945;
   --background:   #201E1E;
-  --shadow:       rgba(32,30,30,.3);
+  --shadow:       rgba(180,179,167,.3);
 }
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
