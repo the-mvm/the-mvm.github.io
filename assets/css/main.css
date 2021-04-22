@@ -190,7 +190,7 @@ kbd,
 samp {
   font-family: monospace;
   /* 1 */
-  font-size: .75rem;
+  font-size: 1rem;
   /* 2 */
 }
 /**
@@ -1392,12 +1392,11 @@ div.tag-cloud{
 /* = = = = = = = = = = Code = = = = = = = = = = */
 .highlighter-rouge {
   color: var(--main);
-  font-weight: var(--font1-light);
   border: none;
   -webkit-border-radius: 3px;
   border-radius: 3px;
   padding: 0.1rem 0.5rem;
-  line-height: 0.75;
+  line-height: 1.1;
 }
 
 /* = = = = = = = = = = Tweet = = = = = = = = = = = = */
