@@ -1332,13 +1332,9 @@ div.tag-cloud{
     text-decoration: none}
 
 /* = = = = = = = = = = Github Link Button = = = = = = = = = = */
-.button-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 4px;
-  display: block;
-  float: left;
-  transition: all 0.3s ease-out;
+.center-container {
+  display: flex;
+  overflow-x: visible;
 }
 .github-button {
   margin-top:1em;
@@ -1354,17 +1350,24 @@ div.tag-cloud{
   white-space: nowrap;
   overflow-x: visible;
 }
-.github-button a{
-  font-family: var(--font2);
-  white-space: nowrap;
-  text-decoration: none;
+.button-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+  display: block;
+  float: left;
+  transition: all 0.3s ease-out;
+}
+.button-icon > svg {
+  vertical-align: super;
 }
 .button-icon, .github-button a{
 color:var(--main);
 }
-.center-container {
-  display: flex;
-  overflow-x: visible;
+.github-button a{
+  font-family: var(--font2);
+  white-space: nowrap;
+  text-decoration: none;
 }
 .github-button:hover,.github-button:focus{
   border: 1px solid var(--accent);
