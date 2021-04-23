@@ -1088,7 +1088,7 @@ svg.menu-icon-house {
 .top svg {
   display: inline-block;
   height: 25px;
-  vertical-align: text-bottom;
+  vertical-align: text-top;
 }
 @media (max-width: 768px) {
   .top.is-active {
