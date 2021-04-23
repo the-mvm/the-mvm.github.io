@@ -16,30 +16,30 @@
 /*
 https://coolors.co/326273-4e3e51-db504a-201e1e-5f5e58-8d897c-b4b3a7-dad7d2-f0efed
 */
-/* DARK MODE */
+/* DARK MODE colder */
 :root {
     --accent:       #d14c47;    /* accent */
     --accent-dark:  #CD8A7A;    /* accent 2 (dark) */
     --main:         #4C6567;    /* main color */
-    --main-dim:     #273335;    /* dimmed version of main color */
+    --main-dim:     #2B333B;    /* dimmed version of main color */
     --text:         #CBCCCD;
     --grey1:        #B1B1AE;
-    --grey2:        #8C8C88;
-    --grey3:        #6C6C69;
-    --grey4:        #575856;
-    --grey5:        #373A3C;
+    --grey2:        #959692;
+    --grey3:        #6A6C69;
+    --grey4:        #4E504F;
+    --grey5:        #313435;
     --background:   #22272E;
     --shadow:      rgba(203,204,205,.3);
     }
     
     /*
-    https://coolors.co/d14c47-4c6567-273335-22272e-cbcccd-b1b1ae-8c8c88-6c6c69-575856-373a3c
+    https://coolors.co/d14c47-4c6567-2b333b-22272e-cbcccd-b1b1ae-959692-6a6c69-4e504f-313435
     */
 
 
 
 
-/* DARK MODE BACKUP */
+/* DARK MODE brownish */
 :root {
 --accent:       #d14c47;    /* accent */
 --accent-dark:  #CD8A7A;    /* accent 2 (dark) */
