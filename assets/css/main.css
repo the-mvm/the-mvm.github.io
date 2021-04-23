@@ -727,6 +727,9 @@ svg.menu-icon-house {
     display: flex;
     justify-content: space-between;
     user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:  none;
+
 }
 
 .theme-toggle .dark {
@@ -1183,6 +1186,7 @@ a.tag.side {
     .sidebar.side {
       display:block;
       position: sticky;
+      position: -webkit-sticky;
       top: 32px;
       width: 115px;
       margin-left: -135px;
@@ -1295,6 +1299,7 @@ path.fa-secondary {
 @media (min-width: 1200px) {
     aside.toc {
         position: sticky;
+        position: -webkit-sticky;
         top: 32px;
         width: 180px;
         margin-right: -210px;
