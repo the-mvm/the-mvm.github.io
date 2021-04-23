@@ -30,14 +30,14 @@ html[data-theme="dark"]  {
   --accent-dark:  #CD8A7A;    /* accent 2 (dark) */
   --main:         #4C6567;    /* main color */
   --main-dim:     #273335;    /* dimmed version of main color */
-  --text:         #B4B3A7;
-  --grey1:        #8D897C;
-  --grey2:        #827F73;
-  --grey3:        #76746A;
-  --grey4:        #66645D;
-  --grey5:        #4A4945;
-  --background:   #201E1E;
-  --shadow:       rgba(180,179,167,.3);
+  --text:         #CBCCCD;
+  --grey1:        #B1B1AE;
+  --grey2:        #8C8C88;
+  --grey3:        #6C6C69;
+  --grey4:        #575856;
+  --grey5:        #373A3C;
+  --background:   #22272E;
+  --shadows:      rgba(203,204,205,.3);
 }
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
