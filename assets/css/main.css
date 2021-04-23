@@ -1698,7 +1698,7 @@ img + small, img + br + small {
   height: 40px;
   font-size: 14px;
   text-align: center;
-  color: white;
+  color: var(--background);
   background-color: var(--accent-dark);
   vertical-align: baseline;
   cursor: pointer;
@@ -1711,6 +1711,7 @@ img + small, img + br + small {
 }
 .newsletter .newsletter-box .subscribe-btn:hover {
   background-color: var(--accent);
+  color: white;
 }
 /* = = = = = = = = = = Author Box = = = = = = = = = = */
 .author-box {
