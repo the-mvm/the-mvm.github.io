@@ -3,7 +3,6 @@
 /* Main Color palette and fonts */
 
 html {
-  --shadow:       rgba(32,30,30,.3);
   --accent:       #DB504A;    /* accent */
   --accent-dark:  #4e3e51;    /* accent 2 (dark) */
   --main:         #326273;    /* main color */
@@ -15,6 +14,7 @@ html {
   --grey4:        #DAD7D2;
   --grey5:        #F0EFED;
   --background:   #ffffff;
+  --shadow:       rgba(32,30,30,.3);
   --font1: 'Lora', charter, Georgia, Cambria, 'Times New Roman', Times, serif;/* body text */
   --font2: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* headers and titles   */
   --font1-light:      400;
@@ -37,7 +37,7 @@ html[data-theme="dark"]  {
   --grey4:        #575856;
   --grey5:        #373A3C;
   --background:   #22272E;
-  --shadows:      rgba(203,204,205,.3);
+  --shadow:       rgba(203,204,205,.3);
 }
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */

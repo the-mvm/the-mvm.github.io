@@ -11,7 +11,7 @@
 --grey4:        #DAD7D2;
 --grey5:        #F0EFED;
 --background:   #ffffff;
---shadows:      rgba(32,30,30,.3);
+--shadow:      rgba(32,30,30,.3);
 }
 /*
 https://coolors.co/326273-4e3e51-db504a-201e1e-5f5e58-8d897c-b4b3a7-dad7d2-f0efed
@@ -29,8 +29,8 @@ https://coolors.co/326273-4e3e51-db504a-201e1e-5f5e58-8d897c-b4b3a7-dad7d2-f0efe
     --grey4:        #575856;
     --grey5:        #373A3C;
     --background:   #22272E;
-    --shadows:      rgba(203,204,205,.3);
-        }
+    --shadow:      rgba(203,204,205,.3);
+    }
     
     /*
     https://coolors.co/d14c47-4c6567-273335-22272e-cbcccd-b1b1ae-8c8c88-6c6c69-575856-373a3c
@@ -52,7 +52,7 @@ https://coolors.co/326273-4e3e51-db504a-201e1e-5f5e58-8d897c-b4b3a7-dad7d2-f0efe
 --grey4:        #66645D;
 --grey5:        #4A4945;
 --background:   #201E1E;
---shadows:      rgba(32,30,30,.3);
+--shadow:      rgba(32,30,30,.3);
     }
 
 /*
