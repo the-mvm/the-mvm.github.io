@@ -1386,6 +1386,26 @@ color: var(--accent);
   line-height: 1.1;
 }
 
+/* = = = = = =   Scrollbar  = = = = = = = = =  */
+::-webkit-scrollbar {
+  width: 5px;
+}
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+}
+::-webkit-scrollbar-track {
+  background: var(--grey3);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--main);
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-dim);
+}
+
 /* = = = = = = = = = = Tweet = = = = = = = = = = = = */
 
 tweet {
