@@ -777,6 +777,8 @@ svg.menu-icon-house {
   -webkit-transform: translate(0, -100%) scale(0, 0);
       -ms-transform: translate(0, -100%) scale(0, 0);
           transform: translate(0, -100%) scale(0, 0);
+  max-height: 100vh;
+  overflow: scroll;
 }
 .search-grid {
   width: 60%;
@@ -800,9 +802,10 @@ svg.menu-icon-house {
 
 .results-search {
   list-style: none;
-  overflow: auto;
+  overflow: scroll;
   margin: 0;
   padding: 0;
+  max-height: 80vh;
 }
 
 .results-search li {
@@ -814,12 +817,20 @@ svg.menu-icon-house {
 .results-search li a {
   font-family: var(--font2);
   text-decoration: none;
-  color: var(--grey1);
+  color: var(--accent-dark);
+  font-weight: var(--font2-bold);
 }
 
 .results-search li a:hover {
   color: var(--accent);
   opacity: .8;
+}
+
+.results-search > * p {
+  font-weight: var(--font1-light);
+  color: var(--grey3);
+  font-size: .75em;
+  line-height: 1.3;
 }
 
 .search-box.search-active {
