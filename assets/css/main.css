@@ -2147,6 +2147,7 @@ a.read-more:hover {
     pre{white-space:pre-wrap !important;word-wrap:break-word}
     a[href^='http://']:after,a[href^='https://']:after,a[href^='ftp://']:after{content:" (" attr(href) ")";font-size:80%}
     abbr[title]:after,acronym[title]:after{content:" (" attr(title) ")"}#main{max-width:100%}
+    .main-header, .main-nav, .theme-toggle .toggle, .theme-toggle  [type="checkbox"]:checked ~ label .toggle, .page-image, .page-content, .newsletter .newsletter-box .email-input {background:white !important}
     .page{margin:0;padding:0;width:100%}
     .page-break,.page-break-before{page-break-before:always}
     .page-break-after{page-break-after:always}
