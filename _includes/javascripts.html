@@ -230,7 +230,7 @@
       searchInput: document.getElementById('search-input'),
       resultsContainer: document.getElementById('results-container'),
       json: '{{ relativebase }}search.json',
-      searchResultTemplate: '<li><a href="{url}" title="{description}">{title}</a></li>',
+      searchResultTemplate: '<li><a href="{url}" title="{description}">{title}</a><br><p>{description}</p></li>',
       noResultsText: 'No results found',
       fuzzy: false,
       exclude: ['Welcome']
