@@ -313,7 +313,6 @@ var relativebase = "./";
       function initWithURL (url) {
         jsonLoader.load(url, function (err, json) {
           if (err) {
-            console.log(err);
             throwError('failed to get JSON (' + url + ')')
           }
           initWithJSON(json)
