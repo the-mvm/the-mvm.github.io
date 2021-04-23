@@ -28,8 +28,8 @@ html {
 html[data-theme="dark"]  {
   --accent:       #d14c47;    /* accent */
   --accent-dark:  #B38080;    /* accent 2 (dark) */
-  --main:         #4C6567;    /* main color */
-  --main-dim:     #2B333B;    /* dimmed version of main color */
+  --main:         #5F8081;    /* main color */
+  --main-dim:     #333D47;    /* dimmed version of main color */
   --text:         #CBCCCD;
   --grey1:        #B1B1AE;
   --grey2:        #959692;
