@@ -1401,11 +1401,11 @@ color: var(--accent);
   background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--accent);
+  background: var(--main-dim);
 }
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-dark);
+  background: var(--main);
 }
 
 /* = = = = = = = = = = Tweet = = = = = = = = = = = = */
