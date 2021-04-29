@@ -3,8 +3,8 @@
 /* Main Color palette and fonts */
 
 html {
-  --accent:       #DB504A;    /* accent */
-  --accent-dark:  #4e3e51;    /* accent 2 (dark) */
+  --accent:       #DB504A;    /* accent     */
+  --accent-dark:  #4e3e51;    /* accent 2   */
   --main:         #326273;    /* main color */
   --main-dim:     #879dab;    /* dimmed version of main color */
   --text:         #22272E;
@@ -26,8 +26,8 @@ html {
 }
 
 html[data-theme="dark"]  {
-  --accent:       #d14c47;    /* accent */
-  --accent-dark:  #FCD7AD;    /* accent 2 (dark) */
+  --accent:       #d14c47;    /* accent     */
+  --accent-dark:  #DBBEA1;    /* accent 2   */
   --main:         #5F8081;    /* main color */
   --main-dim:     #333D47;    /* dimmed version of main color */
   --text:         #CBCCCD;
@@ -474,6 +474,9 @@ code {
 svg {
     vertical-align: middle;
 }
+
+.hidden{display:none}
+
 .flex-container {
   will-change: opacity;
   display: -webkit-box;
