@@ -27,7 +27,7 @@ html {
 
 html[data-theme="dark"]  {
   --accent:       #d14c47;    /* accent */
-  --accent-dark:  #B38080;    /* accent 2 (dark) */
+  --accent-dark:  #FCD7AD;    /* accent 2 (dark) */
   --main:         #5F8081;    /* main color */
   --main-dim:     #333D47;    /* dimmed version of main color */
   --text:         #CBCCCD;
@@ -37,7 +37,7 @@ html[data-theme="dark"]  {
   --grey4:        #636564;
   --grey5:        #3B3D40;
   --background:   #2B323B;
-  --shadow:      rgba(0,0,0,.3);
+  --shadow:       rgba(0,0,0,.3);
 }
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
