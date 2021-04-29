@@ -36,8 +36,8 @@ html[data-theme="dark"]  {
   --grey3:        #7C7E7B;
   --grey4:        #636564;
   --grey5:        #3B3D40;
-  --background:   #22272E;
-  --shadow:      rgba(203,204,205,.3);
+  --background:   #2B323B;
+  --shadow:      rgba(0,0,0,.3);
 }
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
