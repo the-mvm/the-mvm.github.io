@@ -225,7 +225,7 @@ Uncomment and change the following line with your new fonts and font weights:
 ```HTML
 <link href="https://fonts.googleapis.com/css?family=Lora:400,600|Source+Sans+Pro:200,400,700" rel="stylesheet">
 ```
-Delete everything within `<style></style>` just before the above line:
+Delete everything within `<style></style>` just before the line above:
 ```HTML
 <style>
 /* latin */
@@ -245,7 +245,7 @@ The front matter options for each post are:
 ```YAML
 ---
 layout: post #ensure this one stays like this
-read_time: true # calculate and show read time baased on number of words
+read_time: true # calculate and show read time based on number of words
 show_date: true # show the date of the post
 title:  Your Blog Post Title
 date:   XXXX-XX-XX XX:XX:XX XXXX
@@ -292,7 +292,7 @@ Adam Blog 2.0/
 ├── feed.xml                   # Generates atom file which Jekyll points to
 ├── 404.html                   # custom and responsive 404 page
 ├── all-posts.json             # database of all posts used for infinite scroll
-├── ipfs-404.html              # 404 page for [IPFS](https://github.com/ipfs/ipfs#quick-summary)
+├── ipfs-404.html              # 404 page for IPFS
 ├── posts-by-tag.json          # database of posts by tag
 ├── robots.txt                 # SEO crawlers exclusion file
 ├── search.json                # database of posts used for search
@@ -319,13 +319,23 @@ It is possible to track your site statistics through [Google Analytics](https://
 
 Atom is supported by default through [jekyll-feed](https://github.com/jekyll/jekyll-feed). With jekyll-feed, you can set configuration variables such as 'title', 'description', and 'author', in the `_config.yml` file.
 
+Your atom feed file will be live at `https://your.site/feed.xml` [example](https://the-mvm.github.io/feed.xml).
+
 ### Social Media Icons
 
 All social media icons are courtesy of [Font Awesome](http://fontawesome.io/). You can change which icons appear, as well as the account that they link to, in the `_config.yml` file.
 
 ### MathJax
 
-Adam Blog 2.0 comes out of the box with [MathJax](https://www.mathjax.org/), which allows you to display mathematical equations in your posts through the use of [LaTeX](http://www.andy-roberts.net/writing/latex/mathematics_1). Just add `Mathjax: yes` in the frontmatter of your post. 
+Adam Blog 2.0 comes out of the box with [MathJax](https://www.mathjax.org/), which allows you to display mathematical equations in your posts through the use of [LaTeX](http://www.andy-roberts.net/writing/latex/mathematics_1). Just add `Mathjax: yes` in the frontmatter of your post.
+
+```markdown
+<p style="text-align:center">
+\(\theta_{t+1} = \theta_{t} - \dfrac{\eta}{\sqrt{\hat{v}_t} + \epsilon} \hat{m}_t\).
+</p>
+```
+![rendered mathjax](/assets/img/template_screenshots/MathjaxRendered.jpg)
+
 
 ### Syntax Highlighting
 
@@ -339,7 +349,7 @@ See the [highlighter directory](https://github.com/the-mvm/the-mvm.github.io/tre
 
 ### Markdown
 
-As always, Jekyll offers support for GitHub Flavored Markdown, which allows you to format your posts using the [Markdown syntax](https://guides.github.com/features/mastering-markdown/). Examples of these text formatting features can be seen below. You can find this post in the `_posts` directory as well as the `README.md` file.
+Jekyll offers support for GitHub Flavored Markdown, which allows you to format your posts using the [Markdown syntax](https://guides.github.com/features/mastering-markdown/).
 
 ## Everything Else
 
