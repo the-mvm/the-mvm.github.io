@@ -5,20 +5,20 @@ show_date: true
 title:  Machine Learning Library in Python from scratch
 date:   2021-02-28 12:32:20 -0600
 description: Single neuron perceptron that classifies elements learning quite quickly.
-img: posts/MLLibrary.jpg 
+img: posts/20210228/MLLibrary.jpg 
 tags: [machine learning, coding, neural networks, python]
 author: Armando Maynez
 github: amaynez/GenericNeuralNetwork/
 ---
 It must sound crazy that in this day and age, when we have such a myriad of amazing machine learning libraries and toolkits all open sourced, all quite well documented and easy to use, I decided to create my own ML library from scratch.
-<center><img src="./assets/img/posts/ML_cloud.jpg" width="480px"></center>
+<center><img src="./assets/img/posts/20210228/ML_cloud.jpg" width="480px"></center>
 Let me try to explain; I am in the process of immersing myself into the world of Machine Learning, and to do so, I want to deeply understand the basic concepts and its foundations, and I think that there is no better way to do so than by creating myself all the code for a basic neural network library from scratch. This way I can gain in depth understanding of the math that underpins the ML algorithms.
 
 Another benefit of doing this is that since I am also learning Python, the experiment brings along good exercise for me.
 
 To call it a Machine Learning Library is perhaps a bit of a stretch, since I just intended to create a **multi-neuron, multi-layered [perceptron](./single-neuron-perceptron.html)**.
 
-<center><img src="./assets/img/posts/nnet_flow.gif"></center>
+<center><img src="./assets/img/posts/20210228/nnet_flow.gif"></center>
 
 The library started very narrowly, with just the following functionality:
 - **create** a neural network based on the following parameters:
@@ -31,13 +31,13 @@ The library started very narrowly, with just the following functionality:
 
 I restricted the model to be sequential, and the layers to be only dense / fully connected, this means that every neuron is connected to every neuron of the following layer. Also, as a restriction, the only activation function I implemented was sigmoid:
 
-<center><img src="./assets/img/posts/nn_diagram.png"></center>
+<center><img src="./assets/img/posts/20210228/nn_diagram.png"></center>
 
 With my neural network coded, I tested it with a very basic problem, the famous XOR problem.
 
 XOR is a logical operation that cannot be solved by a single perceptron because of its linearity restriction:
 
-<center><img src="./assets/img/posts/xor_problem.png"></center>
+<center><img src="./assets/img/posts/20210228/xor_problem.png"></center>
 
 As you can see, when plotted in an X,Y plane, the logical operators AND and OR have a line that can clearly separate the points that are false from the ones that are true, hence a perceptron can easily learn to classify them; however, for XOR there is no single straight line that can do so, therefore a multilayer perceptron is needed for the task.
 
@@ -111,7 +111,7 @@ axs1.plot_surface(x, y, z,
 ```
 
 The end result looks something like this:
-<center><img src="./assets/img/posts/Surface_XOR.jpg"></center>
+<center><img src="./assets/img/posts/20210228/Surface_XOR.jpg"></center>
 
 
 Then we reshape the z array as a one dimensional array to use it to color the scatter plot:
@@ -126,7 +126,7 @@ scatter = axs2.scatter(x, y,
                        vmin=0,
                        vmax=1)
 ```
-<center><img src="./assets/img/posts/Final_XOR_Plot.jpg"></center>
+<center><img src="./assets/img/posts/20210228/Final_XOR_Plot.jpg"></center>
 
 To actually see the progress while learning, I created a Matplotlib animation, and it is quite interesting to see as it learns.
 
@@ -6962,7 +6962,7 @@ B8gAAAh0AAADrQAABTsAAAikAAAM1AAABeQAAAmAAAADmgAACpgAAAvVAAAE2wAABG8AAAeKAAAE
 AAAAWm1ldGEAAAAAAAAAIWhkbHIAAAAAAAAAAG1kaXJhcHBsAAAAAAAAAAAAAAAALWlsc3QAAAAl
 qXRvbwAAAB1kYXRhAAAAAQAAAABMYXZmNTguNDUuMTAw
 ">
-  <img src="./assets/img/posts/xor_animation.gif">
+  <img src="./assets/img/posts/20210228/xor_animation.gif">
 </video></center>
 
 So my baby ML library is completed for now, but still I would like to enhance it in several ways:

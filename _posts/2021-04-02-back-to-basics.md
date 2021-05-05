@@ -4,7 +4,7 @@ read_time: true
 show_date: true
 title: "So, what is a neural network?"
 date: 2021-04-02
-img: posts/post7-header.webp
+img: posts/20210402/post7-header.webp
 tags: [neural networks, machine learning, artificial intelligence]
 category: theory
 author: Armando Maynez
@@ -24,20 +24,20 @@ They say that the best way to learn something is to try to explain it, so in a p
 
 Let's start with a little history, humans have been tinkering with the idea of an intelligent machine for a while now, some even say that the idea of artificial intelligence was conceived by the ancient greeks ([source](https://www.thinkautomation.com/bots-and-ai/a-history-of-automation-the-rise-of-robots-and-ai/)), and several attempts at devising "intelligent" machines have been made through history, a notable one was 'The Analytical Engine' created by Charles Babbage in 1837:
 
-![The Analytical Engine](./assets/img/posts/post7-analytical-engine.jpg)
+![The Analytical Engine](./assets/img/posts/20210402/post7-analytical-engine.jpg)
 <small>The Analytical Engine of Charles Babbage - 1837</small>
 
 Then, in the middle of last century by trying to create a model of how our brain works, Neural Networks were born. Around that time, Frank Rosenblatt at Cornell trying to understand the simple decision system present in the eye of a common housefly,  proposed the idea of a [perceptron](./single-neuron-perceptron.html), a very simple system that processes certain inputs with basic math operations and produces an output.
 
-![A perceptron](./assets/img/posts/Perceptron.png)
+![A perceptron](./assets/img/posts/20210125/Perceptron.png)
 
 To illustrate, let's say that the brain of the housefly is a perceptron, its inputs are whatever values are produced by the multiple cells in its eyes, when the eye cell detects "something" it's output will be a 1, and if there is nothing a 0. Then the combination of all those inputs can be processed by the perceptron (the fly brain), and the output is a simple 0 or 1 value. If it is a 1 then the brain is telling the fly to flee and if it is a 0 it means it is safe to stay where it is.
 
-![A housefly eye](./assets/img/posts/post7-housefly-eye.jpg)
+![A housefly eye](./assets/img/posts/20210402/post7-housefly-eye.jpg)
 
 We can imagine then that if many of the eye cells of the fly produce 1s, it means that an object is quite near, and therefore the perceptron will calculate a 1, it is time to flee.
 
-![The fly vision](./assets/img/posts/post7-fly-vision.jpg)
+![The fly vision](./assets/img/posts/20210402/post7-fly-vision.jpg)
 
 The perceptron is just a math operation, one that multiplies certain input values with preset "parameters" (called weights) and adds up the resulting multiplications to generate a value.
 
@@ -48,14 +48,14 @@ Then the magic spark was ignited, the parameters (weights) of the perceptron cou
 From this I will try to explain how this simple concept can have such diverse applications as natural language processing (think Alexa), image recognition like medical diagnosis from a CTR scan, autonomous vehicles, etc.
 
 A basic neural network is a combination of perceptrons in different arrangements, the perceptron therefore was downgraded from "fly brain" to "network neuron".
-![A multilayer perceptron](./assets/img/posts/post7-multilayer-perceptron.png)
+![A multilayer perceptron](./assets/img/posts/20210402/post7-multilayer-perceptron.png)
 
 A neural network has different components, in its basic form it has:
 - Input
 - Hidden layers
 - Output
 
-![Neural network components](./assets/img/posts/nnet_flow.gif)
+![Neural network components](./assets/img/posts/20210228/nnet_flow.gif)
 
 ### Input
 
@@ -67,7 +67,7 @@ Inputs can be as many as one need for the task at hand, from maybe 9 inputs to t
 
 A "layer" within a neural network is just a group of perceptrons that all perform the same exact mathematical operation to the inputs and produce an output. The catch is that each of them have different weights (parameters), therefore their output for a given input will be different amongst them. There are many types of layers, the most typical of them being a "dense" layer, which is another word to say that all the inputs are connected to all the neurons (individual perceptrons), and as said before, each of these connections have a weight associated with it, so that the operation that each neuron performs is a simple weighted sum of all the inputs.
 
-![post7-dense-layers](./assets/img/posts/post7-dense-layers.png)
+![post7-dense-layers](./assets/img/posts/20210402/post7-dense-layers.png)
 
 The hidden layer is then typically connected to another dense layer, and their connection means that each output of a neuron from the first layer is treated effectively as an input for the subsequent one, and it is thus connected to every neuron.
 
@@ -87,7 +87,7 @@ Many of the problems neural networks solve, could be certainly worked out by oth
 
 There are a few more details on how a simple neural network operate that I purposedly left out to make this explanation as simple as possible. Thinks like biases, the activation functions and the math behind learning, the backpropagation algorithm, I will leave to a more in depth article. I will also write (perhaps in a series) about the more complex topologies combining different types of layers and other building blocks, a part from the perceptron.
 
-![Alexa recognizing speach](./assets/img/posts/post7-alexa.png)
+![Alexa recognizing speach](./assets/img/posts/20210402/post7-alexa.png)
 
 Things like "Alexa", are a bit more complex, but work on exactly the same principles. Let's break down for example the case of asking "Alexa" to play a song in spotify. Alexa uses several different neural networks to acomplish this:
 
@@ -99,7 +99,7 @@ As a basic input we have our speech: the command **"Alexa, play Van Halen"**. Th
 
 Once the previous network managed to succesfuly convert our spoken words into text, there comes the even more difficult task of making sense of what we said. Things that we humans take for granted such as context, intonation and non verbal communication, help give our words meaning in a very subtle, but powerful way, a machine will have to do with much less information to correctly understand what we mean. It has to correctly identify the intention of our sentence and the subject or entities of what we mean.
 
-![post7-alexa-natural-lang](./assets/img/posts/post7-alexa-natural-lang.png)
+![post7-alexa-natural-lang](./assets/img/posts/20210402/post7-alexa-natural-lang.png)
 
 The neural network has to identify that it received a command (by identifying its name), the command ("play music"), and our choice ("Van Halen"). And it does so by means of simple math operations as described before. Of course the network involved is quite complex and has different types of neurons and connection types, but the underlying principles remain.
 
@@ -107,7 +107,7 @@ The neural network has to identify that it received a command (by identifying it
 
 Once Alexa understood what we meant, it then proceeds to execute the action of the command it interpreted and it replies to us in turn using natural language. This is accomplished using a technique called speech synthesis, things like pitch, duration and intensity of the words and phonems are selected based on the "meaning" of what Alexa will respond to us: "Playing songs by Van Halen on Spotify" sounding quite naturally. And all is accomplished with neural networks executing many simple math operations.
 
-![post7-alexa-steps](./assets/img/posts/post7-alexa-steps.png)
+![post7-alexa-steps](./assets/img/posts/20210402/post7-alexa-steps.png)
 <small>Although it seems quite complex, the process for AI to understand us can be boiled down to simple math operations</small>
 
 Of course Amazon's Alexa neural networks have undergone quite a lot of training to get to the level where they are, the beauty is that once trained, to perform their magic they just need a few mathematical operations.

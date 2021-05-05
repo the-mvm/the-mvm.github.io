@@ -4,7 +4,7 @@ read_time: true
 show_date: true
 title: "Starting the adventure"
 date: 2021-03-24
-img: posts/starting_adventure.jpg
+img: posts/20210324/starting_adventure.jpg
 tags: [general blogging, thoughts, life]
 author: Armando Maynez
 description: "Midlife career change: a disaster or an opportunity?"
@@ -75,7 +75,7 @@ The first I tried was [netlify](https://www.netlify.com/), I also set up a [test
 I also tested [gatsby](https://www.gatsbyjs.com/docs/glossary/static-site-generator/) with it's own Gatsby Cloud hosting service, [here is my test site](https://amaynez.gatsbyjs.io/). They also use GitHub as a base to host the source files to build the website, so you create a repository, and it is connected to it. I found the free template offerings quite limited for what I was looking for.
 
 Finally it came the turn for [jekyll](https://jekyllrb.com/), although an older, and slower generator (compared to Hugo and Gatsby), it was created by one of the founders of GitHub, so it's integration with GitHub Pages is quite natural and painless, so much so, that to use them together you don't even have to install Jekyll in your machine! You have two choices:
-1. keep it all online, by having one repository in Github keep all the source files, modify or add them online, and having Jekyll build and publish your site to the special _gh-pages_ repository everytime you change or add a new file to the source repository.
+1. keep it all online, by having one repository in Github keep all the source files, modify or add them online, and having Jekyll build and publish your site to the special `gh-pages` repository everytime you change or add a new file to the source repository.
 2. Have a synchronized local copy of the source files for the website, this way you can edit your blog and customize it in your choice of IDE (Integrated Development Environment). Then, when you update any file on your computer, you just "push" the changes to GitHub, and GitHub Pages automatically uses Jekyll to build and publish your site.
 
 I chose the second option, specially because I can manipulate files, like images, in my laptop, and everytime I sync my local repository with GitHub, they are updated and published automatically. Quite convenient.
