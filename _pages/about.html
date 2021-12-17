@@ -32,6 +32,10 @@ permalink: about:output_ext
       {% if site.bandcamp %}
         <li class="bandcamp"><a class="bandcamp" href="https://{{site.bandcamp}}.bandcamp.com" target="_blank"><i class="fa fa-bandcamp" aria-hidden="true"></i></a></li>
       {% endif %}
+      {% if site.stackoverflow %}
+      <li class="stackoverflow"><a class="stackoverflow" href="https://stackoverflow.com/users/{{site.stackoverflow}}" target="_blank">
+        <i class="fa fa-stack-overflow" aria-hidden="true"></i></a></li>
+      {% endif %}
       </ul>
     </section> <!-- End About Body-->
   </div> <!-- End About Container -->
