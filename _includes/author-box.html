@@ -16,6 +16,9 @@
       {% if site.email %}
       <li class="email"><a class="email" href="mailto:{{site.email}}"><i class="fa fa-envelope-o"></i></a></li>
       {% endif %}
+      {% if site.stackoverflow %}
+      <li class="stackoverflow"><a class="stackoverflow" href="https://stackoverflow.com/users/{{site.stackoverflow}}"><i class="fa fa-stack-overflow"></i></a></li>
+      {% endif %}
     </ul>
   </div>
   <div class="author-desc">
