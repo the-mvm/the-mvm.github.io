@@ -116,8 +116,14 @@
 {% if page.layout == "post" %}
   <script>
     function toggle_comments(){
-        document.getElementById('comment-curtain').classList.toggle('hide')
-        document.getElementById('disqus_thread').classList.toggle('show')
+      var commentCurtain = document.getElementById('comment-curtain')
+      if (commentCurtain) {
+        commentCurtain.classList.toggle('hide')
+      }
+      var disqusThread = document.getElementById('disqus_thread')
+      if (disqusThread) {
+        disqusThread.classList.toggle('show')
+      }
     }
 
     function copyToClipboard() {
@@ -134,7 +140,10 @@
 
     $(function () {
       if (document.getElementById('comment-curtain') == null){
-        document.getElementById('disqus_thread').classList.toggle('show')
+        var disqusThread = document.getElementById('disqus_thread')
+        if (disqusThread) {
+          disqusThread.classList.toggle('show')
+        }
       }
 
       var tweetTags = document.getElementsByTagName("tweet");

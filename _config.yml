@@ -41,10 +41,6 @@ stackoverflow: stackoverflow # Add your stackoverflow account
 # Newsletter
 mailchimp: "https://github.us1.list-manage.com/subscribe/post?u=8ece198b3eb260e6838461a60&amp;id=397d90b5f4"
 
-# Disqus
-discus_identifier: amaynez-github-io # Add your discus identifier
-comments_curtain: yes # leave empty to show the disqus embed directly
-
 # Tracker
 analytics: G-R8SZS2YBZK
 fbadmin: ar.maybach
@@ -53,6 +49,17 @@ fbadmin: ar.maybach
 paginate: 6
 paginate_path: 'page:num'
 words_per_minute: 200
+
+# Comments
+comments: utteranc  #[disqus, utteranc]
+comments_opts:
+  repo: # The GitHub repo URL.  https://utteranc.es/
+  issue_term: # The GitHub issue label
+  label: # The GitHub comments label
+  theme: # The GitHub comment's there. e.g. github-dark
+  # Disqus
+  discus_identifier: # Add your discus identifier
+  comments_curtain: yes # leave empty to show the disqus embed directly
 
 # Build settings
 markdown: kramdown
