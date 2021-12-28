@@ -1064,8 +1064,8 @@ svg.menu-icon-house {
 }
 /* = = = = = = = = = = Post's comments = = = = = = = = = = */
 .hide {display:none}
-#disqus_thread {display:none}
-#disqus_thread.show {display:block}
+#comment-layout {display:none}
+#comment-layout.show {display:block}
 
 .comments {
   margin-bottom: 2em;

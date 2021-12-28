@@ -120,7 +120,7 @@
       if (commentCurtain) {
         commentCurtain.classList.toggle('hide')
       }
-      var disqusThread = document.getElementById('disqus_thread')
+      var disqusThread = document.getElementById('comment-layout')
       if (disqusThread) {
         disqusThread.classList.toggle('show')
       }
@@ -140,7 +140,7 @@
 
     $(function () {
       if (document.getElementById('comment-curtain') == null){
-        var disqusThread = document.getElementById('disqus_thread')
+        var disqusThread = document.getElementById('comment-layout')
         if (disqusThread) {
           disqusThread.classList.toggle('show')
         }

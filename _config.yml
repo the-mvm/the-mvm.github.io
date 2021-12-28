@@ -53,13 +53,13 @@ words_per_minute: 200
 # Comments
 comments: utteranc  #[disqus, utteranc]
 comments_opts:
+  comments_curtain: yes # leave empty to show the disqus embed directly
   repo: # The GitHub repo URL.  https://utteranc.es/
   issue_term: # The GitHub issue label
   label: # The GitHub comments label
   theme: # The GitHub comment's there. e.g. github-dark
   # Disqus
   discus_identifier: # Add your discus identifier
-  comments_curtain: yes # leave empty to show the disqus embed directly
 
 # Build settings
 markdown: kramdown
