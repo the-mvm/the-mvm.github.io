@@ -50,6 +50,9 @@ paginate: 6
 paginate_path: 'page:num'
 words_per_minute: 200
 
+extensions:
+  mermaid_enable: true
+
 # Comments
 comments: utteranc  #[disqus, utteranc]
 comments_opts:
