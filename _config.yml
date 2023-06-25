@@ -1,9 +1,9 @@
 # Site settings
-title: The Minimum Viable Model
-description: 'Artificial Intelligence trends and concepts made easy.' # this means to ignore newlines until "baseurl:"
+title: Frannie1020
+description: 'Live in the moment.' # this means to ignore newlines until "baseurl:"
 permalink: ':title:output_ext'
-baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://the-mvm.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/frannie1020" # the subpath of your site, e.g. /blog
+url: "https://github.com/Frannie1020" # the base hostname & protocol for your site, e.g. http://example.com
 logo: "/assets/img/branding/MVM-logo-full.svg"
 logo-icon: "/assets/img/branding/MVM-symbol.svg"
 logo-icon-SEO: "/assets/img/branding/MVM-symbol-black.png" # must be a non SVG file
@@ -24,26 +24,26 @@ logo-dark: "/assets/img/branding/MVM-logo-full-dark.svg"
 highlight_theme: syntax-base16.monokai.dark # select a dark theme for the code highlighter if needed
 
 # Author settings
-author: Armando Maynez # add your name
+author: Frannie # add your name
 author-pic: Myself_Neon_grey.jpg
-about-author: Engineer, industry executive, research enthusiast. Avid learner with diverse interests in coding, machine learning, artificial intelligence and reinforcement learning. 17+ years of experience working in multinational corporations.
+about-author: B.Eng in UESTC|Computer Science and Technology|SDE|SWE
 
 # Contact links
-email: armando.maynez@gmail.com # Add your Email address
-phone: # Add your Phone number
-website: https://amaynez.github.io # Add your website
-linkedin: amaynez # Add your Linkedin handle
-github: amaynez # Add your Github handle
-twitter: '@MvmThe' # Add your Twitter handle
-bandcamp: armandomaynez # Add your Bandcamp username
-stackoverflow: stackoverflow # Add your stackoverflow account
+email: franylinn@gmail.com # Add your Email address
+# phone: # Add your Phone number
+website: https://frannie1020.github.io/ # Add your website
+linkedin: https://www.linkedin.com/in/yijing-z-sdeswe/ # Add your Linkedin handle
+github: https://github.com/Frannie1020 # Add your Github handle
+# twitter: '@MvmThe' # Add your Twitter handle
+# bandcamp: armandomaynez # Add your Bandcamp username
+stackoverflow: Frannie # Add your stackoverflow account
 
 # Newsletter
-mailchimp: "https://github.us1.list-manage.com/subscribe/post?u=8ece198b3eb260e6838461a60&amp;id=397d90b5f4"
+# mailchimp: "https://github.us1.list-manage.com/subscribe/post?u=8ece198b3eb260e6838461a60&amp;id=397d90b5f4"
 
 # Tracker
-analytics: G-R8SZS2YBZK
-fbadmin: ar.maybach
+# analytics: G-R8SZS2YBZK
+# fbadmin: ar.maybach
 
 # Paginate
 paginate: 6
