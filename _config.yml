@@ -4,7 +4,7 @@ description: 'Chào mừng bạn đến với Code Whisper, một trang blog bí
 permalink: ':title:output_ext'
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://theflours.com/" # the base hostname & protocol for your site, e.g. http://example.com
-logo: "https://i.imgur.com/oScJYNM.png"
+logo: "/assets/My-Logo-Website.png"
 logo-icon: "/assets/img/branding/logo.png"
 logo-icon-SEO: "/assets/img/branding/logo.png" # must be a non SVG file
 
