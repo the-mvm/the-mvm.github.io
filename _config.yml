@@ -5,8 +5,8 @@ permalink: ':title:output_ext'
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://theflours.com/" # the base hostname & protocol for your site, e.g. http://example.com
 logo: "/assets/My-Logo-Website.png"
-logo-icon: "/assets/img/branding/logo.png"
-logo-icon-SEO: "/assets/img/branding/logo.png" # must be a non SVG file
+logo-icon: "/assets/My-Logo-Website.png"
+logo-icon-SEO: "/assets/My-Logo-Website.png" # must be a non SVG file
 
 # Night/Dark mode
 # Default mode is "auto", "auto" is for auto nightshift
@@ -20,7 +20,7 @@ logo-icon-SEO: "/assets/img/branding/logo.png" # must be a non SVG file
 # the browser is closed or not)
 night_mode: "auto"
 
-logo-dark: "/assets/img/branding/MVM-logo-full-dark.svg"
+logo-dark: "/assets/My-Logo-Website.png"
 highlight_theme: syntax-base16.monokai.dark # select a dark theme for the code highlighter if needed
 
 # Author settings
