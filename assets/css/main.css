@@ -66,6 +66,7 @@ html[data-theme="dark"]  {
 
 body {
   margin: 0;
+  font-family: emoji;
 }
 
 /**
