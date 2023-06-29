@@ -4,7 +4,7 @@ description: 'Chào mừng bạn đến với Code Whisper, một trang blog bí
 permalink: ':title:output_ext'
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://theflours.com/" # the base hostname & protocol for your site, e.g. http://example.com
-logo: "/assets/logo.png"
+logo: "/assets/logo_white.png"
 logo-icon: "/assets/logo.png"
 logo-icon-SEO: "/assets/logo.png" # must be a non SVG file
 
@@ -24,18 +24,18 @@ logo-dark: "/assets/logo.png"
 highlight_theme: syntax-base16.monokai.dark # select a dark theme for the code highlighter if needed
 
 # Author settings
-author: Armando Maynez # add your name
+author: C0d3Whisp3r # add your name
 author-pic: Myself_Neon_grey.jpg
-about-author: Engineer, industry executive, research enthusiast. Avid learner with diverse interests in coding, machine learning, artificial intelligence and reinforcement learning. 17+ years of experience working in multinational corporations.
+about-author: Code Whisper là một tác giả đen tối và ma mị, hiện diện trong thế giới lập trình để chia sẻ những nguyên tắc bí mật và kỹ thuật tối thượng. Với sức mạnh đọc hiểu mã nguồn và tư duy sáng tạo, Code Whisper đã tạo ra công cụ và phương pháp giúp lập trình viên trở nên tinh thông và mạnh mẽ hơn.
 
 # Contact links
-email: armando.maynez@gmail.com # Add your Email address
+email: hgtxxxxx@gmail.com # Add your Email address
 phone: # Add your Phone number
-website: https://amaynez.github.io # Add your website
-linkedin: amaynez # Add your Linkedin handle
-github: amaynez # Add your Github handle
-twitter: '@MvmThe' # Add your Twitter handle
-bandcamp: armandomaynez # Add your Bandcamp username
+website: https://theflours.com # Add your website
+linkedin: hgtxxxxx # Add your Linkedin handle
+github: hgtxxxxx # Add your Github handle
+twitter: '@hgtxxxxx' # Add your Twitter handle
+bandcamp: hgtxxxxx # Add your Bandcamp username
 stackoverflow: stackoverflow # Add your stackoverflow account
 
 # Newsletter
