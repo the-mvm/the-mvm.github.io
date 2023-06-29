@@ -5,7 +5,7 @@ show_date: true
 title:  Tìm hiểu về kỹ thuật Dorking - GHDB
 date:   2023-06-29 21:25:20 +0700
 description: Kỹ thuật Dorking, hay còn được gọi là Google Hacking Database (GHDB), là một phương pháp tìm kiếm thông qua việc sử dụng các từ khóa đặc biệt để khai thác các lỗ hổng bảo mật trên các trang web. Được phát triển bởi Johnny Long, Dorking sử dụng Google Search để tìm kiếm thông tin bảo mật bằng cách sử dụng các truy vấn tìm kiếm khéo léo.
-img: https://i.ytimg.com/vi/uWR1Jag48lg/maxresdefault.jpg
+img: assets/img/posts/20230701/ghdb_dorking.jpg
 tags: [hacking, coding, search-engine, dorking]
 author: C0d3 Whisp3r
 mathjax: yes
