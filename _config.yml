@@ -4,9 +4,9 @@ description: 'Chào mừng bạn đến với Code Whisper, một trang blog bí
 permalink: ':title:output_ext'
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://theflours.com/" # the base hostname & protocol for your site, e.g. http://example.com
-logo: "/assets/My-Logo-Website.png"
-logo-icon: "/assets/My-Logo-Website.png"
-logo-icon-SEO: "/assets/My-Logo-Website.png" # must be a non SVG file
+logo: "/assets/logo.png"
+logo-icon: "/assets/logo.png"
+logo-icon-SEO: "/assets/logo.png" # must be a non SVG file
 
 # Night/Dark mode
 # Default mode is "auto", "auto" is for auto nightshift
@@ -20,7 +20,7 @@ logo-icon-SEO: "/assets/My-Logo-Website.png" # must be a non SVG file
 # the browser is closed or not)
 night_mode: "auto"
 
-logo-dark: "/assets/My-Logo-Website.png"
+logo-dark: "/assets/logo.png"
 highlight_theme: syntax-base16.monokai.dark # select a dark theme for the code highlighter if needed
 
 # Author settings
