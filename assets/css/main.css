@@ -66,6 +66,7 @@ html[data-theme="dark"]  {
 
 body {
   margin: 0;
+  font-family: emoji;
 }
 
 /**
@@ -1458,6 +1459,7 @@ tweet a {
   -webkit-box-shadow: 0px 2px 4px var(--shadow);
           box-shadow: 0px 2px 4px var(--shadow);
   max-width: 800px;
+  font-family: auto;
 }
 /* full width image in posts */
 img[src$="#full"] {

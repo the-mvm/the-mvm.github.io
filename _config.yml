@@ -1,12 +1,12 @@
 # Site settings
-title: The Minimum Viable Model
-description: 'Artificial Intelligence trends and concepts made easy.' # this means to ignore newlines until "baseurl:"
+title: Code Whisper - Kỹ thuật đen tối trong mã nguồn
+description: 'Chào mừng bạn đến với Code Whisper, một trang blog bí ẩn và ma mị dành riêng cho những người yêu thích lập trình. Tại đây, chúng tôi khám phá những khía cạnh tối tăm của mã nguồn và chia sẻ những bí mật đen đủi về lập trình. Code Whisper là nơi mà chúng tôi khám phá những kỹ thuật độc đáo và khác biệt, những nguyên tắc mã hóa tối thượng và những phương pháp sáng tạo để tạo ra mã nguồn đầy ma mị. Bạn sẽ được tiếp cận với những ý tưởng sắc bén, những gợi ý tối ưu hóa và những cách tiếp cận độc đáo để nâng cao hiệu suất lập trình của mình. Nếu bạn là người tìm kiếm sự đen tối và ma mị trong lập trình, Code Whisper là điểm đến lý tưởng. Hãy cùng chúng tôi lạc vào những bí mật mã lệnh và khám phá sự hấp dẫn của thế giới mã nguồn đen tối.' # this means to ignore newlines until "baseurl:"
 permalink: ':title:output_ext'
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://the-mvm.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-logo: "/assets/img/branding/MVM-logo-full.svg"
-logo-icon: "/assets/img/branding/MVM-symbol.svg"
-logo-icon-SEO: "/assets/img/branding/MVM-symbol-black.png" # must be a non SVG file
+url: "https://theflours.com/" # the base hostname & protocol for your site, e.g. http://example.com
+logo: "/assets/logo_white.png"
+logo-icon: "/assets/logo.png"
+logo-icon-SEO: "/assets/logo.png" # must be a non SVG file
 
 # Night/Dark mode
 # Default mode is "auto", "auto" is for auto nightshift
@@ -20,22 +20,22 @@ logo-icon-SEO: "/assets/img/branding/MVM-symbol-black.png" # must be a non SVG f
 # the browser is closed or not)
 night_mode: "auto"
 
-logo-dark: "/assets/img/branding/MVM-logo-full-dark.svg"
+logo-dark: "/assets/logo.png"
 highlight_theme: syntax-base16.monokai.dark # select a dark theme for the code highlighter if needed
 
 # Author settings
-author: Armando Maynez # add your name
+author: C0d3Whisp3r # add your name
 author-pic: Myself_Neon_grey.jpg
-about-author: Engineer, industry executive, research enthusiast. Avid learner with diverse interests in coding, machine learning, artificial intelligence and reinforcement learning. 17+ years of experience working in multinational corporations.
+about-author: Code Whisper là một tác giả đen tối và ma mị, hiện diện trong thế giới lập trình để chia sẻ những nguyên tắc bí mật và kỹ thuật tối thượng. Với sức mạnh đọc hiểu mã nguồn và tư duy sáng tạo, Code Whisper đã tạo ra công cụ và phương pháp giúp lập trình viên trở nên tinh thông và mạnh mẽ hơn.
 
 # Contact links
-email: armando.maynez@gmail.com # Add your Email address
+email: hgtxxxxx@gmail.com # Add your Email address
 phone: # Add your Phone number
-website: https://amaynez.github.io # Add your website
-linkedin: amaynez # Add your Linkedin handle
-github: amaynez # Add your Github handle
-twitter: '@MvmThe' # Add your Twitter handle
-bandcamp: armandomaynez # Add your Bandcamp username
+website: https://theflours.com # Add your website
+linkedin: hgtxxxxx # Add your Linkedin handle
+github: hgtxxxxx # Add your Github handle
+twitter: '@hgtxxxxx' # Add your Twitter handle
+bandcamp: hgtxxxxx # Add your Bandcamp username
 stackoverflow: stackoverflow # Add your stackoverflow account
 
 # Newsletter
