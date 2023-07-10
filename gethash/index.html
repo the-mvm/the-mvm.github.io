@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+  <link rel="stylesheet" href="./public/main.css">
+<title>n3k0ch3n | Auto detect and decrypt</title>
+  
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <h1 id="title">decrypt ccv aud - hased<sup>v.1.0.0 - by N3k0Ch3n</sup></h1>
+      <h2>give me your hashed i will explain!</h2>
+    </div>
+  </header>
+
+  <div class="container">
+    <section id="main_content">
+      <div class="tabs">
+        <div class="tab active" data-target="String">How do you like that? </div>
+        </div>
+      <div class="cf"></div>
+      <div class="tabs-contents">
+        <div class="tab-content show" id="contentString">
+          <textarea id="input" class="content" rows="7" placeholder="Paste code here..."></textarea>
+        </div>
+        <div class="tab-content" id="contentLocal">
+          <div class="box">
+            <input type="file" name="file" id="file" class="inputfile" accept="text/javascript,text/plain">
+            <label for="file" class="read-only">
+              <span id="fileName"></span>
+              <strong>Choose a file…</strong>
+            </label>
+          </div>
+          <pre id="renderLocal" class="render read-only"></pre>
+        </div>
+        <div class="tab-content" id="contentRemote">
+          <form class="form-wrapper cf" id="formRemove">
+            <input type="url" placeholder="Enter a URL" id="urlRemove" required>
+            <button type="submit" class="btn" id="submitRemove">Submit</button>
+          </form>
+          <small>Cross-origin requests require Access-Control-Allow-Origin header</small>
+          <pre id="renderRemove" class="render read-only"></pre>
+        </div>
+      </div>
+
+      <div class="config tab-content show">
+        <form name="de4js">
+         </form>
+      </div>
+
+      <div class="center">
+        <button id="clear" class="btn" type="reset">
+          Clear
+        </button>
+        <button id="auto" class="btn" type="button">
+          Auto Decode
+        </button>
+      </div>
+
+      <div class="view-wrap">
+        <div class="view-control">
+          <button id="copyjs" class="btn" type="button">
+            <img class="btn-icon" src="./public/copy-document.png"
+              alt="Copy to clipboard">
+          </button>
+        </a>
+        </div>
+        <textarea id="readable"></textarea>
+        <pre id="view" class="hljs"></pre>
+      </div>
+    </section>
+  </div>
+
+  <script type="text/javascript" src="./public/clipboard.js"></script>
+  <script src="./public/script.js" type="text/javascript"></script>
+  
+</body>
+
+</html>
