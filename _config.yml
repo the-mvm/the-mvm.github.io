@@ -8,18 +8,18 @@ logo-icon: "/assets/img/branding/MVM-symbol.svg"
 logo-icon-SEO: "/assets/img/branding/MVM-symbol-black.png" # must be a non SVG file
 
 # Author settings
-author: Armando Maynez # add your name
-author-pic: Myself_Neon.jpg
-about-author: Engineer, industry executive, research enthusiast. Avid learner with diverse interests in coding, machine learning, artificial intelligence and reinforcement learning. 17+ years of experience working in multinational corporations.
+author: Noe Yam  # add your name
+author-pic: noe yam.JPG
+about-author: Actual mente Ing.sistemas junior.
 
 # Contact links
-email: armando.maynez@gmail.com # Add your Email address
-phone: # Add your Phone number
-website: https://the-mvm.github.io # Add your website, do not add http://
-linkedin: amaynez # Add your Linkedin handle
-github: amaynez # Add your Github handle
-twitter: '@MvmThe' # Add your Twitter handle
-bandcamp: armandomaynez # Add your Bandcamp username
+email: power_chico@gmail.com # Add your Email address
+phone: +52 9981814069 # Add your Phone number
+#website: https://the-mvm.github.io # Add your website, do not add http://
+#linkedin: amaynez # Add your Linkedin handle
+github: NoeYam # Add your Github handle
+#twitter: '@MvmThe' # Add your Twitter handle
+#bandcamp: armandomaynez # Add your Bandcamp username
 
 # Newsletter
 mailchimp: "https://github.us1.list-manage.com/subscribe/post?u=8ece198b3eb260e6838461a60&amp;id=397d90b5f4"
