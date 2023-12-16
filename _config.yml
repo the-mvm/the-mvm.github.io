@@ -1,12 +1,12 @@
 # Site settings
-title: The Minimum Viable Model
-description: 'Artificial Intelligence trends and concepts made easy.' # this means to ignore newlines until "baseurl:"
+title: Antão Almada's Blog
+description: 'The official blog of Antão Almada. A blog about software development, technology and other stuff.' # this means to ignore newlines until "baseurl:"
 permalink: ':title:output_ext'
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://the-mvm.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-logo: "/assets/img/branding/MVM-logo-full.svg"
-logo-icon: "/assets/img/branding/MVM-symbol.svg"
-logo-icon-SEO: "/assets/img/branding/MVM-symbol-black.png" # must be a non SVG file
+url: "https://aalmada.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+logo: "/assets/img/branding/aalmada-logo-full.svg"
+logo-icon: "/assets/img/branding/aalmada-symbol.svg"
+logo-icon-SEO: "/assets/img/branding/aalmada-symbol-black.png" # must be a non SVG file
 
 # Night/Dark mode
 # Default mode is "auto", "auto" is for auto nightshift
@@ -20,33 +20,32 @@ logo-icon-SEO: "/assets/img/branding/MVM-symbol-black.png" # must be a non SVG f
 # the browser is closed or not)
 night_mode: "auto"
 
-logo-dark: "/assets/img/branding/MVM-logo-full-dark.svg"
+logo-dark: "/assets/img/branding/aalmada-logo-full-dark.svg"
 highlight_theme: syntax-base16.monokai.dark # select a dark theme for the code highlighter if needed
 
 # Author settings
-author: Armando Maynez # add your name
-author-pic: Myself_Neon_grey.jpg
-about-author: Engineer, industry executive, research enthusiast. Avid learner with diverse interests in coding, machine learning, artificial intelligence and reinforcement learning. 17+ years of experience working in multinational corporations.
-
+author: Antão Almada # add your name
+author-pic: antaoalmada_400x400.jpg
+about-author: My tech journey, starting in the late '90s with virtual reality, spans full-body interaction and augmented reality. I began coding on a ZX Spectrum 48K and earned a Computer Science degree from the NOVA University Lisbon. While I spent many years using C++, C# is my primary coding tool today. Most of my open-source projects are within the NetFabric organization in GitHub. I also contributed to other projects including notable ones like ReactiveUI and MixedRealityToolkit-Unity. Beyond coding, I balance family life and enjoy dirt biking on pump tracks and exploring mountain bike trails in my free time.
 # Contact links
-email: armando.maynez@gmail.com # Add your Email address
+email: # Add your Email address
 phone: # Add your Phone number
-website: https://amaynez.github.io # Add your website
-linkedin: amaynez # Add your Linkedin handle
-github: amaynez # Add your Github handle
-twitter: '@MvmThe' # Add your Twitter handle
-bandcamp: armandomaynez # Add your Bandcamp username
-stackoverflow: stackoverflow # Add your stackoverflow account
+website: # Add your website
+linkedin: antaoalmada # Add your Linkedin handle
+github: aalmada # Add your Github handle
+twitter: # Add your Twitter handle
+bandcamp: # Add your Bandcamp username
+stackoverflow: 861773 # Add your stackoverflow account
 
 # Newsletter
-mailchimp: "https://github.us1.list-manage.com/subscribe/post?u=8ece198b3eb260e6838461a60&amp;id=397d90b5f4"
+mailchimp:
 
 # Tracker
-analytics: G-R8SZS2YBZK
-fbadmin: ar.maybach
+analytics: G-W2YEK46D0J
+fbadmin: 
 
 # Paginate
-paginate: 6
+paginate: 10
 paginate_path: 'page:num'
 words_per_minute: 200
 
@@ -57,10 +56,10 @@ extensions:
 comments: utteranc  #[disqus, utteranc]
 comments_opts:
   comments_curtain: yes # leave empty to show the disqus embed directly
-  repo: # The GitHub repo URL.  https://utteranc.es/
-  issue_term: # The GitHub issue label
-  label: # The GitHub comments label
-  theme: # The GitHub comment's there. e.g. github-dark
+  repo: aalmada/aalmada.github.io # The GitHub repo URL.  https://utteranc.es/
+  issue_term: title # The GitHub issue label
+  label: Comment # The GitHub comments label
+  theme: preferred-color-scheme # The GitHub comment's there. e.g. github-dark
   # Disqus
   discus_identifier: # Add your discus identifier
 
@@ -74,7 +73,7 @@ compress_html:
   startings: [html, head, body]
 
 # Outputting
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Europe/Lisbon # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 category_archive:
   type: liquid
