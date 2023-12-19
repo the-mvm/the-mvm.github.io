@@ -12,12 +12,12 @@ author: Antão Almada
 
 In the dynamic landscape of modern software development, efficient data processing lies at the core of creating high-performance applications. As developers, we constantly strive to balance readability, maintainability, and speed when writing code. In the realm of C#, a programming language known for its versatility and robustness, the `foreach` loop emerges as a powerful tool for seamlessly navigating collections.
 
-`foreach` is a statement in C# that generates the code required to traverse the items of a collection. The syntax is very simple:
+`foreach`` is a statement in C# that generates the code required to traverse the items of a collection. The syntax is very simple:
 
 ```csharp
 foreach(var item in source)
 {
-    Console.WriteLine(item); 
+    Console.WriteLine(item);
 }
 ```
 
@@ -35,34 +35,34 @@ As an example, here's a collection that stores its items in an inner array and t
 class MyCollection
 {
     readonly int[] source;
-    
+
     public MyCollection(int[] source)
         => this.source = source;
-    
+
     public Enumerator GetEnumerator()
         => new Enumerator(this);
-    
+
     public struct Enumerator
     {
         readonly int[] source;
         int index;
-        
+
         public Enumerator(MyCollection enumerable)
         {
             source = enumerable.source;
             index = -1;
         }
-        
-        public int Current 
+
+        public int Current
             => source[index];
-        
+
         public bool MoveNext()
             => ++index < source.Length;
     }
 }
 ```
 
-> The enumerator should always be a `struct` (a value-type) for improved performance! Check my other article "[Performance of value-type vs reference-type enumerators in C#](https://www.linkedin.com/pulse/performance-value-type-vs-reference-type-enumerators-ant%C3%A3o-almada?lipi=urn%3Ali%3Apage%3Ad_flagship3_pulse_read%3B84unqQOjQjqCC3uzPJH30Q%3D%3D)" to understand why.
+> The enumerator should always be a struct (a value-type) for improved performance! Check my other article "[Performance of value-type vs reference-type enumerators in C#](https://www.linkedin.com/pulse/performance-value-type-vs-reference-type-enumerators-ant%C3%A3o-almada?lipi=urn%3Ali%3Apage%3Ad_flagship3_pulse_read%3BACD%2BUgenSQC%2FUZMFSw%2BoCQ%3D%3D)" to understand why.
 
 The compiler converts the C# code into [Intermediate Language (IL)](https://en.wikipedia.org/wiki/Common_Intermediate_Language). There is no `foreach` instruction in IL. [Using SharpLab, you can see that in this case the `foreach` is converted to something equivalent to the following](https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA+ABATABgLABQ2AjIYQG4CGUABAM4QCuUYMNAvDQHYwDuNAWQCeAYQgAbcTDAAXAJYQuACh68A2gF0aAbxwAaGsQNYDAZgMoAvgEoA3IQBm0GJTAALJVVpyZMALY0clz0TCww1oQ0UTQYxACcSj7+dmREWIKiElKyClyE2pHRsJQAJoriQoFcMpohzKz2BNE0hVEYphliktLyionVtQz14a3NHAB8NDJucnQAdENhHHVhjc2j7TQAolyMfjBQlDLQNADiMDI7ewdH0EoRTWNR7JOq27v7h8dQStOzKY8ohsOnQZFBGLJ3tcvtBRgVAWNimUuBUqjUtIsGqNmkEZFUSjAEGsni0Ec1NldPrcfsIutlesEYB8bsApA8STpsSTMWxOEzoZRWTAFqEsWSSUECQhlnBiMSnpYuUDxW0OriaCJmLBqqSOc0XitWGpJYSNPKxkqYh1gBAJIIIOQYAA5Qkye6W/WTADUXpN0oAPIbhQAZJkAc2m5sVBGjhCAA===):
 
@@ -76,7 +76,7 @@ while (enumerator.MoveNext())
 
 It first calls `GetEnumerator()` to get a new instance of the enumerator. It then uses `MoveNext()` as the continuation condition in a `while` loop and, for every time it returns `true`, gets the item using `Current`.
 
-If the enumerator must release any resources at the end of the item traversal, it must implement `IDisposable`. [You can see in SharpLab that in this case the generated code will make sure Dispose() is called](https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA+ABATABgLABQ2AjIYQG4CGUABAM4QCuUYMNAvDQHYwDuNAWQCeAYQgAbcTDAAXAJYQuACh68A2gF0aAbxwAaGsQNYDAZgMoAvgEoA3IQBm0GJTAALJVVpyZMALY0clz0TCww1oQ0UTQYxACcSj7+dmREWIKiElKyClyE2pHRsJQAJoriQoFcMpohzKz2BNE0hVEYphliktLyionVtQz14a3NHAB8NDJucnQAdENhHHVhjc2j7TQAolyMfjBQlDLQNADiMDI7ewdH0EoRTWNR7JOq27v7h8dQStOzKY8ohsOnQZFBGLJ3tcvicQDQAJIAEVmAAcIHRKMApKMCoCxsUylwKlUalpFg1Rs0gjIqiUYAg1k8Wnjmpsrp9bj9hF1sr1gjAPjcsSMWdFcUyxuS2JwBdDMVIFqEKaKnkE6QhlnBiIynpZKdF9W0OtSaCJmLBqsyJc0XitWGo1fSNDqxoaYh1gBAJIIIOQYAA5ekye5um2TADU4cdGoAPHaYHMADICgDm0xd6xV7piKBoyLoaLoMHuOj1eLLZcIQA==):
+If the enumerator must release any resources at the end of the item traversal, it must implement `IDisposable`. [You can see in SharpLab that in this case the generated code will make sure `Dispose()` is called](https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA+ABATABgLABQ2AjIYQG4CGUABAM4QCuUYMNAvDQHYwDuNAWQCeAYQgAbcTDAAXAJYQuACh68A2gF0aAbxwAaGsQNYDAZgMoAvgEoA3IQBm0GJTAALJVVpyZMALY0clz0TCww1oQ0UTQYxACcSj7+dmREWIKiElKyClyE2pHRsJQAJoriQoFcMpohzKz2BNE0hVEYphliktLyionVtQz14a3NHAB8NDJucnQAdENhHHVhjc2j7TQAolyMfjBQlDLQNADiMDI7ewdH0EoRTWNR7JOq27v7h8dQStOzKY8ohsOnQZFBGLJ3tcvicQDQAJIAEVmAAcIHRKMApKMCoCxsUylwKlUalpFg1Rs0gjIqiUYAg1k8Wnjmpsrp9bj9hF1sr1gjAPjcsSMWdFcUyxuS2JwBdDMVIFqEKaKnkE6QhlnBiIynpZKdF9W0OtSaCJmLBqsyJc0XitWGo1fSNDqxoaYh1gBAJIIIOQYAA5ekye5um2TADU4cdGoAPHaYHMADICgDm0xd6xV7piKBoyLoaLoMHuOj1eLLZcIQA==):
 
 ```csharp
 MyCollection.Enumerator enumerator = new MyCollection(array).GetEnumerator();
@@ -103,30 +103,30 @@ For example, we can change the `Current` property to return `ref int`:
 class MyCollection
 {
     readonly int[] source;
-    
+
     public MyCollection(int[] source)
         => this.source = source;
-    
+
     public Enumerator GetEnumerator()
         => new Enumerator(this);
-    
+
     public struct Enumerator
     {
         readonly int[] source;
         int index;
-        
+
         public Enumerator(MyCollection enumerable)
         {
             source = enumerable.source;
             index = -1;
         }
-        
+
         public ref int Current // return by reference
             => ref source[index];
-        
+
         public bool MoveNext()
             => ++index < source.Length;
-        
+
         public void Dispose() {}
     }
 }
@@ -155,39 +155,40 @@ If you'd like the enumerator to contain a span field, it's possible to declare t
 ```csharp
 class MyCollection
 {
-    readonly int[] source;
-    
+readonly int[] source;
+
     public MyCollection(int[] source)
         => this.source = source;
-    
+
     public Enumerator GetEnumerator()
         => new Enumerator(this);
-    
+
     public ref struct Enumerator // ref struct enumerator
     {
         readonly ReadOnlySpan<int> source; // readonly span field
         int index;
-        
+
         public Enumerator(MyCollection enumerable)
         {
             source = enumerable.source;
             index = -1;
         }
-        
+
         public ref readonly int Current // return by reference
             => ref source[index];
-        
+
         public bool MoveNext()
             => ++index < source.Length;
-        
+
         public void Dispose() {}
     }
+
 }
 ```
 
 [You can see it working in SharpLab](https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA0AXEUCuA7AHwAEAmABgFgAoUgRmuoDcBDKAAgGcIcowY2AvGzwwA7mwCyATwDCEADbyYYDAEsIeABQjRAbQC6bAN5k0bWmZJmAzGZQBfAJQBuagDNoMZmAAWmluyqGDAAtmyqeJzcvDCO1GwJbES0AJyaQaEuDDQkkrIKSirqeNRG8YmwzAAmGvJS4XgYBlE8fK5UiWzlCUTWeXKKymoa6Y3NXK2x3Z2CAHxsGD6qHAB0EzGCLTHtndO9bACieDghMFDMGNBsAOIwGEcnZxfQmnEdMwkC8zqHx6fnlygmkWyyy7wSez6sDcnAwuBUv0eAOg0zK4JmlRqeDqbAASl4qgB5bFSADKAAdmHgADwRDDzdZtaadOkNKowBA7D5ddGdfYPf7PIHSAaFYaRGB/J7AJRvbnGZncxn8ISSpHMGUwNbRJm87kRdkITZwWhcj72RUQvU9KEwGGY2r1VkyHiwRo8+WdL5saFbPi6A0c/RmmaWpJ9YAQBSSCCMGAAOQ5GFeYa98wA1OnA0bqX6tQAZSUAc0WId21vDSRQbAAIstyRAODBXsYLei223qEA===).
 
-> NOTE: A `ref struct` cannot implement interfaces. In this case, `foreach` will call the `Dispose()` method if present. Without requiring the enumerator to implement `IDisposable`.
+> A ref struct cannot implement interfaces. In this case, `foreach` will call the Dispose() method if present. Without requiring the enumerator to implement IDisposable.
 
 ## GetEnumerator() extension method
 
@@ -198,13 +199,13 @@ Imagine that you'd like to use `foreach` on the following collection developed b
 public class MyCollection
 {
     readonly int[] source;
-    
+
     public MyCollection(int[] source)
         => this.source = source;
-    
+
     public int Count
         => source.Length;
-    
+
     public int this[int index]
         => source[index];
 }
@@ -219,25 +220,25 @@ public static class MyExtension
 {
     public static Enumerator GetEnumerator(this MyCollection source)
         => new Enumerator(source);
-    
+
     public struct Enumerator
     {
         readonly MyCollection source;
         int index;
-        
+
         public Enumerator(MyCollection source)
         {
             this.source = source;
             index = -1;
         }
-        
-        public int Current 
+
+        public int Current
             => source[index];
-        
+
         public bool MoveNext()
             => ++index < source.Count;
     }
-} 
+}
 ```
 
 [You can see in SharpLab that the `foreach` statement compiles](https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA+ABATABgLABQ2AjIYQG4CGUABAM4QCuUYMNAvDQHYwDuNAWQCeAYQgAbcTDAAXAJYQuACh68A2gF0aAbxwAaGsQNYDAZgMoAvgEoA3IQBm0GJTAALJVVpyZMALY0clz0TCww1oQ0UTQYxACcSj7+dmREpjFYgqISUrIKXITakdGwlAAmiuJCgVwymiHMrPYE0TTFURjpwmKS0vKKibX1DI3h7a0cAHw0Mm5ydAB0I2EcDWHNreOdNTI0Yoy1463s08usCwAyMFwA5rMb0VvpQbuz82ovNWUwCBpH0Sc1qwPlxvr9mpZUttYkgMlkAKIIXxcOj5OiFJ4xYiw+FcRh+GBQSgyaA0ADiMBkuPxhOJ0CUbzoWR6uX6wTOYxaEyigNUNGpBKJJKgSg5KS5UUxdBkUEYsn5eMFdKg4yKEompQqXCqzJyfXyQJgD25nyCYONE3+HXSAtpwqU3T1eUUhoi6taau53MZS1CrFWHItXq+P1WcGIQeikPdjxj1p2e2YsFqbTjE0BHJBYI0tmDVtTwe2wAgEkEEHIMAAcj8ZEo3cHjtMANRNs2hgA8hoW+1qFuj0cIQA===). You can also see that the generated code is very similar. The only difference is that it uses the extension method:
@@ -250,7 +251,7 @@ while (enumerator.MoveNext())
 };
 ```
 
-[You can see in SharpLab that the same applies to GetAsyncEnumerator()](https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA0AXEUCuA7AHwAEAmABgFgAoUgRmqLIAIjaBWAbmuoDcBDKEwDOEHFDAwmAXiZ4YAdyYBZAJ4BhCABtNMMBgCWEPAAo58gNoBdJgG8yaJrQckHAZgcoAvgEouNAJxMAGbQMHxgABbG/IL6GDAAtkz6eMKi4jDe1Ew5LLT+xnGJvtw0riwkyupaOnqGeNQ22bmwfAAmRpoqyXgYVmliEn65TM05ROWqGtq6BkaFvf0ig5ljI9IAfEwYEfpCAHTLGdIDGcO5axM9GEwa+BhrI1JbRxL7ADIweADmO+c5l3KKRuOz25mBPTaMAQlkeuWepwk4LwUJhfk8pSurCQFSqAFEEPE8EJ6kJGoC8ji8XgcAkYFA+BhoEwAOIwDAAQSEKjwYGptPpjOgxlBQiq01qc1Sr1WVHW8K2ZiY/LpDKZUGMMpKcouOvG5SEGFwemVNNVQqgayaevWrQ6eC64pqs3qiJg/3WEJSqI9Izh+tNArVwqmzrqRjdWRtI2t8vlosO6QkJxlvrj3uhJzgtDTOQx0d1cZYQN6tzEsFL/vWCJlyNRlg4RarVauADU+JocDAiEgADzACBaLZKCA8GAAOWhnO5vOMUaLTy27c73aQ+wAYlAIAkAEowIQ4TQYYwAahPGYQTF7bv2d162pG+fz1CAA===).
+[You can see in SharpLab that the same applies to `GetAsyncEnumerator()`](https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA0AXEUCuA7AHwAEAmABgFgAoUgRmqLIAIjaBWAbmuoDcBDKEwDOEHFDAwmAXiZ4YAdyYBZAJ4BhCABtNMMBgCWEPAAo58gNoBdJgG8yaJrQckHAZgcoAvgEouNAJxMAGbQMHxgABbG/IL6GDAAtkz6eMKi4jDe1Ew5LLT+xnGJvtw0riwkyupaOnqGeNQ22bmwfAAmRpoqyXgYVmliEn65TM05ROWqGtq6BkaFvf0ig5ljI9IAfEwYEfpCAHTLGdIDGcO5axM9GEwa+BhrI1JbRxL7ADIweADmO+c5l3KKRuOz25mBPTaMAQlkeuWepwk4LwUJhfk8pSurCQFSqAFEEPE8EJ6kJGoC8ji8XgcAkYFA+BhoEwAOIwDAAQSEKjwYGptPpjOgxlBQiq01qc1Sr1WVHW8K2ZiY/LpDKZUGMMpKcouOvG5SEGFwemVNNVQqgayaevWrQ6eC64pqs3qiJg/3WEJSqI9Izh+tNArVwqmzrqRjdWRtI2t8vlosO6QkJxlvrj3uhJzgtDTOQx0d1cZYQN6tzEsFL/vWCJlyNRlg4RarVauADU+JocDAiEgADzACBaLZKCA8GAAOWhnO5vOMUaLTy27c73aQ+wAYlAIAkAEowIQ4TQYYwAahPGYQTF7bv2d162pG+fz1CAA===).
 
 ## IEnumerable
 
@@ -262,18 +263,18 @@ As an example, here's the sample collection now implementing `IEnumerable`:
 class MyCollection : IEnumerable
 {
     readonly int[] source;
-    
+
     public MyCollection(int[] source)
         => this.source = source;
-    
+
     public IEnumerator GetEnumerator()
         => new Enumerator(this);
-    
+
     public struct Enumerator : IEnumerator
     {
         readonly int[] source;
         int index;
-        
+
         public Enumerator(MyCollection enumerable)
         {
             source = enumerable.source;
@@ -281,16 +282,16 @@ class MyCollection : IEnumerable
         }
 
         // public property
-        public int Current 
+        public int Current
             => source[index];
-            
+
         // explicit IEnumerator implementation
         object IEnumerator.Current
             => Current;
-            
+
         public bool MoveNext()
             => ++index < source.Length;
-            
+
         public void Reset()
             => index = -1;
     }
@@ -299,14 +300,14 @@ class MyCollection : IEnumerable
 
 The only differences are:
 
-- The collection derives from `IEnumerable`.
-- `GetEnumerator()` must return `IEnumerator`.
-- The enumerator derives from `IEnumerator`.
-- The enumerator must have a `Reset()` method.
+-   The collection derives from `IEnumerable`.
+-   `GetEnumerator()` must return `IEnumerator`.
+-   The enumerator derives from `IEnumerator`.
+-   The enumerator must have a `Reset()` method.
 
-Notice that `IEnumerator` requires the property `Current` to return the type object. I want it to return int as it's the type of the item for this collection. Its possible to have both implementations, one public and the other use [explicit interface implementation](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/interfaces/explicit-interface-implementation). The explicit implementation property is only used when the enumerator is cast to `IEnumerator`.
+Notice that `IEnumerator` requires the property `Current` to return the type `object`. I want it to return `int` as it's the type of the item for this collection. Its possible to have both implementations, one public and the other use explicit interface implementation. The explicit implementation property is only used when the enumerator is cast to `IEnumerator`.
 
-> NOTE: If the enumerator does not support resetting, it should throw a `NotSupportedException`.
+> If the enumerator does not support resetting, it should throw a `NotSupportedException`.
 
 [You can see in SharpLab that the generated code for a `foreach` statement is the following](https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA+ABATABgLABQ2AjIRjgAQbEB0AwhADaMxgAuAlhAHYDOA3IUIA3AIZQKvCAFcoYGBQC8FbjADuFALIBPBs1aceAClVqA2gF0KAbxwAaCsQdYHAZgcoAvgEpBBAGbQMKJgABZGHNxsFBxsMAC2MdySMnIw3oQUWVTEAJwRcfG+QkRYWrpMLOxcySA5roTWmdmwogAmPIzaSWyWKbLyftkUzVkYruV6VYbcEVF9UgPpo8NKAHwUbKEcvDSLaUr9aUPZK+MUAJIAotzS8TBQomzQFADiMGw3dw9P0EYZBFW2UUG1MFC+90ezygRi2O2KgNOiLGE14bCg0nY4NukN+Ejq1xxP2hKyayNWrQ63C6PQWqUGK2GkWikTaMAQJyBjOy5whxL+OimBhqFBgRMewBYAKBWTJMtW+3khzF3wlLD29JgnPlSTZCEOcGI2uGnm5WTNVAmEGAACsDBQ6LJYFERuT5SCjvIzKz2RZjTKLedgBAmFoIMIYAA5dlsf4W4YegDUiZ9+oAPJ6YDQADJigDmW39XLdPImGBQFAASjBeB84yWgR7UwajStTQR24QgA==):
 
@@ -331,48 +332,48 @@ finally
 
 Several things to notice:
 
-- The enumerator is returned as type `IEnumerator`, which is a reference-type. 
-- The value returned by `Current` has to be cast to `int` because it's using the explicit implementation.
-- Although the enumerator doesn't implement `IDispose`, it adds code to check at runtime if it does.
+-   The enumerator is returned as type `IEnumerator`, which is a reference-type.
+-   The value returned by `Current` has to be cast to int because it's using the explicit implementation.
+-   Although the enumerator doesn't implement `IDispose`, it adds code to check at runtime if it does.
 
-I mentioned above that enumerators should have a value-type enumerator for better performance. We see here that by returning `IEnumerator`, the enumerator is boxed, which converts it into a reference-type. The way to workaround this is to also use explicit interface implementation for the method `GetEnumerator()`: 
+I mentioned above that enumerators should have a value-type enumerator for better performance. We see here that by returning `IEnumerator`, the enumerator is boxed, which converts it into a reference-type. The way to workaround this is to also use explicit interface implementation for the method `GetEnumerator()`:
 
 ```csharp
 class MyCollection : IEnumerable
 {
     readonly int[] source;
-    
+
     public MyCollection(int[] source)
         => this.source = source;
-    
+
     // public method
     public Enumerator GetEnumerator()
         => new Enumerator(this);
-        
+
     // explicit IEnumerable implementation
     IEnumerator IEnumerable.GetEnumerator()
         => GetEnumerator();
-    
+
     public struct Enumerator : IEnumerator
     {
         readonly int[] source;
         int index;
-        
+
         public Enumerator(MyCollection enumerable)
         {
             source = enumerable.source;
             index = -1;
         }
-        
-        public int Current 
+
+        public int Current
             => source[index];
-            
+
         object IEnumerator.Current
             => Current;
-            
+
         public bool MoveNext()
             => ++index < source.Length;
-            
+
         public void Reset()
             => index = -1;
     }
@@ -391,11 +392,11 @@ while (enumerator.MoveNext())
 
 It uses the value type enumerator. It will only use the reference-type enumerator if the collection is cast to `IEnumerable`.
 
-> NOTE: All collections provided by .NET provide a value-type enumerator. You should do the same if you implement your own collection.
+> All collections provided by .NET provide a value-type enumerator. You should do the same if you implement your own collection.
 
-## IEnumerable&lt;T&gt;
+## IEnumerable<T>
 
-[As I explained in my previous article](https://aalmada.github.io/IEnumerable-and-pals.html), `IEnumerable<T>` and `IEnumerator<T>` extend the pair of interfaces `IEnumerable` and `IEnumerator` to specify the type of item returned by the `Current` property.
+`IEnumerable<T>` and `IEnumerator<T>` extend the pair of interfaces `IEnumerable` and `IEnumerator` to specify the type of item returned by the `Current` property.
 
 Because `IEnumerable<T>` derives from `IEnumerable`, and `IEnumerator<T>` derives from `IEnumerator` and `IDispose`, the example collection should be implemented as follow:
 
@@ -403,45 +404,45 @@ Because `IEnumerable<T>` derives from `IEnumerable`, and `IEnumerator<T>` derive
 class MyCollection : IEnumerable<int>
 {
     readonly int[] source;
-    
+
     public MyCollection(int[] source)
         => this.source = source;
-    
+
     // public method
     public Enumerator GetEnumerator()
         => new Enumerator(this);
-        
+
     // explicit IEnumerable<T> implementation
     IEnumerator<int> IEnumerable<int>.GetEnumerator()
-        => GetEnumerator();  
-        
+        => GetEnumerator();
+
     // explicit IEnumerable implementation
     IEnumerator IEnumerable.GetEnumerator()
         => GetEnumerator();
-    
+
     public struct Enumerator : IEnumerator<int>
     {
         readonly int[] source;
         int index;
-        
+
         public Enumerator(MyCollection enumerable)
         {
             source = enumerable.source;
             index = -1;
         }
-        
-        public int Current 
+
+        public int Current
             => source[index];
-            
+
         object IEnumerator.Current
             => Current;
-            
+
         public bool MoveNext()
             => ++index < source.Length;
-            
+
         public void Reset()
             => index = -1;
-            
+
         public void Dispose() {}
     }
 }
@@ -466,9 +467,9 @@ finally
 
 The differences are:
 
-- The enumerator is a value-type.
-- The value returned by `Current` doesn't require a cast. This improves performance as it was being done for each item.
-- `Dispose()` is called even though it's empty. It's `IEnumerator<T>` that makes the `Dispose()` mandatory. 
+-   The enumerator is a value-type.
+-   The value returned by `Current` doesn't require a cast. This improves performance as it was being done for each item.
+-   `Dispose()` is called even though it's empty. It's `IEnumerator<T>` that makes the `Dispose()` mandatory.
 
 The `Dispose()` call can be avoided by declaring two enumerators for the collection:
 
@@ -476,62 +477,62 @@ The `Dispose()` call can be avoided by declaring two enumerators for the collect
 class MyCollection : IEnumerable<int>
 {
     readonly int[] source;
-    
+
     public MyCollection(int[] source)
         => this.source = source;
-    
+
     public Enumerator GetEnumerator()
         => new Enumerator(this);
-        
+
     IEnumerator<int> IEnumerable<int>.GetEnumerator()
         => new ReferenceEnumerator(this);
-        
+
     IEnumerator IEnumerable.GetEnumerator()
         => new ReferenceEnumerator(this);
-    
+
     // value type enumerator
     public struct Enumerator
     {
         readonly int[] source;
         int index;
-        
+
         public Enumerator(MyCollection enumerable)
         {
             source = enumerable.source;
             index = -1;
         }
-        
-        public int Current 
+
+        public int Current
             => source[index];
-            
+
         public bool MoveNext()
             => ++index < source.Length;
-    }   
-        
+    }
+
     // reference type enumerator
     class ReferenceEnumerator : IEnumerator<int>
     {
         readonly int[] source;
         int index;
-        
+
         public ReferenceEnumerator(MyCollection enumerable)
         {
             source = enumerable.source;
             index = -1;
         }
-        
-        public int Current 
+
+        public int Current
             => source[index];
-            
+
         object IEnumerator.Current
             => Current;
-            
+
         public bool MoveNext()
             => ++index < source.Length;
-            
+
         public void Reset()
             => index = -1;
-            
+
         public void Dispose() {}
     }
 }
@@ -539,10 +540,10 @@ class MyCollection : IEnumerable<int>
 
 Thing that changed:
 
-- The public `GetEnumerator()` returns an instance of the value-type enumerator while the other ones return instances of the reference-type enumerator.
-- The value-type enumerator only implements the minimum requirements.
-- The reference-type enumerator is declared as private as it's only used internally.
-- The reference-type enumerator is declared as a class. This avoids the boxing performance penalty of converting from value-type to reference-type.
+-   The public `GetEnumerator()` returns an instance of the value-type enumerator while the other ones return instances of the reference-type enumerator.
+-   The value-type enumerator only implements the minimum requirements.
+-   The reference-type enumerator is declared as private as it's only used internally.
+-   The reference-type enumerator is declared as a class. This avoids the boxing performance penalty of converting from value-type to reference-type.
 
 [You can see in SharpLab that the generated code for the `foreach` statement if the following](https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA+ABATABgLABQ2AjIRjgAQbEB0AwhADaMxgAuAlhAHYDOA3GUrUUggoQBuAQygVeEAK5QwMCgF4K3GAHcKAWQCeDZq048AFFu0BtALoUA3jgA0FYq6yuAzK5QBfAEoxADNoGCkwAAtzDm42Cg42GABbBO45RWUYAMIKPKpiAE4YpOSgwjIsfSMmFnYudJACrwAeWLYAPkIHXPzYKQATHkYDNLY7DKUVMXyKXryML2rjOrNuGLiJ+Sns+dn1Doo2SI5eGm2s9Umsmfy9xYoAUW4FZJgoKTZoCgBxGDZnq93p9oOYcgR9vk1IcrE8Xm8Pl8oOZjqdyhDIXMMXkAJKAhEgqBtOKHaitdodGh/AHw4FIsF7WbQzQ6CgAJRgwXeMG4KnxdNBqN46MxWNmeNpiO+ZKp/35UuR4NFzNhHK5sF5MHlhJRJ2Ftzy9yWvDYUAU7DhQIVex62P2/SG3BGYy2mWmjPy7TSAxgCAN+w9CyW2vphhWpgaFB5VqkwBYSsxttFswuKiu0YJcZg5zdMH9otiPoQVzgxHz+T8gbFmIeXroSg18SrTMOqZg1kLvts5chVYewAgTH0EAkMAAcr62Ay7crDgBqOed4sta4qGgAGR5AHNjmI9n47jPD7NsOzOdzNSHvk0JTGkcTOjaqw7hqN2q6dj2xt7fV++0s1QvPlJR1MNagjHgoxArME0hJNkzyNt02glgc0/ZtPW4IsSzLKtKyPQ0CKoJY6wbHkmyIltV3bJduwwwjRQgYAACtTAoW8CSRegyLieiDgoesoEbL9Zn/CgByHPQR3HSdpwQvJmQXJcKBXNsN23Xc+LEjAUDPXh/jk+TmWUjRSxE48ayWHSKAAEVOAAHCB9LBRx8NmfD8IqAggA=):
 
@@ -556,9 +557,9 @@ while (enumerator.MoveNext())
 
 The advantage is that without the `try`/`finally` blocks the JIT compiler may be able to perform more optimizations resulting in better performance.
 
-## Arrays and spans
+## Arrays and Span<T>
 
-Arrays and spans are types of collections where the data is stored in a contiguous portion of memory. These are exceptions on how `foreach` deals with them. Instead of using an enumerator, it uses the indexer which performs much better.
+Arrays and `Span<T>` are types of collections where the data is stored in a contiguous portion of memory. These are exceptions on how `foreach` deals with them. Instead of using an enumerator, it uses the indexer which performs much better.
 
 [You can see in SharpLab that the generated code for a `foreach` statement with an array as source is the following](https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA+ABATABgLABQ2AjIYQG4CGUABAM4QCuUYMNAvDQHYwDuA2gF0aAbxwAaGsUlZJAZkkoAvgG4yBAGbQYlMAAsAFFVoBLAC4wAtjRNd6TFjACUhGm5oZiATgPmrTtQIgA):
 
@@ -572,22 +573,16 @@ while (num < array2.Length)
 };
 ```
 
-> NOTE: Please check my other article "[Array iteration performance in C#](https://aalmada.github.io/Array-iteration-performance-in-csharp.html)" where I analyze into more detail this case.
+> Please check my other article "Array iteration performance in C#" where I analyze into more detail this case.
 
 The only issue with using `foreach` on arrays is that it only allows full traversal. If you want to traverse only a portion of the array, you can create an instance of `ArraySegment<T>` or `Span<T>` and use `foreach` to traverse it.
 
-> NOTE: Check my other article "[ArraySegment<T> iteration performance in C#](https://aalmada.github.io/ArraySegment-iteration-performance.html)" to understand the differences between `ArraySegment<T>` and `Span<T>`.
+Both `Span<T>` and `ReadOnlySpan<T>` support passing items by reference. Don't forget to use the `ref` keyword when traversing these types using foreach.
 
-Both `Span<T>` and `ReadOnlySpan<T>` support passing items by reference. Don't forget to use the `ref` keyword when traversing these types using `foreach`.
+> [I've implemented a Roslyn Analyzer](https://github.com/NetFabric/NetFabric.Hyperlinq.Analyzer) that includes a rule that warns you when ref and ref readonly can be used. Install it to get this and several many other rules related to the used of foreach.
 
-> NOTE: [I've implemented a Roslyn Analyzer](https://github.com/NetFabric/NetFabric.Hyperlinq.Analyzer) that includes a rule that warns you when `ref` and `ref readonly` can be used. Install it to get this and several many other rules related to the used of `foreach`.
+# Conclusions
 
-## Conclusions
-
-`foreach` has a very simple and clear syntax. We saw here that the C# compiler adapts the generated code to the type of collection. 
+`foreach` has a very simple and clear syntax. We saw here that the C# compiler adapts the generated code to the type of collection.
 
 When declaring a new collection type, you should adjust its enumeration code so that `foreach` can take full advantage of it.
-
-
-
-
