@@ -130,7 +130,7 @@ static async IAsyncEnumerable<int> RangeAsync(int start, int count, int millisec
     var end = start + count;
     for (var value = start; value < end; value++)
     {
-        await Task.Delay(millisecondsDelay);
+        await Task.Delay(millisecondsDelay).ConfigureAwait(false);
         yield return value;
     }
 }
@@ -212,9 +212,6 @@ The `foreach` loop is applicable only to enumerables, so it is advisable to retu
 [When returning `IEnumerator`](https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA+ABATABgLABQ2AjIRjgAQbEB0AwhADaMxgAuAlhAHYDOA3IUIA3AIZQKMbgFcAtjCii20CgF4KAcRhsAaqMbSYvABQBKQQQDuACw4tjUuQqXQaAWQjCYAORgI2ZqaEFCFUxACcDjLyispQ9NJQsNxs5kJExEgUAJIAotHOcZraegZGZoQA3sGh1MRUAOwUxBahYfUYTVgWAL5AA):
 
 ```csharp
-using System;
-using System.Collections;
-
 var enumerator = GetValues();
 while(enumerator.MoveNext())
 {
@@ -231,9 +228,6 @@ static IEnumerator GetValues()
 [When returning `IEnumerator<T>`](https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA+ABATABgLABQ2AjIRjgAQbEoDchZOAFAG4CGUFMAdgK4C2MKGwAu0CgF4KAcRgiAamwA2vGAGcmASk2EA3oQqGKAdwAWASyUwmPAUNHQAdAFkILGADkYCEVp0EjQKpiAE4bPkFhMShHAGFeKFhuEU16AgBfBiJiJAoASQBRCPtogB5zZIA+GTlFFXUtPQMjamIqAHYKYjTA1o6KLDT0oA==):
 
 ```csharp
-using System;
-using System.Collections.Generic;
-
 using(var enumerator = GetValues())
 {
     while(enumerator.MoveNext())
