@@ -5,7 +5,7 @@ show_date: true
 title: "Building Custom Iterators with 'yield' in C#"
 date: 2023-09-14
 img: posts/20230914/Yield.png
-tags: [development, .net, csharp, performance]
+tags: [development, .net, csharp]
 category: development
 author: Antão Almada
 ---
