@@ -20,7 +20,7 @@ The disadvantage of using `IEnumerable<T>` is exactly that it requires `GetEnume
 
 ## IValueEnumerable&lt;T, TEnumerator&gt;
 
-My proposal is to adopt an interface that not only requires ` GetEnumerator()`  to return a value-type but that is also backwards compatible. Meaning that, collections that implement it, must still be handled by existing libraries that require the use of ` IEnumerable<T>` , e.g. LINQ.
+My proposal is to adopt an interface that not only requires `GetEnumerator()`  to return a value-type but that is also backwards compatible. Meaning that, collections that implement it, must still be handled by existing libraries that require the use of `IEnumerable<T>` , e.g. LINQ.
 
 ```csharp
 public interface IValueEnumerable<out T, out TEnumerator>
