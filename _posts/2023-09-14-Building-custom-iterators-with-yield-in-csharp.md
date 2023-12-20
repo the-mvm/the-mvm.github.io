@@ -311,7 +311,7 @@ System.ArgumentException: count must not be negative
    at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
 ```
 
-Notice that, the exception is thrown only when the code enters the `for` loop, which calls the `MoveNext()` method. [This behavior can be observed in SharpLab](https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA0AXEUCuA7AHwAEAmABgFgAoUgRmqLIAIjaUBuah2gTgAoARAGcMAQygYBASk5UAbuKZRReAOYwmAXiYAlFer5k0TOLTIzu/ATDwYYUAJZqmAGwgQADtNkAzaDFEwAAs+BSgmBzsAWwi8JX0YKWomFJZePkiYKIsqbiQ0gGYAHicMAD5dBIzbJhFxDGNSpkh8DCSqAG9k1IcfJj4WmqKmcyZu1NSMIKgIAHcmPBh5gEEoVRwomwwAUQQwGA8MBwg8QUGMJiicEQWIC+ANRdVRI7kYb3GxqgmwphsAEy0tTEEiYAGpmhBWrIJn5wqFFAoXDgNNo6hJ2EwkSimMMAZjsTAwWD2hMJqxaCwAOxY0TImCyAC+QA=).
+Notice that, the exception is thrown only when the code enters the `foreach` loop, which calls the `MoveNext()` method. [This behavior can be observed in SharpLab](https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA0AXEUCuA7AHwAEAmABgFgAoUgRmqLIAIjaUBuah2gTgAoARAGcMAQygYBASk5UAbuKZRReAOYwmAXiYAlFer5k0TOLTIzu/ATDwYYUAJZqmAGwgQADtNkAzaDFEwAAs+BSgmBzsAWwi8JX0YKWomFJZePkiYKIsqbiQ0gGYAHicMAD5dBIzbJhFxDGNSpkh8DCSqAG9k1IcfJj4WmqKmcyZu1NSMIKgIAHcmPBh5gEEoVRwomwwAUQQwGA8MBwg8QUGMJiicEQWIC+ANRdVRI7kYb3GxqgmwphsAEy0tTEEiYAGpmhBWrIJn5wqFFAoXDgNNo6hJ2EwkSimMMAZjsTAwWD2hMJqxaCwAOxY0TImCyAC+QA=).
 
 Parameter validation should occur when the method is initially called. To achieve this, the method should be split into two parts: one that does not use `yield` and another that does. This can be accomplished using a [local function](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/local-functions):
 
@@ -344,7 +344,7 @@ System.ArgumentException: count must not be negative
    at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
 ```
 
-Importantly, it never reaches the enumerable instanciation [This behavior can also be observed in SharpLab](https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA0AXEUCuA7AHwAEAmABgFgAoUgRmqLIAIjaUBuah2gTgAoARAGcMAQygYBASk5UAbuKZRReAOYwmAXiYAlFer5k0TOLTIzu/ATDwYYUAJZqmAGwgQADtNkAzaDFEwAAs+BSgmBzsAWwi8JX0YKWomFJZePkiYKIsqbiQ0gGYAHicMAD5dBIzbJhFxDGNSpkh8DCSqAG9k1IcfJj4WmqKmcyZu1NSMIKgIAHcmPBh5gEEoVRwomwwAUQQwGA8MBwg8QUGMJiicEQWIC+ANRdVRI7kYb3GWAHYmAHEYHZ4Db2UTAFwwPh1CTGc45CafVj5VjFUoVf6A4HKMEQppQhqxC6wz5dKgTCZhJg2AAmWlqYgkTAA1M0IK1ZGTUn5wqFFAoXDgNNo8ewmHyBUxhtSRWKYIzGe0ORzWLRvqLRPyYOzUgBfajaoA===).
+Importantly, it never reaches the enumerable instanciation. [This behavior can also be observed in SharpLab](https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA0AXEUCuA7AHwAEAmABgFgAoUgRmqLIAIjaUBuah2gTgAoARAGcMAQygYBASk5UAbuKZRReAOYwmAXiYAlFer5k0TOLTIzu/ATDwYYUAJZqmAGwgQADtNkAzaDFEwAAs+BSgmBzsAWwi8JX0YKWomFJZePkiYKIsqbiQ0gGYAHicMAD5dBIzbJhFxDGNSpkh8DCSqAG9k1IcfJj4WmqKmcyZu1NSMIKgIAHcmPBh5gEEoVRwomwwAUQQwGA8MBwg8QUGMJiicEQWIC+ANRdVRI7kYb3GWAHYmAHEYHZ4Db2UTAFwwPh1CTGc45CafVj5VjFUoVf6A4HKMEQppQhqxC6wz5dKgTCZhJg2AAmWlqYgkTAA1M0IK1ZGTUn5wqFFAoXDgNNo8ewmHyBUxhtSRWKYIzGe0ORzWLRvqLRPyYOzUgBfajaoA===).
 
 ## Performance
 
@@ -366,7 +366,7 @@ Coroutines are often described as [functions with the capability to pause and la
 
 This concept finds extensive application in game development, [particularly within the Unity framework](https://docs.unity3d.com/Manual/Coroutines.html). Game engines operate by executing code and then rendering frames, repeating these steps in a continuous loop. The rapid execution of this loop creates the illusion of movement, akin to a movie. Coroutines, in the context of Unity, are methods that enable the distribution of execution across multiple frames.
 
-In Unity, a coroutine is essentially a method that returns an `IEnumerator`. The Unity engine, in turn, invokes the corresponding `MoveNext()` method to resume execution just before each frame rendering. The utilization of `yield` simplifies code development and maintenance, eliminating the need to implement intricate state machines.
+In Unity, a coroutine is essentially a method that returns `IEnumerator`. The Unity engine, in turn, invokes the corresponding `MoveNext()` method to resume execution just before each frame rendering. The utilization of `yield` simplifies code development and maintenance, eliminating the need to implement intricate state machines.
 
 ## Behavior Trees
 
