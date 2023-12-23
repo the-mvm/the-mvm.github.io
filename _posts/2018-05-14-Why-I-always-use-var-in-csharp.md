@@ -32,9 +32,7 @@ When employing `var`, the variables will compile to the correct type in both sce
 
 In the .NET framework, value types are "boxed" when cast to an interface type, causing them to be copied to the heap, and all method calls become virtual. This implicit boxing occurs when assigned to a variable declared as an interface type.
 
-Typically, `GetEnumerator()` returns `IEnumerator<T>`, a reference type. However, `List<T>.GetEnumerator()` returns `List<T>.Enumerator`, a value type. Many people overlook this distinction, but getting the type wrong can significantly impact performance.
-
-By using `var`, automatic avoidance of "boxing" is ensured.
+Typically, `GetEnumerator()` returns `IEnumerator<T>`, a reference type. However, `List<T>.GetEnumerator()` returns `List<T>.Enumerator`, a value type that implements `IEnumerator<T>`. If cast to the interface, the value is "boxed". Many people overlook this distinction, but getting the type wrong can significantly impact performance. By using `var`, automatic avoidance of "boxing" is ensured.
 
 > I've developed an analyzer featuring a rule to detect instances of this case: [NetFabric.Hyperlinq.Analyzer](https://github.com/NetFabric/NetFabric.Hyperlinq.Analyzer/blob/master/docs/reference/HLQ001_AssignmentBoxing.md)
 
