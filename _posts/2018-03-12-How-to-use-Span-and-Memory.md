@@ -232,7 +232,7 @@ How do these examples perform? [BenchmarkDotNet]() makes it very simple to compa
 
 The code for these benchmarks can be found at https://github.com/aalmada/SpanSample/blob/master/SpanSample/EnumerationBenchmarks.cs
 
-![interface hierarchy](./assets/img/posts/20100312/Benchmarks.png)
+![benchmarks](./assets/img/posts/20180312/Benchmarks.png)
 
 For the benchmarks, I extended the first example into 3 options of iteration on the buffer `Span<>`: using a `foreach`, using `GetEnumerator()` and using a `for` loop with indexer operator. Interesting to see that the `foreach` has the same performance has the `for` but using the `GetEnumerator()` is twice as slow.
 
