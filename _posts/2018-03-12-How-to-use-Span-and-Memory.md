@@ -3,7 +3,7 @@ layout: post
 read_time: true
 show_date: true
 title: "How to use Span&lt;T&gt; and Memory&lt;T&gt;"
-date: 2023-06-11
+date: 2018-03-12
 img: posts/20180312/Baños.jpg
 tags: [development, .net, csharp]
 category: development
