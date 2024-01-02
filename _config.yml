@@ -1,7 +1,7 @@
 # Site settings
 title: Antão Almada's Blog
-description: 'The official blog of Antão Almada. A blog about software development, technology and other stuff.' # this means to ignore newlines until "baseurl:"
-permalink: ':title:output_ext'
+description: "The official blog of Antão Almada. A blog about software development, technology and other stuff." # this means to ignore newlines until "baseurl:"
+permalink: ":title:output_ext"
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://aalmada.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 logo: "/assets/img/branding/aalmada-logo-full.svg"
@@ -26,7 +26,7 @@ highlight_theme: syntax-base16.monokai.dark # select a dark theme for the code h
 # Author settings
 author: Antão Almada # add your name
 author-pic: antaoalmada_400x400.jpg
-about-author: My tech journey, starting in the late '90s with virtual reality, spans full-body interaction and augmented reality. I began coding on a ZX Spectrum 48K and earned a Computer Science degree from the NOVA University Lisbon. While I spent many years using C++, C# is my primary coding tool today. Most of my open-source projects are within the NetFabric organization in GitHub. I also contributed to other projects including notable ones like ReactiveUI and MixedRealityToolkit-Unity. Beyond coding, I balance family life and enjoy dirt biking on pump tracks and exploring mountain bike trails in my free time.
+about-author: My journey in the tech world began in the late '90s, delving into virtual reality and extending to full-body interaction and augmented reality. My coding adventure started with a ZX Spectrum 48K, and I later obtained a Computer Science degree from NOVA University Lisbon. Although I have spent considerable time using C++, my current go-to coding tool is C#. The majority of my open-source projects can be found under the NetFabric organization on GitHub. I've also made contributions to other projects, including well-known ones like ReactiveUI and MixedRealityToolkit-Unity. Outside of coding, I maintain a balance with family life and indulge in dirt biking on pump tracks and navigating mountain bike trails during my leisure time. All images are my own creations.
 # Contact links
 email: # Add your Email address
 phone: # Add your Phone number
@@ -42,50 +42,58 @@ mailchimp:
 
 # Tracker
 analytics: G-W2YEK46D0J
-fbadmin: 
+fbadmin:
 
 # Paginate
 paginate: 10
-paginate_path: 'page:num'
+paginate_path: "page:num"
 words_per_minute: 200
 
 extensions:
-  mermaid_enable: true
+    mermaid_enable: true
 
 # Comments
-comments: utteranc  #[disqus, utteranc]
+comments: utteranc #[disqus, utteranc]
 comments_opts:
-  comments_curtain: yes # leave empty to show the disqus embed directly
-  repo: aalmada/aalmada.github.io # The GitHub repo URL.  https://utteranc.es/
-  issue_term: title # The GitHub issue label
-  label: Comment # The GitHub comments label
-  theme: preferred-color-scheme # The GitHub comment's there. e.g. github-dark
-  # Disqus
-  discus_identifier: # Add your discus identifier
+    comments_curtain: yes # leave empty to show the disqus embed directly
+    repo: aalmada/aalmada.github.io # The GitHub repo URL.  https://utteranc.es/
+    issue_term: title # The GitHub issue label
+    label: Comment # The GitHub comments label
+    theme: preferred-color-scheme # The GitHub comment's there. e.g. github-dark
+    # Disqus
+    discus_identifier: # Add your discus identifier
 
 # Build settings
 markdown: kramdown
 mathjax: true
 highlighter: rouge
 compress_html:
-  clippings: all
-  comments: all
-  startings: [html, head, body]
+    clippings: all
+    comments: all
+    startings: [html, head, body]
 
 # Outputting
 timezone: Europe/Lisbon # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 category_archive:
-  type: liquid
-  path: /categories/
+    type: liquid
+    path: /categories/
 
 sass:
-  style: compressed
+    style: compressed
 
 plugins:
-  - jekyll-paginate
-  - jekyll-feed
-  - jekyll-sitemap
+    - jekyll-paginate
+    - jekyll-feed
+    - jekyll-sitemap
 
 include: [_pages]
-exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock", "package-lock.json", "assets/css/sass/"]
+exclude:
+    [
+        "node_modules",
+        "gulpfile.js",
+        "package.json",
+        "yarn.lock",
+        "package-lock.json",
+        "assets/css/sass/",
+    ]
