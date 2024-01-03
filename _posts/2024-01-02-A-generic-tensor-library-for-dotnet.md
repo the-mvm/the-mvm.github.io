@@ -235,6 +235,41 @@ public static ValueTuple<T, T> SumPairs<T>(ReadOnlySpan<T> source)
 
 `NetFabric.Numerics.Tensors` provides these overloads for the common operators, but you can easily implement your own operator and use it in a similar manner.
 
+## Working with tensors for structured data
+
+The tensors in `NetFabric.Numerics.Tensors` can handle any value-type that meets the minimum requirements. For example, the following 2D vector implementation can be used in `Sum` because it implements both `IAdditionOperators<T, T, T>` and `IAdditiveIdentity<T, T>`:
+
+```csharp
+public readonly record struct MyVector2<T>(T X, T Y)
+    : IAdditiveIdentity<MyVector2<T>, MyVector2<T>>
+    , IAdditionOperators<MyVector2<T>, MyVector2<T>, MyVector2<T>>
+    where T : struct, INumber<T>
+{
+    public static MyVector2<T> AdditiveIdentity
+        => new(T.AdditiveIdentity, T.AdditiveIdentity);
+
+    public static MyVector2<T> operator +(MyVector2<T> left, MyVector2<T> right)
+        => new (left.X + right.X, left.Y + right.Y);
+}
+```
+
+However, `Vector<T>` does not support this type directly, so the tensor cannot use SIMD to optimize the `Sum`.
+
+Note that this `MyVector2<T>` type has two fields of the same type and is always a value type. This means that they are stored adjacently in memory. This means that a span of `MyVector2<T>` can be converted to a span of `T` by using `MemoryMarshal.Cast<MyVector2<T>, T>()`.
+
+This allows us to implement the following:
+
+```csharp
+public static MyVector2<T> Sum<T>(this ReadOnlySpan<MyVector2<T>> source)
+    where T : struct, INumber<T>, IMinMaxValue<T>
+{
+    (var sumX, var sumY) = Tensor.SumPairs(MemoryMarshal.Cast<MyVector2<T>, T>(source));
+    return new MyVector2<T>(sumX, sumY);
+}
+```
+
+This way, the tensor can use SIMD to enhance the performance of `Sum` for a span of `MyVector2<T>`.
+
 ## Benchmarks
 
 I conducted benchmarks for various operations on an Apple M1 platform:
