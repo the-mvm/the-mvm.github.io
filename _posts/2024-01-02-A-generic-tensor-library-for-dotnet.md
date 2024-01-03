@@ -38,7 +38,7 @@ Due to these considerations, I've made the decision to develop my own open-sourc
 
 -   `System.Numerics.Tensors` employs SIMD for tensor operations regardless of the number of elements. In contrast, `NetFabric.Numerics.Tensors` leverages SIMD only when the number of elements can fully occupy at least one `Vector<T>` for the specific system it's running on. Any remaining elements are processed iteratively.
 
--   `NetFabric.Numerics.Tensors` is better suited for handling large collections of elements. On the other hand, `System.Numerics.Tensors` can be used for both large and small data sets, such as calculating the length of a vector with only three coordinates provided in a span.
+-   `NetFabric.Numerics.Tensors` is better suited for handling large collections of elements. On the other hand, `System.Numerics.Tensors` can be used for both large and small data sets, such as calculating the length of a vector with only two, three, or any number of dimensions provided in a span.
 
 -   While `System.Numerics.Tensors` enjoys support across various .NET versions, including the .NET Framework, `NetFabric.Numerics.Tensors` is exclusively compatible with .NET 8.
 
