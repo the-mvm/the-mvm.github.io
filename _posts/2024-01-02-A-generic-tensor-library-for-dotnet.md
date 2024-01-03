@@ -16,7 +16,7 @@ In an [earlier post](https://aalmada.github.io/SIMD-in-dotnet.html), I explored 
 
 As a software engineer, my aim for this library is to reduce code repetition while maintaining performance.
 
-In [a different post](https://www.linkedin.com/pulse/battle-loops-foreach-vs-c-ant%C3%A3o-almada/), I introduced the concept of value-type delegates, functioning similarly to C# delegates for code injection into existing algorithms. The key distinction is that, unlike C# delegates, they don't impact performance. It's about finding the right balance between abstraction and efficiency in the development process.
+In [a different post](https://aalmada.github.io/The-battle-of-loops.html), I introduced the concept of value-type delegates, functioning similarly to C# delegates for code injection into existing algorithms. The key distinction is that, unlike C# delegates, they don't impact performance. It's about finding the right balance between abstraction and efficiency in the development process.
 
 ## Tensors
 
@@ -97,7 +97,7 @@ public interface IAggregationPairsOperator<T>
 }
 ```
 
-Take note that the interfaces utilize [static virtual members](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/static-virtual-interface-members), a feature introduced in .NET 7. Unlike the value delegates employed in my [previous post](https://www.linkedin.com/pulse/battle-loops-foreach-vs-c-ant%C3%A3o-almada/), there's no need to create an instance of the operator to utilize the methods. This also implies that operators cannot possess inner state.
+Take note that the interfaces utilize [static virtual members](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/static-virtual-interface-members), a feature introduced in .NET 7. Unlike the value delegates employed in my [previous post](https://aalmada.github.io/The-battle-of-loops.html), there's no need to create an instance of the operator to utilize the methods. This also implies that operators cannot possess inner state.
 
 Take, for instance, the square operator, responsible for computing the square of values:
 
