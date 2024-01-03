@@ -5,7 +5,7 @@ show_date: true
 title: "A generic tensor library for .NET"
 date: 2024-01-02
 img: posts/20240102/EstacaoOriente.jpeg
-tags: [development, .net, csharp, simd, performance]
+tags: [development, .net, csharp, simd, intrinsics, performance]
 category: development
 author: Antão Almada
 ---
@@ -467,3 +467,5 @@ The performance improvement is directly proportional to the number of elements t
 I see `System.Numerics.Tensors` and `NetFabric.Numerics.Tensors` as examples of achieving "clean code" without significant performance compromises. Understanding how compilers handle your code and the system's execution is crucial. I also encourage you to explore my related post, "[A 12% improvement, easily obtained, is never considered marginal -- Donald Knuth](https://aalmada.github.io/Performance-optimizations.html)".
 
 I do like the implementation of `System.Numerics.Tensors`. My hope is that it will eventually broaden its support to encompass a wider range of base types beyond just `float`, including provisions for pairs and triplets of data.
+
+`System.Numerics.Tensors` is available on [NuGet](https://www.nuget.org/packages/NetFabric.Numerics.Tensors) and its source on [GitHub](https://github.com/NetFabric/NetFabric.Numerics/tree/main/src/NetFabric.Numerics.Tensors).
