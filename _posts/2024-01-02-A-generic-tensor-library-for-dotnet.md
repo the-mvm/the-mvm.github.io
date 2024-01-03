@@ -270,6 +270,18 @@ public static MyVector2<T> Sum<T>(this ReadOnlySpan<MyVector2<T>> source)
 
 This allows the tensor to leverage SIMD to improve the performance of `Sum` for a span of `MyVector2<T>`. It's important to observe that now we need to use `SumPairs` since we are aiming for the sum of every other item in the span.
 
+For `Apply`, the operation is applied to each element while preserving the order in the destination span. In this scenario, applying `MemoryMarshal.Cast<MyVector2<T>, T>()` to both the sources and destination is sufficient.
+
+```csharp
+public static void Add<T>(ReadOnlySpan<MyVector2<T>> angles, MyVector2<T> value, Span<MyVector2<T>> result)
+    where T : struct, INumber<T>, IMinMaxValue<T>
+    => Tensor.Add(MemoryMarshal.Cast<MyVector2<T>, T>(angles), (value.X, value.Y), MemoryMarshal.Cast<MyVector2<T>, T>(result));
+
+public static void Add<T>(ReadOnlySpan<MyVector2<T>> left, ReadOnlySpan<MyVector2<T>> right, Span<MyVector2<T>> result)
+    where T : struct, INumber<T>, IMinMaxValue<T>
+    => Tensor.Add(MemoryMarshal.Cast<MyVector2<T>, T>(left), MemoryMarshal.Cast<MyVector2<T>, T>(right), MemoryMarshal.Cast<MyVector2<T>, T>(result));
+```
+
 ## Benchmarks
 
 I conducted benchmarks for various operations on an Apple M1 platform:
