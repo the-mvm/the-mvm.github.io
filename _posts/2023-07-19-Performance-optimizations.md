@@ -14,7 +14,7 @@ I've been writing articles about performance in .NET for several years but I fre
 
 > We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil.
 
-If you care about “things that matter” in programming, I highly recommend this keynote by Scott Meyers:
+If you prioritize aspects that truly impact programming, I strongly suggest watching this keynote by Scott Meyers. As the author of my favorite programming books, the "Effective C++" series, his insights have profoundly transformed my approach to programming.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3WBaY61c9sE?si=bH1Oc9724oBoCthJ&amp;start=86" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 

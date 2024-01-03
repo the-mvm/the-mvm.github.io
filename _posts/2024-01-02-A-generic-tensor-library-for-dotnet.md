@@ -48,7 +48,7 @@ Due to these considerations, I've made the decision to develop my own open-sourc
 
 `NetFabric.Numerics.Tensors` facilitates two categories of operations on spans of data:
 
--   `Apply`: Executes an operation using one, two, or three source spans of data, and the result is stored in the destination span. The operation can be performed in-place if the destination is the same as one of the sources.
+-   `Apply`: Applies an operation using one, two, or three source spans of data, and the result is stored in the destination span. The operation can be performed in-place if the destination is the same as one of the sources.
 
 -   `Aggregate`: Consolidates a source span of data into either a single value or a pair of values.
 
@@ -268,7 +268,7 @@ public static MyVector2<T> Sum<T>(this ReadOnlySpan<MyVector2<T>> source)
 }
 ```
 
-This way, the tensor can use SIMD to enhance the performance of `Sum` for a span of `MyVector2<T>`.
+This allows the tensor to leverage SIMD to improve the performance of `Sum` for a span of `MyVector2<T>`. It's important to observe that now we need to use `SumPairs` since we are aiming for the sum of every other item in the span.
 
 ## Benchmarks
 
@@ -464,6 +464,6 @@ Each benchmark involved four different jobs:
 
 The performance improvement is directly proportional to the number of elements that can fit in a `Vector<T>`. Notably, for smaller types, the gains in performance are more pronounced. While for larger types, the benefits become noticeable only when the platform supports larger vectors. In either scenario, the code functions well without requiring any special handling.
 
-I see `System.Numerics.Tensors` and `NetFabric.Numerics.Tensors` as examples of achieving clean code without significant performance compromises. Understanding how compilers handle your code and the system's execution is crucial. I also encourage you to explore my related post, "[A 12% improvement, easily obtained, is never considered marginal -- Donald Knuth](https://aalmada.github.io/Performance-optimizations.html)".
+I see `System.Numerics.Tensors` and `NetFabric.Numerics.Tensors` as examples of achieving "clean code" without significant performance compromises. Understanding how compilers handle your code and the system's execution is crucial. I also encourage you to explore my related post, "[A 12% improvement, easily obtained, is never considered marginal -- Donald Knuth](https://aalmada.github.io/Performance-optimizations.html)".
 
 I do like the implementation of `System.Numerics.Tensors`. My hope is that it will eventually broaden its support to encompass a wider range of base types beyond just `float`, including provisions for pairs and triplets of data.
