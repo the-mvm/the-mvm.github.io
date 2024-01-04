@@ -5,7 +5,7 @@ show_date: true
 title: "Using “React Query” to mutate smart contracts (part 1)"
 date: 2022-12-07
 img: posts/20221207/Rollercoaster.jpeg
-tags: [web3, react, react-query]
+tags: [development, web3, react, react-query]
 category: development
 author: Antão Almada
 ---

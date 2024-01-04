@@ -5,7 +5,7 @@ show_date: true
 title: "Using “React Query” to query smart contracts (part 3)"
 date: 2022-12-06
 img: posts/20221206/Lichen.jpeg
-tags: [web3, react, react-query]
+tags: [development, web3, react, react-query]
 category: development
 author: Antão Almada
 ---
