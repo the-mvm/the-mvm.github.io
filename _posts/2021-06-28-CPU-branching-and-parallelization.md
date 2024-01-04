@@ -5,7 +5,7 @@ show_date: true
 title: "CPU branching and parallelization"
 date: 2021-06-28
 img: posts/20210628/OConnell-Bridge.jpg
-tags: [development, .net, csharp, performance]
+tags: [development, .net, csharp, simd, performance, benchmarks]
 category: development
 author: Antão Almada
 ---

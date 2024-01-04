@@ -5,7 +5,7 @@ show_date: true
 title: "A generic tensor library for .NET"
 date: 2024-01-02
 img: posts/20240102/EstacaoOriente.jpeg
-tags: [development, .net, csharp, simd, intrinsics, performance]
+tags: [development, .net, csharp, simd, math, intrinsics, performance]
 category: development
 author: Antão Almada
 ---

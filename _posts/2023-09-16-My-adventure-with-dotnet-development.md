@@ -5,7 +5,7 @@ show_date: true
 title: "Coding Chronicles: My Adventure with .NET Development"
 date: 2023-09-16
 img: posts/20230916/Depth-camera-AR.png
-tags: [.net]
+tags: [.net, opinion]
 category: development
 author: Antão Almada
 ---

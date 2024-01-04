@@ -5,7 +5,7 @@ show_date: true
 title: "ToList(), or not ToList(), that is the question"
 date: 2023-07-22
 img: posts/20230722/Plaza.jpg
-tags: [development, .net, csharp, linq, performance]
+tags: [development, .net, csharp, linq, performance, benchmarks]
 category: development
 author: Antão Almada
 ---

@@ -5,7 +5,7 @@ show_date: true
 title: "Single Instruction, Multiple Data (SIMD) in .NET"
 date: 2023-07-04
 img: posts/20230704/Margarida.jpg
-tags: [development, .net, csharp, performance, simd, intrinsics]
+tags: [development, .net, csharp, performance, math, simd, intrinsics]
 category: development
 author: Antão Almada
 ---

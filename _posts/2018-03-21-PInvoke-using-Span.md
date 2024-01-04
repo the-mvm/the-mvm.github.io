@@ -5,7 +5,7 @@ show_date: true
 title: "P/Invoking using Span&lt;T&gt;"
 date: 2018-03-21
 img: posts/20180321/Observing.jpg
-tags: [development, .net, csharp]
+tags: [development, .net, csharp, span]
 category: development
 author: Antão Almada
 ---

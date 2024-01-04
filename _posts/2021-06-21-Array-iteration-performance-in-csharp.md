@@ -5,7 +5,7 @@ show_date: true
 title: "Array iteration performance in C#"
 date: 2021-06-21
 img: posts/20210621/Snails.jpg
-tags: [development, .net, csharp, linq, performance]
+tags: [development, .net, csharp, linq, performance, benchmarks]
 category: development
 author: Antão Almada
 ---
