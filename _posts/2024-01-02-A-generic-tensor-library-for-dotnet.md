@@ -30,7 +30,7 @@ While these libraries are primarily developed in Python, there are ports availab
 
 ## NetFabric.Numerics.Tensors
 
-In my ongoing work on the geometry library, I've chosen to use a `struct` approach for each geometry object, encapsulating the element values within. This differs from the conventional tensor definition, where each coordinate is typically represented by a separate tensor. Additionally, the library employs generic mathematics, utilizing generics to handle various element types. It's important to highlight that `System.Numerics.Tensors` is limited to exclusively supporting the `float` type.
+In my ongoing work on the geometry library, I've used a object-oriented approach where each geometry object contains the coordinate values within. This differs from the conventional tensor usage, where each coordinate is typically represented by a separate tensor. Additionally, the library employs generic mathematics, utilizing generics to handle various element types. It's important to highlight that `System.Numerics.Tensors` is limited to exclusively supporting the `float` type.
 
 Due to these considerations, I've made the decision to develop my own open-source tensors library `NetFabric.Numerics.Tensors`, drawing inspiration from `System.Numerics.Tensors` but with some notable distinctions:
 
