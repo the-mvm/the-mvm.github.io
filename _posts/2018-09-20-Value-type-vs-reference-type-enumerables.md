@@ -3,8 +3,8 @@ layout: post
 read_time: true
 show_date: true
 title: "Performance of value-type vs. reference-type enumerators in C#"
-date: 2023-07-23
-img: posts/20230723/Warp.jpg
+date: 2018-09-20
+img: posts/20180920/Warp.jpg
 tags: [development, .net, csharp, linq, performance]
 category: development
 author: Antão Almada

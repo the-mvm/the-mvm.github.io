@@ -3,8 +3,8 @@ layout: post
 read_time: true
 show_date: true
 title: "ArraySegment&lt;T&gt; iteration performance in C#"
-date: 2023-07-24
-img: posts/20230724/Karts.jpg
+date: 2021-06-25
+img: posts/20210625/Karts.jpg
 tags: [development, .net, csharp, performance]
 category: development
 author: Antão Almada

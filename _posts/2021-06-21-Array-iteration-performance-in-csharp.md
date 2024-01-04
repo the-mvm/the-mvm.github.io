@@ -3,8 +3,8 @@ layout: post
 read_time: true
 show_date: true
 title: "Array iteration performance in C#"
-date: 2023-07-21
-img: posts/20230721/Snails.jpg
+date: 2021-06-21
+img: posts/20210621/Snails.jpg
 tags: [development, .net, csharp, linq, performance]
 category: development
 author: Antão Almada

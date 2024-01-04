@@ -3,8 +3,8 @@ layout: post
 read_time: true
 show_date: true
 title: "CPU branching and parallelization"
-date: 2023-07-25
-img: posts/20230725/OConnell-Bridge.jpg
+date: 2021-06-28
+img: posts/20210628/OConnell-Bridge.jpg
 tags: [development, .net, csharp, performance]
 category: development
 author: Antão Almada
