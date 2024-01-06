@@ -5,7 +5,7 @@ show_date: true
 title: "A generic tensor library for .NET"
 date: 2024-01-02
 img: posts/20240102/EstacaoOriente.jpeg
-tags: [development, .net, csharp, simd, math, intrinsics, performance]
+tags: [development, .net, csharp, generics, simd, math, intrinsics, performance]
 category: development
 author: Antão Almada
 ---
@@ -320,25 +320,25 @@ Each benchmark involved four different jobs:
 
 **Apple M1**
 
-| Method     | Job       | Count |        Mean |    StdDev |        Ratio |
-| ---------- | --------- | ----- | ----------: | --------: | -----------: |
-| Add_Short  | Scalar    | 10000 |  5,677.0 ns |   5.66 ns |     baseline |
-| Add_Short  | Vector128 | 10000 |    686.3 ns |   0.23 ns | 8.27x faster |
-|            |           |       |             |           |              |
-| Add_Int    | Scalar    | 10000 |  5,675.5 ns |   4.61 ns |     baseline |
-| Add_Int    | Vector128 | 10000 |  1,420.2 ns |   1.76 ns | 4.00x faster |
-|            |           |       |             |           |              |
-| Add_Long   | Scalar    | 10000 |  5,679.9 ns |   4.35 ns |     baseline |
-| Add_Long   | Vector128 | 10000 |  2,790.5 ns |   1.26 ns | 2.04x faster |
-|            |           |       |             |           |              |
-| Add_Half   | Scalar    | 10000 | 82,937.0 ns | 116.03 ns |     baseline |
-| Add_Half   | Vector128 | 10000 | 82,846.6 ns |  41.69 ns | 1.00x faster |
-|            |           |       |             |           |              |
-| Add_Float  | Scalar    | 10000 |  5,138.9 ns |   1.51 ns |     baseline |
-| Add_Float  | Vector128 | 10000 |  1,304.5 ns |   0.93 ns | 3.94x faster |
-|            |           |       |             |           |              |
-| Add_Double | Scalar    | 10000 |  5,160.2 ns |   2.76 ns |     baseline |
-| Add_Double | Vector128 | 10000 |  2,793.6 ns |   1.98 ns | 1.85x faster |
+| Method     | Job       | Count | Mean        | StdDev    | Ratio        | 
+|----------- |---------- |------ |------------:|----------:|-------------:|-
+| Add_Short  | Scalar    | 10000 |  3,488.8 ns |   4.54 ns |     baseline | 
+| Add_Short  | Vector128 | 10000 |    421.2 ns |   0.49 ns | 8.28x faster | 
+|            |           |       |             |           |              | 
+| Add_Int    | Scalar    | 10000 |  3,496.1 ns |  20.67 ns |     baseline | 
+| Add_Int    | Vector128 | 10000 |    869.8 ns |   0.76 ns | 4.02x faster | 
+|            |           |       |             |           |              | 
+| Add_Long   | Scalar    | 10000 |  3,524.7 ns |  30.92 ns |     baseline | 
+| Add_Long   | Vector128 | 10000 |  1,712.5 ns |   1.50 ns | 2.06x faster | 
+|            |           |       |             |           |              | 
+| Add_Half   | Scalar    | 10000 | 51,628.3 ns | 234.75 ns |     baseline | 
+| Add_Half   | Vector128 | 10000 | 51,118.0 ns |  98.57 ns | 1.01x faster | 
+|            |           |       |             |           |              | 
+| Add_Float  | Scalar    | 10000 |  3,156.9 ns |   3.76 ns |     baseline | 
+| Add_Float  | Vector128 | 10000 |    802.1 ns |   1.69 ns | 3.93x faster | 
+|            |           |       |             |           |              | 
+| Add_Double | Scalar    | 10000 |  3,180.0 ns |  27.26 ns |     baseline | 
+| Add_Double | Vector128 | 10000 |  1,718.9 ns |   3.54 ns | 1.85x faster | 
 
 **Intel i7**
 
@@ -372,25 +372,25 @@ Each benchmark involved four different jobs:
 
 **Apple M1**
 
-| Method     | Job       | Count |      Mean |    StdDev |        Ratio |
-| ---------- | --------- | ----- | --------: | --------: | -----------: |
-| Sum_Short  | Scalar    | 10000 | 10.284 μs | 0.0033 μs |     baseline |
-| Sum_Short  | Vector128 | 10000 |  1.214 μs | 0.0010 μs | 8.47x faster |
-|            |           |       |           |           |              |
-| Sum_Int    | Scalar    | 10000 |  8.059 μs | 0.0043 μs |     baseline |
-| Sum_Int    | Vector128 | 10000 |  2.494 μs | 0.0010 μs | 3.23x faster |
-|            |           |       |           |           |              |
-| Sum_Long   | Scalar    | 10000 |  8.094 μs | 0.0058 μs |     baseline |
-| Sum_Long   | Vector128 | 10000 |  5.055 μs | 0.0016 μs | 1.60x faster |
-|            |           |       |           |           |              |
-| Sum_Half   | Scalar    | 10000 |        NA |        NA |            ? |
-| Sum_Half   | Vector128 | 10000 |        NA |        NA |            ? |
-|            |           |       |           |           |              |
-| Sum_Float  | Scalar    | 10000 | 15.257 μs | 0.0050 μs |     baseline |
-| Sum_Float  | Vector128 | 10000 |  3.730 μs | 0.0018 μs | 4.09x faster |
-|            |           |       |           |           |              |
-| Sum_Double | Scalar    | 10000 | 15.254 μs | 0.0060 μs |     baseline |
-| Sum_Double | Vector128 | 10000 |  7.573 μs | 0.0022 μs | 2.01x faster |
+| Method     | Job       | Count | Mean         | StdDev    | Median       | Ratio        | 
+|----------- |---------- |------ |-------------:|----------:|-------------:|-------------:|-
+| Sum_Short  | Scalar    | 10000 |   6,298.3 ns |   7.26 ns |   6,298.4 ns |     baseline | 
+| Sum_Short  | Vector128 | 10000 |     745.5 ns |   1.45 ns |     744.9 ns | 8.45x faster | 
+|            |           |       |              |           |              |              | 
+| Sum_Int    | Scalar    | 10000 |   4,949.5 ns |   4.65 ns |   4,947.8 ns |     baseline | 
+| Sum_Int    | Vector128 | 10000 |   1,529.4 ns |   1.39 ns |   1,529.0 ns | 3.24x faster | 
+|            |           |       |              |           |              |              | 
+| Sum_Long   | Scalar    | 10000 |   4,946.4 ns |   4.29 ns |   4,946.7 ns |     baseline | 
+| Sum_Long   | Vector128 | 10000 |   3,101.3 ns |   2.50 ns |   3,100.6 ns | 1.59x faster | 
+|            |           |       |              |           |              |              | 
+| Sum_Half   | Scalar    | 10000 | 164,877.8 ns | 251.07 ns | 164,758.6 ns |     baseline | 
+| Sum_Half   | Vector128 | 10000 | 164,804.9 ns | 309.48 ns | 164,711.8 ns | 1.00x faster | 
+|            |           |       |              |           |              |              | 
+| Sum_Float  | Scalar    | 10000 |   9,694.8 ns | 248.92 ns |   9,712.4 ns |     baseline | 
+| Sum_Float  | Vector128 | 10000 |   2,287.8 ns |   2.25 ns |   2,287.8 ns | 4.23x faster | 
+|            |           |       |              |           |              |              | 
+| Sum_Double | Scalar    | 10000 |   9,528.9 ns | 269.41 ns |   9,373.0 ns |     baseline | 
+| Sum_Double | Vector128 | 10000 |   4,672.1 ns |  36.10 ns |   4,652.4 ns | 2.08x faster | 
 
 **Intel i7**
 
@@ -424,25 +424,25 @@ Each benchmark involved four different jobs:
 
 **Apple M1**
 
-| Method     | Job       | Count |      Mean |    StdDev |        Ratio |
-| ---------- | --------- | ----- | --------: | --------: | -----------: |
-| Sum_Short  | Scalar    | 10000 | 11.252 μs | 0.1730 μs |     baseline |
-| Sum_Short  | Vector128 | 10000 |  2.573 μs | 0.0155 μs | 4.37x faster |
-|            |           |       |           |           |              |
-| Sum_Int    | Scalar    | 10000 |  9.968 μs | 0.0202 μs |     baseline |
-| Sum_Int    | Vector128 | 10000 |  5.143 μs | 0.0082 μs | 1.94x faster |
-|            |           |       |           |           |              |
-| Sum_Long   | Scalar    | 10000 |  9.943 μs | 0.0365 μs |     baseline |
-| Sum_Long   | Vector128 | 10000 | 10.268 μs | 0.0182 μs | 1.03x slower |
-|            |           |       |           |           |              |
-| Sum_Half   | Scalar    | 10000 |        NA |        NA |            ? |
-| Sum_Half   | Vector128 | 10000 |        NA |        NA |            ? |
-|            |           |       |           |           |              |
-| Sum_Float  | Scalar    | 10000 | 15.393 μs | 0.0587 μs |     baseline |
-| Sum_Float  | Vector128 | 10000 |  7.739 μs | 0.0252 μs | 1.99x faster |
-|            |           |       |           |           |              |
-| Sum_Double | Scalar    | 10000 | 15.345 μs | 0.0266 μs |     baseline |
-| Sum_Double | Vector128 | 10000 | 15.376 μs | 0.0438 μs | 1.00x slower |
+| Method     | Job       | Count | Mean       | StdDev    | Ratio         | 
+|----------- |---------- |------ |-----------:|----------:|--------------:|-
+| Sum_Short  | Scalar    | 10000 |  24.513 μs | 0.0231 μs |      baseline | 
+| Sum_Short  | Vector128 | 10000 |   1.599 μs | 0.0011 μs | 15.33x faster | 
+|            |           |       |            |           |               | 
+| Sum_Int    | Scalar    | 10000 |   5.620 μs | 0.0198 μs |      baseline | 
+| Sum_Int    | Vector128 | 10000 |   3.175 μs | 0.0070 μs |  1.77x faster | 
+|            |           |       |            |           |               | 
+| Sum_Long   | Scalar    | 10000 |   6.059 μs | 0.0048 μs |      baseline | 
+| Sum_Long   | Vector128 | 10000 |   6.084 μs | 0.0267 μs |  1.00x slower | 
+|            |           |       |            |           |               | 
+| Sum_Half   | Scalar    | 10000 | 177.767 μs | 0.2944 μs |      baseline | 
+| Sum_Half   | Vector128 | 10000 | 178.542 μs | 1.2602 μs |  1.00x slower | 
+|            |           |       |            |           |               | 
+| Sum_Float  | Scalar    | 10000 |   9.425 μs | 0.0772 μs |      baseline | 
+| Sum_Float  | Vector128 | 10000 |   4.722 μs | 0.0087 μs |  2.00x faster | 
+|            |           |       |            |           |               | 
+| Sum_Double | Scalar    | 10000 |   9.397 μs | 0.0111 μs |      baseline | 
+| Sum_Double | Vector128 | 10000 |   9.394 μs | 0.0162 μs |  1.00x faster | 
 
 **Intel i7**
 
