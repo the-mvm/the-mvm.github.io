@@ -42,7 +42,7 @@ Due to these considerations, I've made the decision to develop my own open-sourc
 
 -   While `System.Numerics.Tensors` enjoys support across various .NET versions, including the .NET Framework, `NetFabric.Numerics.Tensors` is exclusively compatible with .NET 8.
 
--   `NetFabric.Numerics.Tensors` accommodates pairs of values of the same type, facilitating operations on 2D vectors without the need to duplicate coordinates into separate tensors. (I still have to work on the triplets to support 3D vectors.)
+-   `NetFabric.Numerics.Tensors` accommodates pairs and triplets of values of the same type, facilitating operations on 2D and 3D vectors without the need to duplicate coordinates into separate tensors.
 
 ### Apply and aggregate operations
 
@@ -80,7 +80,7 @@ public interface IAggregationOperator<T>
     : IBinaryOperator<T>
     where T : struct
 {
-    static virtual T Seed
+    static virtual T Identity
         => Throw.NotSupportedException<T>();
 
     static abstract T ResultSelector(T value, Vector<T> vector);
@@ -90,7 +90,7 @@ public interface IAggregationPairsOperator<T>
     : IBinaryOperator<T>
     where T : struct
 {
-    static virtual ValueTuple<T, T> Seed
+    static virtual ValueTuple<T, T> Identity
         => Throw.NotSupportedException<ValueTuple<T, T>>();
 
     static abstract ValueTuple<T, T> ResultSelector(ValueTuple<T, T> value, Vector<T> vector);
@@ -157,7 +157,7 @@ public readonly struct SumOperator<T>
     : IAggregationOperator<T>
     where T : struct, IAdditiveIdentity<T, T>, IAdditionOperators<T, T, T>
 {
-    public static T Seed
+    public static T Identity
         => T.AdditiveIdentity;
 
     public static T ResultSelector(T value, Vector<T> vector)
@@ -171,7 +171,7 @@ public readonly struct SumOperator<T>
 }
 ```
 
-This is an aggregation operator, delivering a value. The generic type `T` is constrained to `struct`, `IAdditiveIdentity<T, T>`, and `IAdditionOperators<T, T, T>`, indicating that only value types with the additive identity and the `+` operator implemented can be used. The `Seed` initializes the sum using the additive identity. The `Invoke` methods simply perform the addition operation for either a single `T` value or a `Vector<T>` of values. Lastly, the `ResultSelector` adds the partial sums resulting from summing the `Vector<T>` elements and the single `T` values.
+This is an aggregation operator, delivering a value. The generic type `T` is constrained to `struct`, `IAdditiveIdentity<T, T>`, and `IAdditionOperators<T, T, T>`, indicating that only value types with the additive identity and the `+` operator implemented can be used. The `Identity` initializes the sum using the additive identity. The `Invoke` methods simply perform the addition operation for either a single `T` value or a `Vector<T>` of values. Lastly, the `ResultSelector` adds the partial sums resulting from summing the `Vector<T>` elements and the single `T` values.
 
 Additionally, here's a variant of the sum that can be used for pairs of values, such as 2D vectors:
 
@@ -180,7 +180,7 @@ public readonly struct SumPairsOperator<T>
     : IAggregationPairsOperator<T>
     where T : struct, IAdditiveIdentity<T, T>, IAdditionOperators<T, T, T>
 {
-    public static ValueTuple<T, T> Seed
+    public static ValueTuple<T, T> Identity
         => (T.AdditiveIdentity, T.AdditiveIdentity);
 
     public static ValueTuple<T, T> ResultSelector(ValueTuple<T, T> value, Vector<T> vector)
@@ -201,7 +201,7 @@ public readonly struct SumPairsOperator<T>
 }
 ```
 
-This is an aggregation operator, producing a pair of values as a `ValueTuple<T, T>`. In this case, the `Seed` initializes the sum with a pair of additive identities. The `ResultSelector` function sums the pairs of values from `Vector<T>` to the pair of values from the single `T` values.
+This is an aggregation operator, producing a pair of values as a `ValueTuple<T, T>`. In this case, the `Identity` initializes the sum with a pair of additive identities. The `ResultSelector` function sums the pairs of values from `Vector<T>` to the pair of values from the single `T` values.
 
 ### Using the operators
 
@@ -344,29 +344,29 @@ Each benchmark involved four different jobs:
 
 | Method     | Job       | Count |         Mean |      StdDev |       Median |         Ratio |
 | ---------- | --------- | ----- | -----------: | ----------: | -----------: | ------------: |
-| Add_Short  | Scalar    | 10000 |   5,590.9 ns |   173.19 ns |   5,512.3 ns |      baseline |
-| Add_Short  | Vector128 | 10000 |     684.5 ns |    10.51 ns |     685.5 ns |  8.22x faster |
-| Add_Short  | Vector256 | 10000 |     375.7 ns |    16.26 ns |     368.5 ns | 14.89x faster |
+| Add_Short  | Scalar    | 10000 |   6,029.5 ns |   238.03 ns |   5,944.0 ns |      baseline |
+| Add_Short  | Vector128 | 10000 |     735.9 ns |    40.58 ns |     717.6 ns |  8.25x faster |
+| Add_Short  | Vector256 | 10000 |     402.4 ns |    18.30 ns |     399.5 ns | 14.95x faster |
 |            |           |       |              |             |              |               |
-| Add_Int    | Scalar    | 10000 |   4,069.3 ns |    53.04 ns |   4,051.1 ns |      baseline |
-| Add_Int    | Vector128 | 10000 |   1,426.8 ns |    58.62 ns |   1,402.7 ns |  2.84x faster |
-| Add_Int    | Vector256 | 10000 |     984.3 ns |    11.39 ns |     983.2 ns |  4.14x faster |
+| Add_Int    | Scalar    | 10000 |   4,321.3 ns |   140.97 ns |   4,285.9 ns |      baseline |
+| Add_Int    | Vector128 | 10000 |   1,510.4 ns |    78.74 ns |   1,475.1 ns |  2.85x faster |
+| Add_Int    | Vector256 | 10000 |   1,133.5 ns |    73.16 ns |   1,103.6 ns |  3.84x faster |
 |            |           |       |              |             |              |               |
-| Add_Long   | Scalar    | 10000 |   4,207.0 ns |   136.60 ns |   4,152.0 ns |      baseline |
-| Add_Long   | Vector128 | 10000 |   2,851.6 ns |   116.40 ns |   2,811.5 ns |  1.46x faster |
-| Add_Long   | Vector256 | 10000 |   1,953.5 ns |    29.76 ns |   1,945.4 ns |  2.13x faster |
+| Add_Long   | Scalar    | 10000 |   4,305.2 ns |    68.61 ns |   4,312.1 ns |      baseline |
+| Add_Long   | Vector128 | 10000 |   3,024.3 ns |   199.01 ns |   2,927.5 ns |  1.40x faster |
+| Add_Long   | Vector256 | 10000 |   2,359.3 ns |   165.68 ns |   2,316.2 ns |  1.87x faster |
 |            |           |       |              |             |              |               |
-| Add_Half   | Scalar    | 10000 | 111,684.1 ns | 2,809.82 ns | 110,697.1 ns |      baseline |
-| Add_Half   | Vector128 | 10000 | 106,414.7 ns |   771.63 ns | 106,375.0 ns |  1.06x faster |
-| Add_Half   | Vector256 | 10000 | 107,698.5 ns | 2,447.17 ns | 107,014.9 ns |  1.04x faster |
+| Add_Half   | Scalar    | 10000 | 115,958.9 ns | 6,975.66 ns | 112,334.2 ns |      baseline |
+| Add_Half   | Vector128 | 10000 | 111,266.9 ns | 8,493.85 ns | 106,796.4 ns |  1.05x faster |
+| Add_Half   | Vector256 | 10000 | 106,486.7 ns | 1,441.02 ns | 106,587.8 ns |  1.10x faster |
 |            |           |       |              |             |              |               |
-| Add_Float  | Scalar    | 10000 |   5,432.5 ns |   148.69 ns |   5,395.7 ns |      baseline |
-| Add_Float  | Vector128 | 10000 |   1,661.6 ns |    26.56 ns |   1,656.8 ns |  3.24x faster |
-| Add_Float  | Vector256 | 10000 |   1,008.9 ns |    36.51 ns |     995.9 ns |  5.35x faster |
+| Add_Float  | Scalar    | 10000 |   5,901.4 ns |   349.22 ns |   5,752.3 ns |      baseline |
+| Add_Float  | Vector128 | 10000 |   1,851.2 ns |   110.01 ns |   1,829.5 ns |  3.20x faster |
+| Add_Float  | Vector256 | 10000 |   1,145.8 ns |    92.70 ns |   1,121.9 ns |  5.20x faster |
 |            |           |       |              |             |              |               |
-| Add_Double | Scalar    | 10000 |   4,380.2 ns |    54.45 ns |   4,382.9 ns |      baseline |
-| Add_Double | Vector128 | 10000 |   2,797.4 ns |    58.89 ns |   2,784.3 ns |  1.56x faster |
-| Add_Double | Vector256 | 10000 |   1,967.7 ns |    35.07 ns |   1,967.1 ns |  2.23x faster |
+| Add_Double | Scalar    | 10000 |   4,482.8 ns |    56.62 ns |   4,502.8 ns |      baseline |
+| Add_Double | Vector128 | 10000 |   3,171.4 ns |   270.37 ns |   3,059.5 ns |  1.47x faster |
+| Add_Double | Vector256 | 10000 |   2,171.3 ns |   295.82 ns |   2,170.7 ns |  1.80x faster |
 
 ### Sum
 
@@ -394,31 +394,31 @@ Each benchmark involved four different jobs:
 
 **Intel i7**
 
-| Method     | Job       | Count |        Mean |    StdDev |      Median |         Ratio |
-| ---------- | --------- | ----- | ----------: | --------: | ----------: | ------------: |
-| Sum_Short  | Scalar    | 10000 |  5,522.5 ns |  58.24 ns |  5,520.6 ns |      baseline |
-| Sum_Short  | Vector128 | 10000 |    511.5 ns |  12.98 ns |    508.3 ns | 10.84x faster |
-| Sum_Short  | Vector256 | 10000 |    258.4 ns |   2.35 ns |    257.4 ns | 21.39x faster |
-|            |           |       |             |           |             |               |
-| Sum_Int    | Scalar    | 10000 |  3,862.1 ns | 150.55 ns |  3,798.6 ns |      baseline |
-| Sum_Int    | Vector128 | 10000 |  1,034.6 ns |  36.37 ns |  1,021.1 ns |  3.75x faster |
-| Sum_Int    | Vector256 | 10000 |    526.0 ns |   7.28 ns |    525.0 ns |  7.29x faster |
-|            |           |       |             |           |             |               |
-| Sum_Long   | Scalar    | 10000 |  3,846.8 ns |  67.45 ns |  3,832.2 ns |      baseline |
-| Sum_Long   | Vector128 | 10000 |  2,056.7 ns |  39.65 ns |  2,052.6 ns |  1.87x faster |
-| Sum_Long   | Vector256 | 10000 |  1,025.1 ns |  12.06 ns |  1,023.7 ns |  3.76x faster |
-|            |           |       |             |           |             |               |
-| Sum_Half   | Scalar    | 10000 |          NA |        NA |          NA |             ? |
-| Sum_Half   | Vector128 | 10000 |          NA |        NA |          NA |             ? |
-| Sum_Half   | Vector256 | 10000 |          NA |        NA |          NA |             ? |
-|            |           |       |             |           |             |               |
-| Sum_Float  | Scalar    | 10000 | 12,012.7 ns | 148.28 ns | 12,039.3 ns |      baseline |
-| Sum_Float  | Vector128 | 10000 |  2,613.2 ns |  21.26 ns |  2,615.2 ns |  4.60x faster |
-| Sum_Float  | Vector256 | 10000 |  1,309.9 ns |  14.90 ns |  1,312.5 ns |  9.17x faster |
-|            |           |       |             |           |             |               |
-| Sum_Double | Scalar    | 10000 | 11,821.3 ns | 350.49 ns | 11,955.6 ns |      baseline |
-| Sum_Double | Vector128 | 10000 |  5,265.3 ns |  45.11 ns |  5,272.2 ns |  2.20x faster |
-| Sum_Double | Vector256 | 10000 |  2,632.7 ns |  22.63 ns |  2,631.7 ns |  4.38x faster |
+| Method     | Job       | Count |         Mean |      StdDev |       Median |         Ratio |
+| ---------- | --------- | ----- | -----------: | ----------: | -----------: | ------------: |
+| Sum_Short  | Scalar    | 10000 |   5,389.3 ns |    34.33 ns |   5,381.4 ns |      baseline |
+| Sum_Short  | Vector128 | 10000 |     589.2 ns |    60.69 ns |     557.3 ns |  9.09x faster |
+| Sum_Short  | Vector256 | 10000 |     291.5 ns |    22.90 ns |     282.8 ns | 18.08x faster |
+|            |           |       |              |             |              |               |
+| Sum_Int    | Scalar    | 10000 |   3,755.7 ns |   170.33 ns |   3,700.5 ns |      baseline |
+| Sum_Int    | Vector128 | 10000 |   1,166.6 ns |   100.07 ns |   1,122.5 ns |  3.24x faster |
+| Sum_Int    | Vector256 | 10000 |     562.7 ns |     7.17 ns |     564.1 ns |  6.73x faster |
+|            |           |       |              |             |              |               |
+| Sum_Long   | Scalar    | 10000 |   3,667.7 ns |    44.57 ns |   3,664.5 ns |      baseline |
+| Sum_Long   | Vector128 | 10000 |   2,194.1 ns |    32.99 ns |   2,196.8 ns |  1.67x faster |
+| Sum_Long   | Vector256 | 10000 |   1,166.2 ns |    76.00 ns |   1,138.7 ns |  3.13x faster |
+|            |           |       |              |             |              |               |
+| Sum_Half   | Scalar    | 10000 | 136,557.0 ns | 8,772.53 ns | 132,492.3 ns |      baseline |
+| Sum_Half   | Vector128 | 10000 | 166,216.1 ns |   838.10 ns | 166,478.5 ns |  1.18x slower |
+| Sum_Half   | Vector256 | 10000 | 166,010.6 ns | 1,549.13 ns | 166,065.4 ns |  1.17x slower |
+|            |           |       |              |             |              |               |
+| Sum_Float  | Scalar    | 10000 |  10,609.8 ns |    94.76 ns |  10,577.4 ns |      baseline |
+| Sum_Float  | Vector128 | 10000 |   2,674.0 ns |    15.03 ns |   2,677.5 ns |  3.97x faster |
+| Sum_Float  | Vector256 | 10000 |   1,343.3 ns |    19.20 ns |   1,342.5 ns |  7.90x faster |
+|            |           |       |              |             |              |               |
+| Sum_Double | Scalar    | 10000 |  10,639.7 ns |    84.98 ns |  10,636.9 ns |      baseline |
+| Sum_Double | Vector128 | 10000 |   5,360.1 ns |    82.42 ns |   5,335.8 ns |  1.98x faster |
+| Sum_Double | Vector256 | 10000 |   2,702.3 ns |    38.59 ns |   2,691.4 ns |  3.94x faster |
 
 ### Sum Pairs
 
@@ -446,31 +446,31 @@ Each benchmark involved four different jobs:
 
 **Intel i7**
 
-| Method     | Job       | Count |        Mean |    StdDev |      Median |         Ratio |
-| ---------- | --------- | ----- | ----------: | --------: | ----------: | ------------: |
-| Sum_Short  | Scalar    | 10000 |  8,864.0 ns | 587.28 ns |  8,698.5 ns |      baseline |
-| Sum_Short  | Vector128 | 10000 |  1,376.6 ns |  12.45 ns |  1,375.8 ns |  6.55x faster |
-| Sum_Short  | Vector256 | 10000 |    591.6 ns |  18.60 ns |    584.3 ns | 15.04x faster |
-|            |           |       |             |           |             |               |
-| Sum_Int    | Scalar    | 10000 |  5,826.2 ns | 462.48 ns |  5,660.9 ns |      baseline |
-| Sum_Int    | Vector128 | 10000 |  2,811.1 ns | 113.68 ns |  2,756.8 ns |  2.08x faster |
-| Sum_Int    | Vector256 | 10000 |  1,359.4 ns |  11.93 ns |  1,358.8 ns |  4.01x faster |
-|            |           |       |             |           |             |               |
-| Sum_Long   | Scalar    | 10000 |  5,487.8 ns |  66.20 ns |  5,471.9 ns |      baseline |
-| Sum_Long   | Vector128 | 10000 |  5,413.2 ns |  63.94 ns |  5,410.6 ns |  1.01x faster |
-| Sum_Long   | Vector256 | 10000 |  2,083.5 ns |  30.40 ns |  2,074.0 ns |  2.63x faster |
-|            |           |       |             |           |             |               |
-| Sum_Half   | Scalar    | 10000 |          NA |        NA |          NA |             ? |
-| Sum_Half   | Vector128 | 10000 |          NA |        NA |          NA |             ? |
-| Sum_Half   | Vector256 | 10000 |          NA |        NA |          NA |             ? |
-|            |           |       |             |           |             |               |
-| Sum_Float  | Scalar    | 10000 | 11,937.9 ns | 239.06 ns | 12,014.6 ns |      baseline |
-| Sum_Float  | Vector128 | 10000 |  5,329.7 ns |  53.87 ns |  5,322.4 ns |  2.25x faster |
-| Sum_Float  | Vector256 | 10000 |  2,684.4 ns |  25.28 ns |  2,687.9 ns |  4.44x faster |
-|            |           |       |             |           |             |               |
-| Sum_Double | Scalar    | 10000 | 12,092.6 ns | 168.62 ns | 12,111.3 ns |      baseline |
-| Sum_Double | Vector128 | 10000 | 11,839.5 ns | 102.38 ns | 11,871.5 ns |  1.02x faster |
-| Sum_Double | Vector256 | 10000 |  5,328.8 ns |  50.20 ns |  5,335.7 ns |  2.27x faster |
+| Method     | Job       | Count |         Mean |       StdDev |       Median |         Ratio |
+| ---------- | --------- | ----- | -----------: | -----------: | -----------: | ------------: |
+| Sum_Short  | Scalar    | 10000 |  48,984.7 ns |    672.78 ns |  48,642.0 ns |      baseline |
+| Sum_Short  | Vector128 | 10000 |   1,114.3 ns |      8.85 ns |   1,113.6 ns | 43.90x faster |
+| Sum_Short  | Vector256 | 10000 |     668.0 ns |     54.55 ns |     649.6 ns | 75.44x faster |
+|            |           |       |              |              |              |               |
+| Sum_Int    | Scalar    | 10000 |  13,987.2 ns |    210.91 ns |  13,899.7 ns |      baseline |
+| Sum_Int    | Vector128 | 10000 |   2,947.6 ns |     66.05 ns |   2,944.6 ns |  4.74x faster |
+| Sum_Int    | Vector256 | 10000 |   1,216.9 ns |     82.75 ns |   1,193.7 ns | 11.84x faster |
+|            |           |       |              |              |              |               |
+| Sum_Long   | Scalar    | 10000 |   5,271.7 ns |    136.80 ns |   5,225.2 ns |      baseline |
+| Sum_Long   | Vector128 | 10000 |   5,201.4 ns |     72.87 ns |   5,197.9 ns |  1.01x faster |
+| Sum_Long   | Vector256 | 10000 |   3,081.0 ns |    215.67 ns |   3,008.6 ns |  1.68x faster |
+|            |           |       |              |              |              |               |
+| Sum_Half   | Scalar    | 10000 | 239,293.1 ns | 20,385.65 ns | 228,534.6 ns |      baseline |
+| Sum_Half   | Vector128 | 10000 | 224,593.4 ns | 16,325.55 ns | 219,436.1 ns |  1.07x faster |
+| Sum_Half   | Vector256 | 10000 | 211,760.1 ns |  4,314.82 ns | 209,544.0 ns |  1.16x faster |
+|            |           |       |              |              |              |               |
+| Sum_Float  | Scalar    | 10000 |  24,220.7 ns |    151.22 ns |  24,197.0 ns |      baseline |
+| Sum_Float  | Vector128 | 10000 |   5,423.7 ns |     73.41 ns |   5,388.3 ns |  4.48x faster |
+| Sum_Float  | Vector256 | 10000 |   2,719.4 ns |     14.30 ns |   2,720.6 ns |  8.91x faster |
+|            |           |       |              |              |              |               |
+| Sum_Double | Scalar    | 10000 |  11,225.3 ns |    411.67 ns |  11,217.9 ns |      baseline |
+| Sum_Double | Vector128 | 10000 |  10,828.0 ns |    142.42 ns |  10,745.9 ns |  1.02x faster |
+| Sum_Double | Vector256 | 10000 |   5,637.4 ns |    218.04 ns |   5,634.2 ns |  1.99x faster |
 
 ## Conclusions
 
@@ -480,4 +480,4 @@ I see `System.Numerics.Tensors` and `NetFabric.Numerics.Tensors` as examples of 
 
 I do like the implementation of `System.Numerics.Tensors`. My hope is that it will eventually broaden its support to encompass a wider range of base types beyond just `float`, including provisions for pairs and triplets of data.
 
-`System.Numerics.Tensors` is available on [NuGet](https://www.nuget.org/packages/NetFabric.Numerics.Tensors) and its source on [GitHub](https://github.com/NetFabric/NetFabric.Numerics/tree/main/src/NetFabric.Numerics.Tensors).
+`System.Numerics.Tensors` is available on [NuGet](https://www.nuget.org/packages/NetFabric.Numerics.Tensors) and its source on [GitHub](https://github.com/NetFabric/NetFabric.Numerics.Tensors).
