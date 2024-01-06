@@ -318,6 +318,8 @@ Each benchmark involved four different jobs:
 
 ### Addition
 
+Inplace addition of a span of 10,000 items.
+
 **Apple M1**
 
 | Method     | Job       | Count | Mean        | StdDev    | Ratio        | 
@@ -370,6 +372,8 @@ Each benchmark involved four different jobs:
 
 ### Sum
 
+Sum of all the items in a span of 10,000 items.
+
 **Apple M1**
 
 | Method     | Job       | Count | Mean         | StdDev    | Median       | Ratio        | 
@@ -421,6 +425,8 @@ Each benchmark involved four different jobs:
 | Sum_Double | Vector256 | 10000 |   2,702.3 ns |    38.59 ns |   2,691.4 ns |  3.94x faster |
 
 ### Sum Pairs
+
+Sum of 2D vectors in a span containing 10,000 vectors. The vector is a value type containing two fields of the same type.
 
 **Apple M1**
 
