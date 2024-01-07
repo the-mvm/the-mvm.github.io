@@ -63,6 +63,26 @@ Observe that constants like `Pi`, as well as the `Sin` and `Asin` methods, are n
 
 Notably, the constants `E`, `Pi`, and `Tau` are defined within the `IFloatingPointConstants<TSelf>` interface.
 
+## Generic Mathematics with Custom Types
+
+When crafting your own types that involve operators, it's beneficial to implement generic math interfaces. Here's a streamlined representation of a 2D vector:
+
+```csharp
+public readonly record struct MyVector2<T>(T X, T Y)
+    : IAdditiveIdentity<MyVector2<T>, MyVector2<T>>
+    , IAdditionOperators<MyVector2<T>, MyVector2<T>, MyVector2<T>>
+    where T : struct, INumber<T>
+{
+    public static MyVector2<T> AdditiveIdentity
+        => new(T.AdditiveIdentity, T.AdditiveIdentity);
+
+    public static MyVector2<T> operator +(MyVector2<T> left, MyVector2<T> right)
+        => new(left.X + right.X, left.Y + right.Y);
+}
+```
+
+This vector adheres to both the `IAdditiveIdentity<T, T>` and `IAdditionOperators<T, T, T>` interfaces. Utilizing `Sum()` as illustrated above enables the calculation of the sum of a collection of vectors.
+
 ## Conclusions
 
 Generics have expanded their utility, simplifying code and enhancing maintainability.
