@@ -444,7 +444,8 @@ table {
 }
 table td, table th {
     border: 0;
-    padding: 12px;
+    padding: 6px;
+    font-size: 14px;
     text-align: left;
     background-color: var(--grey5);
 }
