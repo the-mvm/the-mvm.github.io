@@ -350,7 +350,7 @@ When employing `yield`, the method must return an interface. These represent ref
 
 > Please refer to my other article titled "[Performance of Value-Type vs. Reference-Type Enumerators in C#](https://aalmada.github.io/Value-type-vs-reference-type-enumerables.html)" for a detailed exploration of how enumerator types impact performance.
 
-However, it's worth noting that the lazy-evaluation nature of enumerables enables the generation of streams and their processing with minimal to no memory allocations, as demonstrated in the provided examples. `yield` remains a useful tool that can save substantial development and testing time. If you require enhanced performance for specific scenarios, consider exploring alternatives or implementing your custom enumerable solution.
+However, it's worth noting that the lazy-evaluation nature of enumerables enables the generation of streams and their processing with minimal memory allocations, as demonstrated in the provided examples. `yield` remains a useful tool that can save substantial development and testing time. If you require enhanced performance for specific scenarios, consider exploring alternatives or implementing your custom enumerable solution.
 
 > For further insights into performance optimizations used by LINQ, I recommend checking out my article "[LINQ Internals: Speed Optimizations](https://aalmada.github.io/LINQ-internals-speed-optimizations.html)".
 
