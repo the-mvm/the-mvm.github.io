@@ -28,7 +28,7 @@ IEnumerable<int> GetValues()
 }
 ```
 
-This method represents a stream containing the values 1 and 2. The execution of this method can be understood as follows:
+This method creates a sequence that yields 1, followed by 2, and then concludes. The execution of this method can be understood as follows:
 
 - Execute code until encountering a `yield return` statement or reaching the end of the method.
 - If a `yield return` statement is encountered, the method returns the provided value; otherwise, execution terminates.
