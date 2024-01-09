@@ -362,7 +362,7 @@ The indexer doesn't have to keep any internal state so there's no need to alloca
 
 When using a `foreach` loop on these collections, it will use the enumerator. You have to use a `for` loop to use the indexer.
 
-> Please check my other articles "[Array iteration performance in C#](https://aalmada.github.io/Array-iteration-performance-in-csharp.html)" and "[ImmutableArray<T> iteration performance in C#](https://aalmada.github.io/ImmutableArray-enumeration-performance.html)" to understand that there are exceptions when using a `foreach` loop.
+> Please check my other articles "[Array iteration performance in C#](https://aalmada.github.io/Array-iteration-performance-in-csharp.html)" and "[ImmutableArray&lt;T&gt;> iteration performance in C#](https://aalmada.github.io/ImmutableArray-enumeration-performance.html)" to understand that there are exceptions when using a `foreach` loop.
 
 You can define an overload for `Sum()` as follow:
 
