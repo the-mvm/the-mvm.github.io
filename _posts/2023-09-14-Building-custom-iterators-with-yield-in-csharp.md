@@ -283,7 +283,7 @@ static IEnumerable<int> Range(int start, int count)
 }
 ```
 
-This code requires the `count` parameter to be non-negative. However, there's a potential issue with when the validation occurs. If we execute the following code that calls the method with an invalid parameter and then uses a foreach loop to iterate the enumerable:
+This code requires the `count` parameter to be non-negative. However, there's a potential issue with this when the validation occurs. If we execute the following code that calls the method with an invalid parameter and then use a foreach loop to iterate the enumerable:
 
 ```csharp
 Console.WriteLine("start");
@@ -305,9 +305,9 @@ System.ArgumentException: count must not be negative
    at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
 ```
 
-Notice that, the exception is thrown only when the code enters the `foreach` loop, which calls the `MoveNext()` method. [This behavior can be observed in SharpLab](https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA0AXEUCuA7AHwAEAmABgFgAoUgRmqLIAIjaUBuah2gTgAoARAGcMAQygYBASk5UAbuKZRReAOYwmAXiYAlFer5k0TOLTIzu/ATDwYYUAJZqmAGwgQADtNkAzaDFEwAAs+BSgmBzsAWwi8JX0YKWomFJZePkiYKIsqbiQ0gGYAHicMAD5dBIzbJhFxDGNSpkh8DCSqAG9k1IcfJj4WmqKmcyZu1NSMIKgIAHcmPBh5gEEoVRwomwwAUQQwGA8MBwg8QUGMJiicEQWIC+ANRdVRI7kYb3GxqgmwphsAEy0tTEEiYAGpmhBWrIJn5wqFFAoXDgNNo6hJ2EwkSimMMAZjsTAwWD2hMJqxaCwAOxY0TImCyAC+QA=).
+Notice that, the exception is thrown only when the code enters the `foreach` loop. This happens because the validation is only performed when `MoveNext()` is called, which is called by the `foreach`. [This behavior can be observed in SharpLab](https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA0AXEUCuA7AHwAEAmABgFgAoUgRmqLIAIjaUBuah2gTgAoARAGcMAQygYBASk5UAbuKZRReAOYwmAXiYAlFer5k0TOLTIzu/ATDwYYUAJZqmAGwgQADtNkAzaDFEwAAs+BSgmBzsAWwi8JX0YKWomFJZePkiYKIsqbiQ0gGYAHicMAD5dBIzbJhFxDGNSpkh8DCSqAG9k1IcfJj4WmqKmcyZu1NSMIKgIAHcmPBh5gEEoVRwomwwAUQQwGA8MBwg8QUGMJiicEQWIC+ANRdVRI7kYb3GxqgmwphsAEy0tTEEiYAGpmhBWrIJn5wqFFAoXDgNNo6hJ2EwkSimMMAZjsTAwWD2hMJqxaCwAOxY0TImCyAC+QA=).
 
-Parameter validation should occur when the method is initially called. To achieve this, the method should be split into two parts: one that does not use `yield` and another that does. This can be accomplished using a [local function](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/local-functions):
+Parameter validation should occur when the method is called, not sometime later. To achieve this, the method should be split into two parts: one that does not use `yield` and another that does. This can be accomplished using a [local function](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/local-functions):
 
 ```csharp
 static IEnumerable<int> Range(int start, int count)
