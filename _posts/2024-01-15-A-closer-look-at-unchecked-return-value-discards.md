@@ -102,7 +102,7 @@ csharp_style_unused_value_expression_statement_preference = discard_variable:err
 
 This configuration prompts the compiler to flag errors, specifically [IDE0058](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0058), when encountering the mentioned issues in your code.
 
-However, there are scenarios where you intentionally want to disregard the returned value. This is common in cases involving fluent syntax, where methods return values that aren't always necessary for continuation. In such instances, you can use the [discard](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/discards), an underscore, as illustrated below:
+However, there are scenarios where you intentionally want to disregard the returned value. This is common in cases involving [fluent](https://en.wikipedia.org/wiki/Fluent_interface) syntax, where methods always return values so that they can be chained together. In such instances, you can use the [discard](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/discards), an underscore, as illustrated below:
 
 ```csharp
 _ = result.Must()
