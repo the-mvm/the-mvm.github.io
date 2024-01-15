@@ -42,6 +42,8 @@ Due to these considerations, I've made the decision to develop my own open-sourc
 
 -   While `System.Numerics.Tensors` enjoys support across various .NET versions, including the .NET Framework, `NetFabric.Numerics.Tensors` is exclusively compatible with .NET 8.
 
+-   `NetFabric.Numerics.Tensors` utilizes `Vector<T>` to leverage intrinsics (SIMD) for enhanced hardware acceleration. In contrast, `System.Numerics.Tensors` relies on `Vector128`, `Vector256`, and `Vector512` for more detailed control over intrinsics. The latter provides specific control but lacks the generality and abstraction offered by `Vector<T>`. While `Vector<T>` abstracts SIMD complexity with generics support, it doesn't allow explicit control over the vector size, consistently opting for the largest available size.
+
 -   `NetFabric.Numerics.Tensors` accommodates pairs and triplets of values of the same type, facilitating operations on 2D and 3D vectors without the need to duplicate coordinates into separate tensors.
 
 ### Apply and aggregate operations
