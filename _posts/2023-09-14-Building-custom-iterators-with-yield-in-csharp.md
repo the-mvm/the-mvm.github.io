@@ -283,7 +283,7 @@ static IEnumerable<int> Range(int start, int count)
 }
 ```
 
-This code requires the `count` parameter to be non-negative. However, there's a potential issue with this when the validation occurs. If we execute the following code that calls the method with an invalid parameter and then use a foreach loop to iterate the enumerable:
+This code requires the `count` parameter to be non-negative. However, there's a potential issue with this when the validation occurs. If we execute the following code that calls the method with an invalid parameter and then use a `foreach` loop to iterate the enumerable:
 
 ```csharp
 Console.WriteLine("start");
