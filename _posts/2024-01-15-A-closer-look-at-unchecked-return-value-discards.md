@@ -106,10 +106,11 @@ However, there are scenarios where you intentionally want to disregard the retur
 
 ```csharp
 _ = result.Must()
-  .BeOfType<List<string>>()
   .BeEnumerableOf<string>()
   .BeEqualTo(expected);
 ```
+
+> NOTE: Example uses [`NetFabric.Assertive`](https://www.nuget.org/packages/NetFabric.Assertive) package.
 
 This approach eliminates the need to declare variables that will ultimately go unused, while explicitly signaling the intention to ignore the returned value.
 
