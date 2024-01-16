@@ -119,7 +119,7 @@ The `Array_Linq()` benchmark uses on the inner array the `Skip()`, `Take()`, and
 
 Here are the benchmarking results using a configuration to test on .NET 6, .NET 7 and .NET 8 (all “modern” .NET versions):
 
-![benchmarks](./assets/img/posts/20230724/Benchmarks.png)
+![benchmarks](./assets/img/posts/20210625/Benchmarks.png)
 
 `ForEach()` is around 1.3x slower than `For()` for the shorter collection. Unlike arrays and `Span<T>`, the C# compiler doesn’t treat `ArraySegment<T>` as a special case. `foreach` does not use the indexer. It allocates an instance of an enumerator and uses it. Although the enumerator is a value-type, it’s still slower than using the indexer.
 

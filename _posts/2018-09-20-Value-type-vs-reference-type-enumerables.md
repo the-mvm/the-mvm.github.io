@@ -203,10 +203,10 @@ It compares the performance of iterating a `List<int>` with 100 and 10.000 items
 
 I used a configuration to test on .NET 6, .NET 7, and .NET 8 RC1 (all “modern” NET versions).
 
-![x64 benchmarks](./assets/img/posts/20230723/Benchmarks-x64.png)
+![x64 benchmarks](./assets/img/posts/20180920/Benchmarks-x64.png)
 <small>x64 benchmarks</small>
 
-![arm64 benchmarks](./assets/img/posts/20230723/Benchmarks-arm64.png)
+![arm64 benchmarks](./assets/img/posts/20180920/Benchmarks-arm64.png)
 <small>arm64 benchmarks</small>
 
 Notice that the difference ranges from 300% and 700% on x64 and a steady 450% on Arm64. Value-type enumerators always performing better than reference-type enumerators.

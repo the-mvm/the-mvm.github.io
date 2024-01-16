@@ -37,7 +37,7 @@ static int Sum(int[] array)
 One other alternative is to use the `Sum()` operation provided by LINQ. It can be applied to any enumerable, including arrays.
 So, how do all these three fairs in terms of performance?
 
-![benchmarks](./assets/img/posts/20230721/Benchmarks-1.png)
+![benchmarks](./assets/img/posts/20210621/Benchmarks-1.png)
 
 The benchmark compares the performance for arrays on int, with sizes 10 and 1.000, on .NET 6, 7, and 8 (all "modern" .NET versions).
 
@@ -183,7 +183,7 @@ static int Sum(ReadOnlySpan<int> source)
 
 So, how do these fairs in terms of performance?
 
-![benchmarks](./assets/img/posts/20230721/Benchmarks-2.png)
+![benchmarks](./assets/img/posts/20210621/Benchmarks-2.png)
 
 Using `foreach` on a slice of the array also performs around 20% better than using the for loop.
 
