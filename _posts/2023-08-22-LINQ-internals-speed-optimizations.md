@@ -113,7 +113,7 @@ Here, both the predicate and selector are applied within a single `foreach` loop
 
 The same optimization occurs when you have two consecutive `Where()` or `Select()` operations. It's equivalent to executing one of the following:
 
-[For Where()](https://github.com/dotnet/dotnet/blob/b61a49ad2478ff60c30a1ca7fbf6f51452b303c5/src/runtime/src/libraries/System.Linq/src/System/Linq/Where.cs#L137C52-L137C52):
+[For consecutive Where()](https://github.com/dotnet/dotnet/blob/b61a49ad2478ff60c30a1ca7fbf6f51452b303c5/src/runtime/src/libraries/System.Linq/src/System/Linq/Where.cs#L137C52-L137C52):
 
 ```csharp
 public static IEnumerable<TSource> Where<TSource>(
@@ -123,9 +123,9 @@ public static IEnumerable<TSource> Where<TSource>(
     => source.Where(item => predicate1(item) && predicate2(item));
 ```
 
-It consolidates the two separate `Where()` calls into a single one. In this unified `Where()` operation, the predicate combines the evaluations of the original two predicates by applying a logical AND operation to their results.
+It takes two predicates as parameteres and consolidates the two separate `Where()` calls into a single one. In this unified `Where()` operation, the predicate combines the evaluations of the original two predicates by applying a logical AND operation to their results.
 
-[For Select()](https://github.com/dotnet/dotnet/blob/b61a49ad2478ff60c30a1ca7fbf6f51452b303c5/src/runtime/src/libraries/System.Linq/src/System/Linq/Select.cs#L156C32-L156C32):
+[For consecutive Select()](https://github.com/dotnet/dotnet/blob/b61a49ad2478ff60c30a1ca7fbf6f51452b303c5/src/runtime/src/libraries/System.Linq/src/System/Linq/Select.cs#L156C32-L156C32):
 
 ```csharp
 public static IEnumerable<TResult> Select<TSource, TMiddle, TResult>(
@@ -135,7 +135,7 @@ public static IEnumerable<TResult> Select<TSource, TMiddle, TResult>(
     => source.Select(item => selector2(selector1(item)));
 ```
 
-It merges the two individual `Select()` calls into a singular operation. Within this unified `Select()`, the output of the selector from the first `Select()` is directly fed into the selector of the second `Select()`.
+It takes two selectors as parameters and merges the two individual `Select()` calls into a singular operation. Within this unified `Select()`, the output of the selector from the first `Select()` is directly fed into the selector of the second `Select()`.
 These enumerator optimizations happen automatically and seamlessly, requiring no code changes on your part.
 
 ## Explicit enumerator collapse
@@ -343,7 +343,7 @@ It's worth noting that these scenarios have been carefully chosen to ensure back
 
 Numerous alternative libraries exist that replicate the functionality of LINQ while striving to enhance performance. Some of these extensions go a step further by accommodating spans (`Span<T>`, `ReadOnlySpan<T>`, `Memory<T>`, and `ReadOnlyMemory<T>`).
 
-For comprehensive benchmark comparisons of these diverse implementations, you can refer to the following link: https://github.com/NetFabric/LinqBenchmarks
+For comprehensive benchmark comparisons of these diverse implementations, you can refer to the following link: [https://github.com/NetFabric/LinqBenchmarks](https://github.com/NetFabric/LinqBenchmarks)
 
 This resource offers benchmarks for individual operations, as well as various combinations. Additionally, it furnishes benchmarks across multiple versions of the .NET framework.
 
