@@ -38,7 +38,7 @@ var query =
 
 The `Enumerable` class is a static class residing within the `System.Linq` namespace, encompassing a multitude of static methods, including `Select()` and `Where()`, which are employed in this query.
 
-> The `Enumerable` class is quite extensive, comprising hundreds of methods. It is a prime candidate for the use of the `partial` keyword, allowing the class to be organized across multiple files. You can explore its source code at https://github.com/dotnet/dotnet/tree/main/src/runtime/src/libraries/System.Linq/src/System/Linq.
+> The `Enumerable` class is quite extensive, comprising hundreds of methods. It is a prime candidate for the use of the `partial` keyword, allowing the class to be organized across multiple files. You can explore its source code [here](https://github.com/dotnet/dotnet/tree/main/src/runtime/src/libraries/System.Linq/src/System/Linq).
 
 It's important to note that all methods within the `Enumerable` class are actually declared as extension methods for `IEnumerable<T>`. Consequently, the query can be rewritten in a more intuitive form:
 
@@ -48,7 +48,7 @@ var query = people
     .Select(person => person.Name);
 ```
 
-This revised structure simplifies understanding. The variable people represents a collection implementing `IEnumerable<Person>`. The `Where()` method applies a predicate function, returning an instance of an object that also implements `IEnumerable<Person>`. Subsequently, the `Select()` method applies a selector function and provides an instance of another object implementing `IEnumerable<string>`. Ultimately, this results in a reference to an `IEnumerable<string>`.
+This revised structure simplifies understanding. The variable `people` represents a collection implementing `IEnumerable<Person>`. The `Where()` method applies a predicate function, returning an instance of an object that also implements `IEnumerable<Person>`. Subsequently, the `Select()` method applies a selector function and provides an instance of another object implementing `IEnumerable<string>`. Ultimately, this results in a reference to an `IEnumerable<string>`.
 
 The key takeaway is that LINQ relies on the methods declared in the `Enumerable` class. The performance of LINQ is intricately linked to the performance of these methods. This article will delve into various optimization techniques employed in LINQ to enhance its performance.
 
