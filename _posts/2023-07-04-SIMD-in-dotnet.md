@@ -18,6 +18,8 @@ In SIMD processing, data is divided into smaller elements, often called vectors 
 
 SIMD instructions are typically supported by specialized hardware or instruction sets found in modern CPUs. These instructions are designed to perform arithmetic, logical, and other operations on vectors efficiently. SIMD instructions are commonly used in multimedia applications, scientific simulations, image and signal processing, and other computationally intensive tasks.
 
+> Note: Implementing SIMD as explained in this article involves writing complex code, which might need replication across multiple methods. This complexity necessitates extensive testing to ensure its functionality in various scenarios. To address this challenge, I've created my own library that defines reusable methods without sacrificing performance. For a detailed understanding of its workings and usage, refer to my other article "[A generic tensor library for .NET](https://aalmada.github.io/A-generic-tensor-library-for-dotnet.html)."
+
 ## SIMD in .NET
 
 SIMD can be used in .NET through the `System.Numerics` and `System.Runtime.Intrinsics` namespaces. 
