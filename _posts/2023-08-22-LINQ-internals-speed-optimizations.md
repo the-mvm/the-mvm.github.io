@@ -328,6 +328,8 @@ In a welcome development, .NET 7 introduced a solution that enables the implemen
 
 Regrettably, in .NET 8, there is only a modest effort to employ this new feature. It is used exclusively for internal purposes, and all the overloads for numeric types are still provided. This implies that third-party numeric types continue to face challenges when attempting to use the `Sum()` and `Average()` methods efficiently. These have to provide their own overloads.
 
+> Please be aware that these methods do not currently support all native numeric types, for example, `short` and `Half`.
+
 ## Single Instruction, Multiple Data (SIMD)
 
 In .NET 8, LINQ has at long last embraced the power of SIMD (Single Instruction, Multiple Data) processing. Regrettably, its utilization remains confined to specific scenarios:
