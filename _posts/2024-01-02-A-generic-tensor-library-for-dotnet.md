@@ -671,6 +671,8 @@ Although `NetFabric.Numerics.Tensors` provides numerous primitive operations, it
 
 In contrast, `Vector<T>` is deficient in low-level operations, which is used for vectorization. As a result, the scope of vectorized operations is constrained to its existing API. Contributions to introduce new operations or vectorize existing ones are highly encouraged.
 
+For enhanced tensor features and improved performance with GPU utilization, consider exploring alternative libraries such as [TorchSharp](https://github.com/dotnet/TorchSharp).
+
 > I view `System.Numerics.Tensors` as an exemple of achieving "clean code" without compromising significant performance. It's crucial to grasp how compilers handle your code and understand the system's execution. I also recommend exploring my related post, "[A 12% improvement, easily obtained, is never considered marginal -- Donald Knuth](https://aalmada.github.io/Performance-optimizations.html)."
 
 
