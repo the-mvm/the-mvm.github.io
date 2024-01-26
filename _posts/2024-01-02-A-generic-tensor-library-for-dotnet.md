@@ -376,7 +376,7 @@ It performs the following bechmarks
 - `Baseline_*` - using a simple iteration without explicit optimizations.
 - `LINQ_*` - using LINQ (when available).
 - `System_*` - using `System.Numerics.Tensors` (only for `Single`, `float` in C#).
-- `NetFabric_*` - using `NetFAbric.Numerics.Tensors`.
+- `NetFabric_*` - using `NetFabric.Numerics.Tensors`.
 
 Every benchmark encompassed four distinct jobs:
 
@@ -389,7 +389,7 @@ The full benchmarking source code can be found [here](https://github.com/NetFabr
 
 ### Add
 
-Benchmarks performing addition on two spans (tensors), each containing 10,000 items,
+Benchmarks performing addition on two spans (tensors), each containing 1,000 items,
 
 The following serves as the baseline against which performance is evaluated:
 
