@@ -4,7 +4,7 @@ description: 앳된 코더의 앳코더 잡기
 permalink: ':title:output_ext'
 baseurl: "/qgasdg.github.io" # the subpath of your site, e.g. /blog
 url: "https://qgasdg.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-logo: "/assets/img/branding/MVM-logo-full.svg"
+logo: "/assets/img/branding/train.jpg"#로고 넣기
 logo-icon: "/assets/img/branding/MVM-symbol.svg"
 logo-icon-SEO: "/assets/img/branding/MVM-symbol-black.png" # must be a non SVG file
 
@@ -62,7 +62,7 @@ comments_opts:
   label: # The GitHub comments label
   theme: # The GitHub comment's there. e.g. github-dark
   # Disqus
-  discus_identifier: @disqus_TZQ1XMoqdP # Add your discus identifier
+  discus_identifier: disqus_TZQ1XMoqdP # Add your discus identifier
 
 # Build settings
 markdown: kramdown

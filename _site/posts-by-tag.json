@@ -1,0 +1,166 @@
+
+
+[   
+      
+  {
+  "tag" : "artificial intelligence",
+  "posts" : [
+      
+      "./AI-and-intellectual-property.html",
+      
+      "./back-to-basics.html",
+      
+      "./deep-q-learning-tic-tac-toe.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "coding",
+  "posts" : [
+      
+      "./deep-q-learning-tic-tac-toe.html",
+      
+      "./neural-network-optimization-methods.html",
+      
+      "./ML-Library-from-scratch.html",
+      
+      "./conways-game-of-life.html",
+      
+      "./single-neuron-perceptron.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "copyright",
+  "posts" : [
+      
+      "./AI-and-intellectual-property.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "creativity",
+  "posts" : [
+      
+      "./AI-and-intellectual-property.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "deep Neural networks",
+  "posts" : [
+      
+      "./neural-network-optimization-methods.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "general blogging",
+  "posts" : [
+      
+      "./starting-the-adventure.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "life",
+  "posts" : [
+      
+      "./starting-the-adventure.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "machine learning",
+  "posts" : [
+      
+      "./AI-and-intellectual-property.html",
+      
+      "./back-to-basics.html",
+      
+      "./deep-q-learning-tic-tac-toe.html",
+      
+      "./neural-network-optimization-methods.html",
+      
+      "./ML-Library-from-scratch.html",
+      
+      "./single-neuron-perceptron.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "neural networks",
+  "posts" : [
+      
+      "./AI-and-intellectual-property.html",
+      
+      "./back-to-basics.html",
+      
+      "./ML-Library-from-scratch.html",
+      
+      "./single-neuron-perceptron.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "optimization",
+  "posts" : [
+      
+      "./neural-network-optimization-methods.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "python",
+  "posts" : [
+      
+      "./deep-q-learning-tic-tac-toe.html",
+      
+      "./ML-Library-from-scratch.html",
+      
+      "./conways-game-of-life.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "reinforcement learning",
+  "posts" : [
+      
+      "./deep-q-learning-tic-tac-toe.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "thoughts",
+  "posts" : [
+      
+      "./starting-the-adventure.html"
+      
+    ]
+  } 
+    
+]
