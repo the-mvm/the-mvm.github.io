@@ -4,7 +4,8 @@ read_time: true
 show_date: true
 title: "Building Custom Iterators with 'yield' in C#"
 date: 2023-09-14
-img: posts/20230914/Yield.png
+img_path: /assets/img/posts/20230914
+image: Yield.png
 tags: [development, .net, csharp]
 category: development
 author: Antão Almada
@@ -178,7 +179,7 @@ static IEnumerable<T> Empty<T>()
 }
 ```
 
-This method returns an empty stream, and it does so by breaking immediately. As a result, the first call to `MoveNext()` will return `false`, indicating that no values are available. [You can experiment with it in SharpLab](https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA0AXEUCuA7AHwAEAmABgFgAoUgRmqLIAIjaUBua6gM2hgEMwACwAUAN35QmASwwwAtjLxMAovIAOGAJ4AeaXgwA+EQEoT1JpZa0AnCNkKTnKg1pJrAZh0AVQ6o3aPsbmVADeFlastEzAsPwA1s4AvtRAA===). 
+This method returns an empty stream, and it does so by breaking immediately. As a result, the first call to `MoveNext()` will return `false`, indicating that no values are available. [You can experiment with it in SharpLab](https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA0AXEUCuA7AHwAEAmABgFgAoUgRmqLIAIjaUBua6gM2hgEMwACwAUAN35QmASwwwAtjLxMAovIAOGAJ4AeaXgwA+EQEoT1JpZa0AnCNkKTnKg1pJrAZh0AVQ6o3aPsbmVADeFlastEzAsPwA1s4AvtRAA===).
 
 Additionally, here's an alternative implementation of the `Range()` method that utilizes `yield break`:
 
@@ -191,9 +192,9 @@ static IEnumerable<int> Range(int start, int count)
     {
         if (value == end)
             yield break;
-        
+
         yield return value;
-        
+
         value++;
     }
 }
@@ -274,9 +275,9 @@ Understanding this behavior is crucial when dealing with parameter validation. L
 ```csharp
 static IEnumerable<int> Range(int start, int count)
 {
-    if (count < 0) 
+    if (count < 0)
         throw new ArgumentException("count must not be negative");
-    
+
     var end = start + count;
     for (var value = start; value < end; value++)
         yield return value;
@@ -312,10 +313,10 @@ Parameter validation should occur when the method is called, not sometime later.
 ```csharp
 static IEnumerable<int> Range(int start, int count)
 {
-    if (count < 0) 
+    if (count < 0)
         throw new ArgumentException("count must not be negative");
     return GetEnumerable(start, count);
-    
+
     static IEnumerable<int> GetEnumerable(int start, int count)
     {
         var end = start + count;
@@ -364,7 +365,7 @@ In Unity, a coroutine is essentially a method that returns `IEnumerator`. The Un
 
 ## Behavior Trees
 
-[Behavior trees find practical applications in game development and robotics](https://en.wikipedia.org/wiki/Behavior_tree_(artificial_intelligence,_robotics_and_control)), enabling the specification of agent or robot behavior in a modular and reusable manner. While initially designed for these domains, the concept can be extended to synchronously manage code execution in various computer science fields.
+[Behavior trees find practical applications in game development and robotics](<https://en.wikipedia.org/wiki/Behavior_tree_(artificial_intelligence,_robotics_and_control)>), enabling the specification of agent or robot behavior in a modular and reusable manner. While initially designed for these domains, the concept can be extended to synchronously manage code execution in various computer science fields.
 
 A behavior tree essentially comprises multiple coroutines arranged in a tree structure. Branch modules, represented as coroutines, coordinate the execution of their child modules. These branch modules are responsible for appropriately invoking the `MoveNext()` method of their children modules. In contrast, leaf modules perform specific, often application-customized, simple tasks. The hierarchical composition of multiple modules as a tree allows for the creation of complex tasks through their combination.
 
@@ -373,4 +374,3 @@ Crucially, a behavior tree module can exist in one of three states: `running`, `
 ## Conclusions
 
 In conclusion, the `yield` keyword in C# is a versatile tool offered by the compiler. While commonly used for creating collections and streams, its utility extends beyond that. It serves as a valuable resource for building easily maintainable state machines and offers a synchronous approach to managing code execution in various scenarios.
-

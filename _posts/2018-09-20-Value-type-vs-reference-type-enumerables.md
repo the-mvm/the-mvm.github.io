@@ -4,7 +4,8 @@ read_time: true
 show_date: true
 title: "Performance of value-type vs. reference-type enumerators in C#"
 date: 2018-09-20
-img: posts/20180920/Warp.jpg
+img_path: /assets/img/posts/20180920
+image: Warp.jpg
 tags: [development, .net, csharp, linq, performance, benchmarks]
 category: development
 author: Antão Almada
@@ -203,10 +204,10 @@ It compares the performance of iterating a `List<int>` with 100 and 10.000 items
 
 I used a configuration to test on .NET 6, .NET 7, and .NET 8 RC1 (all “modern” NET versions).
 
-![x64 benchmarks](./assets/img/posts/20180920/Benchmarks-x64.png)
+![x64 benchmarks](Benchmarks-x64.png)
 <small>x64 benchmarks</small>
 
-![arm64 benchmarks](./assets/img/posts/20180920/Benchmarks-arm64.png)
+![arm64 benchmarks](Benchmarks-arm64.png)
 <small>arm64 benchmarks</small>
 
 Notice that the difference ranges from 300% and 700% on x64 and a steady 450% on Arm64. Value-type enumerators always performing better than reference-type enumerators.

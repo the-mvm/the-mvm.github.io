@@ -4,7 +4,8 @@ read_time: true
 show_date: true
 title: "A 12 % improvement, easily obtained, is never considered marginal -- Donald Knuth"
 date: 2023-07-19
-img: posts/20230719/Hummingbird-hawk-moth.jpg
+img_path: /assets/img/posts/20230719
+image: Hummingbird-hawk-moth.jpg
 tags: [performance, opinion]
 category: development
 author: Antão Almada
@@ -24,17 +25,17 @@ Scott points out that on the same page of the same paper, there's also this phra
 
 > In established engineering disciplines a 12 % improvement, easily obtained, is never considered marginal;
 
-If you know that there's an easy way to get better performance, you should not ignore it. 
+If you know that there's an easy way to get better performance, you should not ignore it.
 
 Writing code that performs well usually means applying the same “recipes” over and over again. Most of these are very simple and can be considered “easily obtained”.
 
-I once worked on a project that processed the data from a call center. It was developed by someone else that had already left the company and it was taking 2 hours to process the data. At the end of those 2 hours, the data analysts would find that something was wrong or missing. The code had to be fixed and they had to wait two more hours to validate it again. It was unbearable. 
+I once worked on a project that processed the data from a call center. It was developed by someone else that had already left the company and it was taking 2 hours to process the data. At the end of those 2 hours, the data analysts would find that something was wrong or missing. The code had to be fixed and they had to wait two more hours to validate it again. It was unbearable.
 
 The source was nice "clean code" with lots of LINQ queries. I analysed the code, refactored it and quickly reduced the processing time to 20 minutes.
 
 I do love well-structured source code, but performance should never be ignored.
 
-To be honest, I didn't pay much attention to the performance of enumerables up until then. I then started noticing the same bad patterns in many other places. In my own code, in code from job interviews, in blog posts. I also didn't find much information about performance of enumerables in .NET. 
+To be honest, I didn't pay much attention to the performance of enumerables up until then. I then started noticing the same bad patterns in many other places. In my own code, in code from job interviews, in blog posts. I also didn't find much information about performance of enumerables in .NET.
 
 I’m far from an expert on performance. I just like to learn and try to apply it the best I can to my work. I started writing articles to help me structure my thoughts. These are references for myself, and hopefully for others too. I also hope this works as validation. In case I got it wrong, I want to learn from the comments.
 
@@ -48,7 +49,7 @@ I also suggest this other video:
 
 In this video, Casey Muratori points out that blindly following the "clean code" principles, results in performance equivalent to running hardware from 15 years ago. Hardware keeps getting faster but software getting slower on this faster hardware.
 
-Knowing how hardware works is important. It's not by accident that machine learning development is mostly based on vectors (tensors). That's how GPUs handle data much faster than traditional sequential code on CPUs. 
+Knowing how hardware works is important. It's not by accident that machine learning development is mostly based on vectors (tensors). That's how GPUs handle data much faster than traditional sequential code on CPUs.
 
 Knowing the difference between a reference type and a value type, and how memory allocation works, is important.
 "Clean code" is subjective. Multiple layers of abstraction, for the sake of modularization and testability, are really necessary? Performant code can be testable and easy to maintain.

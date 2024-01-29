@@ -4,7 +4,8 @@ read_time: true
 show_date: true
 title: "LINQ Internals: Speed Optimizations"
 date: 2023-08-22
-img: posts/20230822/Pine-processionary.jpg
+img_path: /assets/img/posts/20230822
+image: Pine-processionary.jpg
 tags: [development, .net, csharp, linq, performance]
 category: development
 author: Antão Almada
@@ -28,11 +29,11 @@ This approach offers several advantages, primarily the ability to validate all q
 A powerful tool for gaining insights into the inner workings of the compiler is [SharpLab](https://sharplab.io/). Using it, [you can observe how the compiler transforms your query into code that closely resembles the following](https://sharplab.io/#v2:EYLgZgpghgLgrgJwgZwLQAdYwggdm5TXVAYwAsoEAfAAQCYAGAWACh6BGVmhgAhvYB0AGQCWuAI4BuVqwBulHuggB7dABsIPALw9cEAO48ACjmTLcAbQC6PAN6sej3QeOnzACgBEAFWUBbTwAaHnYGAEpAhyc9QxMEM1wvAGU4CCCeRgioxxjXeI9PACllMlx0gGZwyJYnZ1i3RM8kkTVZESh0gBYq1gBfaRY5BXFUhABPbWyeMAR/RQaeMXnVDSn9MhxNJXzcAQBBAHNNAD4M5hqnZAgNEhh5nYEAOSg/CAHWMGUkKHIed3kEDx5GpUotcDwRjgxmEpvwAJz/KAgiBhd4sb4AE3MagmSBIXwxPGQMAQcFueQS7n4vGer2CYjuhxRkiAA===):
 
 ```csharp
-var query = 
+var query =
   Enumerable.Select(
     Enumerable.Where(
-      people, 
-      person => person.Age > 20), 
+      people,
+      person => person.Age > 20),
     person => person.Name);
 ```
 
@@ -67,7 +68,7 @@ The basic implementations of `Where()` and `Select()`, without any optimizations
 
 ```csharp
 public static IEnumerable<TSource> Where<TSource>(
-    this IEnumerable<TSource> source, 
+    this IEnumerable<TSource> source,
     Func<TSource, bool> predicate)
 {
     foreach(var item in source)
@@ -79,14 +80,14 @@ public static IEnumerable<TSource> Where<TSource>(
 
 
 public static IEnumerable<TResult> Select<TSource, TResult>(
-    this IEnumerable<TSource> source, 
+    this IEnumerable<TSource> source,
     Func<TSource, TResult> selector)
 {
     foreach(var item in source)
     {
         yield return selector(item);
     }
-} 
+}
 ```
 
 Each of these operations returns an enumerable, which means that to traverse the result of their composition, an instance of each enumerator must be created. Each item is "pulled" from one enumerator, which, in turn, "pulls" from another, and so on, until the source enumerator is reached. While composability is a major advantage of LINQ, it can also pose significant performance challenges. Thankfully, certain optimizations help mitigate this issue.
@@ -95,8 +96,8 @@ The common pattern of using `Where().Select()` has been optimized for performanc
 
 ```csharp
 public static IEnumerable<TResult> WhereSelect<TSource, TResult>(
-    this IEnumerable<TSource> source, 
-    Func<TSource, bool> predicate, 
+    this IEnumerable<TSource> source,
+    Func<TSource, bool> predicate,
     Func<TSource, TResult> selector)
 {
     foreach(var item in source)
@@ -117,8 +118,8 @@ The same optimization occurs when you have two consecutive `Where()` or `Select(
 
 ```csharp
 public static IEnumerable<TSource> Where<TSource>(
-    this IEnumerable<TSource> source, 
-    Func<TSource, bool> predicate1, 
+    this IEnumerable<TSource> source,
+    Func<TSource, bool> predicate1,
     Func<TSource, bool> predicate2)
     => source.Where(item => predicate1(item) && predicate2(item));
 ```
@@ -129,8 +130,8 @@ It takes two predicates as parameteres and consolidates the two separate `Where(
 
 ```csharp
 public static IEnumerable<TResult> Select<TSource, TMiddle, TResult>(
-    this IEnumerable<TSource> source, 
-    Func<TSource, TMiddle> selector1, 
+    this IEnumerable<TSource> source,
+    Func<TSource, TMiddle> selector1,
     Func<TMiddle, TResult> selector2)
     => source.Select(item => selector2(selector1(item)));
 ```
@@ -169,7 +170,7 @@ The `Count()` with a predicate parameter:
 
 ```csharp
 public static int Count<TSource>(
-    this IEnumerable<TSource> source, 
+    this IEnumerable<TSource> source,
     Func<TSource, bool> predicate)
 {
     var count = 0;
@@ -255,7 +256,7 @@ However, it's important to recognize that checking whether the collection implem
 /// Returns the count of elements in the sequence.
 /// </summary>
 /// <param name="onlyIfCheap">
-/// If true then the count should only be calculated if doing so is quick 
+/// If true then the count should only be calculated if doing so is quick
 /// (sure or likely to be constant time), otherwise -1 should be returned.
 /// </param>
 /// <returns>The number of elements.</returns>
@@ -284,7 +285,7 @@ In .NET 8, an internal method, `TryGetSpan()`, has been introduced. This method 
 
 ```csharp
 private static bool TryGetSpan<TSource>(
-    this IEnumerable<TSource> source, 
+    this IEnumerable<TSource> source,
     out ReadOnlySpan<TSource> span)
     where TSource : struct
 {
@@ -356,4 +357,3 @@ The abstractions offered by `IEnumerable<T>` make LINQ an invaluable library for
 .NET's performance has steadily improved, largely owing to advancements in the JIT compiler and the ongoing development of new APIs within the framework. Nevertheless, a strict commitment to preserving LINQ's full backward compatibility has limited the incorporation of many internal optimizations that align with the latest advancements.
 
 For optimal performance, it is advisable to prioritize the use of methods provided by the collections themselves. These methods possess an intimate understanding of their internal workings that LINQ inherently lacks. Leveraging these collection-specific methods will yield significantly improved performance compared to relying solely on LINQ for data processing tasks.
-

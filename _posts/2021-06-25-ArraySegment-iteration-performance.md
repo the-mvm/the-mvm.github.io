@@ -4,7 +4,8 @@ read_time: true
 show_date: true
 title: "ArraySegment&lt;T&gt; iteration performance in C#"
 date: 2021-06-25
-img: posts/20210625/Karts.jpg
+img_path: /assets/img/posts/20210625
+image: Karts.jpg
 tags: [development, .net, csharp, performance, benchmarks]
 category: development
 author: Antão Almada
@@ -34,7 +35,7 @@ namespace ArrayIteration;
 public class ArraySegmentBenchmarks
 {
     protected ArraySegment<int> arraySegment;
-    
+
     [Params(100)]
     public int Offset { get; set; }
 
@@ -59,7 +60,7 @@ public class ArraySegmentBenchmarks
             sum += arraySegment[index];
         return sum;
     }
-    
+
     [Benchmark]
     public int ForEach()
     {
@@ -73,7 +74,7 @@ public class ArraySegmentBenchmarks
     public int Linq()
         => arraySegment
             .Sum();
-    
+
     [Benchmark]
     public int Array_For()
     {
@@ -119,7 +120,7 @@ The `Array_Linq()` benchmark uses on the inner array the `Skip()`, `Take()`, and
 
 Here are the benchmarking results using a configuration to test on .NET 6, .NET 7 and .NET 8 (all “modern” .NET versions):
 
-![benchmarks](./assets/img/posts/20210625/Benchmarks.png)
+![benchmarks](Benchmarks.png)
 
 `ForEach()` is around 1.3x slower than `For()` for the shorter collection. Unlike arrays and `Span<T>`, the C# compiler doesn’t treat `ArraySegment<T>` as a special case. `foreach` does not use the indexer. It allocates an instance of an enumerator and uses it. Although the enumerator is a value-type, it’s still slower than using the indexer.
 

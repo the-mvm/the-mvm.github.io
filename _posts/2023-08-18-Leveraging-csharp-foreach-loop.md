@@ -4,7 +4,8 @@ read_time: true
 show_date: true
 title: "Efficient Data Processing: Leveraging C#'s foreach Loop"
 date: 2023-08-18
-img: posts/20230818/Casa-do-Alentejo.jpg
+img_path: /assets/img/posts/20230818
+image: Casa-do-Alentejo.jpg
 tags: [development, .net, csharp, performance]
 category: development
 author: Antão Almada
@@ -300,10 +301,10 @@ class MyCollection : IEnumerable
 
 The only differences are:
 
--   The collection derives from `IEnumerable`.
--   `GetEnumerator()` must return `IEnumerator`.
--   The enumerator derives from `IEnumerator`.
--   The enumerator must have a `Reset()` method.
+- The collection derives from `IEnumerable`.
+- `GetEnumerator()` must return `IEnumerator`.
+- The enumerator derives from `IEnumerator`.
+- The enumerator must have a `Reset()` method.
 
 Notice that `IEnumerator` requires the property `Current` to return the type `object`. I want it to return `int` as it's the type of the item for this collection. Its possible to have both implementations, one public and the other use explicit interface implementation. The explicit implementation property is only used when the enumerator is cast to `IEnumerator`.
 
@@ -332,9 +333,9 @@ finally
 
 Several things to notice:
 
--   The enumerator is returned as type `IEnumerator`, which is a reference-type.
--   The value returned by `Current` has to be cast to int because it's using the explicit implementation.
--   Although the enumerator doesn't implement `IDispose`, it adds code to check at runtime if it does.
+- The enumerator is returned as type `IEnumerator`, which is a reference-type.
+- The value returned by `Current` has to be cast to int because it's using the explicit implementation.
+- Although the enumerator doesn't implement `IDispose`, it adds code to check at runtime if it does.
 
 I mentioned above that enumerators should have a value-type enumerator for better performance. We see here that by returning `IEnumerator`, the enumerator is boxed, which converts it into a reference-type. The way to workaround this is to also use explicit interface implementation for the method `GetEnumerator()`:
 
@@ -467,9 +468,9 @@ finally
 
 The differences are:
 
--   The enumerator is a value-type.
--   The value returned by `Current` doesn't require a cast. This improves performance as it was being done for each item.
--   `Dispose()` is called even though it's empty. It's `IEnumerator<T>` that makes the `Dispose()` mandatory.
+- The enumerator is a value-type.
+- The value returned by `Current` doesn't require a cast. This improves performance as it was being done for each item.
+- `Dispose()` is called even though it's empty. It's `IEnumerator<T>` that makes the `Dispose()` mandatory.
 
 The `Dispose()` call can be avoided by declaring two enumerators for the collection:
 
@@ -540,10 +541,10 @@ class MyCollection : IEnumerable<int>
 
 Thing that changed:
 
--   The public `GetEnumerator()` returns an instance of the value-type enumerator while the other ones return instances of the reference-type enumerator.
--   The value-type enumerator only implements the minimum requirements.
--   The reference-type enumerator is declared as private as it's only used internally.
--   The reference-type enumerator is declared as a class. This avoids the boxing performance penalty of converting from value-type to reference-type.
+- The public `GetEnumerator()` returns an instance of the value-type enumerator while the other ones return instances of the reference-type enumerator.
+- The value-type enumerator only implements the minimum requirements.
+- The reference-type enumerator is declared as private as it's only used internally.
+- The reference-type enumerator is declared as a class. This avoids the boxing performance penalty of converting from value-type to reference-type.
 
 [You can see in SharpLab that the generated code for the `foreach` statement if the following](https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA+ABATABgLABQ2AjIRjgAQbEB0AwhADaMxgAuAlhAHYDOA3GUrUUggoQBuAQygVeEAK5QwMCgF4K3GAHcKAWQCeDZq048AFFu0BtALoUA3jgA0FYq6yuAzK5QBfAEoxADNoGCkwAAtzDm42Cg42GABbBO45RWUYAMIKPKpiAE4YpOSgwjIsfSMmFnYudJACrwAeWLYAPkIHXPzYKQATHkYDNLY7DKUVMXyKXryML2rjOrNuGLiJ+Sns+dn1Doo2SI5eGm2s9Umsmfy9xYoAUW4FZJgoKTZoCgBxGDZnq93p9oOYcgR9vk1IcrE8Xm8Pl8oOZjqdyhDIXMMXkAJKAhEgqBtOKHaitdodGh/AHw4FIsF7WbQzQ6CgAJRgwXeMG4KnxdNBqN46MxWNmeNpiO+ZKp/35UuR4NFzNhHK5sF5MHlhJRJ2Ftzy9yWvDYUAU7DhQIVex62P2/SG3BGYy2mWmjPy7TSAxgCAN+w9CyW2vphhWpgaFB5VqkwBYSsxttFswuKiu0YJcZg5zdMH9otiPoQVzgxHz+T8gbFmIeXroSg18SrTMOqZg1kLvts5chVYewAgTH0EAkMAAcr62Ay7crDgBqOed4sta4qGgAGR5AHNjmI9n47jPD7NsOzOdzNSHvk0JTGkcTOjaqw7hqN2q6dj2xt7fV++0s1QvPlJR1MNagjHgoxArME0hJNkzyNt02glgc0/ZtPW4IsSzLKtKyPQ0CKoJY6wbHkmyIltV3bJduwwwjRQgYAACtTAoW8CSRegyLieiDgoesoEbL9Zn/CgByHPQR3HSdpwQvJmQXJcKBXNsN23Xc+LEjAUDPXh/jk+TmWUjRSxE48ayWHSKAAEVOAAHCB9LBRx8NmfD8IqAggA=):
 

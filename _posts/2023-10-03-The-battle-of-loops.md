@@ -4,7 +4,8 @@ read_time: true
 show_date: true
 title: "The Battle of Loops: foreach vs. ForEach in C#"
 date: 2023-10-03
-img: posts/20231003/ForEach.png
+img_path: /assets/img/posts/20231003
+image: ForEach.png
 tags: [.net, csharp, performance, simd, intrinsics]
 category: development
 author: Antão Almada
@@ -23,7 +24,7 @@ In C# programming, the `foreach` statement is a fundamental language feature des
 ```csharp
 foreach(var value in source)
 {
-    Console.WriteLine(value); 
+    Console.WriteLine(value);
 }
 ```
 
@@ -113,15 +114,15 @@ static class Extensions
                 action(item);
         }
     }
-    
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void ForEachEx<T>(this T[] source, Action<T> action)
         => source.AsSpan().ForEachEx(action);
-    
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void ForEachEx<T>(this Span<T> source, Action<T> action)
         => ((ReadOnlySpan<T>)source).ForEachEx(action);
-    
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void ForEachEx<T>(this ReadOnlySpan<T> source, Action<T> action)
     {
@@ -140,17 +141,17 @@ Additionally, an if clause has been added to the enumerable overload to check if
 The type check is executed using `GetType() == typeof(...)` as recommended in the following [comment from the .NET 8 LINQ implementation](https://github.com/dotnet/dotnet/blob/7278a1a4b5163f0a14d8eec87a58fbcd16e67946/src/runtime/src/libraries/System.Linq/src/System/Linq/Enumerable.cs#L39):
 
 ```csharp
-// Use `GetType() == typeof(...)` rather than `is` to avoid cast helpers.  
+// Use `GetType() == typeof(...)` rather than `is` to avoid cast helpers.
 // This is measurably cheaper but does mean we could end up missing some
 // rare cases where we could get a span but don't (e.g. a uint[]
 // masquerading as an int[]).  That's an acceptable tradeoff.  The Unsafe
-// usage is only after we've validated the exact type; this could be 
+// usage is only after we've validated the exact type; this could be
 // changed to a cast in the future if the JIT starts to recognize it.
 // We only pay the comparison/branching costs here for super common types
 // we expect to be used frequently with LINQ methods.
 ```
 
-No checks are made for spans since they cannot implement `IEnumerable<T>`. 
+No checks are made for spans since they cannot implement `IEnumerable<T>`.
 
 ### Lists
 
@@ -177,19 +178,19 @@ static class Extensions
                 action(item);
         }
     }
-    
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void ForEachEx<T>(this List<T> source, Action<T> action)
         => CollectionsMarshal.AsSpan(source).ForEachEx(action);
-    
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void ForEachEx<T>(this T[] source, Action<T> action)
         => source.AsSpan().ForEachEx(action);
-    
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void ForEachEx<T>(this Span<T> source, Action<T> action)
         => ((ReadOnlySpan<T>)source).ForEachEx(action);
-    
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void ForEachEx<T>(this ReadOnlySpan<T> source, Action<T> action)
     {
@@ -317,7 +318,7 @@ Console.WriteLine(action.Result);
 
 To achieve this, we need to instantiate a value action, pass it by reference to the `ForEachEx` method, and then retrieve the result using the action's `Result` property. It's essential to create a fresh instance of the value action for each iteration.
 
-> `SumValueAction<T>` leverages generic math support available in .NET 7, which is further detailed in my other article titled "[Generic Math in .NET](https://aalmada.github.io/Generic-math-in-dotnet.html)". For older versions of .NET, you need to use implementations specific for each numeric type. 
+> `SumValueAction<T>` leverages generic math support available in .NET 7, which is further detailed in my other article titled "[Generic Math in .NET](https://aalmada.github.io/Generic-math-in-dotnet.html)". For older versions of .NET, you need to use implementations specific for each numeric type.
 
 ## Vectorization (SIMD)
 
@@ -358,7 +359,7 @@ public struct SumValueAction<T> : IVectorAction<T>
         => Vector.Sum(sumVector) + sum;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    void IAction<T>.Invoke(ref readonly T item) 
+    void IAction<T>.Invoke(ref readonly T item)
         => sum += item;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -387,7 +388,7 @@ public static void ForEachVectorEx<T, TAction>(this ReadOnlySpan<T> source, ref 
         // Cast the source span into vectors of the specified data type.
         var vectors = MemoryMarshal.Cast<T, Vector<T>>(source);
 
-        // Iterate through the vectors and invoke the action on 
+        // Iterate through the vectors and invoke the action on
         // each vector.
         foreach (ref readonly var vector in vectors)
             action.Invoke(in vector);
@@ -395,13 +396,13 @@ public static void ForEachVectorEx<T, TAction>(this ReadOnlySpan<T> source, ref 
         // Calculate the remaining elements after processing vectors.
         var remaining = source.Length % Vector<T>.Count;
 
-        // Reduce the source span to the remaining elements for 
+        // Reduce the source span to the remaining elements for
         // further processing.
         source = source[^remaining..];
     }
 
-    // Iterate through the remaining elements (or all elements 
-    // if not using SIMD operations) and invoke the action on 
+    // Iterate through the remaining elements (or all elements
+    // if not using SIMD operations) and invoke the action on
     // each individual element.
     foreach (ref readonly var item in source)
     {
@@ -438,9 +439,9 @@ Our baseline measurement employs a traditional `foreach` loop. The benchmarks al
 
 For the `ForEachEx` implementations, we will benchmark them using both lambda expressions (`_ForEachEx_Action`) and value actions (`_ForEachEx_ValueAction`).
 
-You can access the source code for these benchmarks by following [this link](https://github.com/NetFabric/NetFabric.ForEachEx/blob/main/NetFabric.ForEachEx.Benchmarks/ForEachBenchmarks.cs). 
+You can access the source code for these benchmarks by following [this link](https://github.com/NetFabric/NetFabric.ForEachEx/blob/main/NetFabric.ForEachEx.Benchmarks/ForEachBenchmarks.cs).
 
-![benchmarks](./assets/img/posts/20231003/Benchmarks.png)
+![benchmarks](Benchmarks.png)
 
 Starting with the `List_ForEach` benchmark, which assesses the performance of the `ForEach` method provided by `List<T>` and compares it to `List_foreach`, measuring the performance of iterating the same list using a `foreach` loop, it becomes evident that `ForEach` is slower. As expected, despite a faster iteration approach, the use of delegates results in reduced performance.
 
@@ -463,5 +464,3 @@ This article seeks to elucidate the disparities between `foreach` and `ForEach`.
 Even if you have reservations about `ForEach`, this post endeavors to deepen your understanding of the diverse performance considerations surrounding `foreach`.
 
 To those who frequently employ `ForEach`, I hope this article has provided valuable insights into both its limitations and its possibilities.
-
-

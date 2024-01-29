@@ -4,7 +4,8 @@ read_time: true
 show_date: true
 title: "Coding Chronicles: My Adventure with .NET Development"
 date: 2023-09-16
-img: posts/20230916/Depth-camera-AR.png
+img_path: /assets/img/posts/20230916
+image: Depth-camera-AR.png
 tags: [.net, opinion]
 category: development
 author: Antão Almada
@@ -18,7 +19,7 @@ If you're interested primarily in my take on the current status of .NET, feel fr
 
 I started using .NET shortly after 1.0 was released, back in 2002. I loved the simplicity of C#, coming from a long experience with C++, and loved the concept of a single runtime and single framework for multiple programming languages. I still hold as a souvenir these two DVDs of Visual Studio .NET (2003) and Visual Studio 2005.
 
-![Old Visual Studio DVD boxes](./assets/img/posts/20230916/VisualStudio.jpeg)
+![Old Visual Studio DVD boxes](VisualStudio.jpeg)
 
 I was then working at [YDreams](https://ydreams.global/) and, for our first big project on .NET, I used [Web Forms](https://en.wikipedia.org/wiki/ASP.NET_Web_Forms) to develop a tool for the management of the truck fleet that collects recyclable garbage in the [Portalegre District, Portugal](https://en.wikipedia.org/wiki/Portalegre_District). Back then, very little was available besides the official framework. I had to develop the route-finding algorithms based on [A-star](https://en.wikipedia.org/wiki/A*_search_algorithm) and [ant colony](https://en.wikipedia.org/wiki/Ant_colony_optimization_algorithms). I implemented map browsing with dynamic panning and zooming. This was before Google Maps was released.
 
@@ -26,7 +27,7 @@ My first own open-source actually came out of this project when I published the 
 
 Around 2004, YDreams [started developing interactive applications based on detection using web cameras](https://www.youtube.com/watch?v=YCuPU6fVGCo). This required the development of both computer vision and computer graphics components. When the number of applications started to grow, we felt the need to develop a reusable framework for this kind of applications. YDreams created an R&D department where I was very lucky to work with an amazing team of developers. We decided to use .NET for it, and we named it YVision.
 
-![YVision technical paper cover](./assets/img/posts/20230916/YVision.png)
+![YVision technical paper cover](YVision.png)
 
 The purpose of this framework was to have reusable and composable components to easily develop interactive applications, based on any type of sensor, with realistic graphics and behaviours. [We published a scientific paper describing the architecture of the framework](https://www.researchgate.net/publication/221097505_YVision_A_General_Purpose_Software_Composition_Framework).
 
@@ -34,7 +35,7 @@ It is composed of three core concepts:
 
 - Dataflow Graph - Composition as a graph of blocks that generate, or process push data streams.
 - Object Composition - Composition as a tree structure of objects that contain components/services.
-- Behavior Composition - Composition as a tree structure of [coroutines](https://en.wikipedia.org/wiki/Coroutine). A concept a.k.a. [behavior trees](https://en.wikipedia.org/wiki/Behavior_tree_(artificial_intelligence,_robotics_and_control)).
+- Behavior Composition - Composition as a tree structure of [coroutines](https://en.wikipedia.org/wiki/Coroutine). A concept a.k.a. [behavior trees](<https://en.wikipedia.org/wiki/Behavior_tree_(artificial_intelligence,_robotics_and_control)>).
 
 The combination of these three core concepts made it very easy to integrate the many different aspects of the development of the interactive application: computer vision, computer graphics, physics, robotics, artificial intelligence and so on. For this, we integrated several existing third-party projects. Here are the ones I remember:
 
@@ -42,10 +43,10 @@ The combination of these three core concepts made it very easy to integrate the 
 - [OpenCV](https://opencv.org/) - An open-source computer vision library developed in C++. We developed our own managed wrapper.
 - [MOGRE](https://wiki.ogre3d.org/MOGRE) - An open-source managed wrapper for the open-source [OGRE 3D](https://www.ogre3d.org/) rendering engine developed in C++.
 - [bullet-xna](https://github.com/xexuxjy/bullet-xna) - An open-source partial rewrite in C# of the open-source [bullet](https://github.com/bulletphysics) physics library develop in C++.
-- [OdeNet](https://wiki.ogre3d.org/OdeNet) - An open-source managed wrapper for the open-source [ODE](http://www.ode.org/) physics library developed in C++.
-- [AForge.NET](http://aforge.net/) - An open-source library for computer vision and machine learning developed in C#.
-- [Accord.NET](http://accord.net/) - An open-source library for machine learning developed in C#.
-- [ALVAR](http://virtual.vtt.fi/virtual/proj2/multimedia/alvar/) - A library for augmented and virtual reality.
+- [OdeNet](https://wiki.ogre3d.org/OdeNet) - An open-source managed wrapper for the open-source [ODE](https://www.ode.org/) physics library developed in C++.
+- [AForge.NET](https://aforge.net/) - An open-source library for computer vision and machine learning developed in C#.
+- [Accord.NET](https://accord.net/) - An open-source library for machine learning developed in C#.
+- [ALVAR](https://virtual.vtt.fi/virtual/proj2/multimedia/alvar/) - A library for augmented and virtual reality.
 
 Here is a very small sample of applications developed using YVision:
 
@@ -73,13 +74,13 @@ In 2014, I joined [LusoVU](https://lusovu.com/). A company focusing on augmented
 
 The device is called [EyeSpeak](https://lusovu.com/products/eyespeak/) and it's composed of a pair of augmented reality glasses, a camera to track the user's eyes, and a speaker. The see-through displays allow the user to interact with the user interface and also see the outside world, without having to remove the device.
 
-![The Eyespeak device](./assets/img/posts/20230916/Eyespeak.jpeg)
+![The Eyespeak device](Eyespeak.jpeg)
 
 Using the open-source projects [Xamarin for Android](https://learn.microsoft.com/en-us/xamarin/android/), [ReactiveUI](https://www.reactiveui.net/) and [Reactive Extensions for .NET](https://github.com/dotnet/reactive), we developed a system to interact with active UI elements, like pressing the buttons and menus, using the eye gaze only. We developed a text-to-speech application that allows the user to output voice sentences through the speaker by typing the text using only the eyes. We developed a custom Android keyboard that is easier to use with gaze tracking. The system also includes a loud sound alarm to be used in case of an emergency that can be easily activated using the eye gaze.
 
 It's a full-featured Android device and the user can interact with all the other apps, like social media, emails, watch videos and play games.
 
-In 2017, I was challenged to join DataSonar. A startup working on "big data". They used C# and .NET, and they wanted me to work on the development of the tools and performance improvement. That's where I gained a large interest in how enumeration works in C# and .NET. I found that there was little information about this subject and decided to share this knowledge by [writing my own posts on Medium](https://medium.com/@antao-almada). 
+In 2017, I was challenged to join DataSonar. A startup working on "big data". They used C# and .NET, and they wanted me to work on the development of the tools and performance improvement. That's where I gained a large interest in how enumeration works in C# and .NET. I found that there was little information about this subject and decided to share this knowledge by [writing my own posts on Medium](https://medium.com/@antao-almada).
 
 I also started developing open-source projects mostly related to enumeration. They can be found on GitHub under an organization named [NetFabric](https://github.com/NetFabric). I wanted these to not just be my projects but a community effort. [Go check them out!](https://github.com/NetFabric)
 
@@ -100,7 +101,7 @@ Thousands of games have been developed in Unity. Unfortunately, most forget that
 One of the reasons I wrote this post is for others to be aware that there's a lot of other uses for .NET. That .NET-community open-source development started long before .NET itself became open-source.
 Much of my work has been based on libraries developed in C++. I developed or used existing managed wrappers to be able to use them in my .NET projects. .NET is amazing but there's no need to keep reinventing the wheel. That's exactly how Python found so much success and adoption. The latest developments in .NET interop makes it even easier to develop wrappers.
 
-Many don't want to use libraries outside of the official .NET release just because they are afraid these could be discontinued. Do you know how many .NET projects have been discontinued by Microsoft? .NET Micro Framework, Web Forms, Silverlight, WPF, WCF, XNA, MRTK, Mono, Xamarin. Some included in the .NET Framework. Some are replaced by another library, some aren't. Porting to alternatives is not always simple. 
+Many don't want to use libraries outside of the official .NET release just because they are afraid these could be discontinued. Do you know how many .NET projects have been discontinued by Microsoft? .NET Micro Framework, Web Forms, Silverlight, WPF, WCF, XNA, MRTK, Mono, Xamarin. Some included in the .NET Framework. Some are replaced by another library, some aren't. Porting to alternatives is not always simple.
 
 .NET is not owned by Microsoft but most of its core developers are Microsoft staff. Microsoft does have the right to allocate resources to other projects or disregard backwards compatibility once in a while. There's also no guarantee that an open-source project supported by the [.NET Foundation](https://dotnetfoundation.org/) will be maintained. Open-source projects also have a limited lifespan but, at least, you can fork the project. For example, [MRTK](https://github.com/microsoft/MixedRealityToolkit-Unity) still lives on, and so does WPF as [Avalonia XPF](https://avaloniaui.net/XPF).
 

@@ -4,7 +4,8 @@ read_time: true
 show_date: true
 title: "Using “React Query” to query smart contracts (part 3)"
 date: 2022-12-06
-img: posts/20221206/Lichen.jpeg
+img_path: /assets/img/posts/20221206
+image: Lichen.jpeg
 tags: [development, web3, react, react-query]
 category: development
 author: Antão Almada
@@ -129,7 +130,3 @@ This custom hook seems a bit complex but it adds the following to all the advant
 Using hooks like this one results in reactive applications where the user doesn’t have to refresh the page or, wait for replies to unnecessary and potentially slow calls.
 
 It’s possible to expand this pattern to other smart contract methods. Just be careful to add all the query properties to the `queryKey` and, subscribe to all the relevant smart contract events to invalidate the query.
-
-Previous: [Using “React Query” to query smart contracts (part 2)](https://aalmada.github.io/Using-React-Query-to-query-smart-contracts-2.html)
-
-Next: [Using “React Query” to mutate smart contracts (part 1)](https://aalmada.github.io/Using-React-Query-to-mutate-smart-contracts-1.html)

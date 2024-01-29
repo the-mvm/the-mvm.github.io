@@ -1,13 +1,22 @@
+# Bundler cache
+.bundle
+vendor
+Gemfile.lock
 
-.DS_Store
-/.idea/inspectionProfiles/profiles_settings.xml
-/.idea/.gitignore
-/.idea/misc.xml
-/.idea/modules.xml
-/.idea/the-mvm.github.io.iml
-/.idea/inspectionProfiles/Project_Default.xml
-/.idea/vcs.xml
-/.vscode/settings.json
-/.vscode/
-/.idea/
-.liquidrc
+# Jekyll cache
+.jekyll-cache
+_site
+
+# RubyGems
+*.gem
+
+# NPM dependencies
+node_modules
+package-lock.json
+
+# IDE configurations
+.idea
+.vscode
+
+# Misc
+assets/js/dist

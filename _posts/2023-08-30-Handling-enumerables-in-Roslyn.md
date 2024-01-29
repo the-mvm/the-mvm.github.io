@@ -4,7 +4,8 @@ read_time: true
 show_date: true
 title: "Handling enumerables in Roslyn Analyzers and Code Generators"
 date: 2023-08-30
-img: posts/20230830/Sunset-beach.jpeg
+img_path: /assets/img/posts/20230830
+image: Sunset-beach.jpeg
 tags: [development, .net, csharp, roslyn]
 category: development
 author: Antão Almada
@@ -66,8 +67,8 @@ You can use these info values to further validate the async enumerable or its re
 
 ## NetFabric.Hyperlinq.Analyzer
 
-[`NetFabric.Hyperlinq.Analyzer`](https://github.com/NetFabric/NetFabric.Hyperlinq.Analyzer) is an Roslyn Analyzer that provides diagnostics and code fixes related to enumerables in C# projects. It makes use of the `NetFabric.CodeAnalysis` package. 
+[`NetFabric.Hyperlinq.Analyzer`](https://github.com/NetFabric/NetFabric.Hyperlinq.Analyzer) is an Roslyn Analyzer that provides diagnostics and code fixes related to enumerables in C# projects. It makes use of the `NetFabric.CodeAnalysis` package.
 
 If you're developing a Roslyn Analyzer or a Code Generator, and would like to use `NetFabric.CodeAnalysis`, you can use its source code as reference.
 
-If you're developing any other kind of C# project, you can add this analyzer to your projects so that you can easily find where to use the tips I wrote about in the articles I've been publishing. You can find the current list of rules in its repository. 
+If you're developing any other kind of C# project, you can add this analyzer to your projects so that you can easily find where to use the tips I wrote about in the articles I've been publishing. You can find the current list of rules in its repository.

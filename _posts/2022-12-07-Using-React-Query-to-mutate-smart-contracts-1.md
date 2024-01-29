@@ -4,7 +4,8 @@ read_time: true
 show_date: true
 title: "Using “React Query” to mutate smart contracts (part 1)"
 date: 2022-12-07
-img: posts/20221207/Rollercoaster.jpeg
+img_path: /assets/img/posts/20221207
+image: Rollercoaster.jpeg
 tags: [development, web3, react, react-query]
 category: development
 author: Antão Almada
@@ -22,8 +23,8 @@ To implement `pause()` using TypeChain we would only need the following:
 
 ```javascript
 const pause = async (contract: MyToken) => {
-	const tx = await contract.pause();
-	return tx.wait();
+  const tx = await contract.pause();
+  return tx.wait();
 };
 ```
 
@@ -37,21 +38,21 @@ import { UseMutationOptions, useMutation } from "@tanstack/react-query";
 import { MyToken } from "../../typechain-types";
 
 const pause = async (contract: MyToken) => {
-	const tx = await contract.pause();
-	return tx.wait();
+  const tx = await contract.pause();
+  return tx.wait();
 };
 
 const usePause = (
-	options?: Omit<
-		UseMutationOptions<ContractReceipt, unknown, MyToken, unknown>,
-		"mutationFn"
-	>
+  options?: Omit<
+    UseMutationOptions<ContractReceipt, unknown, MyToken, unknown>,
+    "mutationFn"
+  >
 ) => {
-	const { mutate, ...result } = useMutation(
-		(contract: MyToken) => pause(contract),
-		options
-	);
-	return { pause: mutate, ...result };
+  const { mutate, ...result } = useMutation(
+    (contract: MyToken) => pause(contract),
+    options
+  );
+  return { pause: mutate, ...result };
 };
 
 export default usePause;
@@ -69,22 +70,22 @@ The custom hook also supports the typical options provided by `useMutation()`. T
 
 ```javascript
 const { pause, isLoading: isPausing } = usePause({
-    onMutate: () => {
-        console.log("Pausing Mint!");
-        console.log(
-            "Please confirm transaction on your wallet and then wait for validation!"
-        );
-    },
-    onError: error => {
-        console.log("Error Pausing Mint!");
-        console.log(error);
-    },
-    onSuccess: data => {
-        console.log("Mint Paused!");
-        console.log("Mint paused successfully!");
-        console.log("Transaction: " + data.transactionHash);
-        console.log("Gas used: " + data.gasUsed.toString());
-    },
+  onMutate: () => {
+    console.log("Pausing Mint!");
+    console.log(
+      "Please confirm transaction on your wallet and then wait for validation!"
+    );
+  },
+  onError: (error) => {
+    console.log("Error Pausing Mint!");
+    console.log(error);
+  },
+  onSuccess: (data) => {
+    console.log("Mint Paused!");
+    console.log("Mint paused successfully!");
+    console.log("Transaction: " + data.transactionHash);
+    console.log("Gas used: " + data.gasUsed.toString());
+  },
 });
 ```
 
@@ -93,7 +94,3 @@ The `onMutate` callback is called before the wallet opens. The `onSuccess` callb
 The `console.log()` statements are used only as a simple example. You should replace these by frontend notifications that give reactive feedback to the user on your frontend.
 
 > You don’t need to invalidate related queries in `onSuccess`. If you implement the queries as suggested in my previous post, the query invalidation will happen automatically when triggered by the smart contract events they subscribe to, which happens immediately after a successful transaction validation.
-
-Previous: [Using “React Query” to query smart contracts (part 3)](https://aalmada.github.io/Using-React-Query-to-query-smart-contracts-3.html)
-
-Next: [Using “React Query” to mutate smart contracts (part 2)](https://aalmada.github.io/Using-React-Query-to-mutate-smart-contracts-2.html)

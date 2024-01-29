@@ -4,7 +4,8 @@ read_time: true
 show_date: true
 title: "P/Invoking using Span&lt;T&gt;"
 date: 2018-03-21
-img: posts/20180321/Observing.jpg
+img_path: /assets/img/posts/20180321
+image: Observing.jpg
 tags: [development, .net, csharp, span]
 category: development
 author: Antão Almada
@@ -61,7 +62,7 @@ All these options can be used to allocate the required buffer to be passed to th
 ```csharp
 public unsafe int Array()
 {
-    var buffer = new int[bufferSize]; 
+    var buffer = new int[bufferSize];
     fixed(int* ptr = &buffer[0])
     {
         return Native.Sum(ptr, (UIntPtr)bufferSize);
@@ -257,9 +258,9 @@ The code is now much cleaner, easier to maintain and read. The need for the `uns
 
 I now want to know if these abstraction affect the performance in any way. To evaluate it, I commented out the buffer iteration in the native code so that only the memory management and the P/Invoke is taken into account.
 
-Using [BenchmarkDotNet](http://benchmarkdotnet.org/) and [some code that reproduces all the scenarios described](https://github.com/aalmada/SpanSample/blob/master/SpanSample/PinvokeBenchmarks.cs), for buffers with 100 and 1000 items, I got the following results:
+Using [BenchmarkDotNet](https://benchmarkdotnet.org/) and [some code that reproduces all the scenarios described](https://github.com/aalmada/SpanSample/blob/master/SpanSample/PinvokeBenchmarks.cs), for buffers with 100 and 1000 items, I got the following results:
 
-![benchmarks](./assets/img/posts/20180321/Benchmarks.png)
+![benchmarks](Benchmarks.png)
 
 > NOTE: Choosing larger buffers would make the stack allocation fail as this type of memory is very limited.
 
@@ -267,7 +268,7 @@ I reordered the result to better understand how the method used, memory type and
 
 On this first table, each line highlights the difference in performance when using `Span<T>` and method with a `Span<T>` argument, relative to when not using them:
 
-![benchmarks](./assets/img/posts/20180321/Benchmarks2.png)
+![benchmarks](Benchmarks2.png)
 
 - The use of `Span<T>` makes almost no difference for the managed array.
 - There’s a big difference when using `Span<T>` with stack allocations.
@@ -276,7 +277,7 @@ On this first table, each line highlights the difference in performance when usi
 
 On this second table, each lines highlights the difference in performance when increasing from 100 to 1000 items:
 
-![benchmarks](./assets/img/posts/20180321/Benchmarks3.png)
+![benchmarks](Benchmarks3.png)
 
 - The factor of time-elapsed increase is constant for all scenarios except for the stack allocation where there is a big difference between using `Span<T>` and not using it.
 - Interesting to see that the factor is 1 (100%) for all unmanaged allocation scenarios.

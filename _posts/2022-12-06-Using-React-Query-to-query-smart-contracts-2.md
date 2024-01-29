@@ -4,7 +4,8 @@ read_time: true
 show_date: true
 title: "Using “React Query” to query smart contracts (part 2)"
 date: 2022-12-06
-img: posts/20221206/TrainTracks.jpeg
+img_path: /assets/img/posts/20221206
+image: TrainTracks.jpeg
 tags: [development, web3, react, react-query]
 category: development
 author: Antão Almada
@@ -56,43 +57,43 @@ Notice in the `useQuery` options that the `initialData` is set to `true`. This v
 
 ```javascript
 const onPaused: TypedListener<PausedEvent> = (_sender: string) =>
-	console.log("paused")
+  console.log("paused");
 
 const onUnpaused: TypedListener<UnpausedEvent> = (_sender: string) =>
-	console.log("unpaused")
+  console.log("unpaused");
 
 contract
-	.on(contract.filters.Paused(), onPaused)
-	.on(contract.filters.Unpaused(), onUnpaused);
+  .on(contract.filters.Paused(), onPaused)
+  .on(contract.filters.Unpaused(), onUnpaused);
 ```
 
 We can use these callbacks to invalidate the cache in `usePaused`. To do that we’ll have to add the following:
 
 ```javascript
 useEffect(() => {
-    const onPaused: TypedListener<PausedEvent> = (_sender: string) =>
-        onPausedChange(true);
+  const onPaused: TypedListener<PausedEvent> = (_sender: string) =>
+    onPausedChange(true);
 
-    const onUnpaused: TypedListener<UnpausedEvent> = (_sender: string) =>
-        onPausedChange(false);
+  const onUnpaused: TypedListener<UnpausedEvent> = (_sender: string) =>
+    onPausedChange(false);
 
-    const onPausedChange = (paused: boolean) => {
-        queryClient.cancelQueries(queryKey);
-        queryClient.setQueryData<boolean>(queryKey, _previous => paused);
-        queryClient.invalidateQueries(queryKey);
+  const onPausedChange = (paused: boolean) => {
+    queryClient.cancelQueries(queryKey);
+    queryClient.setQueryData < boolean > (queryKey, (_previous) => paused);
+    queryClient.invalidateQueries(queryKey);
+  };
+
+  if (contract) {
+    contract
+      .on(contract.filters.Paused(), onPaused)
+      .on(contract.filters.Unpaused(), onUnpaused);
+
+    return () => {
+      contract
+        .removeListener(contract.filters.Paused(), onPaused)
+        .removeListener(contract.filters.Unpaused(), onUnpaused);
     };
-
-    if (contract) {
-        contract
-            .on(contract.filters.Paused(), onPaused)
-            .on(contract.filters.Unpaused(), onUnpaused);
-
-        return () => {
-            contract
-                .removeListener(contract.filters.Paused(), onPaused)
-                .removeListener(contract.filters.Unpaused(), onUnpaused);
-        };
-    }
+  }
 }, [contract, queryClient, queryKey]);
 ```
 
@@ -170,8 +171,3 @@ export default usePaused;
 Using this custom hook, the value of paused automatically changes when it changes on the smart contract. This allows for your app to be fully reactive.
 
 This last version of `usePaused` adds `queryKey` to the returned object so that callers may use it to invalidate cache anywhere else if required.
-
-Previous: [Using “React Query” to query smart contracts (part 1)](https://aalmada.github.io/Using-React-Query-to-query-smart-contracts-1.html)
-
-Next: [Using “React Query” to query smart contracts (part 3)](https://aalmada.github.io/Using-React-Query-to-query-smart-contracts-3.html)
-

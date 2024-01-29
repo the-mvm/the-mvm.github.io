@@ -4,7 +4,8 @@ read_time: true
 show_date: true
 title: "ImmutableArray&lt;T&gt; iteration performance in C#"
 date: 2023-07-30
-img: posts/20230730/Surf.jpg
+img_path: /assets/img/posts/20230730
+image: Surf.jpg
 tags: [development, .net, csharp, performance, benchmarks]
 category: development
 author: Antão Almada
@@ -68,7 +69,7 @@ internal static int <<Main>$>g__Sum|0_0(ImmutableArray<int> source)
 }
 ```
 
-As you can see in its source code, `ImmutableArray<T>.Enumerator` is a value type. 
+As you can see in its source code, `ImmutableArray<T>.Enumerator` is a value type.
 For these reasons, I would expect a `foreach` with an `ImmutableArray<T>` to have performance somewhat similar to the one with a `List<T>`.
 
 > NOTE: Check my other article "[Performance of value-type vs reference-type enumerators in C#](https://aalmada.github.io/Value-type-vs-reference-type-enumerables.html)" to understand the importance of having a value-type enumerator.
@@ -155,7 +156,7 @@ It tests the performance of `foreach` when iterating an `int[]`, a `ReadOnlySpan
 
 I used a configuration to test for both .NET 6 and .NET 8, and obtained the following results:
 
-![benchmarks](./assets/img/posts/20230730/Benchmarks.png)
+![benchmarks](Benchmarks.png)
 
 What is surprising is that the performance for `ImmutableArray<int>` is equivalent to the one of the `int[]`, not to the one of the `List<int>`.
 
@@ -337,7 +338,7 @@ MyExtensions.Sum(System.Collections.Generic.IEnumerable`1<Int32>)
     L00a4: add rsp, 0x28
     L00a8: pop rsi
     L00a9: pop rbp
-    L00aa: ret 
+    L00aa: ret
 ```
 
 You don't need to understand ASM to find the patterns.
@@ -388,7 +389,7 @@ M00_L01:
 M00_L02:
        call      System.ThrowHelper.ThrowInvalidOperationException_InvalidOperation_NoValue()
        int       3
-; Total bytes of code 62) 
+; Total bytes of code 62)
 ```
 
 .NET 8.0.0 (8.0.23.32907), X64 RyuJIT AVX2
@@ -433,7 +434,7 @@ The generated ASM code is not exactly the same in both .NET 6 and .NET 8, and no
 
 ## Conclusions
 
-The .NET team has been working hard in improving the performance of .NET. They've been doing this by adding new performance centric APIs, and by adding many more optimizations at the JIT compiler level. 
+The .NET team has been working hard in improving the performance of .NET. They've been doing this by adding new performance centric APIs, and by adding many more optimizations at the JIT compiler level.
 
 Optimizations at the JIT level are great because you don't need to make changes to your code. Not even recompile it. You just need to upgrade the .NET runtime.
 

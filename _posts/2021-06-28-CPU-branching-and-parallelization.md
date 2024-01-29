@@ -4,7 +4,8 @@ read_time: true
 show_date: true
 title: "CPU branching and parallelization"
 date: 2021-06-28
-img: posts/20210628/OConnell-Bridge.jpg
+img_path: /assets/img/posts/20210628
+image: OConnell-Bridge.jpg
 tags: [development, .net, csharp, simd, performance, benchmarks]
 category: development
 author: Antão Almada
@@ -20,9 +21,9 @@ Modern CPUs try to maximize its throughput by executing instructions simultaneou
 
 ## Logical Branch Removal
 
-> “A branch is an instruction in a computer program that can cause a computer to begin executing a different instruction sequence and thus deviate from its default behavior of executing instructions in order.” — [Wikipedia](https://en.wikipedia.org/wiki/Branch_(computer_science))
+> “A branch is an instruction in a computer program that can cause a computer to begin executing a different instruction sequence and thus deviate from its default behavior of executing instructions in order.” — [Wikipedia](<https://en.wikipedia.org/wiki/Branch_(computer_science)>)
 
-Code execution on a CPU is not always linear. When it has to evaluate a condition to then decide what next instruction to execute, the CPU may try to guess the most probable branch to follow and execute ahead of time. 
+Code execution on a CPU is not always linear. When it has to evaluate a condition to then decide what next instruction to execute, the CPU may try to guess the most probable branch to follow and execute ahead of time.
 
 When the condition is finally evaluated, if it took the correct path, time was saved. Otherwise, it has to go back and take the correct branch, loosing valuable time. The more it predicts correctly, the better is the performance. Performance can be maximized when this decision making can be avoided.
 
@@ -89,7 +90,7 @@ public class BranchingBenchmarks
 
         var random = new Random(Seed);
         foreach (ref var item in array.AsSpan())
-            item = random.Next(Count);   
+            item = random.Next(Count);
     }
 
     [Benchmark(Baseline = true)]
@@ -116,7 +117,7 @@ public class BranchingBenchmarks
         return sum;
     }
 
-    static bool IsEven(int item) 
+    static bool IsEven(int item)
         => (item & 1) is 0;
 }
 ```
@@ -125,7 +126,7 @@ This benchmark tests the performance of each method using an array of random int
 
 > NOTE: You can see in [SharpLab](https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA0AXEBDAzgWwB8ABAJgEYBYAKGIGYACMhgYQYG8aHunHgIIAGwYBJXAFEAbjAB2ACgCWMjA0nZBAVxgBKBgF4AfKvVaGAUgakGC3AwAMAbi49n3eg35DRE6TNKLlY00dfSM5NWCGADIGcl0beydqHgZXXg8BYTEAeQATXICVCK1dQyDTCysEmQgVRzS0908s3Dzc/yUikxCy8O7o2PjbGrqkgF8gA===) that using `item % 2 is 0` or `(item & 1) is 0` generates exactly the same assembly code on the latest .NET versions but not for the older versions. I’m using `(item & 1) is 0` to guarantee equality in the benchmarks.
 
-![benchmarks](./assets/img/posts/20210628/Benchmarks-1.png)
+![benchmarks](Benchmarks-1.png)
 
 > NOTE: The results for this benchmark depend on how well the CPU can predict the branch to follow. This depends on the data used which, in this case, depends on the seed value.
 
@@ -220,7 +221,7 @@ public class ParallelizationBenchmarks
 
 This benchmark tests the performance of each method using an array of integers. It uses two lengths for the array: 10 and 1,000 items.
 
-![benchmarks](./assets/img/posts/20210628/Benchmarks-2.png)
+![benchmarks](Benchmarks-2.png)
 
 The parallelized method is 20% to 40% faster for both short and large collections. Using this method, the CPU is able to automatically parallelize instruction flows.
 
@@ -366,11 +367,11 @@ It benchmarks both methods using an array of random integers. It uses three diff
 
 This time I used a configuration only for .NET 8 but with three variants:
 
-- SIMD is not available (scalar), 
-- Vector128 is available, 
+- SIMD is not available (scalar),
+- Vector128 is available,
 - Vector256 is available.
 
-![benchmarks](./assets/img/posts/20210628/Benchmarks-3.png)
+![benchmarks](Benchmarks-3.png)
 
 The optimized version is significantly faster than the baseline version in all cases. It achieves more than a 7x gain for a 1,000 items array when Vector256 hardware is available.
 

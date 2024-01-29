@@ -4,7 +4,8 @@ read_time: true
 show_date: true
 title: "Single Instruction, Multiple Data (SIMD) in .NET"
 date: 2023-07-04
-img: posts/20230704/Margarida.jpg
+img_path: /assets/img/posts/20230704
+image: Margarida.jpg
 tags: [development, .net, csharp, performance, math, simd, intrinsics]
 category: development
 author: Antão Almada
@@ -22,7 +23,7 @@ SIMD instructions are typically supported by specialized hardware or instruction
 
 ## SIMD in .NET
 
-SIMD can be used in .NET through the `System.Numerics` and `System.Runtime.Intrinsics` namespaces. 
+SIMD can be used in .NET through the `System.Numerics` and `System.Runtime.Intrinsics` namespaces.
 
 In .NET Core 1.0 and later versions, you can use the `System.Numerics.Vector<T>` class. This class provides SIMD support for a wide range of data types, including integers and floating-point numbers. You can perform SIMD operations using `Vector<T>` to efficiently process large sets of data in parallel. For example, you can create `Vector<T>` instances, perform arithmetic or logical operations on them, and access the individual elements of the vector using familiar array-like syntax.
 
@@ -80,7 +81,7 @@ public static class MyExtensions
         // check if the enumerable is an array
         if (source.GetType() == typeof(T[]))
             return Sum(Unsafe.As<T[]>(source));
-            
+
         var sum = T.AdditiveIdentity;
         foreach (var value in source)
         {
@@ -88,12 +89,12 @@ public static class MyExtensions
         }
         return sum;
     }
-    
+
     // overload that takes an array
     public static T Sum<T>(this T[] source)
         where T : struct, IAdditionOperators<T, T, T>, IAdditiveIdentity<T, T>
         => Sum<T>(source.AsSpan());
-    
+
     // overload that takes a span
     public static T Sum<T>(this ReadOnlySpan<T> source)
         where T : struct, IAdditionOperators<T, T, T>, IAdditiveIdentity<T, T>
@@ -124,7 +125,7 @@ public static class MyExtensions
     {
         if (source.GetType() == typeof(T[]))
             return Sum(Unsafe.As<T[]>(source));
-            
+
         var sum = T.AdditiveIdentity;
         foreach (var value in source)
         {
@@ -132,11 +133,11 @@ public static class MyExtensions
         }
         return sum;
     }
-    
+
     public static T Sum<T>(this T[] source)
         where T : struct, IAdditionOperators<T, T, T>, IAdditiveIdentity<T, T>
         => Sum<T>(source.AsSpan());
-    
+
     public static T Sum<T>(this ReadOnlySpan<T> source)
         where T : struct, IAdditionOperators<T, T, T>, IAdditiveIdentity<T, T>
     {
@@ -146,9 +147,9 @@ public static class MyExtensions
         {
             var sumVector = Vector<T>.Zero; // initialize to zeros
 
-            // cast the span to a span of vectors  
-            var vectors = MemoryMarshal.Cast<T, Vector<T>>(source);   
- 
+            // cast the span to a span of vectors
+            var vectors = MemoryMarshal.Cast<T, Vector<T>>(source);
+
             // add each vector to the sum vector
             foreach (ref readonly var vector in vectors)
                 sumVector += vector;
@@ -184,7 +185,7 @@ Once the loop ends, each element of `sumVector` contains a partial sum of the ar
 
 > NOTE: This portion of the code does not check for overflows or deal with NaN and infinite. I you know how to do it, please let me know in the comments.
 
-We now only have to handle the case where there are elements of the source that were left out because they were not enough to fill up one last `Vector<T>`. To do it efficiently, without copies, we can slice the source, leaving only these last elements. The span resulting from the slice will then be handled by the usual foreach loop, adding to the current sum value. 
+We now only have to handle the case where there are elements of the source that were left out because they were not enough to fill up one last `Vector<T>`. To do it efficiently, without copies, we can slice the source, leaving only these last elements. The span resulting from the slice will then be handled by the usual foreach loop, adding to the current sum value.
 
 ### Optimizing the sum of the `List<T>` elements
 
@@ -213,7 +214,7 @@ public static class MyExtension
         // check if the enumerable is a list
         if (source.GetType() == typeof(List<T>))
             return Sum(Unsafe.As<List<T>>(source));
-            
+
         var sum = T.AdditiveIdentity;
         foreach (var value in source)
         {
@@ -221,16 +222,16 @@ public static class MyExtension
         }
         return sum;
     }
-    
+
     public static T Sum<T>(this T[] source)
         where T : struct, IAdditionOperators<T, T, T>, IAdditiveIdentity<T, T>
         => Sum<T>(source.AsSpan());
-    
+
     // override that takes a list
     public static T Sum<T>(this List<T> source)
         where T : struct, IAdditionOperators<T, T, T>, IAdditiveIdentity<T, T>
         => Sum<T>(CollectionsMarshal.AsSpan(source));
-    
+
     public static T Sum<T>(this ReadOnlySpan<T> source)
         where T : struct, IAdditionOperators<T, T, T>, IAdditiveIdentity<T, T>
     {
@@ -239,7 +240,7 @@ public static class MyExtension
         {
             var sumVector = Vector<T>.Zero;
 
-            var vectors = MemoryMarshal.Cast<T, Vector<T>>(source);           
+            var vectors = MemoryMarshal.Cast<T, Vector<T>>(source);
             foreach (ref readonly var vector in vectors)
                 sumVector += vector;
 
@@ -266,13 +267,14 @@ Lets now benchmark it against the basic implementation of `Sum(IEnumerable<T>)` 
 
 The benchmark compares the following scenarios:
 
-- A List<float> with 10 and 10,000 items, 
-- .NET 7 and .NET 8, 
+- A List<float> with 10 and 10,000 items,
+- .NET 7 and .NET 8,
 - With no SIMD support (Scalar), only Vector128 support (Vector128) and with Vector256 support (Vector256).
 
-![benchmarks](./assets/img/posts/20230704/Benchmarks.png)
+![benchmarks](Benchmarks.png)
 
 The use of SIMD, together with the iteration of `List<T>` as span, totals in performance boosts of:
+
 - 14x faster for 10 items and 6x faster for 10,000 items when hardware acceleration is not available (Scalar jobs).
 - 17x faster for 10 items and 27x faster for 10,000 items when Vector128 is available (Vector128 jobs).
 - 19x faster for 10 items and 54x faster for 10,000 items when Vector256 is available (Vector256 jobs).

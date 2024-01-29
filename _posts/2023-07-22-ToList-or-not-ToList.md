@@ -4,7 +4,8 @@ read_time: true
 show_date: true
 title: "ToList(), or not ToList(), that is the question"
 date: 2023-07-22
-img: posts/20230722/Plaza.jpg
+img_path: /assets/img/posts/20230722
+image: Plaza.jpg
 tags: [development, .net, csharp, linq, performance, benchmarks]
 category: development
 author: Antão Almada
@@ -82,7 +83,7 @@ foreach(var number in sequence)
     Console.WriteLine(number);
 ```
 
-> NOTE: The Where(_ => true) is here just for benchmarking purposes. It converts the Enumerable.Range() into an IEnumerable<T> while returning the same number of items. It represents the output of most regular LINQ queries.
+> NOTE: The Where(\_ => true) is here just for benchmarking purposes. It converts the Enumerable.Range() into an IEnumerable<T> while returning the same number of items. It represents the output of most regular LINQ queries.
 
 Now these operations have to allocate memory one or more times and copy all the items by using an equivalent to the first `foreach` loop.
 
@@ -143,7 +144,7 @@ I also configured it to use .NET 6, .NET 7, and .NET 8 (all the “modern” .NE
 
 > NOTE: The benchmarking methods return the sum of the items so that the JIT compiler doesn’t remove any code that it considers "unused".
 
-![benchmarks](./assets/img/posts/20230722/Benchmarks.png)
+![benchmarks](Benchmarks.png)
 
 One thing to note is that the performance improves significantly between .NET 7 and .NET 8. That’s one good reason to upgrade to .NET 8 as soon as possible.
 
@@ -158,20 +159,20 @@ public class ToListBenchmarks
     public int Count { get; set; }
 
     [Benchmark(Baseline = true)]
-    public List<int> ToList() 
+    public List<int> ToList()
         => Enumerable.Range(0, Count)
             .Where(_ => true)
             .ToList();
 
     [Benchmark]
-    public int[] ToArray() 
+    public int[] ToArray()
         => Enumerable.Range(0, Count)
             .Where(_ => true)
             .ToArray();
 }
 ```
 
-<center><img style="float: left;margin-right: 1em;" src='./assets/img/posts/20230722/Benchmarks2.png'></center>
+![benchmarks2](Benchmarks2.png)
 
 Notice that most the allocated memory does come from the conversion operation and that it increases with the number of items in the sequence.
 
@@ -187,4 +188,3 @@ These methods should be used to cache the result of a query when:
 - The total size is guaranteed to fit in memory.
 
 A method that returns the result of a query should not internally use any of these methods. It should be the caller of the method to decide if the result should be cached and, if so, if `ToList()` or `ToArray()` is more adequate.
-

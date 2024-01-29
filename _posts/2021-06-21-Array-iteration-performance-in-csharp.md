@@ -4,7 +4,8 @@ read_time: true
 show_date: true
 title: "Array iteration performance in C#"
 date: 2021-06-21
-img: posts/20210621/Snails.jpg
+img_path: /assets/img/posts/20210621
+image: Snails.jpg
 tags: [development, .net, csharp, linq, performance, benchmarks]
 category: development
 author: Antão Almada
@@ -37,7 +38,7 @@ static int Sum(int[] array)
 One other alternative is to use the `Sum()` operation provided by LINQ. It can be applied to any enumerable, including arrays.
 So, how do all these three fairs in terms of performance?
 
-![benchmarks](./assets/img/posts/20210621/Benchmarks-1.png)
+![benchmarks](Benchmarks-1.png)
 
 The benchmark compares the performance for arrays on int, with sizes 10 and 1.000, on .NET 6, 7, and 8 (all "modern" .NET versions).
 
@@ -64,7 +65,7 @@ int Sum_For()
     var sum = 0;
     for (var index = 0; index < array.Length; index++)
         sum += array[index];
-    return sum;                     
+    return sum;
 }
 
 int Sum_ForEach()
@@ -72,7 +73,7 @@ int Sum_ForEach()
     var sum = 0;
     foreach (var item in array)
         sum += item;
-    return sum;                     
+    return sum;
 }
 ```
 
@@ -162,14 +163,14 @@ static int Sum(int[] source, int start, int length)
     var sum = 0;
     for (var index = start; index < start + length; index++)
         sum += source[index];
-    return sum;        
+    return sum;
 }
 ```
 
 This can easily be converted to a `foreach` by using the `Span.Slice()` method:
 
 ```csharp
-static int Sum(int[] source, int start, int length)  
+static int Sum(int[] source, int start, int length)
     => Sum(source.AsSpan().Slice(start, length));
 
 static int Sum(ReadOnlySpan<int> source)
@@ -183,7 +184,7 @@ static int Sum(ReadOnlySpan<int> source)
 
 So, how do these fairs in terms of performance?
 
-![benchmarks](./assets/img/posts/20210621/Benchmarks-2.png)
+![benchmarks](Benchmarks-2.png)
 
 Using `foreach` on a slice of the array also performs around 20% better than using the for loop.
 
@@ -219,9 +220,9 @@ There are several performance issues with this code:
 
 All this makes the enumeration of the array much slower.
 
-.NET 8 introduces a new internal method `TryGetSpan()`. This method tries to return a `ReadOnlySpan<T>` from the a given `IEnumerable<T>` so that the indexer can be used instead of the enumerator when traversing the collection. It succeeds for arrays and `List<T>`. It makes use of the method `CollectionsMarshal.AsSpan()` to get the internal array of a `List<T>`. `Sum()` in .NET 8 [uses this method to improve its performance when the source is an array or a List<T>](https://github.com/dotnet/dotnet/blob/dbe0b88eab62164795c981e2f447c068cf9c788e/src/runtime/src/libraries/System.Linq/src/System/Linq/Sum.cs#L28). 
+.NET 8 introduces a new internal method `TryGetSpan()`. This method tries to return a `ReadOnlySpan<T>` from the a given `IEnumerable<T>` so that the indexer can be used instead of the enumerator when traversing the collection. It succeeds for arrays and `List<T>`. It makes use of the method `CollectionsMarshal.AsSpan()` to get the internal array of a `List<T>`. `Sum()` in .NET 8 [uses this method to improve its performance when the source is an array or a List<T>](https://github.com/dotnet/dotnet/blob/dbe0b88eab62164795c981e2f447c068cf9c788e/src/runtime/src/libraries/System.Linq/src/System/Linq/Sum.cs#L28).
 
-`ReadOnlySpan<T>` references a contiguous chunk of memory. This is the ideal condition to use SIMD to improve performance even more. 
+`ReadOnlySpan<T>` references a contiguous chunk of memory. This is the ideal condition to use SIMD to improve performance even more.
 
 In case the collection it's a `int[]`, `long[]`, `List<int>` or `List<long>`, `Sum()` uses SIMD. That explain the huge performance improvement in the benchmarks above.
 
@@ -232,4 +233,3 @@ Iteration of an array is a special case for the compiler which can perform code 
 Converting an array to `IEnumerable<T>` makes its iteration a lot slower.
 
 Not all LINQ methods are optimized for the case of arrays. Prior to .NET 8 it’s best to use a custom implementation of the `Sum()` method.
-

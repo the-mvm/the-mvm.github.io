@@ -4,13 +4,14 @@ read_time: true
 show_date: true
 title: "How to use Span&lt;T&gt; and Memory&lt;T&gt;"
 date: 2018-03-12
-img: posts/20180312/Baños.jpg
+img_path: /assets/img/posts/20180312
+image: Baños.jpg
 tags: [development, .net, csharp, span]
 category: development
 author: Antão Almada
 ---
 
-> NOTE: I highly suggest to also check how to use [System.Threading.Channels](https://devblogs.microsoft.com/dotnet/an-introduction-to-system-threading-channels/). It’s a feature introduced after this article was published and that allows a better implementation of the patterns shown in the examples of this article. 
+> NOTE: I highly suggest to also check how to use [System.Threading.Channels](https://devblogs.microsoft.com/dotnet/an-introduction-to-system-threading-channels/). It’s a feature introduced after this article was published and that allows a better implementation of the patterns shown in the examples of this article.
 
 `Span<T>` and `Memory<T>` are new features in .NET Core 2.1 that allow strongly-typed management of contiguous memory, independently of how it was allocated. These allow easier to maintain code and greatly improves the performance of applications by reducing the number of required memory allocations and copies.
 
@@ -159,7 +160,7 @@ The previous code allows the use of `foreach` but if you also want to allow the 
 public struct Enumerable : IEnumerable<Foo>
 {
     readonly Stream stream;
- 
+
     public Enumerable(Stream stream)
     {
         this.stream = stream;
@@ -232,7 +233,7 @@ How do these examples perform? [BenchmarkDotNet]() makes it very simple to compa
 
 The code for these benchmarks can be found at https://github.com/aalmada/SpanSample/blob/master/SpanSample/EnumerationBenchmarks.cs
 
-![benchmarks](./assets/img/posts/20180312/Benchmarks.png)
+![benchmarks](Benchmarks.png)
 
 For the benchmarks, I extended the first example into 3 options of iteration on the buffer `Span<>`: using a `foreach`, using `GetEnumerator()` and using a `for` loop with indexer operator. Interesting to see that the `foreach` has the same performance has the `for` but using the `GetEnumerator()` is twice as slow.
 
@@ -256,8 +257,7 @@ I plan to write a few more articles on this subject but you can find a lot more 
 
 - [Welcome to C# 7.2 and Span](https://blogs.msdn.microsoft.com/dotnet/2017/11/15/welcome-to-c-7-2-and-span/) by Mads Torgersen
 - [C# — All About Span: Exploring a New .NET Mainstay](https://msdn.microsoft.com/en-us/magazine/mt814808.aspx) by Stephen Toub
-- [Span](http://adamsitnik.com/Span/) by Adam Sitnik
+- [Span](https://adamsitnik.com/Span/) by Adam Sitnik
 - [C# 7.2: Understanding Span](https://channel9.msdn.com/Events/Connect/2017/T125) by Jared Parsons
 - [Span spec](https://github.com/dotnet/corefxlab/blob/master/docs/specs/span.md) by Krzysztof Cwalina et al
 - [Add initial Span/Buffer-based APIs across corefx](https://github.com/dotnet/corefx/issues/21281) by Stephen Toub et al
-

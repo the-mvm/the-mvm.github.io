@@ -4,7 +4,8 @@ read_time: true
 show_date: true
 title: "Using “React Query” to query smart contracts (part 1)"
 date: 2022-12-05
-img: posts/20221205/Cluster.jpeg
+img_path: /assets/img/posts/20221205
+image: Cluster.jpeg
 tags: [development, web3, react, react-query]
 category: development
 author: Antão Almada
@@ -77,5 +78,3 @@ This custom hook is way more complex than the method that we started from but it
 - Allow external reset of cache by exposing the queryKey.
 
 This is the simplest example of using `useQuery` to query a smart contract. In the next articles I’ll go through more complex examples. I’ll then also start a series on `useMutation`.
-
-Next: [Using “React Query” to query smart contracts (part 2)](https://aalmada.github.io/Using-React-Query-to-query-smart-contracts-2.html)
