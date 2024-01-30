@@ -8,7 +8,6 @@ img_path: /assets/img/posts/20180321
 image: Observing.jpg
 tags: [development, .net, csharp, span]
 category: development
-author: Antão Almada
 ---
 
 Through out the many years I’ve been using .NET, I’ve had to use many functionalities that were not yet available in .NET (computer vision, 3D rendering, physics, augmented-reality, and many more). One of the great features of .NET is that it supports calls to native code. This is called [Platform Invocation Service, or P/Invoke](https://en.wikipedia.org/wiki/Platform_Invocation_Services). This article is about my investigation on how `Span<T>` can be used for P/Invoke calls.

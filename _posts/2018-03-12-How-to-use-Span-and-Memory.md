@@ -8,7 +8,6 @@ img_path: /assets/img/posts/20180312
 image: Baños.jpg
 tags: [development, .net, csharp, span]
 category: development
-author: Antão Almada
 ---
 
 > NOTE: I highly suggest to also check how to use [System.Threading.Channels](https://devblogs.microsoft.com/dotnet/an-introduction-to-system-threading-channels/). It’s a feature introduced after this article was published and that allows a better implementation of the patterns shown in the examples of this article.

@@ -8,7 +8,6 @@ img_path: /assets/img/posts/20230814
 image: IEnumerable.png
 tags: [development, .net, csharp, linq, performance]
 category: development
-author: Antão Almada
 ---
 
 ## Introduction

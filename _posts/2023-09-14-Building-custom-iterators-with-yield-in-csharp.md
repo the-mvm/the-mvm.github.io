@@ -8,7 +8,6 @@ img_path: /assets/img/posts/20230914
 image: Yield.png
 tags: [development, .net, csharp]
 category: development
-author: Antão Almada
 ---
 
 [As detailed in a previous article](https://aalmada.github.io/IEnumerable-and-pals.html), an enumerator serves as a representation of a pull stream. To obtain the next item, clients must invoke the `MoveNext()` method. If it returns`true`, it indicates a successful retrieval, and the value can be accessed through the `Current` property. The enumerator is typically implemented as a state machine, encompassing information about the current position within the stream and the current value.

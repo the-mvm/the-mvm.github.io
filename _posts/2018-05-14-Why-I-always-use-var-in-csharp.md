@@ -8,7 +8,6 @@ img_path: /assets/img/posts/20180514
 image: Ballpit.jpg
 tags: [development, .net, csharp, opinion]
 category: development
-author: Antão Almada
 ---
 
 The `var` keyword was introduced in C# 3.0 back in 2007 and remains a topic of debate within development teams. Personally, I advocate for its use, and here's why the arguments against it don't sway me.

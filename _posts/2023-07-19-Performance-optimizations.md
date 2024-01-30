@@ -8,7 +8,6 @@ img_path: /assets/img/posts/20230719
 image: Hummingbird-hawk-moth.jpg
 tags: [performance, opinion]
 category: development
-author: Antão Almada
 ---
 
 I've been writing articles about performance in .NET for several years but I frequently find in the comments the famous quote from the Donald Knuth's paper ["Structured Programming with go to Statements"](https://dl.acm.org/doi/pdf/10.1145/356635.356640):

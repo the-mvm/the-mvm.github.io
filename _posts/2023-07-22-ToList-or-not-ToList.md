@@ -8,7 +8,6 @@ img_path: /assets/img/posts/20230722
 image: Plaza.jpg
 tags: [development, .net, csharp, linq, performance, benchmarks]
 category: development
-author: Antão Almada
 ---
 
 ## Introduction

@@ -8,7 +8,6 @@ img_path: /assets/img/posts/20221206
 image: TrainTracks.jpeg
 tags: [development, web3, react, react-query]
 category: development
-author: Antão Almada
 ---
 
 In my [previous post](Using-React-Query-to-query-smart-contracts-1.md) I explained how `useQuery` can be used to retrieve the value from an immutable method. Now let’s go up a notch and see how to use on methods where the returned value may change over time.

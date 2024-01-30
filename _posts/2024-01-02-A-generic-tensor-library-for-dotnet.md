@@ -8,7 +8,6 @@ img_path: /assets/img/posts/20240102
 image: EstacaoOriente.jpeg
 tags: [development, .net, csharp, generics, simd, math, intrinsics, performance]
 category: development
-author: Antão Almada
 ---
 
 > EDIT: Revised the content to align with the changes introduced in [version 2](https://www.nuget.org/packages/NetFabric.Numerics.Tensors) of `NetFabric.Numerics.Tensors`.

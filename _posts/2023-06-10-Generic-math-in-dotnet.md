@@ -8,7 +8,6 @@ img_path: /assets/img/posts/20230610
 image: Sculpture-by-Liechennay.jpg
 tags: [development, .net, csharp, math, generics]
 category: development
-author: Antão Almada
 ---
 
 ## Before .NET 7

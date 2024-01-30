@@ -8,7 +8,6 @@ img_path: /assets/img/posts/20210625
 image: Karts.jpg
 tags: [development, .net, csharp, performance, benchmarks]
 category: development
-author: Antão Almada
 ---
 
 ## Introduction

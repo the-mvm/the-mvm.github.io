@@ -8,7 +8,6 @@ img_path: /assets/img/posts/20230910
 image: IValueEnumerable.png
 tags: [development, .net, csharp, performance]
 category: development
-author: Antão Almada
 ---
 
 [As I explained in a previous article](https://aalmada.github.io/Leveraging-csharp-foreach-loop.html), `IEnumerable<T>` is an interface that enforces the requirements for the source of a `foreach` statement. Any type that implements `IEnumerable<T>` can be traversed using the `foreach` statement.

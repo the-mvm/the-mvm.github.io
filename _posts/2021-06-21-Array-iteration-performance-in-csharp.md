@@ -8,7 +8,6 @@ img_path: /assets/img/posts/20210621
 image: Snails.jpg
 tags: [development, .net, csharp, linq, performance, benchmarks]
 category: development
-author: Antão Almada
 ---
 
 Implementing the sum of the items in an array is very simple. I think most developers would implement it this way:

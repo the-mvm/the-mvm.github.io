@@ -8,7 +8,6 @@ img_path: /assets/img/posts/20240115
 image: Discard.png
 tags: [development, .net, csharp, .editorconfig]
 category: development
-author: Antão Almada
 ---
 
 One of the significant advantages of strongly-typed languages like C# lies in their ability to catch many errors during compile time, providing a robust defense against bugs reaching the runtime. This not only streamlines the development process but also contributes to a more reliable user experience.
