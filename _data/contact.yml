@@ -22,11 +22,11 @@
   icon: "fab fa-stack-overflow"
   url: "https://stackoverflow.com/users/861773/antao-almada" # Fill with your stackoverflow homepage
 
-- type: stack-overflow
+- type: instagram
   icon: "fab fa-instagram"
   url: "https://www.instagram.com/antao.almada/"
 
-- type: stack-overflow
+- type: instagram
   icon: "fab fa-instagram"
   url: "https://www.instagram.com/antao.almada.biking/"
 
