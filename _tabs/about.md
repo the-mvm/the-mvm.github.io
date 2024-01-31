@@ -4,6 +4,8 @@ icon: fas fa-info-circle
 order: 4
 ---
 
+![BMX](/assets/img/BMX.jpg)
+
 My journey in the tech world began in the late '90s, delving into virtual reality and extending to full-body interaction and augmented reality. My coding adventure started with a ZX Spectrum 48K, and I later obtained a Computer Science degree from NOVA University Lisbon.
 
 Although I have spent considerable time using C++, my current go-to coding tool is C#. The majority of my open-source projects can be found under the [NetFabric](https://github.com/NetFabric) organization on GitHub. I've also made contributions to other projects, including well-known ones like [ReactiveUI](https://github.com/reactiveui/ReactiveUI) and [MixedRealityToolkit-Unity](https://github.com/microsoft/MixedRealityToolkit-Unity).
